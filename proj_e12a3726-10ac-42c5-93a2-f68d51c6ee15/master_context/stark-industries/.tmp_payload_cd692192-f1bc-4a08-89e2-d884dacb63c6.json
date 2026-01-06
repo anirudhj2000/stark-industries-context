@@ -1,0 +1,10 @@
+{
+  "job_id": "cd692192-f1bc-4a08-89e2-d884dacb63c6",
+  "source_id": "eaf2df3c-3f4e-4a1c-93fa-a8baea22f97e",
+  "project_id": "59faae44-4c8c-4201-8bdc-3dca45272bd8",
+  "context_type": "project",
+  "source_type": "other",
+  "integration": "notion",
+  "url": "https://www.notion.so/Blogs-Ideas-adc85491a2a3406cac787b5194d6e5f9",
+  "playbook_webhook_url": "http://localhost:8000/api/v1/context/webhooks/completion/"
+}

@@ -1,0 +1,43 @@
+{
+  "manifest_version": "2.0",
+  "generated_at": "2026-01-06T06:32:49.596958+00:00",
+  "org": {
+    "id": "91a7be4c-014a-4117-b884-441e89d05009",
+    "slug": "stark-industries"
+  },
+  "project": {
+    "id": "59faae44-4c8c-4201-8bdc-3dca45272bd8",
+    "name": "Organization Context"
+  },
+  "sources": [
+    {
+      "id": "7f157606-4610-4100-ace5-0b7e23d10832",
+      "title": "members_template (1).csv",
+      "type": "spreadsheet",
+      "status": "pending",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_91a7be4c-014a-4117-b884-441e89d05009/proj_59faae44-4c8c-4201-8bdc-3dca45272bd8/raw/document/179f857d-5bac-4459-baf2-f6058f39955a.csv",
+        "region": "us-east-1"
+      }
+    }
+  ],
+  "workspace": {
+    "root": "master_context/stark-industries/project_workspaces/59faae44-4c8c-4201-8bdc-3dca45272bd8"
+  },
+  "team_members": [],
+  "access": {
+    "read": [
+      "7f157606-4610-4100-ace5-0b7e23d10832"
+    ],
+    "write": [],
+    "scratch": [
+      "workspace/notes/*.yaml",
+      "scratch/agent_scratchpad/*"
+    ]
+  },
+  "playbook_api": {
+    "base_url": "http://localhost:8000",
+    "api_key": "gsd-inter-service-key-for-local-dev"
+  }
+}

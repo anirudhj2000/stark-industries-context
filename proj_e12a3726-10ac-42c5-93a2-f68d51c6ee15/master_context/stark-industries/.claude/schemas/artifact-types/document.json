@@ -1,0 +1,32 @@
+{
+  "id": "DOCUMENT",
+  "name": "Document",
+  "description": "Generated documents (PRD, specs, reports)",
+  "file_types": ["md", "pdf", "docx"],
+  "render": {
+    "component": "DocumentViewer",
+    "supports_preview": true,
+    "interactive": false
+  },
+  "metadata_schema": {
+    "type": "object",
+    "required": ["document_type"],
+    "properties": {
+      "document_type": {
+        "type": "string",
+        "enum": ["prd", "tdd", "frd", "report", "spec", "guide", "brainstorm"]
+      },
+      "title": {
+        "type": "string"
+      },
+      "sections": {
+        "type": "array",
+        "items": {"type": "string"}
+      },
+      "version": {
+        "type": "string",
+        "default": "1.0"
+      }
+    }
+  }
+}

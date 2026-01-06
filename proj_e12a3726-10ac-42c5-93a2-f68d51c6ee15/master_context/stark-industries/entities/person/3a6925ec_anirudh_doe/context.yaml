@@ -1,0 +1,36 @@
+id: 3a6925ec_anirudh_doe
+type: person
+name: Anirudh Doe
+status: active
+external_ids:
+  bulk_import_item_id: 3a6925ec-61c9-428d-9732-8227a20eb217
+  email: anirudhjoshi985@gmail.com
+profile:
+  email: anirudhjoshi985@gmail.com
+  first_name: Anirudh
+  last_name: Doe
+  primary_role: Software Engineer
+  department: Engineering
+  function: ENGINEERING
+  timezone: America/New_York
+  location: ''
+  pronouns: ''
+  about: ''
+  expertise_tags:
+  - Python
+  - Django
+  context_description: ''
+  responsibilities: []
+  manager_email: null
+rbac_scope:
+  teams: []
+  org_role: MEMBER
+metadata:
+  source: created
+  created_at: '2026-01-05T14:42:51.614923+00:00'
+  data_quality: minimal
+change_history:
+- operation: create
+  timestamp: '2026-01-05T14:42:51.614923+00:00'
+  source: created
+  reference_id: 3a6925ec-61c9-428d-9732-8227a20eb217

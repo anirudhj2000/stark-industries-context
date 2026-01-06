@@ -1,0 +1,43 @@
+{
+  "manifest_version": "2.0",
+  "generated_at": "2026-01-06T06:00:12.974728+00:00",
+  "org": {
+    "id": "91a7be4c-014a-4117-b884-441e89d05009",
+    "slug": "stark-industries"
+  },
+  "project": {
+    "id": "59faae44-4c8c-4201-8bdc-3dca45272bd8",
+    "name": "Organization Context"
+  },
+  "sources": [
+    {
+      "id": "eaf2df3c-3f4e-4a1c-93fa-a8baea22f97e",
+      "title": "notion_adc85491-a2a3-406c-ac78-7b5194d6e5f9.md",
+      "type": "other",
+      "status": "pending",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_91a7be4c-014a-4117-b884-441e89d05009/proj_59faae44-4c8c-4201-8bdc-3dca45272bd8/raw/other/2a51039c-3171-4f81-96d5-449406272ee1.md",
+        "region": "us-east-1"
+      }
+    }
+  ],
+  "workspace": {
+    "root": "master_context/stark-industries/project_workspaces/59faae44-4c8c-4201-8bdc-3dca45272bd8"
+  },
+  "team_members": [],
+  "access": {
+    "read": [
+      "eaf2df3c-3f4e-4a1c-93fa-a8baea22f97e"
+    ],
+    "write": [],
+    "scratch": [
+      "workspace/notes/*.yaml",
+      "scratch/agent_scratchpad/*"
+    ]
+  },
+  "playbook_api": {
+    "base_url": "http://localhost:8000",
+    "api_key": "gsd-inter-service-key-for-local-dev"
+  }
+}
