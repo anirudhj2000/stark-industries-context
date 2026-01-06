@@ -1,0 +1,43 @@
+{
+  "manifest_version": "2.0",
+  "generated_at": "2026-01-06T13:47:51.964573+00:00",
+  "org": {
+    "id": "cdde9953-e211-4826-93d5-e2dce0440843",
+    "slug": "stark-industries"
+  },
+  "project": {
+    "id": "edd483c4-297f-46c9-b9fa-51189dc3c8ec",
+    "name": "Organization Context"
+  },
+  "sources": [
+    {
+      "id": "a29b58ec-d41f-4dc5-96fb-9f468014f308",
+      "title": "vocabulary_template.csv",
+      "type": "spreadsheet",
+      "status": "pending",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_cdde9953-e211-4826-93d5-e2dce0440843/proj_edd483c4-297f-46c9-b9fa-51189dc3c8ec/raw/document/66b9d143-b73f-4888-91d6-080b7c302950.csv",
+        "region": "us-east-1"
+      }
+    }
+  ],
+  "workspace": {
+    "root": "master_context/stark-industries/project_workspaces/edd483c4-297f-46c9-b9fa-51189dc3c8ec"
+  },
+  "team_members": [],
+  "access": {
+    "read": [
+      "a29b58ec-d41f-4dc5-96fb-9f468014f308"
+    ],
+    "write": [],
+    "scratch": [
+      "workspace/notes/*.yaml",
+      "scratch/agent_scratchpad/*"
+    ]
+  },
+  "playbook_api": {
+    "base_url": "http://host.docker.internal:8000",
+    "api_key": "gsd-inter-service-key-for-local-dev"
+  }
+}
