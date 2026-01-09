@@ -1,0 +1,52 @@
+id: team_9cb0f438_mobile-app
+type: team
+name: Mobile App
+slug: mobile-app
+status: active
+external_ids:
+  team_id: 9cb0f438-cf21-4973-8a8a-84e32df46126
+  organization_slug: stark-industries
+profile:
+  description: 'Project Team: Mobile App'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: 4ba949ec-2ed1-4e9b-9418-9be91f91817a
+  entity_path: entities/top-boss/baccme-corp/mobile-apper
+  level: project-team
+roster:
+- email: anirudhjoshi999@gmail.com
+  name: ''
+  membership_id: f8a689cb-df82-4abd-b69c-70b6d5c6631b
+  role: MEMBER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-09T04:37:38.025148+00:00'
+- email: tony@gmail.com
+  name: Tony Stark
+  membership_id: 39e37e93-7436-4ae8-b9e5-c94a3698dbb3
+  role: OWNER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-09T04:37:37.927266+00:00'
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-01-09T04:37:38.429548+00:00'
+  member_count: 2
+  active_member_count: 2
+change_history:
+- operation: roster_updated
+  timestamp: '2026-01-09T04:37:38.429548+00:00'
+  source: member_added
