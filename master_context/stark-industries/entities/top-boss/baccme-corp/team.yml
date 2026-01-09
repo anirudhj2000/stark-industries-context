@@ -1,0 +1,28 @@
+id: team_18a95841_acme-corp
+type: team
+name: Acme Corp
+slug: acme-corp
+status: active
+external_ids:
+  team_id: 18a95841-38a0-4bde-ae47-e1c0a11e8e72
+  organization_slug: stark-industries
+profile:
+  description: 'Client: Acme Corp'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: 9b969bfe-ac0e-4f9e-8d27-0aa763edaea5
+  entity_path: entities/top-boss/baccme-corp
+  level: clienteles
+roster: []
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-01-09T04:42:56.736330+00:00'
+  member_count: 0
+  active_member_count: 0
+change_history:
+- operation: roster_updated
+  timestamp: '2026-01-09T04:42:56.736330+00:00'
+  source: member_added
