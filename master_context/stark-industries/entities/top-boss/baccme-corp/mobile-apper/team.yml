@@ -16,18 +16,6 @@ ontology:
   entity_path: entities/top-boss/baccme-corp/mobile-apper
   level: project-team
 roster:
-- email: anirudhjoshi999@gmail.com
-  name: ''
-  membership_id: f8a689cb-df82-4abd-b69c-70b6d5c6631b
-  role: MEMBER
-  title: ''
-  department: ''
-  function: ''
-  is_active: true
-  team_role: MEMBER
-  context_description: ''
-  responsibilities: []
-  joined_at: '2026-01-09T04:37:38.025148+00:00'
 - email: tony@gmail.com
   name: Tony Stark
   membership_id: 39e37e93-7436-4ae8-b9e5-c94a3698dbb3
@@ -42,11 +30,11 @@ roster:
   joined_at: '2026-01-09T04:37:37.927266+00:00'
 metadata:
   source: membership_change
-  sync_reason: member_added
-  updated_at: '2026-01-09T04:37:42.163123+00:00'
-  member_count: 2
-  active_member_count: 2
+  sync_reason: member_removed
+  updated_at: '2026-01-09T04:40:12.490876+00:00'
+  member_count: 1
+  active_member_count: 1
 change_history:
 - operation: roster_updated
-  timestamp: '2026-01-09T04:37:42.163123+00:00'
-  source: member_added
+  timestamp: '2026-01-09T04:40:12.490876+00:00'
+  source: member_removed
