@@ -1,0 +1,283 @@
+version: '1.0'
+entity_id: cdde9953-e211-4826-93d5-e2dce0440843
+entity_type: organization
+organization_id: cdde9953-e211-4826-93d5-e2dce0440843
+organization_name: stark-industries
+context_type: vocabulary
+updated_at: '2026-01-08T09:31:28.887657'
+data:
+  terms:
+  - term: API
+    definition: Application Programming Interface
+    term_type: acronym
+    synonyms:
+    - interface
+    - programming interface
+  - term: Kubernetes
+    definition: Container orchestration platform
+    term_type: technical
+    synonyms:
+    - k8s
+    - kube
+  - term: CI/CD
+    definition: Continuous Integration and Continuous Deployment
+    term_type: acronym
+    synonyms:
+    - continuous delivery
+    - cicd
+  - term: Microservices
+    definition: Architectural pattern of small independent services
+    term_type: technical
+    synonyms:
+    - micro services
+    - service oriented
+  - term: XYZ
+    definition: Application Programming Interface
+    term_type: acronym
+    synonyms:
+    - interface
+    - programming interface
+  - term: ABCD
+    definition: Container orchestration platform
+    term_type: technical
+    synonyms:
+    - k8s
+    - kube
+  - term: K8s
+    definition: Container orchestration platform for automating deployment and scaling
+    term_type: technical
+    synonyms:
+    - kubernetes
+    - kube
+    - container orchestrator
+  - term: SLA
+    definition: Service Level Agreement defining uptime and support guarantees
+    term_type: acronym
+    synonyms:
+    - service agreement
+    - uptime guarantee
+  - term: MVP
+    definition: Minimum Viable Product for initial market testing
+    term_type: acronym
+    synonyms:
+    - prototype
+    - initial release
+    - beta product
+  - term: KPI
+    definition: Key Performance Indicator for measuring success
+    term_type: acronym
+    synonyms:
+    - metric
+    - performance measure
+    - success indicator
+  - term: ETL
+    definition: Extract Transform Load process for data integration
+    term_type: acronym
+    synonyms:
+    - data pipeline
+    - data processing
+  - term: SOC2
+    definition: Security compliance framework for service organizations
+    term_type: technical
+    synonyms:
+    - security compliance
+    - audit certification
+  - term: RBAC
+    definition: Role-Based Access Control for permission management
+    term_type: acronym
+    synonyms:
+    - access control
+    - permissions
+    - authorization
+  - term: SSO
+    definition: Single Sign-On authentication mechanism
+    term_type: acronym
+    synonyms:
+    - unified login
+    - federated identity
+  - term: MFA
+    definition: Multi-Factor Authentication for enhanced security
+    term_type: acronym
+    synonyms:
+    - 2FA
+    - two-factor
+    - dual authentication
+  - term: SDK
+    definition: Software Development Kit for building applications
+    term_type: acronym
+    synonyms:
+    - dev kit
+    - toolkit
+    - development library
+  - term: CLI
+    definition: Command Line Interface for terminal-based operations
+    term_type: acronym
+    synonyms:
+    - terminal
+    - command prompt
+    - shell
+  - term: REST
+    definition: Representational State Transfer architectural style
+    term_type: technical
+    synonyms:
+    - restful
+    - web api
+    - http api
+  - term: GraphQL
+    definition: Query language for APIs with flexible data fetching
+    term_type: technical
+    synonyms:
+    - graph query
+    - api query language
+  - term: Webhook
+    definition: HTTP callback for real-time event notifications
+    term_type: technical
+    synonyms:
+    - callback
+    - http trigger
+    - event hook
+  - term: Microservice
+    definition: Independent deployable service component
+    term_type: technical
+    synonyms:
+    - service
+    - module
+    - component
+  - term: Monolith
+    definition: Single unified application architecture
+    term_type: technical
+    synonyms:
+    - monolithic app
+    - single codebase
+  - term: Tech Debt
+    definition: Accumulated cost of shortcuts in code
+    term_type: technical
+    synonyms:
+    - code debt
+    - technical liability
+  - term: Refactor
+    definition: Code restructuring without changing behavior
+    term_type: technical
+    synonyms:
+    - code cleanup
+    - restructure
+  - term: Hotfix
+    definition: Emergency production code correction
+    term_type: technical
+    synonyms:
+    - urgent fix
+    - critical patch
+    - emergency update
+  - term: Rollback
+    definition: Reverting to previous application version
+    term_type: technical
+    synonyms:
+    - revert
+    - undo deployment
+  - term: Canary
+    definition: Gradual deployment to subset of users
+    term_type: technical
+    synonyms:
+    - canary release
+    - staged rollout
+  - term: Blue-Green
+    definition: Deployment strategy with parallel environments
+    term_type: technical
+    synonyms:
+    - zero-downtime deploy
+    - parallel deployment
+  - term: Load Balancer
+    definition: Traffic distribution across multiple servers
+    term_type: technical
+    synonyms:
+    - traffic distributor
+    - request router
+  - term: CDN
+    definition: Content Delivery Network for fast asset delivery
+    term_type: acronym
+    synonyms:
+    - edge network
+    - content cache
+  - term: DNS
+    definition: Domain Name System for address resolution
+    term_type: acronym
+    synonyms:
+    - name server
+    - domain resolver
+  - term: VPC
+    definition: Virtual Private Cloud for isolated networking
+    term_type: acronym
+    synonyms:
+    - virtual network
+    - private cloud
+  - term: IAM
+    definition: Identity and Access Management for cloud resources
+    term_type: acronym
+    synonyms:
+    - access management
+    - identity service
+  - term: Latency
+    definition: Time delay in system response
+    term_type: technical
+    synonyms:
+    - response time
+    - delay
+    - lag
+  - term: Throughput
+    definition: Rate of successful data transfer
+    term_type: technical
+    synonyms:
+    - bandwidth
+    - capacity
+    - data rate
+  - term: Uptime
+    definition: Percentage of time system is operational
+    term_type: technical
+    synonyms:
+    - availability
+    - reliability
+  - term: Slacks
+    definition: Team communication platform
+    term_type: brand
+    synonyms:
+    - slack app
+    - slack chat
+  - term: Downtime
+    definition: Period when system is unavailable
+    term_type: technical
+    synonyms:
+    - outage
+    - interruption
+    - service disruption
+  - term: PagerDuty
+    definition: Alerting and incident management platform
+    term_type: technical
+    synonyms:
+    - alert system
+    - incident tool
+  - term: Terraform
+    definition: Infrastructure as Code tool for provisioning
+    term_type: technical
+    synonyms:
+    - IaC
+    - infrastructure automation
+  - term: Docker
+    definition: Container runtime for application packaging
+    term_type: technical
+    synonyms:
+    - container
+    - containerization
+  - term: Redis
+    definition: In-memory data store for caching
+    term_type: technical
+    synonyms:
+    - cache
+    - memory store
+    - key-value store
+  - term: Slack
+    definition: Team communication platform
+    term_type: brand
+    synonyms:
+    - slack app
+    - slack chat
+processing_path: direct

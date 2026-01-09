@@ -1,0 +1,13 @@
+version: '1.0'
+entity_id: cdde9953-e211-4826-93d5-e2dce0440843
+entity_type: organization
+organization_id: cdde9953-e211-4826-93d5-e2dce0440843
+organization_name: stark-industries
+context_type: settings
+updated_at: '2026-01-08T09:31:28.925247'
+data:
+  name: Stark Industries
+  slug: stark-industries
+  description: ''
+  created_at: '2026-01-06T12:50:08.174084+00:00'
+processing_path: direct

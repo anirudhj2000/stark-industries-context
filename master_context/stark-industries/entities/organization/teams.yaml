@@ -1,0 +1,76 @@
+version: '1.0'
+entity_id: cdde9953-e211-4826-93d5-e2dce0440843
+entity_type: organization
+organization_id: cdde9953-e211-4826-93d5-e2dce0440843
+organization_name: stark-industries
+context_type: teams
+updated_at: '2026-01-08T09:31:28.920485'
+data:
+  teams:
+  - team_id: a334b2cc-899b-4bfd-a927-8f2ae560246f
+    name: All Team Members
+    description: ''
+  - team_id: 75e5dc5f-b07e-4d8e-b332-1ede3989bb13
+    name: Retail
+    description: 'LOB: Retail'
+  - team_id: be4b9d35-244f-4acc-8522-b8632b61cab2
+    name: Marketing
+    description: 'Function: Marketing'
+  - team_id: 28115f3b-d0b5-410f-832c-130d6f29ebb4
+    name: Sales
+    description: 'Function: Sales'
+  - team_id: 25d4a34b-b9e2-4507-a238-077c4690615c
+    name: Brand Team
+    description: 'Team: Brand Team'
+  - team_id: a5eed8d3-0a15-4051-b615-55c7b8555132
+    name: Digital Team
+    description: 'Team: Digital Team'
+  - team_id: 4098ae32-a20e-4851-b971-b265ff4fecd5
+    name: Inside Sales
+    description: 'Team: Inside Sales'
+  - team_id: a25e2c8d-4937-4f79-a546-6111c81e32d2
+    name: Engineering
+    description: 'Function: Engineering'
+  - team_id: e5223f1f-d70c-4a05-a524-3ef732b263cc
+    name: Devops
+    description: 'Team: Devops'
+  - team_id: 88132c01-9a85-4b65-8eeb-154761eb54ac
+    name: Frontend
+    description: 'Team: Frontend'
+  - team_id: 838d90dc-fcf1-4fc2-9929-e17f846cc3cc
+    name: Devop
+    description: 'Team: Devop'
+  - team_id: 018be585-a205-4934-95bf-bba0e3d28f46
+    name: Retail
+    description: 'LOB: Retail'
+  - team_id: a714742a-4343-4dfc-87e8-8e5e3630b6a0
+    name: Marketing
+    description: 'Function: Marketing'
+  - team_id: 6cb8817f-1e25-4392-9e17-d7b8a2f28cb0
+    name: Sales
+    description: 'Function: Sales'
+  - team_id: 1f80d47f-3474-4847-8066-4f79371fcde8
+    name: Brand Team
+    description: 'Team: Brand Team'
+  - team_id: 96db74b5-cee3-462e-bb9f-d5dfad252cb4
+    name: Digital Team
+    description: 'Team: Digital Team'
+  - team_id: 0bd9a8d5-aa23-4fce-a50c-162a408ba520
+    name: Inside Sales
+    description: 'Team: Inside Sales'
+  - team_id: 3a7cc539-11ef-4525-ac1f-94444fd8a4f9
+    name: Product Team
+    description: 'Team: Product Team'
+  - team_id: ffbb5f19-6816-4b01-9cb4-99c73e1a4acb
+    name: North America
+    description: 'Region: North America'
+  - team_id: 5a564766-8b3f-467d-9019-f75ff4b91812
+    name: Engineering
+    description: 'Function: Engineering'
+  - team_id: 3272fe09-45ae-4174-96ad-c4938a089e45
+    name: Platform Team
+    description: 'Team: Platform Team'
+  - team_id: 3e7baf18-46f3-47af-a4ad-59e4bc64d8a1
+    name: API Team
+    description: 'Team: API Team'
+processing_path: direct

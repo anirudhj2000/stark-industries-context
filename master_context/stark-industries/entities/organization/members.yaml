@@ -1,0 +1,15 @@
+version: '1.0'
+entity_id: cdde9953-e211-4826-93d5-e2dce0440843
+entity_type: organization
+organization_id: cdde9953-e211-4826-93d5-e2dce0440843
+organization_name: stark-industries
+context_type: members
+updated_at: '2026-01-08T09:31:28.915213'
+data:
+  members:
+  - user_id: 6c9ec031-8747-48ba-8ba1-349d46a77d41
+    username: tony_c9fe8168
+    role: OWNER
+    title: ''
+    department: ''
+processing_path: direct
