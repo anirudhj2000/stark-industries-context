@@ -43,10 +43,10 @@ roster:
 metadata:
   source: membership_change
   sync_reason: member_added
-  updated_at: '2026-01-09T04:37:38.429548+00:00'
+  updated_at: '2026-01-09T04:37:42.163123+00:00'
   member_count: 2
   active_member_count: 2
 change_history:
 - operation: roster_updated
-  timestamp: '2026-01-09T04:37:38.429548+00:00'
+  timestamp: '2026-01-09T04:37:42.163123+00:00'
   source: member_added
