@@ -1,0 +1,40 @@
+id: team_7965b476_content
+type: team
+name: content
+slug: content
+status: active
+external_ids:
+  team_id: 7965b476-dac6-4d43-b7b8-1dd3370b1e14
+  organization_slug: stark-industries
+profile:
+  description: 'team: content'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: e7993ee7-aa93-48eb-b87f-1a41b4c0ffcf
+  entity_path: entities/function/marketing/teams/content
+  level: ''
+roster:
+- email: testday98@gmail.com
+  name: ''
+  membership_id: 31a13a3a-7bb4-401c-985c-87833361357c
+  role: MEMBER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-11T10:51:36.984498+00:00'
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-01-11T10:51:54.958158+00:00'
+  member_count: 1
+  active_member_count: 1
+change_history:
+- operation: roster_updated
+  timestamp: '2026-01-11T10:51:54.958158+00:00'
+  source: member_added
