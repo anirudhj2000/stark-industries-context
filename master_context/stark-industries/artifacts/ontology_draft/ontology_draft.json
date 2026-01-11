@@ -138,6 +138,16 @@
           "path": "entities/function/hr",
           "files": ["overview.yaml", "_triage.yaml", "hiring_plan.yaml", "programs.yaml", "org_chart.yaml"]
         }
+      },
+      {
+        "name": "operations",
+        "type": "department",
+        "order": 1,
+        "children": [],
+        "_meta": {
+          "path": "entities/function/operations",
+          "files": ["overview.yaml", "_triage.yaml", "processes.yaml", "slas.yaml", "runbooks.yaml"]
+        }
       }
     ],
     "_meta": {
