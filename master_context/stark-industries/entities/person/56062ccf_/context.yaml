@@ -24,11 +24,11 @@ rbac_scope:
   teams: []
   org_role: GUEST
 metadata:
-  source: created
-  created_at: '2026-01-11T11:46:28.824071+00:00'
+  source: backfill
+  created_at: '2026-01-11T11:50:19.357397+00:00'
   data_quality: minimal
 change_history:
-- operation: create
-  timestamp: '2026-01-11T11:46:28.824071+00:00'
-  source: created
+- operation: update
+  timestamp: '2026-01-11T11:50:19.357397+00:00'
+  source: backfill
   reference_id: 56062ccf-9bbb-4147-8168-3df699cae457
