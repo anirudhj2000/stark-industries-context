@@ -24,11 +24,11 @@ rbac_scope:
   teams: []
   org_role: MEMBER
 metadata:
-  source: created
-  created_at: '2026-01-08T09:56:17.013792+00:00'
+  source: backfill
+  created_at: '2026-01-11T11:50:27.187692+00:00'
   data_quality: minimal
 change_history:
-- operation: create
-  timestamp: '2026-01-08T09:56:17.013792+00:00'
-  source: created
+- operation: update
+  timestamp: '2026-01-11T11:50:27.187692+00:00'
+  source: backfill
   reference_id: 5cee54e4-a4af-430a-8519-0472b26f0e67
