@@ -1,0 +1,34 @@
+id: 94e02b11_
+type: person
+name: ' '
+status: active
+external_ids:
+  bulk_import_item_id: 94e02b11-d0a4-41e8-8d69-6f45a6d9a7df
+  email: anirudhkoshi@lkjhgfd.com
+profile:
+  email: anirudhkoshi@lkjhgfd.com
+  first_name: ''
+  last_name: ''
+  primary_role: ''
+  department: ''
+  function: ''
+  timezone: UTC
+  location: ''
+  pronouns: ''
+  about: ''
+  expertise_tags: []
+  context_description: ''
+  responsibilities: []
+  manager_email: null
+rbac_scope:
+  teams: []
+  org_role: MEMBER
+metadata:
+  source: backfill
+  created_at: '2026-01-11T11:50:03.668704+00:00'
+  data_quality: minimal
+change_history:
+- operation: update
+  timestamp: '2026-01-11T11:50:03.668704+00:00'
+  source: backfill
+  reference_id: 94e02b11-d0a4-41e8-8d69-6f45a6d9a7df
