@@ -2,7 +2,7 @@
 version: '1.1'
 structure_type: functional
 template: null
-generated_at: '2026-01-11T06:21:05.851931+00:00'
+generated_at: '2026-01-11T06:21:44.195206+00:00'
 levels: []
 entities:
 - name: organization
