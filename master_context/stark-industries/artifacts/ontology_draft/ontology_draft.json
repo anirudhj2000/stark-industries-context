@@ -107,6 +107,37 @@
           "path": "entities/function/marketing",
           "files": ["overview.yaml", "_triage.yaml", "channels.yaml", "campaigns.yaml", "brand_assets.yaml"]
         }
+      },
+      {
+        "name": "hr",
+        "type": "department",
+        "order": 1,
+        "children": [
+          {
+            "name": "talent_acquisition",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/hr/teams/talent_acquisition",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
+          },
+          {
+            "name": "people_ops",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/hr/teams/people_ops",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
+          }
+        ],
+        "_meta": {
+          "path": "entities/function/hr",
+          "files": ["overview.yaml", "_triage.yaml", "hiring_plan.yaml", "programs.yaml", "org_chart.yaml"]
+        }
       }
     ],
     "_meta": {
