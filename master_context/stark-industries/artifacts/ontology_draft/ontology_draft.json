@@ -1,0 +1,117 @@
+{
+  "structure_type": "functional",
+  "organization": {
+    "name": "organization",
+    "type": "organization",
+    "order": 0,
+    "children": [
+      {
+        "name": "engineering",
+        "type": "department",
+        "order": 1,
+        "children": [
+          {
+            "name": "frontend",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/engineering/teams/frontend",
+              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "design_tokens.yaml", "component_library.yaml"]
+            }
+          },
+          {
+            "name": "backend",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/engineering/teams/backend",
+              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
+            }
+          }
+        ],
+        "_meta": {
+          "path": "entities/function/engineering",
+          "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
+        }
+      },
+      {
+        "name": "sales",
+        "type": "department",
+        "order": 1,
+        "children": [
+          {
+            "name": "enterprise",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/sales/teams/enterprise",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
+          },
+          {
+            "name": "smb",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/sales/teams/smb",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
+          }
+        ],
+        "_meta": {
+          "path": "entities/function/sales",
+          "files": ["overview.yaml", "_triage.yaml", "pipeline.yaml", "territories.yaml", "playbooks.yaml"]
+        }
+      },
+      {
+        "name": "marketing",
+        "type": "department",
+        "order": 1,
+        "children": [
+          {
+            "name": "growth",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/marketing/teams/growth",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
+          },
+          {
+            "name": "content",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/marketing/teams/content",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
+          },
+          {
+            "name": "brand",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/marketing/teams/brand",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
+          }
+        ],
+        "_meta": {
+          "path": "entities/function/marketing",
+          "files": ["overview.yaml", "_triage.yaml", "channels.yaml", "campaigns.yaml", "brand_assets.yaml"]
+        }
+      }
+    ],
+    "_meta": {
+      "path": "entities/organization",
+      "files": ["overview.yaml", "brand.yaml", "strategy.yaml", "governance.yaml", "_triage.yaml", "competitors.yaml", "vendors.yaml", "partners.yaml", "investors.yaml"]
+    }
+  }
+}
