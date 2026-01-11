@@ -11,14 +11,24 @@ Extract organizational knowledge from processed source documents into the entity
 
 ---
 
+## Core Rules
+
+1. **NEVER create directories** - Only ontology-setup creates structure
+2. **NEVER create new files** - Only update existing files or append to existing list files
+3. **NEVER create person entities** - Can update existing person files, but new people always go to triage for user approval
+4. **New entities → triage** - If no existing file matches, route to `_triage.yaml`
+5. **Ambiguous references → triage** - Partial names like "Smith" (without first name) MUST be triaged with `candidates` list
+
+---
+
 ## Workflow
 
 1. **Classify document** - Understand what type of document this is
-2. **Discover entity structure** - Scan `entities/` for existing types, entities, and `_triage.yaml` locations
-3. **Extract entities** - Identify entities matching existing types
-4. **Merge with existing** - Prevent duplicates, handle conflicts
-5. **Route unplaceable items** - Send ambiguous/unknown items to `_triage.yaml`
-6. **Write and return** - Create/update files, return structured output
+2. **Discover existing files** - Scan `entities/` for existing files (not just directories)
+3. **Extract entities** - Identify entities matching existing files
+4. **Merge or append** - Update existing files, append to list files
+5. **Route new entities** - Send unplaceable items to `_triage.yaml`
+6. **Return output** - Return structured output (no file creation)
 
 ---
 
@@ -26,112 +36,118 @@ Extract organizational knowledge from processed source documents into the entity
 
 Read the source and determine what type of document it is. This guides extraction focus.
 
-| Source Type | What to Look For | Creates/Updates |
-|-------------|------------------|-----------------|
-| `meeting` | Decisions, action items, attendees, concerns, terminology | ADR, person |
-| `company_overview` | Org structure, leadership, products, financials, competitors | organization, person, team, product, competitor |
-| `financial_report` | Revenue, metrics, funding, strategic goals | organization |
-| `technical_doc` | Systems, architecture, technical processes | system, process, adr |
-| `operational_doc` | Workflows, SOPs, procedures, process owners | process, person, team |
-| `org_chart` | Teams, reporting structure, roles | team, person |
-| `product_doc` | Products, pricing, features, roadmap | product, system, process |
+| Source Type | What to Look For | Updates |
+|-------------|------------------|---------|
+| `meeting` | Decisions, action items, attendees, concerns, terminology | ADR files, person files |
+| `company_overview` | Org structure, leadership, products, financials, competitors | organization files, competitors.yaml, vendors.yaml |
+| `financial_report` | Revenue, metrics, funding, strategic goals | organization files |
+| `technical_doc` | Systems, architecture, technical processes | system files, process files |
+| `operational_doc` | Workflows, SOPs, procedures, process owners | process files, person files |
+| `org_chart` | Teams, reporting structure, roles | team files, person files |
+| `product_doc` | Products, pricing, features, roadmap | product files, system files |
 
 **If unclear:** Flag for manual review rather than guessing.
 
 ---
 
-## Step 2: Discover Entity Structure
+## Step 2: Discover Existing Files
 
-Scan `entities/` to understand what exists:
+Run the scan script to get a structured index of existing files:
 
 ```bash
-ls entities/
-# Example output: organization/ person/ team/ product/ system/ adr/
+python {skill_dir}/scripts/scan_entities.py entities/ --pretty
 ```
 
-Build an index of existing entities for deduplication:
-- Entity ID
-- Normalized name (for matching)
-- Type directory
+Where `{skill_dir}` is this skill's directory path. The script scans the `entities/` directory in the current workspace.
 
-**Only extract entities that fit existing type directories.** If document mentions something that doesn't fit (e.g., "vendor" but no `entities/vendor/`), flag it for review.
+**Output:**
+```json
+{
+  "success": true,
+  "entity_files": ["organization/overview.yaml", "person/john_smith/overview.yaml"],
+  "list_files": ["organization/vendors.yaml", "organization/competitors.yaml"],
+  "triage_files": ["_triage.yaml", "person/_triage.yaml"],
+  "directories": ["organization", "person", "person/john_smith"]
+}
+```
+
+Use this index to determine:
+- `entity_files` → can be updated/merged
+- `list_files` → can append entries to
+- `triage_files` → route new entities here
+
+**Only update files that already exist.** If a file doesn't exist, route to triage.
 
 ---
 
 ## Step 3: Extract Entities
 
-Read the document and extract entities that match existing types.
+Read the document and extract entities.
 
 **For each entity found:**
-- Determine which existing type it belongs to
-- Extract relevant information as flat YAML
-- Use natural field names based on content
+- Check if a matching file already exists (use scan output)
+- If yes → prepare merge/update
+- If no → prepare triage entry
+- If person and no existing file → **always triage** (never create person files)
+- If ambiguous reference (e.g., "Smith" without first name) → **always triage** with `candidates` list
 
-**Entity file structure:**
-```yaml
-id: john_smith
-name: John Smith
-role: CTO
-team: leadership
-email: john@company.com
-_source_id: src_meeting_123
-_sources: [src_onboarding_001, src_meeting_123]
-_last_updated: "2025-12-27T10:00:00Z"
-```
+**For YAML structures:** See `references/yaml_schemas.md` for entity files, list files, and required metadata fields.
 
 **Principles:**
 - Extract what's actually in the document
 - Use simple, flat structure
-- Include `_source_id` (latest), `_sources` (all), and `_last_updated` for traceability
+- Include `_source_id`, `_source_name`, `_sources` (with id+name), and `_last_updated` for traceability
 
 ---
 
-## Step 4: Merge with Existing
+## Step 4: Merge or Append
 
-Before writing, check if entity already exists.
+**For existing entity files (update):**
 
-**Resolution:**
 1. Normalize name (`"Dr. John Smith"` → `john_smith`)
-2. Check for existing entity with same normalized name in that type
-3. If match → merge; if no match → create new; if ambiguous → flag
+2. Find matching file from scan output
+3. Merge fields according to rules in `references/yaml_schemas.md`
 
-**Merge rules:**
+**For existing list files (append):**
 
-| Field Type | Behavior |
-|------------|----------|
-| Identity (name, id) | Keep existing unless new is more specific |
-| Current state (role, status) | Most recent wins, track previous |
-| Lists (skills, projects) | Append and deduplicate |
-| Nested objects | Recursive merge |
-| `_sources` | Append new source_id to list |
+1. Check if entity already exists in the list (by id or normalized name)
+2. If exists → merge the entry
+3. If new → append to the list
 
-**Conflicts:** When values disagree and it's not an enhancement, add `_conflict` marker:
-
-```yaml
-role: Senior Engineer
-_conflict:
-  field: role
-  existing_value: Senior Engineer
-  new_value: Staff Engineer
-  source_id: src_org_chart_2025
-```
-
-This allows generate-questions skill to create resolution questions.
+**Conflicts:** When values disagree and it's not a clear enhancement, add `_conflict` marker (see `references/yaml_schemas.md` for format). This allows `generate-questions` skill to create resolution questions.
 
 ---
 
-## Step 5: Write and Return
+## Step 5: Route New Entities to Triage
 
-**Write entities:**
+**When to triage:**
+
+| Situation | Action |
+|-----------|--------|
+| No matching file exists | → `_triage.yaml` |
+| New person (even if structure exists) | → `_triage.yaml` (user must approve person creation) |
+| Ambiguous match (multiple candidates) | → `_triage.yaml` |
+| Major conflicts (core identity disagrees) | → `_triage.yaml` |
+
+**Routing logic:**
+
+1. Check scan output for matching file
+2. If file exists → update/merge
+3. If no file exists OR new person → find nearest `_triage.yaml` and append
+
+**For triage file structure:** See `references/yaml_schemas.md`
+
+**Log for visibility:**
 ```
-entities/{type}/{entity_id}/context.yaml
+INFO: Updated entities/organization/vendors.yaml (appended acme_corp)
+INFO: Updated entities/person/john_smith/overview.yaml (merged role)
+INFO: Triaged 'new person Jane Doe' → entities/_triage.yaml (new person requires approval)
+INFO: Triaged ambiguous 'Smith' → entities/_triage.yaml
 ```
 
-Special case - organization files go directly in `entities/organization/`:
-```
-entities/organization/overview.yaml
-entities/organization/vocabulary.yaml
-```
+---
+
+## Step 6: Return Output
 
 **DO NOT run git add, git commit, or git push.** The task runner handles all git operations.
 
@@ -141,13 +157,13 @@ entities/organization/vocabulary.yaml
   "status": "success",
   "source_id": "{source_id}",
   "source_type": "{detected_type}",
-  "files_written": [
-    "entities/person/john_smith/context.yaml",
-    "entities/team/engineering/context.yaml"
+  "files_updated": [
+    "entities/organization/vendors.yaml",
+    "entities/person/john_smith/overview.yaml"
   ],
   "commit_message": "feat(entities): Populate from {source_id}",
-  "entities_created": ["john_smith", "engineering_team"],
-  "entities_updated": ["jane_doe"],
+  "entities_updated": ["acme_corp", "john_smith"],
+  "entities_triaged": ["jane_doe", "ambiguous_smith"],
   "triaged_count": 2,
   "conflicts": ["john_smith.role"]
 }
@@ -157,134 +173,15 @@ entities/organization/vocabulary.yaml
 
 ## Examples
 
-### Meeting → ADR + Person Updates
+| Scenario | Input | Action |
+|----------|-------|--------|
+| Company overview with vendors | Pitch deck mentions "Acme Cloud" | Append to `vendors.yaml` if exists, else triage |
+| Meeting with role change | Transcript says "John is now VP" | Update existing `john_smith/overview.yaml`, track `_previous_roles` |
+| New person mentioned | "Sarah Chen presented..." | **Always triage** - new people require user approval |
+| Ambiguous reference | "Smith will lead..." | Triage with `candidates: [john_smith, jane_smith]` |
+| Existing person, new info | Meeting mentions John's new project | Update existing file, append to `_sources` |
 
-**Input:** Meeting transcript with decisions
-
-**Creates:**
-```yaml
-# entities/adr/quarterly_review_2025_q4/context.yaml
-id: quarterly_review_2025_q4
-title: Q4 Quarterly Review
-date: "2025-12-15"
-attendees: [john_smith, jane_doe]
-decisions:
-  - Migrate to new platform by Q1
-  - Hire 3 engineers
-actions:
-  - owner: john_smith
-    task: Draft migration plan
-    due: "2025-12-30"
-_source_id: src_meeting_456
-```
-
-**Updates:**
-```yaml
-# entities/person/john_smith/context.yaml (merged)
-decisions_made:
-  - quarterly_review_2025_q4
-actions_assigned:
-  - quarterly_review_2025_q4/migration_plan
-_source_id: src_meeting_456
-_sources: [src_onboarding_001, src_meeting_456]
-```
-
-### Company Overview → Multiple Entities
-
-**Input:** Company pitch deck
-
-**Creates/updates:** organization files, person entities for leadership, product entities, competitor entities.
-
----
-
-## Triage Routing
-
-When information can't be placed in an existing folder, route it to `_triage.yaml` at the appropriate level. **Don't lose information** — triage captures what doesn't fit current structure.
-
-**Triage situations:**
-
-1. **No matching folder:** Information relates to an entity but no subfolder fits
-2. **Unrecognized entity type:** Document mentions entities that don't fit existing directories
-3. **Ambiguous match:** Multiple existing entities could match
-4. **Major conflicts:** Core identity fields disagree
-5. **Partial information:** Not enough context to create a proper entity
-
-**Routing logic:**
-
-```
-1. CLASSIFY: What type of information is this? (person, team, project, system, etc.)
-
-2. FIND ENTITY: Which entity does this relate to most?
-   - Is it about a specific person? → entities/person/{slug}/
-   - Is it about a team? → entities/team/{slug}/
-   - Is it organization-wide? → entities/organization/
-
-3. TRY TO PLACE: Look at folders within that entity
-   - Does the entity have a folder where this fits? (adrs/, systems/, projects/)
-   - If yes → place it there
-   - If no → go to step 4
-
-4. TRIAGE: Put in that entity's _triage.yaml
-   - If _triage.yaml exists → append to inbox
-   - If _triage.yaml doesn't exist → CREATE it, then append
-```
-
-**Examples:**
-
-| Information | Belongs To | Try To Place | Result |
-|-------------|------------|--------------|--------|
-| "New API architecture decision" | `entities/team/platform/` | `adrs/` folder exists | Place in `adrs/api_architecture.yaml` |
-| "Vendor contract with Acme" | `entities/organization/` | No `vendors/` folder | Create/append to `entities/organization/_triage.yaml` |
-| "John's certification expired" | `entities/person/john_smith/` | No `certifications/` folder | Create/append to `entities/person/john_smith/_triage.yaml` |
-| "Unknown entity type 'supplier'" | Can't determine | No entity matches | Create/append to `entities/_triage.yaml` |
-
-**Triage file structure:**
-```yaml
-inbox:
-  - item: "Vendor contract with Acme Corp"
-    source: "src_meeting_456"
-    added_date: "2025-12-27T10:00:00Z"
-    suggested_destination: "Consider creating vendors/ folder or add to competitors/"
-    context:
-      attempted_placement: "No vendors/ folder exists"
-      raw_text: "Our vendor Acme Corp provides..."
-  - item: "Person 'Smith' mentioned - ambiguous match"
-    source: "src_org_chart_2025"
-    added_date: "2025-12-27T10:00:00Z"
-    suggested_destination: "Clarify which Smith via generate-questions"
-    context:
-      candidates: ["john_smith", "jane_smith"]
-      raw_text: "Smith will lead the project..."
-```
-
-**Creating triage when needed:**
-
-```python
-# Pseudocode
-def place_or_triage(info, entity_path):
-    # 1. Check what folders exist in this entity
-    existing_folders = list_dirs(entity_path)
-
-    # 2. Does info fit any existing folder?
-    target_folder = find_matching_folder(info, existing_folders)
-
-    if target_folder:
-        # Place it
-        write_to(f"{entity_path}/{target_folder}/{info.slug}.yaml", info)
-    else:
-        # Triage it
-        triage_path = f"{entity_path}/_triage.yaml"
-        if not exists(triage_path):
-            create_file(triage_path, {"inbox": []})
-        append_to_inbox(triage_path, info)
-```
-
-**Log for visibility:**
-```
-INFO: Placed 'API architecture decision' → entities/team/platform/adrs/
-INFO: Triaged 'vendor Acme Corp' → entities/organization/_triage.yaml (created)
-INFO: Triaged ambiguous 'Smith' → entities/person/_triage.yaml
-```
+**For detailed YAML examples:** See `references/yaml_schemas.md`
 
 ---
 
@@ -292,10 +189,11 @@ INFO: Triaged ambiguous 'Smith' → entities/person/_triage.yaml
 
 | Mistake | Fix |
 |---------|-----|
-| Creating new type directories | Only use existing `entities/{type}/` directories |
-| Overwriting without merge | Always check for existing entity first |
-| Missing source traceability | Include `_source_id` in every entity |
-| Inventing structure | Extract what's in the document, don't embellish |
+| Creating new files | Only update existing files; triage new entities |
+| Creating person files | **NEVER** - always triage new people for user approval |
+| Creating directories | NEVER; only ontology-setup does this |
+| Overwriting without merge | Always merge with existing content |
+| Missing source traceability | Include `_source_id` in every update |
+| Ignoring ambiguous references | "Smith will lead..." → triage with `candidates` list |
 | Ignoring conflicts | Add `_conflict` markers for generate-questions |
-| Discarding unplaceable items | Route to `_triage.yaml` instead of dropping |
-| Losing context in triage | Include `context` with raw_text and candidates for resolution |
+| Discarding new entities | Route to `_triage.yaml` instead of dropping |

@@ -1,9 +1,0 @@
-{
-  "job_id": "cb649bc4-acfa-45ff-9228-54d91a621f0e",
-  "source_id": "a29b58ec-d41f-4dc5-96fb-9f468014f308",
-  "project_id": "edd483c4-297f-46c9-b9fa-51189dc3c8ec",
-  "context_type": "project",
-  "source_type": "spreadsheet",
-  "upload_id": "9d8c6890-3fba-450d-8fa2-1162dad14f2c",
-  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/context/webhooks/completion/"
-}

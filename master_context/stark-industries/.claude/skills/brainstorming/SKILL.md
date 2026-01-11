@@ -9,7 +9,15 @@ description: Collaborative brainstorming through dialogue. Use when user wants t
 
 ## Input
 
-Read `prompt` from payload file.
+Read `prompt` from payload file or user message.
+
+**Resolve context from `<chat_context>` block** (in chat) or payload:
+```
+<chat_context>
+context_type: project
+project_id: abc123
+</chat_context>
+```
 
 ## Output Format
 
@@ -25,14 +33,19 @@ Great question! Let me help you think through this.
 ```
 
 **At completion** (user says "done", "wrap up", "summarize", or after 6-8 exchanges):
+
+Output path based on context:
+- If `context_type == "project"` and `project_id`: `project_workspaces/project_{project_id}/artifacts/brainstorms/`
+- Otherwise: `artifacts/brainstorms/`
+
 ```json
 {
   "success": true,
   "status": "multi_turn_ended",
   "artifact_type": "DOCUMENT",
-  "file_path": "artifacts/brainstorms/{YYYY-MM-DD}_{topic-slug}.md",
+  "file_path": "{output_dir}/{YYYY-MM-DD}_{topic-slug}.md",
   "display_name": "Brainstorm: {Topic}",
-  "files_written": ["artifacts/brainstorms/{YYYY-MM-DD}_{topic-slug}.md"],
+  "files_written": ["{output_dir}/{YYYY-MM-DD}_{topic-slug}.md"],
   "commit_message": "docs: brainstorm summary - {topic}",
   "result": "I've created a summary of our brainstorm."
 }
@@ -40,22 +53,25 @@ Great question! Let me help you think through this.
 
 ## Process
 
-1. **Explore organization context**:
+1. **Resolve output path** - Parse `<chat_context>` for `context_type` and `project_id`
+2. **Explore organization context**:
    - Run `Glob("entities/**/*.yaml")` to discover org structure
    - Read relevant files to understand vocabulary, guidelines, domain knowledge
-2. **Explore project context** (if `project_id` in payload):
+3. **Explore project context** (if `project_id` in chat_context):
    - Run `Glob("project_workspaces/project_{project_id}/**/*")` to see what exists
    - Read sources (`*/structured.md`) and artifacts
-3. **Use context to inform conversation** - Reference discovered context. Call out how ideas relate to existing org assets.
-4. **Explore iteratively** - One question at a time, prefer multiple choice
-5. **Propose approaches** - 2-3 options with trade-offs, lead with recommendation
-6. **Present in sections** - 200-300 words, get confirmation before next section
+4. **Use context to inform conversation** - Reference discovered context. Call out how ideas relate to existing org assets.
+5. **Explore iteratively** - One question at a time, prefer multiple choice
+6. **Propose approaches** - 2-3 options with trade-offs, lead with recommendation
+7. **Present in sections** - 200-300 words, get confirmation before next section
 
 ## Completion
 
 Detect when user says "done", "wrap up", "summarize", or after 6-8 substantive exchanges.
 
-**1. Create summary file** at `artifacts/brainstorms/{YYYY-MM-DD}_{topic-slug}.md`:
+`{output_dir}` = path resolved from `<chat_context>` (see Output Format section above)
+
+**1. Create summary file** at `{output_dir}/{YYYY-MM-DD}_{topic-slug}.md`:
 
 ```markdown
 # Brainstorm: {topic}

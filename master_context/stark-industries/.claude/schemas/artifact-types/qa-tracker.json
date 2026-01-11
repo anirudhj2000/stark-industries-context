@@ -36,7 +36,22 @@
       "question_types": {
         "type": "array",
         "items": {"type": "string"},
-        "description": "Types of questions generated"
+        "description": "Types of questions generated (purpose: gap_analysis, conflict_resolution, etc.)"
+      },
+      "answer_types": {
+        "type": "object",
+        "description": "Distribution of answer types in generated questions",
+        "properties": {
+          "free_text": {"type": "integer"},
+          "yes_no": {"type": "integer"},
+          "multiple_choice": {"type": "integer"},
+          "multi_select": {"type": "integer"},
+          "rating": {"type": "integer"}
+        }
+      },
+      "assignees_suggested": {
+        "type": "integer",
+        "description": "Number of questions with suggested assignees"
       }
     }
   }

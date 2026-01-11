@@ -1,9 +1,0 @@
-{
-  "job_id": "70a24d13-632b-4d42-b783-590f270fe024",
-  "source_id": "7f157606-4610-4100-ace5-0b7e23d10832",
-  "project_id": "59faae44-4c8c-4201-8bdc-3dca45272bd8",
-  "context_type": "project",
-  "source_type": "spreadsheet",
-  "upload_id": "d812cb81-9855-4a70-82f6-73bff568592b",
-  "playbook_webhook_url": "http://localhost:8000/api/v1/context/webhooks/completion/"
-}

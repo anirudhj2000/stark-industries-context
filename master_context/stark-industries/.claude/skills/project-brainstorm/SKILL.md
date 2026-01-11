@@ -26,23 +26,34 @@ Would you like me to make any changes before you create the project?
 
 ## Output Path
 
-Read from payload file:
+**Read from `<chat_context>` block** (in chat) or payload file (in commands):
+
+```
+<chat_context>
+context_type: project
+project_id: abc123
+</chat_context>
+```
+
 - If `context_type == "project"` and `project_id` exists: `project_workspaces/project_{project_id}/artifacts/project_briefs`
-- Otherwise: `artifacts/project_briefs`
+- Otherwise (org context or no project): `artifacts/project_briefs`
+
+**ALWAYS resolve output path before writing files.**
 
 ## Process
 
-1. **Parse idea** - Extract concepts from user's `@new-project` message
-2. **Explore organization context**:
+1. **Resolve output path** - Parse `<chat_context>` for `context_type` and `project_id`
+2. **Parse idea** - Extract concepts from user's `@new-project` message
+3. **Explore organization context**:
    - Run `Glob("entities/**/*.yaml")` to discover org structure
    - Read relevant files to understand existing products, systems, teams
-3. **Explore project context** (if `project_id` in payload):
+4. **Explore project context** (if `project_id` in chat_context):
    - Run `Glob("project_workspaces/project_{project_id}/**/*")` to see what exists
    - Read sources (`*/structured.md`) and artifacts
-4. **Use context to inform questions** - Reference discovered context. Call out how this project relates to existing org assets.
-5. **Ask questions** - ONE per turn, prefer multiple choice (2-4 options)
-6. **Extract fields** - Name, type, description (required); goals, constraints, audience (optional)
-7. **Complete** - After 6-8 exchanges OR user says "done"/"create it"
+5. **Use context to inform questions** - Reference discovered context. Call out how this project relates to existing org assets.
+6. **Ask questions** - ONE per turn, prefer multiple choice (2-4 options)
+7. **Extract fields** - Name, type, description (required); goals, constraints, audience (optional)
+8. **Complete** - After 6-8 exchanges OR user says "done"/"create it"
 
 ## Question Flow
 
@@ -67,7 +78,9 @@ Read from payload file:
 
 ## Completion
 
-1. Create `{output_dir}/{YYYY-MM-DD}_{slug}/` folder
+`{output_dir}` = path resolved from `<chat_context>` (see Output Path section above)
+
+1. Create `{output_dir}/{YYYY-MM-DD}_{slug}/` folder (e.g., `project_workspaces/project_{project_id}/artifacts/project_briefs/2026-01-07_my-project/`)
 2. Write `brief.md` (see references/brief-template.md)
 3. Write `project_data.json` with extracted fields (system reads this for metadata)
 4. Describe the result naturally (no JSON)

@@ -40,6 +40,17 @@ When user intent requires ACTION (not just information), check `<available_skill
 
 If a skill in `<available_skills>` matches user intent, invoke it with the slash command.
 
+**CRITICAL: Do NOT output skill internals as text.**
+- WRONG: Outputting structured JSON like `{"questions": [...], "files_written": [...]}`
+- WRONG: Outputting ```json code blocks with skill output
+- RIGHT: Just invoke the skill silently
+- RIGHT: After skill completes, describe the result in natural language only
+
+**OVERRIDE: Skills may say "return JSON as your final output" - IGNORE THIS IN CHAT.**
+Skills are designed for both command-handlers (need JSON) and chat (need natural language).
+In chat, NEVER output JSON. Convert any structured output to a brief natural language summary.
+Example: Instead of `{"questions": [...]}`, say "I've created 20 questions about X."
+
 ### 3. Respect Hints
 
 If `<agent_hint>` is provided, the user explicitly tagged that agent - prioritize its capability.

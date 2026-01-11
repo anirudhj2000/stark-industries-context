@@ -217,13 +217,19 @@ For each gap/conflict:
 
 ```yaml
 id: qna_20251207_abc12
-text: "What is the value for 'profile.joined_date'..."
+title: "When did Vivek join?"                    # NEW: One-liner for display
+text: "What is the value for 'profile.joined_date'..."  # Full question
 question_type: gap_analysis
+answer_type: free_text                           # NEW: UI rendering type
+options: []                                      # NEW: For multiple_choice/multi_select
 source:
   entity_id: vivek_gupta
   entity_type: person
   field_path: profile.joined_date
   gap_type: undefined_value
+suggested_assignees:                             # NEW: AI-suggested assignees
+  - id: "vivek_gupta"
+    reason: "Subject of this question"
 generated_at: "2025-12-07T16:57:00Z"
 generated_by_job: job_123
 thread: []
@@ -285,8 +291,11 @@ If you skip artifact creation and only return JSON, the skill has FAILED even if
 {
   "questions": [
     {
-      "text": "What is the value for 'profile.joined_date' in person 'vivek_gupta'? Currently set to 'TBD'.",
+      "title": "When did Vivek join?",
+      "text": "What is the official date when Vivek Gupta joined the organization? This helps track tenure and team composition.",
       "question_type": "gap_analysis",
+      "answer_type": "free_text",
+      "options": [],
       "priority": "normal",
       "context": {
         "gap_type": "undefined_value",
@@ -294,14 +303,57 @@ If you skip artifact creation and only return JSON, the skill has FAILED even if
         "entity_type": "person",
         "field": "profile.joined_date"
       },
-      "suggested_assignees": [],
+      "suggested_assignees": [
+        {"id": "hr_manager", "reason": "HR handles employee records"}
+      ],
       "min_responses": 1,
       "agent_sdk_ref_id": "qna_20251206_abc12"
+    },
+    {
+      "title": "Is the product publicly available?",
+      "text": "Is the product currently available to the general public, or is it in private beta/internal use only?",
+      "question_type": "gap_analysis",
+      "answer_type": "yes_no",
+      "options": [],
+      "priority": "normal",
+      "context": {
+        "gap_type": "undefined_value",
+        "entity_id": "product_x",
+        "entity_type": "product",
+        "field": "availability.is_public"
+      },
+      "suggested_assignees": [],
+      "min_responses": 1,
+      "agent_sdk_ref_id": "qna_20251206_xyz34"
+    },
+    {
+      "title": "What deployment model is used?",
+      "text": "What is the primary deployment model for this system?",
+      "question_type": "gap_analysis",
+      "answer_type": "multiple_choice",
+      "options": [
+        {"label": "Cloud-hosted (SaaS)", "value": "cloud"},
+        {"label": "On-premise", "value": "on_prem"},
+        {"label": "Hybrid", "value": "hybrid"},
+        {"label": "Other", "value": "other"}
+      ],
+      "priority": "normal",
+      "context": {
+        "gap_type": "undefined_value",
+        "entity_id": "main_system",
+        "entity_type": "system",
+        "field": "deployment.model"
+      },
+      "suggested_assignees": [],
+      "min_responses": 1,
+      "agent_sdk_ref_id": "qna_20251206_def56"
     }
   ],
   "files_written": [
     "{artifact_dir}/type.meta.json",
-    "{artifact_dir}/questions/qna_20251206_abc12.yaml"
+    "{artifact_dir}/questions/qna_20251206_abc12.yaml",
+    "{artifact_dir}/questions/qna_20251206_xyz34.yaml",
+    "{artifact_dir}/questions/qna_20251206_def56.yaml"
   ],
   "commit_message": "qna: create question artifacts for project {project_id}",
   "metadata": {
@@ -327,15 +379,35 @@ If you skip artifact creation and only return JSON, the skill has FAILED even if
 - CORRECT: `{artifact_dir}/type.meta.json` (file!)
 
 **Required fields for each question:**
-- `text` (string): The question text
+- `title` (string): Short one-liner summary (max 100 chars) for display
+- `text` (string): The full question text with context and explanation
 - `question_type` (string): One of "gap_analysis", "conflict_resolution", "clarification", "factual", "opinion"
+- `answer_type` (string): How to answer - determines UI rendering:
+  - `free_text`: Open-ended text response (default)
+  - `yes_no`: Binary yes/no buttons
+  - `multiple_choice`: Single selection from options
+  - `multi_select`: Multiple selections from options
+  - `rating`: 1-5 scale rating
+- `options` (array): For `multiple_choice`/`multi_select` only. Each option has:
+  - `label` (string): Display text
+  - `value` (string): Value to store (snake_case)
+  - Always include "Other" as last option for flexibility
 - `priority` (string): One of "high", "normal", "low"
 - `agent_sdk_ref_id` (string): Unique ID in format `qna_YYYYMMDD_xxxxx`
 
 **Optional fields:**
 - `context` (object): Additional context about the question source
-- `suggested_assignees` (array): User IDs to assign
+- `suggested_assignees` (array): People to assign, each with `id` and `reason`
 - `min_responses` (integer): Minimum responses needed (default: 1)
+
+**Answer Type Selection Guidelines:**
+| Question Pattern | Answer Type | Example |
+|-----------------|-------------|---------|
+| "Is X...?", "Does Y...?", "Has Z...?" | `yes_no` | "Is the product publicly available?" |
+| Finite set of known options | `multiple_choice` | "What deployment model is used?" |
+| "Which of these...?" (multi-select) | `multi_select` | "Which integrations are supported?" |
+| Importance/priority/confidence | `rating` | "How critical is this feature?" |
+| Open-ended explanation | `free_text` | "Describe the onboarding process" |
 
 **The Agent SDK handler will:**
 1. Receive this structured output directly (no file reading)
@@ -455,12 +527,35 @@ If you skip artifact creation and only return JSON, the skill has FAILED even if
 
 ---
 
+## Assignee Suggestion
+
+When generating questions, identify potential assignees from the organization's people data:
+
+1. **Discover people** - Look for person entities in `entities/` with roles, responsibilities, expertise
+2. **Match by relevance:**
+   - Question about a person → suggest that person or their manager
+   - Question about a product → suggest product owner
+   - Technical questions → suggest people with relevant expertise
+   - HR/admin questions → suggest HR or operations roles
+3. **Output format:**
+   ```json
+   "suggested_assignees": [
+     {"id": "vivek_gupta", "reason": "Product owner"},
+     {"id": "jane_doe", "reason": "Technical lead for this system"}
+   ]
+   ```
+4. **Guidelines:**
+   - Suggest 0-2 people per question
+   - Leave empty if no clear match
+   - Include `reason` explaining why they're suggested
+
+---
+
 ## Notes
 
-- **This skill has ALL the intelligence** - Gap detection, conflict detection, question generation
+- **This skill has ALL the intelligence** - Gap detection, conflict detection, question generation, assignee matching
 - **Artifact creation** - Write individual question YAMLs to `{artifact_dir}/questions/`
 - **Structured output** - Your final JSON response is automatically extracted by the SDK
 - **Agent SDK handles HTTP** - POSTs questions directly to Playbook from the structured output
 - **Playbook is just orchestration** - Triggers, receives results
-- **Assignee suggestion** - Deferred (returns empty array for now)
 - **Git operations** - Task runner handles all git operations using `files_written` and `commit_message` from your output

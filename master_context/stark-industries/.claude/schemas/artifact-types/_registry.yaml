@@ -29,3 +29,7 @@ artifact_types:
   PROJECT_BRIEF_DRAFT:
     schema_file: project-brief-draft.json
     description: Draft project brief from brainstorming session
+
+  ONTOLOGY_DRAFT:
+    schema_file: ontology-draft.json
+    description: Organizational hierarchy draft from ontology-setup skill
