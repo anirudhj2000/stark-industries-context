@@ -120,17 +120,6 @@
                   "path": "entities/product/newsletter/functions/editorial/teams/business_finance",
                   "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
                 }
-              },
-              {
-                "name": "technology",
-                "type": "team",
-                "order": 3,
-                "display_name": "Technology",
-                "children": [],
-                "_meta": {
-                  "path": "entities/product/newsletter/functions/editorial/teams/technology",
-                  "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
-                }
               }
             ],
             "_meta": {
