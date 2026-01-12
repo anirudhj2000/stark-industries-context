@@ -96,7 +96,28 @@
             "name": "brand",
             "type": "team",
             "order": 2,
-            "children": [],
+            "children": [
+              {
+                "name": "local_brands",
+                "type": "team",
+                "order": 3,
+                "children": [],
+                "_meta": {
+                  "path": "entities/function/marketing/teams/brand/teams/local_brands",
+                  "files": ["overview.yaml", "_triage.yaml"]
+                }
+              },
+              {
+                "name": "international_brands",
+                "type": "team",
+                "order": 3,
+                "children": [],
+                "_meta": {
+                  "path": "entities/function/marketing/teams/brand/teams/international_brands",
+                  "files": ["overview.yaml", "_triage.yaml"]
+                }
+              }
+            ],
             "_meta": {
               "path": "entities/function/marketing/teams/brand",
               "files": ["overview.yaml", "_triage.yaml"]
