@@ -153,17 +153,6 @@
                   "path": "entities/product/newsletter/functions/research/teams/fact_checking",
                   "files": ["overview.yaml", "_triage.yaml", "verification_process.yaml", "sources.yaml"]
                 }
-              },
-              {
-                "name": "investigative",
-                "type": "team",
-                "display_name": "Investigative",
-                "order": 3,
-                "children": [],
-                "_meta": {
-                  "path": "entities/product/newsletter/functions/research/teams/investigative",
-                  "files": ["overview.yaml", "_triage.yaml", "research_methods.yaml", "sources.yaml"]
-                }
               }
             ],
             "_meta": {
