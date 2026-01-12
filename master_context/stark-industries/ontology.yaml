@@ -2,7 +2,7 @@
 version: '1.1'
 structure_type: functional
 template: null
-generated_at: '2026-01-12T16:28:19.705514+00:00'
+generated_at: '2026-01-12T16:30:08.650610+00:00'
 levels: []
 entities:
 - name: organization
@@ -80,6 +80,14 @@ entities:
         order: 3
         level: team
         path: entities/function/marketing/teams/brand/teams/international_brands
+        children:
+        - name: low_tier
+          slug: low_tier
+          description: ''
+          entity_type: team
+          order: 4
+          level: team
+          path: entities/function/marketing/teams/brand/teams/international_brands/teams/low_tier
       - name: local_brands
         slug: local_brands
         description: ''
