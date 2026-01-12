@@ -2,7 +2,7 @@
 version: '1.1'
 structure_type: product_centric
 template: null
-generated_at: '2026-01-12T10:00:25.773460+00:00'
+generated_at: '2026-01-12T10:03:17.663361+00:00'
 levels: []
 entities:
 - name: organization
@@ -72,13 +72,6 @@ entities:
     level: product
     path: entities/product/newsletter
     children:
-    - name: design
-      slug: design
-      description: ''
-      entity_type: function
-      order: 2
-      level: function
-      path: entities/product/newsletter/functions/design
     - name: editorial
       slug: editorial
       description: ''
