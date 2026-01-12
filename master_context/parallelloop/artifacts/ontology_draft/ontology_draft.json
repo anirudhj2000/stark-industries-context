@@ -132,16 +132,6 @@
               "path": "entities/product/newsletter/functions/research",
               "files": ["overview.yaml", "_triage.yaml", "research_methods.yaml", "sources.yaml"]
             }
-          },
-          {
-            "name": "design",
-            "type": "function",
-            "order": 2,
-            "children": [],
-            "_meta": {
-              "path": "entities/product/newsletter/functions/design",
-              "files": ["overview.yaml", "_triage.yaml", "design_system.yaml", "ux_research.yaml"]
-            }
           }
         ],
         "_meta": {
