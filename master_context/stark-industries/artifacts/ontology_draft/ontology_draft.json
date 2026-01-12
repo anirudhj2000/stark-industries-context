@@ -143,7 +143,28 @@
         "name": "operations",
         "type": "department",
         "order": 1,
-        "children": [],
+        "children": [
+          {
+            "name": "excellence",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/operations/teams/excellence",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
+          },
+          {
+            "name": "dexcellence",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/operations/teams/dexcellence",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
+          }
+        ],
         "_meta": {
           "path": "entities/function/operations",
           "files": ["overview.yaml", "_triage.yaml", "processes.yaml", "slas.yaml", "runbooks.yaml"]
