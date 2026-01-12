@@ -1,0 +1,52 @@
+version: '1.0'
+entity_id: 948cad33-870e-4d2d-bdeb-39ff4dd5a5f3
+entity_type: organization
+organization_id: 948cad33-870e-4d2d-bdeb-39ff4dd5a5f3
+organization_name: parallelloop
+context_type: teams
+updated_at: '2026-01-12T14:33:38.369585'
+data:
+  teams:
+  - team_id: f1a4e364-d2fa-418e-ae45-fa12f817b4e0
+    name: All Team Members
+    description: ''
+  - team_id: ea90ec23-1252-4926-b0ee-989da8f90b4e
+    name: mobile_app
+    description: 'product: mobile_app'
+  - team_id: 625ef287-771f-4abc-bfec-ff811e31b03b
+    name: engineering
+    description: 'function: engineering'
+  - team_id: 3979f8d0-03b1-4384-9948-cc9c2ed89c96
+    name: frontend
+    description: 'team: frontend'
+  - team_id: e5d51d34-bac3-4d50-9e49-f527b475f133
+    name: backend
+    description: 'team: backend'
+  - team_id: 02e48181-1dae-4927-bcbc-3ff71881c171
+    name: research
+    description: 'function: research'
+  - team_id: f2389bcd-657b-4852-891d-31f2120d0e11
+    name: newsletter
+    description: 'product: newsletter'
+  - team_id: d4a2c7d2-1541-4573-8fd5-ac187ab75e56
+    name: engineering
+    description: 'function: engineering'
+  - team_id: 1c1f53f9-942d-4b90-b9b1-088cc64f5a5b
+    name: frontend
+    description: 'team: frontend'
+  - team_id: 25a5cb24-df21-4b5f-92e3-0c7ac1801420
+    name: backend
+    description: 'team: backend'
+  - team_id: e86ed4d2-6397-45a9-b315-e7c994ce7434
+    name: research
+    description: 'function: research'
+  - team_id: f97868c6-dbd2-4176-846c-1b0c2523d659
+    name: politics
+    description: 'team: politics'
+  - team_id: ed0bb6ea-3234-4f31-8407-8f2213ddfe14
+    name: business_finance
+    description: 'team: business_finance'
+  - team_id: 81d51b7c-ba37-4332-b9e0-579d4f28766c
+    name: Fact Checking
+    description: 'team: Fact Checking'
+processing_path: direct

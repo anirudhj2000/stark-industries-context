@@ -1,0 +1,15 @@
+version: '1.0'
+entity_id: 948cad33-870e-4d2d-bdeb-39ff4dd5a5f3
+entity_type: organization
+organization_id: 948cad33-870e-4d2d-bdeb-39ff4dd5a5f3
+organization_name: parallelloop
+context_type: members
+updated_at: '2026-01-12T14:33:38.351562'
+data:
+  members:
+  - user_id: 1f039cb1-450d-4f70-917b-85ce50d60ec7
+    username: anirudh_a24cfc78
+    role: OWNER
+    title: ''
+    department: ''
+processing_path: direct
