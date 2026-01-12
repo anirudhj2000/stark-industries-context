@@ -99,6 +99,16 @@
         }
       },
       {
+        "name": "pr_management",
+        "type": "function",
+        "order": 1,
+        "children": [],
+        "_meta": {
+          "path": "entities/function/pr_management",
+          "files": ["overview.yaml", "_triage.yaml", "media_contacts.yaml", "press_releases.yaml", "client_relations.yaml"]
+        }
+      },
+      {
         "name": "newsletter",
         "type": "product",
         "order": 1,
