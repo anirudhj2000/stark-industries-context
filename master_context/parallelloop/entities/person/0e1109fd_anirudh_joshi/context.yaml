@@ -27,6 +27,11 @@ rbac_scope:
     role: OWNER
     team_role: MEMBER
     entity_path: entities/product/newsletter/functions/research
+  - name: business_finance
+    slug: business_finance
+    role: OWNER
+    team_role: MEMBER
+    entity_path: entities/product/newsletter/functions/editorial/teams/business_finance
   org_role: OWNER
 metadata:
   source: created
@@ -73,3 +78,7 @@ change_history:
   timestamp: '2026-01-12T12:39:33.459560+00:00'
   source: team_sync
   team_slug: technology
+- operation: team_added
+  timestamp: '2026-01-12T12:59:14.548855+00:00'
+  source: team_sync
+  team_slug: business_finance
