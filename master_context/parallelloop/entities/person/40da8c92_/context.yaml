@@ -37,6 +37,11 @@ rbac_scope:
     role: MEMBER
     team_role: MEMBER
     entity_path: entities/product/newsletter/functions/engineering/teams/frontend
+  - name: research
+    slug: research-1
+    role: MEMBER
+    team_role: MEMBER
+    entity_path: entities/product/newsletter/functions/research
   org_role: MEMBER
 metadata:
   source: created
@@ -59,3 +64,7 @@ change_history:
   timestamp: '2026-01-12T15:13:45.517266+00:00'
   source: team_sync
   team_slug: frontend-1
+- operation: team_added
+  timestamp: '2026-01-12T15:13:46.219281+00:00'
+  source: team_sync
+  team_slug: research-1
