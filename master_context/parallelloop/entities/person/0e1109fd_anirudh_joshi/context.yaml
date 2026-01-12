@@ -1,0 +1,34 @@
+id: 0e1109fd_anirudh_joshi
+type: person
+name: Anirudh Joshi
+status: active
+external_ids:
+  bulk_import_item_id: 0e1109fd-486c-4f72-94a7-83d61bd5bc16
+  email: anirudh@parallelloop.ai
+profile:
+  email: anirudh@parallelloop.ai
+  first_name: Anirudh
+  last_name: Joshi
+  primary_role: ''
+  department: ''
+  function: ''
+  timezone: UTC
+  location: ''
+  pronouns: ''
+  about: ''
+  expertise_tags: []
+  context_description: ''
+  responsibilities: []
+  manager_email: null
+rbac_scope:
+  teams: []
+  org_role: OWNER
+metadata:
+  source: created
+  created_at: '2026-01-12T06:59:46.239535+00:00'
+  data_quality: minimal
+change_history:
+- operation: create
+  timestamp: '2026-01-12T06:59:46.239535+00:00'
+  source: created
+  reference_id: 0e1109fd-486c-4f72-94a7-83d61bd5bc16
