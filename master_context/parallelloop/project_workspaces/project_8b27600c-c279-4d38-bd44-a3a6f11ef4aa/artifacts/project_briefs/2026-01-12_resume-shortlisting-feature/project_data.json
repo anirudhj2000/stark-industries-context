@@ -1,0 +1,24 @@
+{
+  "name": "Resume Shortlisting Feature",
+  "slug": "resume-shortlisting-feature",
+  "type": "PRODUCT_DEVELOPMENT",
+  "description": "A public-facing resume shortlisting feature on the website homepage that gives job seekers instant feedback on their applications using AI-powered evaluation, with self-scheduling for shortlisted candidates.",
+  "goals": [
+    "Provide instant feedback to job seekers upon resume submission",
+    "Automate initial screening using AI-powered evaluation",
+    "Enable shortlisted candidates to self-schedule interviews",
+    "Reduce time-to-first-contact for qualified candidates"
+  ],
+  "audience": "Job seekers applying on the website",
+  "constraints": [
+    "MVP approach - keep it simple",
+    "No complex integrations for initial release"
+  ],
+  "success_criteria": [
+    "Shortlist decision within seconds of upload",
+    "Self-booking without HR intervention",
+    "Positive candidate experience feedback"
+  ],
+  "created_at": "2026-01-12",
+  "status": "draft"
+}

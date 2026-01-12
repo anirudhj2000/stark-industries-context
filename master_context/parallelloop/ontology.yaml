@@ -2,10 +2,10 @@
 version: '1.1'
 structure_type: product_centric
 template: null
-generated_at: '2026-01-12T12:49:02.251585+00:00'
+generated_at: '2026-01-12T14:02:42.399496+00:00'
 levels: []
 entities:
-- name: organization
+- name: Organization
   slug: organization
   description: ''
   entity_type: organization
@@ -13,7 +13,7 @@ entities:
   level: organization
   path: entities/organization
   children:
-  - name: mobile_app
+  - name: Mobile App
     slug: mobile_app
     description: ''
     entity_type: product
@@ -21,7 +21,7 @@ entities:
     level: product
     path: entities/product/mobile_app
     children:
-    - name: engineering
+    - name: Engineering
       slug: engineering
       description: ''
       entity_type: function
@@ -29,28 +29,28 @@ entities:
       level: function
       path: entities/product/mobile_app/functions/engineering
       children:
-      - name: backend
+      - name: Backend
         slug: backend
         description: ''
         entity_type: team
         order: 3
         level: team
         path: entities/product/mobile_app/functions/engineering/teams/backend
-      - name: frontend
+      - name: Frontend
         slug: frontend
         description: ''
         entity_type: team
         order: 3
         level: team
         path: entities/product/mobile_app/functions/engineering/teams/frontend
-    - name: research
+    - name: Research
       slug: research
       description: ''
       entity_type: function
       order: 2
       level: function
       path: entities/product/mobile_app/functions/research
-  - name: newsletter
+  - name: Newsletter
     slug: newsletter
     description: ''
     entity_type: product
@@ -58,7 +58,7 @@ entities:
     level: product
     path: entities/product/newsletter
     children:
-    - name: editorial
+    - name: Editorial
       slug: editorial
       description: ''
       entity_type: function
@@ -66,21 +66,21 @@ entities:
       level: function
       path: entities/product/newsletter/functions/editorial
       children:
-      - name: business_finance
+      - name: Business Finance
         slug: business_finance
         description: ''
         entity_type: team
         order: 3
         level: team
         path: entities/product/newsletter/functions/editorial/teams/business_finance
-      - name: politics
+      - name: Politics
         slug: politics
         description: ''
         entity_type: team
         order: 3
         level: team
         path: entities/product/newsletter/functions/editorial/teams/politics
-    - name: engineering
+    - name: Engineering
       slug: engineering
       description: ''
       entity_type: function
@@ -88,24 +88,39 @@ entities:
       level: function
       path: entities/product/newsletter/functions/engineering
       children:
-      - name: backend
+      - name: Backend
         slug: backend
         description: ''
         entity_type: team
         order: 3
         level: team
         path: entities/product/newsletter/functions/engineering/teams/backend
-      - name: frontend
+      - name: Frontend
         slug: frontend
         description: ''
         entity_type: team
         order: 3
         level: team
         path: entities/product/newsletter/functions/engineering/teams/frontend
-    - name: research
+    - name: Research
       slug: research
       description: ''
       entity_type: function
       order: 2
       level: function
       path: entities/product/newsletter/functions/research
+      children:
+      - name: Fact Checking
+        slug: fact_checking
+        description: ''
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/product/newsletter/functions/research/teams/fact_checking
+      - name: Investigative
+        slug: investigative
+        description: ''
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/product/newsletter/functions/research/teams/investigative
