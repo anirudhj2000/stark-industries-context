@@ -21,7 +21,12 @@ profile:
   responsibilities: []
   manager_email: null
 rbac_scope:
-  teams: []
+  teams:
+  - name: research
+    slug: research-1
+    role: OWNER
+    team_role: MEMBER
+    entity_path: entities/product/newsletter/functions/research
   org_role: OWNER
 metadata:
   source: created
@@ -56,3 +61,7 @@ change_history:
   timestamp: '2026-01-12T10:56:36.860560+00:00'
   source: team_sync
   team_slug: writer_management
+- operation: team_added
+  timestamp: '2026-01-12T12:11:11.058791+00:00'
+  source: team_sync
+  team_slug: research-1
