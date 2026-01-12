@@ -82,3 +82,7 @@ change_history:
   timestamp: '2026-01-12T12:59:14.548855+00:00'
   source: team_sync
   team_slug: business_finance
+- operation: team_updated
+  timestamp: '2026-01-12T15:13:46.214421+00:00'
+  source: team_sync
+  team_slug: research-1

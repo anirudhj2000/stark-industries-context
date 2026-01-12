@@ -28,13 +28,25 @@ roster:
   context_description: ''
   responsibilities: []
   joined_at: '2026-01-12T12:11:10.761237+00:00'
+- email: chrisday@gmail.com
+  name: ''
+  membership_id: 1e82d769-bf9a-4596-8a2a-214f58618541
+  role: MEMBER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-12T15:13:43.539955+00:00'
 metadata:
   source: membership_change
   sync_reason: member_added
-  updated_at: '2026-01-12T12:11:11.034656+00:00'
-  member_count: 1
-  active_member_count: 1
+  updated_at: '2026-01-12T15:13:46.201664+00:00'
+  member_count: 2
+  active_member_count: 2
 change_history:
 - operation: roster_updated
-  timestamp: '2026-01-12T12:11:11.034656+00:00'
+  timestamp: '2026-01-12T15:13:46.201664+00:00'
   source: member_added
