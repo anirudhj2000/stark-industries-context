@@ -111,7 +111,28 @@
                 "name": "international_brands",
                 "type": "team",
                 "order": 3,
-                "children": [],
+                "children": [
+                  {
+                    "name": "low_tier",
+                    "type": "team",
+                    "order": 4,
+                    "children": [],
+                    "_meta": {
+                      "path": "entities/function/marketing/teams/brand/teams/international_brands/teams/low_tier",
+                      "files": ["overview.yaml", "_triage.yaml"]
+                    }
+                  },
+                  {
+                    "name": "high_tier",
+                    "type": "team",
+                    "order": 4,
+                    "children": [],
+                    "_meta": {
+                      "path": "entities/function/marketing/teams/brand/teams/international_brands/teams/high_tier",
+                      "files": ["overview.yaml", "_triage.yaml"]
+                    }
+                  }
+                ],
                 "_meta": {
                   "path": "entities/function/marketing/teams/brand/teams/international_brands",
                   "files": ["overview.yaml", "_triage.yaml"]
