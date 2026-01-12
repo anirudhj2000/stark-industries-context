@@ -78,27 +78,6 @@
         }
       },
       {
-        "name": "hr",
-        "type": "function",
-        "order": 1,
-        "children": [
-          {
-            "name": "talent_acquisition",
-            "type": "team",
-            "order": 2,
-            "children": [],
-            "_meta": {
-              "path": "entities/function/hr/teams/talent_acquisition",
-              "files": ["overview.yaml", "_triage.yaml", "hiring_plan.yaml"]
-            }
-          }
-        ],
-        "_meta": {
-          "path": "entities/function/hr",
-          "files": ["overview.yaml", "_triage.yaml", "hiring_plan.yaml", "programs.yaml", "org_chart.yaml"]
-        }
-      },
-      {
         "name": "pr_management",
         "type": "function",
         "order": 1,
