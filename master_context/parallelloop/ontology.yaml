@@ -2,7 +2,7 @@
 version: '1.1'
 structure_type: product_centric
 template: null
-generated_at: '2026-01-12T10:03:17.663361+00:00'
+generated_at: '2026-01-12T10:19:25.311383+00:00'
 levels: []
 entities:
 - name: organization
@@ -13,6 +13,28 @@ entities:
   level: organization
   path: entities/organization
   children:
+  - name: hr
+    slug: hr
+    description: ''
+    entity_type: function
+    order: 1
+    level: function
+    path: entities/function/hr
+    children:
+    - name: talent_acquisition
+      slug: talent_acquisition
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/function/hr/teams/talent_acquisition
+    - name: writer_management
+      slug: writer_management
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/function/hr/teams/writer_management
   - name: mobile_app
     slug: mobile_app
     description: ''
