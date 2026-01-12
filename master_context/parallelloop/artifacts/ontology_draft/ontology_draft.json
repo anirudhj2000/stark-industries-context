@@ -3,21 +3,25 @@
   "organization": {
     "name": "organization",
     "type": "organization",
+    "display_name": "Organization",
     "order": 0,
     "children": [
       {
         "name": "mobile_app",
         "type": "product",
+        "display_name": "Mobile App",
         "order": 1,
         "children": [
           {
             "name": "engineering",
             "type": "function",
+            "display_name": "Engineering",
             "order": 2,
             "children": [
               {
                 "name": "frontend",
                 "type": "team",
+                "display_name": "Frontend",
                 "order": 3,
                 "children": [],
                 "_meta": {
@@ -28,6 +32,7 @@
               {
                 "name": "backend",
                 "type": "team",
+                "display_name": "Backend",
                 "order": 3,
                 "children": [],
                 "_meta": {
@@ -44,6 +49,7 @@
           {
             "name": "research",
             "type": "function",
+            "display_name": "Research",
             "order": 2,
             "children": [],
             "_meta": {
@@ -60,16 +66,19 @@
       {
         "name": "newsletter",
         "type": "product",
+        "display_name": "Newsletter",
         "order": 1,
         "children": [
           {
             "name": "engineering",
             "type": "function",
+            "display_name": "Engineering",
             "order": 2,
             "children": [
               {
                 "name": "frontend",
                 "type": "team",
+                "display_name": "Frontend",
                 "order": 3,
                 "children": [],
                 "_meta": {
@@ -80,6 +89,7 @@
               {
                 "name": "backend",
                 "type": "team",
+                "display_name": "Backend",
                 "order": 3,
                 "children": [],
                 "_meta": {
@@ -96,14 +106,14 @@
           {
             "name": "editorial",
             "type": "function",
-            "order": 2,
             "display_name": "Editorial",
+            "order": 2,
             "children": [
               {
                 "name": "politics",
                 "type": "team",
-                "order": 3,
                 "display_name": "Politics",
+                "order": 3,
                 "children": [],
                 "_meta": {
                   "path": "entities/product/newsletter/functions/editorial/teams/politics",
@@ -113,8 +123,8 @@
               {
                 "name": "business_finance",
                 "type": "team",
-                "order": 3,
                 "display_name": "Business Finance",
+                "order": 3,
                 "children": [],
                 "_meta": {
                   "path": "entities/product/newsletter/functions/editorial/teams/business_finance",
@@ -130,14 +140,14 @@
           {
             "name": "research",
             "type": "function",
-            "order": 2,
             "display_name": "Research",
+            "order": 2,
             "children": [
               {
                 "name": "fact_checking",
                 "type": "team",
-                "order": 3,
                 "display_name": "Fact Checking",
+                "order": 3,
                 "children": [],
                 "_meta": {
                   "path": "entities/product/newsletter/functions/research/teams/fact_checking",
@@ -147,8 +157,8 @@
               {
                 "name": "investigative",
                 "type": "team",
-                "order": 3,
                 "display_name": "Investigative",
+                "order": 3,
                 "children": [],
                 "_meta": {
                   "path": "entities/product/newsletter/functions/research/teams/investigative",
