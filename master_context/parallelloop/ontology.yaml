@@ -2,7 +2,7 @@
 version: '1.1'
 structure_type: product_centric
 template: null
-generated_at: '2026-01-12T14:02:42.399496+00:00'
+generated_at: '2026-01-12T14:08:58.644701+00:00'
 levels: []
 entities:
 - name: Organization
@@ -117,10 +117,3 @@ entities:
         order: 3
         level: team
         path: entities/product/newsletter/functions/research/teams/fact_checking
-      - name: Investigative
-        slug: investigative
-        description: ''
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/product/newsletter/functions/research/teams/investigative
