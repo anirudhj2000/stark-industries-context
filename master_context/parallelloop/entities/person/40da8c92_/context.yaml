@@ -21,7 +21,22 @@ profile:
   responsibilities: []
   manager_email: null
 rbac_scope:
-  teams: []
+  teams:
+  - name: engineering
+    slug: engineering-1
+    role: MEMBER
+    team_role: MEMBER
+    entity_path: entities/product/newsletter/functions/engineering
+  - name: backend
+    slug: backend-1
+    role: MEMBER
+    team_role: MEMBER
+    entity_path: entities/product/newsletter/functions/engineering/teams/backend
+  - name: frontend
+    slug: frontend-1
+    role: MEMBER
+    team_role: MEMBER
+    entity_path: entities/product/newsletter/functions/engineering/teams/frontend
   org_role: MEMBER
 metadata:
   source: created
@@ -32,3 +47,15 @@ change_history:
   timestamp: '2026-01-12T15:13:43.842243+00:00'
   source: created
   reference_id: 40da8c92-d541-4812-9a8c-f6460f1279a0
+- operation: team_added
+  timestamp: '2026-01-12T15:13:45.034372+00:00'
+  source: team_sync
+  team_slug: engineering-1
+- operation: team_added
+  timestamp: '2026-01-12T15:13:45.041463+00:00'
+  source: team_sync
+  team_slug: backend-1
+- operation: team_added
+  timestamp: '2026-01-12T15:13:45.517266+00:00'
+  source: team_sync
+  team_slug: frontend-1
