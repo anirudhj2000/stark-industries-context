@@ -1,0 +1,40 @@
+id: team_3e3814b4_technology
+type: team
+name: technology
+slug: technology
+status: active
+external_ids:
+  team_id: 3e3814b4-9f55-4143-a2be-600940a89cfe
+  organization_slug: parallelloop
+profile:
+  description: 'team: technology'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: 53f93576-08f2-48be-b008-0325ee3fc968
+  entity_path: entities/product/newsletter/functions/editorial/teams/technology
+  level: ''
+roster:
+- email: anirudh@parallelloop.ai
+  name: Anirudh Joshi
+  membership_id: 6482baac-7e8d-453f-a04d-f4e254530cf7
+  role: OWNER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-12T12:27:29.388976+00:00'
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-01-12T12:27:29.627039+00:00'
+  member_count: 1
+  active_member_count: 1
+change_history:
+- operation: roster_updated
+  timestamp: '2026-01-12T12:27:29.627039+00:00'
+  source: member_added
