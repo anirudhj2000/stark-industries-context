@@ -83,16 +83,6 @@
         "order": 1,
         "children": [
           {
-            "name": "writer_management",
-            "type": "team",
-            "order": 2,
-            "children": [],
-            "_meta": {
-              "path": "entities/function/hr/teams/writer_management",
-              "files": ["overview.yaml", "_triage.yaml", "programs.yaml"]
-            }
-          },
-          {
             "name": "talent_acquisition",
             "type": "team",
             "order": 2,
