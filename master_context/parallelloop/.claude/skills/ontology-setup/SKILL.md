@@ -313,88 +313,34 @@ All rules in `references/templates.yaml`:
 - **Missing team files** → Check `team_config.<team>.files` for known team names
 - **Incremental generation** → Build COMPLETE JSON in ONE pass, not iteratively
 - **Missing display_name** → Every node needs `display_name` (auto-generated from name)
-- **Deleting entities with people** → Always check `entities/person/*/overview.yaml` before deletion
+- **Deleting entities with people** → Check for assigned people before deletion
 
 ---
 
 ## Entity Deletion Safety Check
 
-When a user requests to **delete or remove** an entity from the structure, you MUST check for assigned people before proceeding.
+When user requests to delete/remove an entity, check for assigned people first.
 
-### Step 1: Detect Deletion Request
+**Detection triggers:** "remove", "delete", "get rid of" + entity name
 
-Recognize deletion intent from user messages:
-- "Remove the data team"
-- "Delete the engineering department"
-- "Get rid of the consumer LOB"
-- "I want to remove [entity_name]"
+**Check process:**
+1. Scan `entities/person/*/overview.yaml` for `team:` matching entity name (normalized, case-insensitive)
+2. For parent entities, also check all child teams recursively
+3. If no `entities/person/` directory exists, allow deletion
 
-### Step 2: Check for Assigned People
-
-Before removing ANY entity, scan for people assigned to it:
+**If people found → BLOCK:**
 
 ```
-Scan: entities/person/*/overview.yaml
-Look for: team: field matching entity name (case-insensitive, normalized)
+Cannot delete '{entity_name}' - these people are currently assigned:
+- John Smith
+- Sarah Chen
+
+Please reassign or remove them from the portal first.
 ```
 
-**Check logic:**
-1. List all folders in `entities/person/`
-2. For each person folder, read `overview.yaml`
-3. Get the `team:` field value
-4. Normalize both entity name and team value (lowercase, replace `-` with `_`)
-5. If they match, add person to the blocked list
+**If no people found → ALLOW** and proceed with removal.
 
-### Step 3: Block or Allow Deletion
-
-**If people are found (BLOCK):**
-
-```
-I cannot delete '{entity_name}' because the following people are assigned to it:
-
-- John Smith (entities/person/john_smith/overview.yaml)
-- Sarah Chen (entities/person/sarah_chen/overview.yaml)
-
-**To proceed with deletion:**
-1. Reassign these people to a different team by editing their `team:` field
-2. Or remove the person entities if they've left the organization
-
-Once all people are reassigned, ask me again to delete '{entity_name}'.
-```
-
-**If no people found (ALLOW):**
-
-Proceed with the entity removal from the JSON structure as requested.
-
-### Step 4: Recursive Child Check
-
-When deleting a **parent entity** (e.g., a department with teams), check ALL children:
-
-```
-User: "Delete the engineering department"
-
-Must check:
-1. entities/person/* where team: "engineering"
-2. entities/person/* where team: "frontend" (child team)
-3. entities/person/* where team: "backend" (child team)
-
-If ANY person is found in the parent or children → BLOCK deletion
-```
-
-### Deletion Safety Examples
-
-| User Request | Entities to Check | Result |
-|--------------|-------------------|--------|
-| "Remove backend team" | team: backend | Block if people found |
-| "Delete engineering" | team: engineering, frontend, backend | Block if any match |
-| "Remove consumer LOB" | All functions and teams under consumer | Block if any match |
-| "Delete empty_team" | team: empty_team | Allow (no people) |
-
-### Edge Cases
-
-| Scenario | Behavior |
-|----------|----------|
-| No `entities/person/` directory | Allow deletion (no people exist) |
-| Person file has no `team:` field | Ignore that person |
-| Team field has path (e.g., `engineering/backend`) | Match against both "engineering" and "backend" |
+**Edge cases:**
+- Person without `team:` field → ignore
+- Team path like `engineering/backend` → match both parts
 

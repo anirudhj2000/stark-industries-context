@@ -2,7 +2,7 @@
 version: '1.1'
 structure_type: product_centric
 template: null
-generated_at: '2026-01-12T12:27:19.428394+00:00'
+generated_at: '2026-01-12T12:49:02.251585+00:00'
 levels: []
 entities:
 - name: organization
@@ -80,13 +80,6 @@ entities:
         order: 3
         level: team
         path: entities/product/newsletter/functions/editorial/teams/politics
-      - name: technology
-        slug: technology
-        description: ''
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/product/newsletter/functions/editorial/teams/technology
     - name: engineering
       slug: engineering
       description: ''
