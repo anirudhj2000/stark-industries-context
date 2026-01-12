@@ -1,0 +1,25 @@
+name: Staff Writer
+type: role
+department: editorial
+headcount: 6
+
+description: >
+  Core content producers responsible for daily news coverage,
+  articles, and supporting senior writers on larger projects.
+
+responsibilities:
+  - Daily article production
+  - News coverage across topics
+  - Research and interviewing
+  - Support investigative pieces
+  - Meet daily/weekly quotas
+  - Develop beat expertise
+
+requirements:
+  - 2+ years journalism experience
+  - Strong writing and research skills
+  - Ability to work under deadline
+  - Journalistic ethics understanding
+  - Adaptability across topics
+
+reports_to: Managing Editor

@@ -1,0 +1,31 @@
+name: Senior Writer
+type: role
+department: editorial
+headcount: 4
+
+description: >
+  Experienced journalists leading coverage in specific beats (Politics, Business,
+  Technology, Culture). Produce high-impact features and mentor junior writers.
+
+beats:
+  - Politics
+  - Business
+  - Technology
+  - Culture
+
+responsibilities:
+  - Lead coverage area expertise
+  - High-impact feature articles
+  - Breaking news on beat
+  - Mentor staff writers
+  - Source development and maintenance
+  - Editorial planning input
+
+requirements:
+  - 5+ years journalism experience
+  - Beat expertise and source network
+  - Strong investigative skills
+  - Published portfolio
+  - Mentorship ability
+
+reports_to: Managing Editor

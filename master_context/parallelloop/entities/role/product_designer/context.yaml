@@ -1,0 +1,31 @@
+name: Product Designer
+type: role
+department: technology
+headcount: 1
+
+description: >
+  UX/UI designer responsible for reader experience, visual design,
+  and user research for the news platform.
+
+responsibilities:
+  - User experience design
+  - Visual and interaction design
+  - User research and testing
+  - Design system maintenance
+  - Prototyping and wireframes
+  - Accessibility compliance
+
+tools:
+  - Figma
+  - Adobe Creative Suite
+  - Prototyping tools
+  - Analytics platforms
+
+requirements:
+  - 4+ years product design
+  - Media/publishing experience preferred
+  - User research skills
+  - Design system experience
+  - Accessibility knowledge
+
+reports_to: CTO

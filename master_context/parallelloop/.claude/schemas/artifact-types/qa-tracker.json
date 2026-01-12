@@ -1,0 +1,58 @@
+{
+  "id": "QA_TRACKER",
+  "name": "Q&A Tracker",
+  "description": "Artifact containing generated questions for knowledge gaps and conflicts",
+  "file_types": ["json"],
+  "render": {
+    "component": "QATrackerRenderer",
+    "supports_preview": true,
+    "interactive": true
+  },
+  "metadata_schema": {
+    "type": "object",
+    "required": [],
+    "properties": {
+      "questions_generated": {
+        "type": "integer",
+        "description": "Number of questions generated"
+      },
+      "gaps_found": {
+        "type": "integer",
+        "description": "Number of knowledge gaps identified"
+      },
+      "conflicts_found": {
+        "type": "integer",
+        "description": "Number of conflicts identified"
+      },
+      "project_id": {
+        "type": "string",
+        "description": "Project ID for the tracker"
+      },
+      "focus_areas": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Focus areas scanned"
+      },
+      "question_types": {
+        "type": "array",
+        "items": {"type": "string"},
+        "description": "Types of questions generated (purpose: gap_analysis, conflict_resolution, etc.)"
+      },
+      "answer_types": {
+        "type": "object",
+        "description": "Distribution of answer types in generated questions",
+        "properties": {
+          "free_text": {"type": "integer"},
+          "yes_no": {"type": "integer"},
+          "multiple_choice": {"type": "integer"},
+          "multi_select": {"type": "integer"},
+          "rating": {"type": "integer"}
+        }
+      },
+      "assignees_suggested": {
+        "type": "integer",
+        "description": "Number of questions with suggested assignees"
+      }
+    }
+  }
+}

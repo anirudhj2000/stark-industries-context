@@ -1,0 +1,25 @@
+name: HR & Admin Coordinator
+type: role
+department: operations
+headcount: 1
+
+description: >
+  People operations specialist handling recruitment, onboarding,
+  benefits administration, and office coordination.
+
+responsibilities:
+  - Recruitment and hiring support
+  - Onboarding coordination
+  - Benefits administration
+  - Employee records management
+  - Office/remote work logistics
+  - Policy documentation
+
+requirements:
+  - 3+ years HR/admin experience
+  - Recruitment experience
+  - HRIS system proficiency
+  - Strong organizational skills
+  - Employee relations knowledge
+
+reports_to: Head of Operations

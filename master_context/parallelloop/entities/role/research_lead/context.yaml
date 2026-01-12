@@ -1,0 +1,28 @@
+name: Research Lead
+type: role
+department: research
+headcount: 1
+
+description: >
+  Head of research operations overseeing investigative support,
+  research methodology, and team coordination.
+
+responsibilities:
+  - Research team management
+  - Methodology and standards
+  - Resource allocation for investigations
+  - Quality control on research outputs
+  - Training and development
+  - Cross-team collaboration
+
+requirements:
+  - 6+ years research/investigative experience
+  - Leadership experience
+  - Strong analytical skills
+  - Data journalism knowledge
+  - OSINT and verification expertise
+
+reports_to: Editor-in-Chief
+direct_reports:
+  - Senior Researchers
+  - Research Analysts
