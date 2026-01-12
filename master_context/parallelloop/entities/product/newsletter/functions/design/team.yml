@@ -1,0 +1,40 @@
+id: team_8c8180da_design
+type: team
+name: design
+slug: design-1
+status: active
+external_ids:
+  team_id: 8c8180da-5490-4e62-bbf9-d6b3326ea0e2
+  organization_slug: parallelloop
+profile:
+  description: 'function: design'
+  team_type: DEPARTMENT
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: 2b070ee5-d7d7-4e24-8ddc-b9b6ba265303
+  entity_path: entities/product/newsletter/functions/design
+  level: ''
+roster:
+- email: anirudh@parallelloop.ai
+  name: Anirudh Joshi
+  membership_id: da58c1d0-9d11-4b41-9b08-646efd9d5a5b
+  role: OWNER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-12T10:01:28.649413+00:00'
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-01-12T10:01:29.031262+00:00'
+  member_count: 1
+  active_member_count: 1
+change_history:
+- operation: roster_updated
+  timestamp: '2026-01-12T10:01:29.031262+00:00'
+  source: member_added

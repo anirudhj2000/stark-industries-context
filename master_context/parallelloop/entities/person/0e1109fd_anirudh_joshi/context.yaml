@@ -21,7 +21,12 @@ profile:
   responsibilities: []
   manager_email: null
 rbac_scope:
-  teams: []
+  teams:
+  - name: design
+    slug: design-1
+    role: OWNER
+    team_role: MEMBER
+    entity_path: entities/product/newsletter/functions/design
   org_role: OWNER
 metadata:
   source: created
@@ -32,3 +37,7 @@ change_history:
   timestamp: '2026-01-12T06:59:46.239535+00:00'
   source: created
   reference_id: 0e1109fd-486c-4f72-94a7-83d61bd5bc16
+- operation: team_added
+  timestamp: '2026-01-12T10:01:29.046686+00:00'
+  source: team_sync
+  team_slug: design-1
