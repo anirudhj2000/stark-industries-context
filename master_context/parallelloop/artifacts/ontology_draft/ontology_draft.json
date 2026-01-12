@@ -1,0 +1,158 @@
+{
+  "structure_type": "product_centric",
+  "organization": {
+    "name": "organization",
+    "type": "organization",
+    "order": 0,
+    "children": [
+      {
+        "name": "mobile_app",
+        "type": "product",
+        "order": 1,
+        "children": [
+          {
+            "name": "engineering",
+            "type": "function",
+            "order": 2,
+            "children": [
+              {
+                "name": "frontend",
+                "type": "team",
+                "order": 3,
+                "children": [],
+                "_meta": {
+                  "path": "entities/product/mobile_app/functions/engineering/teams/frontend",
+                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "design_tokens.yaml", "component_library.yaml"]
+                }
+              },
+              {
+                "name": "backend",
+                "type": "team",
+                "order": 3,
+                "children": [],
+                "_meta": {
+                  "path": "entities/product/mobile_app/functions/engineering/teams/backend",
+                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
+                }
+              }
+            ],
+            "_meta": {
+              "path": "entities/product/mobile_app/functions/engineering",
+              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
+            }
+          },
+          {
+            "name": "editorial",
+            "type": "function",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/product/mobile_app/functions/editorial",
+              "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "content_calendar.yaml"]
+            }
+          },
+          {
+            "name": "research",
+            "type": "function",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/product/mobile_app/functions/research",
+              "files": ["overview.yaml", "_triage.yaml", "research_methods.yaml", "sources.yaml"]
+            }
+          },
+          {
+            "name": "design",
+            "type": "function",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/product/mobile_app/functions/design",
+              "files": ["overview.yaml", "_triage.yaml", "design_system.yaml", "ux_research.yaml"]
+            }
+          }
+        ],
+        "_meta": {
+          "path": "entities/product/mobile_app",
+          "files": ["overview.yaml", "_triage.yaml"]
+        }
+      },
+      {
+        "name": "newsletter",
+        "type": "product",
+        "order": 1,
+        "children": [
+          {
+            "name": "engineering",
+            "type": "function",
+            "order": 2,
+            "children": [
+              {
+                "name": "frontend",
+                "type": "team",
+                "order": 3,
+                "children": [],
+                "_meta": {
+                  "path": "entities/product/newsletter/functions/engineering/teams/frontend",
+                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "design_tokens.yaml", "component_library.yaml"]
+                }
+              },
+              {
+                "name": "backend",
+                "type": "team",
+                "order": 3,
+                "children": [],
+                "_meta": {
+                  "path": "entities/product/newsletter/functions/engineering/teams/backend",
+                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
+                }
+              }
+            ],
+            "_meta": {
+              "path": "entities/product/newsletter/functions/engineering",
+              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
+            }
+          },
+          {
+            "name": "editorial",
+            "type": "function",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/product/newsletter/functions/editorial",
+              "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "content_calendar.yaml"]
+            }
+          },
+          {
+            "name": "research",
+            "type": "function",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/product/newsletter/functions/research",
+              "files": ["overview.yaml", "_triage.yaml", "research_methods.yaml", "sources.yaml"]
+            }
+          },
+          {
+            "name": "design",
+            "type": "function",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/product/newsletter/functions/design",
+              "files": ["overview.yaml", "_triage.yaml", "design_system.yaml", "ux_research.yaml"]
+            }
+          }
+        ],
+        "_meta": {
+          "path": "entities/product/newsletter",
+          "files": ["overview.yaml", "_triage.yaml"]
+        }
+      }
+    ],
+    "_meta": {
+      "path": "entities/organization",
+      "files": ["overview.yaml", "brand.yaml", "strategy.yaml", "governance.yaml", "_triage.yaml", "competitors.yaml", "vendors.yaml", "partners.yaml", "investors.yaml"]
+    }
+  }
+}
