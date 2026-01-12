@@ -1,0 +1,40 @@
+id: team_79ea091c_writermanagement
+type: team
+name: writer_management
+slug: writer_management
+status: active
+external_ids:
+  team_id: 79ea091c-2931-475c-90c8-69c564b730b0
+  organization_slug: parallelloop
+profile:
+  description: 'team: writer_management'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: 3a5cd526-3a10-4125-86c1-6eda262ed827
+  entity_path: entities/function/hr/teams/writer_management
+  level: ''
+roster:
+- email: anirudh@parallelloop.ai
+  name: Anirudh Joshi
+  membership_id: 48a56025-4988-4266-9d77-0af9bddc145b
+  role: OWNER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-12T10:24:22.448284+00:00'
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-01-12T10:24:22.818868+00:00'
+  member_count: 1
+  active_member_count: 1
+change_history:
+- operation: roster_updated
+  timestamp: '2026-01-12T10:24:22.818868+00:00'
+  source: member_added
