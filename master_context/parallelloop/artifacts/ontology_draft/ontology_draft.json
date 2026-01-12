@@ -42,16 +42,6 @@
             }
           },
           {
-            "name": "editorial",
-            "type": "function",
-            "order": 2,
-            "children": [],
-            "_meta": {
-              "path": "entities/product/mobile_app/functions/editorial",
-              "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "content_calendar.yaml"]
-            }
-          },
-          {
             "name": "research",
             "type": "function",
             "order": 2,
