@@ -94,6 +94,51 @@
             }
           },
           {
+            "name": "editorial",
+            "type": "function",
+            "order": 2,
+            "display_name": "Editorial",
+            "children": [
+              {
+                "name": "politics",
+                "type": "team",
+                "order": 3,
+                "display_name": "Politics",
+                "children": [],
+                "_meta": {
+                  "path": "entities/product/newsletter/functions/editorial/teams/politics",
+                  "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
+                }
+              },
+              {
+                "name": "business_finance",
+                "type": "team",
+                "order": 3,
+                "display_name": "Business Finance",
+                "children": [],
+                "_meta": {
+                  "path": "entities/product/newsletter/functions/editorial/teams/business_finance",
+                  "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
+                }
+              },
+              {
+                "name": "technology",
+                "type": "team",
+                "order": 3,
+                "display_name": "Technology",
+                "children": [],
+                "_meta": {
+                  "path": "entities/product/newsletter/functions/editorial/teams/technology",
+                  "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
+                }
+              }
+            ],
+            "_meta": {
+              "path": "entities/product/newsletter/functions/editorial",
+              "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "content_calendar.yaml"]
+            }
+          },
+          {
             "name": "research",
             "type": "function",
             "order": 2,
