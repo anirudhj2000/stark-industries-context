@@ -2,7 +2,7 @@
 version: '1.1'
 structure_type: product_centric
 template: null
-generated_at: '2026-01-12T10:56:40.723834+00:00'
+generated_at: '2026-01-12T11:00:14.347820+00:00'
 levels: []
 entities:
 - name: organization
@@ -123,3 +123,10 @@ entities:
       order: 2
       level: function
       path: entities/product/newsletter/functions/research
+  - name: pr_management
+    slug: pr_management
+    description: ''
+    entity_type: function
+    order: 1
+    level: function
+    path: entities/function/pr_management
