@@ -21,7 +21,12 @@ profile:
   responsibilities: []
   manager_email: null
 rbac_scope:
-  teams: []
+  teams:
+  - name: writer_management
+    slug: writer_management
+    role: OWNER
+    team_role: MEMBER
+    entity_path: entities/function/hr/teams/writer_management
   org_role: OWNER
 metadata:
   source: created
@@ -46,5 +51,9 @@ change_history:
   team_slug: writer_management
 - operation: team_removed
   timestamp: '2026-01-12T10:49:07.654832+00:00'
+  source: team_sync
+  team_slug: writer_management
+- operation: team_added
+  timestamp: '2026-01-12T10:49:15.024300+00:00'
   source: team_sync
   team_slug: writer_management

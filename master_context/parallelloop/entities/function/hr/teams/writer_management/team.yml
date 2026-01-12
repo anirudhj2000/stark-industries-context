@@ -15,14 +15,26 @@ ontology:
   entity_id: 3a5cd526-3a10-4125-86c1-6eda262ed827
   entity_path: entities/function/hr/teams/writer_management
   level: ''
-roster: []
+roster:
+- email: anirudh@parallelloop.ai
+  name: Anirudh Joshi
+  membership_id: c8dfec14-7484-4189-ae5f-878274ca8a05
+  role: OWNER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-12T10:49:14.646745+00:00'
 metadata:
   source: membership_change
-  sync_reason: member_removed
-  updated_at: '2026-01-12T10:49:07.517547+00:00'
-  member_count: 0
-  active_member_count: 0
+  sync_reason: member_added
+  updated_at: '2026-01-12T10:49:15.005109+00:00'
+  member_count: 1
+  active_member_count: 1
 change_history:
 - operation: roster_updated
-  timestamp: '2026-01-12T10:49:07.517547+00:00'
-  source: member_removed
+  timestamp: '2026-01-12T10:49:15.005109+00:00'
+  source: member_added
