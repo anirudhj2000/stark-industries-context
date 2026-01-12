@@ -78,7 +78,10 @@ This is a **singleton** - one draft per organization. The skill always writes to
 2. Ask follow-up based on type (1 question)
 3. [If uncertain] Ask one clarifying question
 4. Show inferred structure → User confirms or modifies
+   - FOR MODIFICATIONS: If user requests entity deletion, run safety check first
+   - See "Entity Deletion Safety Check" section below
 5. Build COMPLETE JSON using templates.yaml → Write artifact
+   - Include display_name for EVERY node (auto-generated from name)
 ```
 
 ### Step 0: Load Templates (MANDATORY)
@@ -173,24 +176,44 @@ Ask: **Confirm? (or describe changes)**
 #### Build Process (follow exactly):
 
 ```
-1. Start with structure_type and organization node (order: 0)
+1. Start with structure_type and organization node (order: 0, display_name: "Organization")
 2. For each user-provided entity (product/department/LOB/team):
-   a. Create node with name, type, order, children[], _meta
-   b. Get ORDER from structures.<type>.levels[].level (0, 1, 2, 3...)
-   c. Get path from structures.<type>.levels[].path
-   d. Get base files from structures.<type>.levels[].files
-   e. Get folders from structures.<type>.levels[].folders
+   a. Create node with name, display_name, type, order, children[], _meta
+   b. Generate display_name from name (see display_name_rules in templates.yaml)
+   c. Get ORDER from structures.<type>.levels[].level (0, 1, 2, 3...)
+   d. Get path from structures.<type>.levels[].path
+   e. Get base files from structures.<type>.levels[].files
+   f. Get folders from structures.<type>.levels[].folders
 3. For each function in the entity:
    a. Look up function_config.<function_name>
    b. ADD function_config.<function>.files to _meta.files
    c. ADD function_config.<function>.default_teams as children
-   d. Each team child also needs proper _meta with path and files
+   d. Each team child also needs proper _meta with path, files, AND display_name
 4. For each team (flat structure OR team under function):
    a. Look up team_config.<team_name>
    b. If found, ADD team_config.<team>.files to _meta.files
    c. This adds domain-specific files (e.g., backend gets tech_stack.yaml)
+   d. Generate display_name for the team node
 5. Verify completeness before writing
 ```
+
+#### Display Name Generation
+
+For every node, generate `display_name` from `name` using these rules:
+
+1. Replace underscores `_` and hyphens `-` with spaces
+2. Capitalize first letter of each word (Title Case)
+3. Preserve common acronyms: IT, HR, QA, SRE, API, CTO, CEO, CFO, COO, VP, SVP, EVP, LOB, SMB
+
+**Examples:**
+- `"engineering"` → `"Engineering"`
+- `"data_engineering"` → `"Data Engineering"`
+- `"customer-success"` → `"Customer Success"`
+- `"it"` → `"IT"`
+- `"sre"` → `"SRE"`
+- `"team_1"` → `"Team 1"`
+
+**Apply to EVERY node** including organization, departments, teams, LOBs, products, functions.
 
 #### Example: Product-Centric with Engineering Function
 
@@ -224,6 +247,7 @@ This means:
 
 #### Verification Checklist (before writing):
 
+- [ ] Every node has a `display_name` field (auto-generated from name)
 - [ ] Every node has an `order` field matching its level depth (0, 1, 2, 3...)
 - [ ] Every function has files from `function_config.<func>.files`
 - [ ] Every function has children from `function_config.<func>.default_teams`
@@ -237,6 +261,7 @@ This means:
   "structure_type": "<type>",
   "organization": {
     "name": "organization",
+    "display_name": "Organization",
     "type": "organization",
     "order": 0,
     "children": [...],
@@ -287,4 +312,89 @@ All rules in `references/templates.yaml`:
 - **Missing function files** → Check `function_config.<func>.files` for EVERY function
 - **Missing team files** → Check `team_config.<team>.files` for known team names
 - **Incremental generation** → Build COMPLETE JSON in ONE pass, not iteratively
+- **Missing display_name** → Every node needs `display_name` (auto-generated from name)
+- **Deleting entities with people** → Always check `entities/person/*/overview.yaml` before deletion
+
+---
+
+## Entity Deletion Safety Check
+
+When a user requests to **delete or remove** an entity from the structure, you MUST check for assigned people before proceeding.
+
+### Step 1: Detect Deletion Request
+
+Recognize deletion intent from user messages:
+- "Remove the data team"
+- "Delete the engineering department"
+- "Get rid of the consumer LOB"
+- "I want to remove [entity_name]"
+
+### Step 2: Check for Assigned People
+
+Before removing ANY entity, scan for people assigned to it:
+
+```
+Scan: entities/person/*/overview.yaml
+Look for: team: field matching entity name (case-insensitive, normalized)
+```
+
+**Check logic:**
+1. List all folders in `entities/person/`
+2. For each person folder, read `overview.yaml`
+3. Get the `team:` field value
+4. Normalize both entity name and team value (lowercase, replace `-` with `_`)
+5. If they match, add person to the blocked list
+
+### Step 3: Block or Allow Deletion
+
+**If people are found (BLOCK):**
+
+```
+I cannot delete '{entity_name}' because the following people are assigned to it:
+
+- John Smith (entities/person/john_smith/overview.yaml)
+- Sarah Chen (entities/person/sarah_chen/overview.yaml)
+
+**To proceed with deletion:**
+1. Reassign these people to a different team by editing their `team:` field
+2. Or remove the person entities if they've left the organization
+
+Once all people are reassigned, ask me again to delete '{entity_name}'.
+```
+
+**If no people found (ALLOW):**
+
+Proceed with the entity removal from the JSON structure as requested.
+
+### Step 4: Recursive Child Check
+
+When deleting a **parent entity** (e.g., a department with teams), check ALL children:
+
+```
+User: "Delete the engineering department"
+
+Must check:
+1. entities/person/* where team: "engineering"
+2. entities/person/* where team: "frontend" (child team)
+3. entities/person/* where team: "backend" (child team)
+
+If ANY person is found in the parent or children → BLOCK deletion
+```
+
+### Deletion Safety Examples
+
+| User Request | Entities to Check | Result |
+|--------------|-------------------|--------|
+| "Remove backend team" | team: backend | Block if people found |
+| "Delete engineering" | team: engineering, frontend, backend | Block if any match |
+| "Remove consumer LOB" | All functions and teams under consumer | Block if any match |
+| "Delete empty_team" | team: empty_team | Allow (no people) |
+
+### Edge Cases
+
+| Scenario | Behavior |
+|----------|----------|
+| No `entities/person/` directory | Allow deletion (no people exist) |
+| Person file has no `team:` field | Ignore that person |
+| Team field has path (e.g., `engineering/backend`) | Match against both "engineering" and "backend" |
 
