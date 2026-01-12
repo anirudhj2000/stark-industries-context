@@ -78,6 +78,37 @@
         }
       },
       {
+        "name": "hr",
+        "type": "function",
+        "order": 1,
+        "children": [
+          {
+            "name": "writer_management",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/hr/teams/writer_management",
+              "files": ["overview.yaml", "_triage.yaml", "programs.yaml"]
+            }
+          },
+          {
+            "name": "talent_acquisition",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/hr/teams/talent_acquisition",
+              "files": ["overview.yaml", "_triage.yaml", "hiring_plan.yaml"]
+            }
+          }
+        ],
+        "_meta": {
+          "path": "entities/function/hr",
+          "files": ["overview.yaml", "_triage.yaml", "hiring_plan.yaml", "programs.yaml", "org_chart.yaml"]
+        }
+      },
+      {
         "name": "newsletter",
         "type": "product",
         "order": 1,
