@@ -1,0 +1,21 @@
+id: project_ccf5d8dc-1afa-4676-bf34-3112d127878e
+metadata:
+  created_at: '2026-01-13T08:24:11.552818+00:00'
+  updated_at: '2026-01-13T08:24:50.043154+00:00'
+project_name: Resume Shortlisting Featureajd
+project_slug: resume-shortlisting-featureajd
+roster:
+- email: chrisday@gmail.com
+  is_active: false
+  is_owner: false
+  joined_at: '2026-01-12T15:46:58.488299+00:00'
+  membership_id: 40da8c92-d541-4812-9a8c-f6460f1279a0
+  name: ''
+  removed_at: '2026-01-13T08:24:49.832094+00:00'
+  role: TEAM_MEMBER
+  teams:
+  - engineering
+  - frontend
+  - backend
+  - research
+type: project_relationship

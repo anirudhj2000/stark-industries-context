@@ -1,0 +1,32 @@
+  id: project_bf73612d-3185-4e23-8725-4fad75517d61
+  metadata:
+    created_at: '2026-01-13T08:36:53.491506+00:00'
+    updated_at: '2026-01-13T08:37:42.079904+00:00'
+  project_name: Holi Marketing Campaign
+  project_slug: holi-marketing-campaign
+  project_members:
+  - email: anirudh@parallelloop.ai
+    is_active: true
+    is_owner: true
+    joined_at: '2026-01-13T08:36:49.941530+00:00'
+    membership_id: 0e1109fd-486c-4f72-94a7-83d61bd5bc16
+    name: Anirudh Joshi
+    removed_at: null
+    role: PROJECT_LEAD
+    teams:
+    - research
+    - business_finance
+  - email: chrisday@gmail.com
+    is_active: true
+    is_owner: false
+    joined_at: '2026-01-13T08:37:41.738052+00:00'
+    membership_id: 40da8c92-d541-4812-9a8c-f6460f1279a0
+    name: ''
+    removed_at: null
+    role: TEAM_MEMBER
+    teams:
+    - engineering
+    - frontend
+    - backend
+    - research
+  type: project_relationship

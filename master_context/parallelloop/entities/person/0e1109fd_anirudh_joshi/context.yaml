@@ -1,88 +1,100 @@
-id: 0e1109fd_anirudh_joshi
-type: person
-name: Anirudh Joshi
-status: active
+change_history:
+- operation: create
+  reference_id: 0e1109fd-486c-4f72-94a7-83d61bd5bc16
+  source: created
+  timestamp: '2026-01-12T06:59:46.239535+00:00'
+- operation: team_added
+  source: team_sync
+  team_slug: design-1
+  timestamp: '2026-01-12T10:01:29.046686+00:00'
+- operation: team_removed
+  source: team_sync
+  team_slug: design-1
+  timestamp: '2026-01-12T10:17:53.727866+00:00'
+- operation: team_added
+  source: team_sync
+  team_slug: writer_management
+  timestamp: '2026-01-12T10:24:22.828347+00:00'
+- operation: team_removed
+  source: team_sync
+  team_slug: writer_management
+  timestamp: '2026-01-12T10:49:07.654832+00:00'
+- operation: team_added
+  source: team_sync
+  team_slug: writer_management
+  timestamp: '2026-01-12T10:49:15.024300+00:00'
+- operation: team_removed
+  source: team_sync
+  team_slug: writer_management
+  timestamp: '2026-01-12T10:56:36.860560+00:00'
+- operation: team_added
+  source: team_sync
+  team_slug: research-1
+  timestamp: '2026-01-12T12:11:11.058791+00:00'
+- operation: team_added
+  source: team_sync
+  team_slug: technology
+  timestamp: '2026-01-12T12:27:29.653594+00:00'
+- operation: team_removed
+  source: team_sync
+  team_slug: technology
+  timestamp: '2026-01-12T12:39:33.459560+00:00'
+- operation: team_added
+  source: team_sync
+  team_slug: business_finance
+  timestamp: '2026-01-12T12:59:14.548855+00:00'
+- operation: team_updated
+  source: team_sync
+  team_slug: research-1
+  timestamp: '2026-01-12T15:13:46.214421+00:00'
+- operation: project_assignment_update
+  project_id: bf73612d-3185-4e23-8725-4fad75517d61
+  source: playbook_sync
+  timestamp: '2026-01-13T08:36:53.486563+00:00'
 external_ids:
   bulk_import_item_id: 0e1109fd-486c-4f72-94a7-83d61bd5bc16
   email: anirudh@parallelloop.ai
-profile:
-  email: anirudh@parallelloop.ai
-  first_name: Anirudh
-  last_name: Joshi
-  primary_role: ''
-  department: ''
-  function: ''
-  timezone: UTC
-  location: ''
-  pronouns: ''
-  about: ''
-  expertise_tags: []
-  context_description: ''
-  responsibilities: []
-  manager_email: null
-rbac_scope:
-  teams:
-  - name: research
-    slug: research-1
-    role: OWNER
-    team_role: MEMBER
-    entity_path: entities/product/newsletter/functions/research
-  - name: business_finance
-    slug: business_finance
-    role: OWNER
-    team_role: MEMBER
-    entity_path: entities/product/newsletter/functions/editorial/teams/business_finance
-  org_role: OWNER
+id: 0e1109fd_anirudh_joshi
 metadata:
-  source: created
   created_at: '2026-01-12T06:59:46.239535+00:00'
   data_quality: minimal
-change_history:
-- operation: create
-  timestamp: '2026-01-12T06:59:46.239535+00:00'
   source: created
-  reference_id: 0e1109fd-486c-4f72-94a7-83d61bd5bc16
-- operation: team_added
-  timestamp: '2026-01-12T10:01:29.046686+00:00'
-  source: team_sync
-  team_slug: design-1
-- operation: team_removed
-  timestamp: '2026-01-12T10:17:53.727866+00:00'
-  source: team_sync
-  team_slug: design-1
-- operation: team_added
-  timestamp: '2026-01-12T10:24:22.828347+00:00'
-  source: team_sync
-  team_slug: writer_management
-- operation: team_removed
-  timestamp: '2026-01-12T10:49:07.654832+00:00'
-  source: team_sync
-  team_slug: writer_management
-- operation: team_added
-  timestamp: '2026-01-12T10:49:15.024300+00:00'
-  source: team_sync
-  team_slug: writer_management
-- operation: team_removed
-  timestamp: '2026-01-12T10:56:36.860560+00:00'
-  source: team_sync
-  team_slug: writer_management
-- operation: team_added
-  timestamp: '2026-01-12T12:11:11.058791+00:00'
-  source: team_sync
-  team_slug: research-1
-- operation: team_added
-  timestamp: '2026-01-12T12:27:29.653594+00:00'
-  source: team_sync
-  team_slug: technology
-- operation: team_removed
-  timestamp: '2026-01-12T12:39:33.459560+00:00'
-  source: team_sync
-  team_slug: technology
-- operation: team_added
-  timestamp: '2026-01-12T12:59:14.548855+00:00'
-  source: team_sync
-  team_slug: business_finance
-- operation: team_updated
-  timestamp: '2026-01-12T15:13:46.214421+00:00'
-  source: team_sync
-  team_slug: research-1
+name: Anirudh Joshi
+profile:
+  about: ''
+  context_description: ''
+  department: ''
+  email: anirudh@parallelloop.ai
+  expertise_tags: []
+  first_name: Anirudh
+  function: ''
+  last_name: Joshi
+  location: ''
+  manager_email: null
+  primary_role: ''
+  pronouns: ''
+  responsibilities: []
+  timezone: UTC
+project_assignments:
+- is_active: true
+  is_owner: true
+  joined_at: '2026-01-13T08:36:49.941530+00:00'
+  project_id: bf73612d-3185-4e23-8725-4fad75517d61
+  project_name: Holi Marketing Campaign
+  project_slug: holi-marketing-campaign
+  role: PROJECT_LEAD
+rbac_scope:
+  org_role: OWNER
+  teams:
+  - entity_path: entities/product/newsletter/functions/research
+    name: research
+    role: OWNER
+    slug: research-1
+    team_role: MEMBER
+  - entity_path: entities/product/newsletter/functions/editorial/teams/business_finance
+    name: business_finance
+    role: OWNER
+    slug: business_finance
+    team_role: MEMBER
+status: active
+type: person

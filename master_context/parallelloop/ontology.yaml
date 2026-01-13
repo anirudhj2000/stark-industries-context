@@ -2,7 +2,7 @@
 version: '1.1'
 structure_type: product_centric
 template: null
-generated_at: '2026-01-12T14:08:58.644701+00:00'
+generated_at: '2026-01-13T09:19:34.943328+00:00'
 levels: []
 entities:
 - name: Organization
@@ -80,6 +80,21 @@ entities:
         order: 3
         level: team
         path: entities/product/newsletter/functions/editorial/teams/politics
+        children:
+        - name: International Politics
+          slug: international_politics
+          description: ''
+          entity_type: team
+          order: 4
+          level: team
+          path: entities/product/newsletter/functions/editorial/teams/politics/teams/international_politics
+        - name: Local Politics
+          slug: local_politics
+          description: ''
+          entity_type: team
+          order: 4
+          level: team
+          path: entities/product/newsletter/functions/editorial/teams/politics/teams/local_politics
     - name: Engineering
       slug: engineering
       description: ''
