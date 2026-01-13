@@ -45,17 +45,6 @@
               "path": "entities/product/mobile_app/functions/engineering",
               "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
             }
-          },
-          {
-            "name": "research",
-            "type": "function",
-            "display_name": "Research",
-            "order": 2,
-            "children": [],
-            "_meta": {
-              "path": "entities/product/mobile_app/functions/research",
-              "files": ["overview.yaml", "_triage.yaml", "research_methods.yaml", "sources.yaml"]
-            }
           }
         ],
         "_meta": {
