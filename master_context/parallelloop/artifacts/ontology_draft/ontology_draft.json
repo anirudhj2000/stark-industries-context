@@ -114,7 +114,30 @@
                 "type": "team",
                 "display_name": "Politics",
                 "order": 3,
-                "children": [],
+                "children": [
+                  {
+                    "name": "local_politics",
+                    "type": "team",
+                    "display_name": "Local Politics",
+                    "order": 4,
+                    "children": [],
+                    "_meta": {
+                      "path": "entities/product/newsletter/functions/editorial/teams/politics/teams/local_politics",
+                      "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
+                    }
+                  },
+                  {
+                    "name": "international_politics",
+                    "type": "team",
+                    "display_name": "International Politics",
+                    "order": 4,
+                    "children": [],
+                    "_meta": {
+                      "path": "entities/product/newsletter/functions/editorial/teams/politics/teams/international_politics",
+                      "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
+                    }
+                  }
+                ],
                 "_meta": {
                   "path": "entities/product/newsletter/functions/editorial/teams/politics",
                   "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
