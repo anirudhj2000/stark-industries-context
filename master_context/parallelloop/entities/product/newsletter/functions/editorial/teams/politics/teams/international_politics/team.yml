@@ -1,0 +1,40 @@
+id: team_b0e684e6_international-politics
+type: team
+name: International Politics
+slug: international-politics
+status: active
+external_ids:
+  team_id: b0e684e6-d533-4e97-bf6d-e7e046ab693e
+  organization_slug: parallelloop
+profile:
+  description: 'team: International Politics'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: d461c48f-8d6c-4346-bbd4-42f0b444b754
+  entity_path: entities/product/newsletter/functions/editorial/teams/politics/teams/international_politics
+  level: ''
+roster:
+- email: chrisday@gmail.com
+  name: ''
+  membership_id: 6ba25b15-0572-4ab2-8aef-5feed21950f0
+  role: MEMBER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-14T12:20:24.549481+00:00'
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-01-14T12:20:25.882260+00:00'
+  member_count: 1
+  active_member_count: 1
+change_history:
+- operation: roster_updated
+  timestamp: '2026-01-14T12:20:25.882260+00:00'
+  source: member_added

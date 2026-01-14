@@ -31,6 +31,10 @@ change_history:
   project_id: bf73612d-3185-4e23-8725-4fad75517d61
   source: playbook_sync
   timestamp: '2026-01-13T08:37:42.073748+00:00'
+- operation: team_added
+  timestamp: '2026-01-14T12:20:25.933258+00:00'
+  source: team_sync
+  team_slug: international-politics
 external_ids:
   bulk_import_item_id: 40da8c92-d541-4812-9a8c-f6460f1279a0
   email: chrisday@gmail.com
@@ -86,5 +90,10 @@ rbac_scope:
     role: MEMBER
     slug: research-1
     team_role: MEMBER
+  - name: International Politics
+    slug: international-politics
+    role: MEMBER
+    team_role: MEMBER
+    entity_path: entities/product/newsletter/functions/editorial/teams/politics/teams/international_politics
 status: active
 type: person
