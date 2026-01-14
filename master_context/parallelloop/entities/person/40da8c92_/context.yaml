@@ -35,6 +35,10 @@ change_history:
   timestamp: '2026-01-14T12:20:25.933258+00:00'
   source: team_sync
   team_slug: international-politics
+- operation: team_updated
+  timestamp: '2026-01-14T12:31:40.762140+00:00'
+  source: team_sync
+  team_slug: international-politics
 external_ids:
   bulk_import_item_id: 40da8c92-d541-4812-9a8c-f6460f1279a0
   email: chrisday@gmail.com

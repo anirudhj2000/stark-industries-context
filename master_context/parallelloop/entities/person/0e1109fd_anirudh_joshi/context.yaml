@@ -51,6 +51,10 @@ change_history:
   project_id: bf73612d-3185-4e23-8725-4fad75517d61
   source: playbook_sync
   timestamp: '2026-01-13T08:36:53.486563+00:00'
+- operation: team_added
+  timestamp: '2026-01-14T12:31:40.726771+00:00'
+  source: team_sync
+  team_slug: international-politics
 external_ids:
   bulk_import_item_id: 0e1109fd-486c-4f72-94a7-83d61bd5bc16
   email: anirudh@parallelloop.ai
@@ -96,5 +100,10 @@ rbac_scope:
     role: OWNER
     slug: business_finance
     team_role: MEMBER
+  - name: International Politics
+    slug: international-politics
+    role: OWNER
+    team_role: MEMBER
+    entity_path: entities/product/newsletter/functions/editorial/teams/politics/teams/international_politics
 status: active
 type: person

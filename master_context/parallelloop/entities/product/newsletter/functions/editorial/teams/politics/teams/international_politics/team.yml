@@ -16,6 +16,18 @@ ontology:
   entity_path: entities/product/newsletter/functions/editorial/teams/politics/teams/international_politics
   level: ''
 roster:
+- email: anirudh@parallelloop.ai
+  name: Anirudh Joshi
+  membership_id: 56f51223-1580-4615-b719-7bd067e10e9d
+  role: OWNER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-14T12:31:40.400205+00:00'
 - email: chrisday@gmail.com
   name: ''
   membership_id: 6ba25b15-0572-4ab2-8aef-5feed21950f0
@@ -31,10 +43,10 @@ roster:
 metadata:
   source: membership_change
   sync_reason: member_added
-  updated_at: '2026-01-14T12:20:25.882260+00:00'
-  member_count: 1
-  active_member_count: 1
+  updated_at: '2026-01-14T12:31:40.641185+00:00'
+  member_count: 2
+  active_member_count: 2
 change_history:
 - operation: roster_updated
-  timestamp: '2026-01-14T12:20:25.882260+00:00'
+  timestamp: '2026-01-14T12:31:40.641185+00:00'
   source: member_added
