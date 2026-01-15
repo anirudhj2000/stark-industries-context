@@ -1,11 +1,75 @@
 ---
 name: ontology-setup
-description: Infer organizational hierarchy and write ONTOLOGY_DRAFT JSON artifact. Use when (1) setting up new organization context, (2) user asks about org structure, (3) initializing entity hierarchies, or (4) user mentions "ontology", "org structure", "hierarchy", "departments", "teams", "company structure", "org chart", "divisions", or "business units". Supports Functional, Divisional, Product-Centric, Matrix, and Flat structures.
+description: Infer organizational hierarchy and write ONTOLOGY_DRAFT JSON artifact. Use when (1) setting up new organization context, (2) user asks about org structure, (3) initializing entity hierarchies, or (4) user mentions "ontology", "org structure", "hierarchy", "departments", "teams", "company structure", "org chart", "divisions", or "business units". Supports Functional, Divisional, Product-Centric, Matrix, and Flat structures. Also supports "infer_files" mode for single-entity file inference.
 ---
 
 # Ontology Setup
 
 Infer organizational hierarchy through collaborative dialogue and create an ONTOLOGY_DRAFT artifact.
+
+---
+
+## Mode: infer_files (Single Entity File Inference)
+
+When invoked with `mode: infer_files`, skip the full ontology workflow and return only the file list for a single entity.
+
+### Input Format
+
+```json
+{
+  "mode": "infer_files",
+  "entity": {
+    "name": "backend",
+    "entity_type": "team",
+    "order": 2
+  }
+}
+```
+
+### Process
+
+1. **Read `references/templates.yaml`** (always required)
+2. **Determine base files from order level:**
+   - `order: 0` (organization) → `[overview.yaml, brand.yaml, strategy.yaml, governance.yaml, _triage.yaml, competitors.yaml, vendors.yaml, partners.yaml, investors.yaml]`
+   - `order: 1` (department/function/lob) → `[overview.yaml, _triage.yaml]`
+   - `order: 2+` (team) → `[overview.yaml, _triage.yaml]`
+
+3. **Add function-specific files** (if `entity_type` is department/function OR `order == 1`):
+   - Look up `function_config.<name>.files` in templates.yaml
+   - Add those files to the list
+
+4. **Add team-specific files** (if `entity_type` is team OR `order >= 2`):
+   - Look up `team_config.<name>.files` in templates.yaml
+   - Add those files to the list
+
+### Output Format
+
+Return ONLY a JSON object with the files array:
+
+```json
+{
+  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
+}
+```
+
+### Examples
+
+| Entity | Order | Type | Files |
+|--------|-------|------|-------|
+| `engineering` | 1 | department | `[overview.yaml, _triage.yaml, tech_stack.yaml, system_architecture.yaml, api_integrations.yaml]` |
+| `backend` | 2 | team | `[overview.yaml, _triage.yaml, tech_stack.yaml, system_architecture.yaml, api_integrations.yaml]` |
+| `frontend` | 2 | team | `[overview.yaml, _triage.yaml, tech_stack.yaml, design_tokens.yaml, component_library.yaml]` |
+| `sales` | 1 | department | `[overview.yaml, _triage.yaml, pipeline.yaml, territories.yaml, playbooks.yaml]` |
+| `custom-team` | 2 | team | `[overview.yaml, _triage.yaml]` (no special config) |
+
+### Important
+
+- **No user interaction** in this mode - just read templates and return files
+- **Normalize entity name** to lowercase with hyphens before lookup
+- **Deduplicate** the final file list
+- **Sort alphabetically** for consistency
+
+---
 
 ---
 
@@ -177,6 +241,8 @@ Ask: **Confirm? (or describe changes)**
 
 ```
 1. Start with structure_type and organization node (order: 0, display_name: "Organization")
+   - NORMALIZE all user-provided names to slug format (see name_format in templates.yaml)
+   - Slug rules: lowercase, replace spaces/underscores with hyphens, alphanumeric + hyphens only
 2. For each user-provided entity (product/department/LOB/team):
    a. Create node with name, display_name, type, order, children[], _meta
    b. Generate display_name from name (see display_name_rules in templates.yaml)
@@ -207,11 +273,11 @@ For every node, generate `display_name` from `name` using these rules:
 
 **Examples:**
 - `"engineering"` → `"Engineering"`
-- `"data_engineering"` → `"Data Engineering"`
+- `"data-engineering"` → `"Data Engineering"`
 - `"customer-success"` → `"Customer Success"`
 - `"it"` → `"IT"`
 - `"sre"` → `"SRE"`
-- `"team_1"` → `"Team 1"`
+- `"team-1"` → `"Team 1"`
 
 **Apply to EVERY node** including organization, departments, teams, LOBs, products, functions.
 
@@ -245,8 +311,30 @@ This means:
 - "frontend" team → `_meta.files`: [overview.yaml, _triage.yaml, tech_stack.yaml, design_tokens.yaml, component_library.yaml]
 - "founders" team (not in team_config) → `_meta.files`: [overview.yaml, _triage.yaml]
 
+#### Building the `levels` Array
+
+**REQUIRED:** The output MUST include a `levels` array with path patterns for each entity type.
+
+1. Read `structures.<type>.levels` from templates.yaml
+2. For each level, extract:
+   - `entity_type`: from `levels[].entity_type`
+   - `order`: from `levels[].level`
+   - `path_pattern`: from `levels[].path`
+3. Include ALL levels for the chosen structure type
+
+**Example for product_centric:**
+```json
+"levels": [
+  {"entity_type": "organization", "order": 0, "path_pattern": "entities/organization"},
+  {"entity_type": "product", "order": 1, "path_pattern": "entities/product/{name}"},
+  {"entity_type": "function", "order": 2, "path_pattern": "entities/product/{parent}/functions/{name}"},
+  {"entity_type": "team", "order": 3, "path_pattern": "entities/product/{grandparent}/functions/{parent}/teams/{name}"}
+]
+```
+
 #### Verification Checklist (before writing):
 
+- [ ] **`levels` array is present** with all entity types and path_patterns
 - [ ] Every node has a `display_name` field (auto-generated from name)
 - [ ] Every node has an `order` field matching its level depth (0, 1, 2, 3...)
 - [ ] Every function has files from `function_config.<func>.files`
@@ -259,6 +347,12 @@ This means:
 ```json
 {
   "structure_type": "<type>",
+  "levels": [
+    {"entity_type": "organization", "order": 0, "path_pattern": "entities/organization"},
+    {"entity_type": "product", "order": 1, "path_pattern": "entities/product/{name}"},
+    {"entity_type": "function", "order": 2, "path_pattern": "entities/product/{parent}/functions/{name}"},
+    {"entity_type": "team", "order": 3, "path_pattern": "entities/product/{grandparent}/functions/{parent}/teams/{name}"}
+  ],
   "organization": {
     "name": "organization",
     "display_name": "Organization",
@@ -269,6 +363,8 @@ This means:
   }
 }
 ```
+
+**IMPORTANT: The `levels` array must include all entity types with their path patterns from `structures.<type>.levels[].path`.**
 
 **IMPORTANT: Every node MUST include an `order` field indicating its depth in the hierarchy:**
 - `order: 0` = organization (root)

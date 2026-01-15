@@ -2,28 +2,23 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: product_centric
+structure_type: functional
 template: null
-generated_at: '2026-01-15T14:54:48.870838+00:00'
+generated_at: '2026-01-15T23:08:58.958854+00:00'
 levels:
 - name: Organization
   slug: organization
   order: 0
   skipped: false
   template_name: null
-- name: Product
-  slug: product
+- name: Department
+  slug: department
   order: 1
-  skipped: false
-  template_name: null
-- name: Function
-  slug: function
-  order: 2
   skipped: false
   template_name: null
 - name: Team
   slug: team
-  order: 3
+  order: 2
   skipped: false
   template_name: null
 entities:
@@ -35,115 +30,60 @@ entities:
   level: organization
   path: entities/organization
   children:
-  - name: Mobile App
-    slug: mobile_app
+  - name: Engineering
+    slug: engineering
     description: ''
-    entity_type: product
+    entity_type: department
     order: 1
-    level: product
-    path: entities/product/mobile_app
+    level: department
+    path: entities/function/engineering
     children:
-    - name: Engineering
-      slug: engineering
+    - name: Firmware
+      slug: firmware
       description: ''
-      entity_type: function
+      entity_type: team
       order: 2
-      level: function
-      path: entities/product/mobile_app/functions/engineering
-      children:
-      - name: Backend
-        slug: backend
-        description: ''
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/product/mobile_app/functions/engineering/teams/backend
-      - name: Frontend
-        slug: frontend
-        description: ''
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/product/mobile_app/functions/engineering/teams/frontend
-  - name: Newsletter
-    slug: newsletter
+      level: team
+      path: entities/function/engineering/teams/firmware
+    - name: Hardware
+      slug: hardware
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/function/engineering/teams/hardware
+    - name: Software
+      slug: software
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/function/engineering/teams/software
+  - name: Finance And Admin
+    slug: finance-and-admin
     description: ''
-    entity_type: product
+    entity_type: department
     order: 1
-    level: product
-    path: entities/product/newsletter
-    children:
-    - name: Editorial
-      slug: editorial
-      description: ''
-      entity_type: function
-      order: 2
-      level: function
-      path: entities/product/newsletter/functions/editorial
-      children:
-      - name: Business Finance
-        slug: business_finance
-        description: ''
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/product/newsletter/functions/editorial/teams/business_finance
-      - name: Politics
-        slug: politics
-        description: ''
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/product/newsletter/functions/editorial/teams/politics
-        children:
-        - name: International Politics
-          slug: international-politics
-          description: ''
-          entity_type: team
-          order: 4
-          level: team
-          path: entities/product/newsletter/functions/editorial/teams/politics/teams/international_politics
-    - name: Engineering
-      slug: engineering
-      description: ''
-      entity_type: function
-      order: 2
-      level: function
-      path: entities/product/newsletter/functions/engineering
-      children:
-      - name: Backend
-        slug: backend
-        description: ''
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/product/newsletter/functions/engineering/teams/backend
-      - name: Devops
-        slug: devops
-        description: Devops
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/organization/newsletter/engineering/devops
-      - name: Frontend
-        slug: frontend
-        description: ''
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/product/newsletter/functions/engineering/teams/frontend
-    - name: Research
-      slug: research
-      description: ''
-      entity_type: function
-      order: 2
-      level: function
-      path: entities/product/newsletter/functions/research
-      children:
-      - name: RD Researcher
-        slug: rd-researcher
-        description: RD Researcher
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/team/rd-researcher
+    level: department
+    path: entities/function/finance-and-admin
+  - name: Operations
+    slug: operations
+    description: ''
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/function/operations
+  - name: Product
+    slug: product
+    description: ''
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/function/product
+  - name: Sales And Marketing
+    slug: sales-and-marketing
+    description: ''
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/function/sales-and-marketing

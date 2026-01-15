@@ -1,42 +1,58 @@
 {
   "structure_type": "functional",
-  "levels": [
-    {"entity_type": "organization", "order": 0, "path_pattern": "entities/organization"},
-    {"entity_type": "department", "order": 1, "path_pattern": "entities/function/{name}"},
-    {"entity_type": "team", "order": 2, "path_pattern": "entities/function/{parent}/teams/{name}"}
-  ],
   "organization": {
     "name": "organization",
     "display_name": "Organization",
     "type": "organization",
     "order": 0,
+    "_meta": {
+      "path": "entities/organization",
+      "files": [
+        "overview.yaml",
+        "brand.yaml",
+        "strategy.yaml",
+        "governance.yaml",
+        "_triage.yaml",
+        "competitors.yaml",
+        "vendors.yaml",
+        "partners.yaml",
+        "investors.yaml"
+      ],
+      "folders": []
+    },
     "children": [
       {
         "name": "engineering",
         "display_name": "Engineering",
         "type": "department",
         "order": 1,
+        "_meta": {
+          "path": "entities/function/engineering",
+          "files": [
+            "overview.yaml",
+            "_triage.yaml",
+            "tech_stack.yaml",
+            "system_architecture.yaml",
+            "api_integrations.yaml"
+          ],
+          "folders": []
+        },
         "children": [
           {
             "name": "firmware",
             "display_name": "Firmware",
             "type": "team",
             "order": 2,
-            "children": [],
             "_meta": {
               "path": "entities/function/engineering/teams/firmware",
-              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
-            }
-          },
-          {
-            "name": "software",
-            "display_name": "Software",
-            "type": "team",
-            "order": 2,
-            "children": [],
-            "_meta": {
-              "path": "entities/function/engineering/teams/software",
-              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
+              "files": [
+                "overview.yaml",
+                "_triage.yaml",
+                "tech_stack.yaml",
+                "system_architecture.yaml",
+                "api_integrations.yaml"
+              ],
+              "folders": []
             }
           },
           {
@@ -44,27 +60,54 @@
             "display_name": "Hardware",
             "type": "team",
             "order": 2,
-            "children": [],
             "_meta": {
               "path": "entities/function/engineering/teams/hardware",
-              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml"]
+              "files": [
+                "overview.yaml",
+                "_triage.yaml",
+                "tech_stack.yaml",
+                "system_architecture.yaml"
+              ],
+              "folders": []
+            }
+          },
+          {
+            "name": "software",
+            "display_name": "Software",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/function/engineering/teams/software",
+              "files": [
+                "overview.yaml",
+                "_triage.yaml",
+                "tech_stack.yaml",
+                "system_architecture.yaml",
+                "api_integrations.yaml"
+              ],
+              "folders": []
             }
           }
-        ],
-        "_meta": {
-          "path": "entities/function/engineering",
-          "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
-        }
+        ]
       },
       {
-        "name": "product",
-        "display_name": "Product",
+        "name": "finance-and-admin",
+        "display_name": "Finance And Admin",
         "type": "department",
         "order": 1,
-        "children": [],
         "_meta": {
-          "path": "entities/function/product",
-          "files": ["overview.yaml", "_triage.yaml", "roadmap.yaml", "metrics.yaml"]
+          "path": "entities/function/finance-and-admin",
+          "files": [
+            "overview.yaml",
+            "_triage.yaml",
+            "financials.yaml",
+            "budget.yaml",
+            "forecasts.yaml",
+            "hiring_plan.yaml",
+            "programs.yaml",
+            "org_chart.yaml"
+          ],
+          "folders": []
         }
       },
       {
@@ -72,10 +115,32 @@
         "display_name": "Operations",
         "type": "department",
         "order": 1,
-        "children": [],
         "_meta": {
           "path": "entities/function/operations",
-          "files": ["overview.yaml", "_triage.yaml", "processes.yaml", "slas.yaml", "runbooks.yaml"]
+          "files": [
+            "overview.yaml",
+            "_triage.yaml",
+            "processes.yaml",
+            "slas.yaml",
+            "runbooks.yaml"
+          ],
+          "folders": []
+        }
+      },
+      {
+        "name": "product",
+        "display_name": "Product",
+        "type": "department",
+        "order": 1,
+        "_meta": {
+          "path": "entities/function/product",
+          "files": [
+            "overview.yaml",
+            "_triage.yaml",
+            "roadmap.yaml",
+            "metrics.yaml"
+          ],
+          "folders": []
         }
       },
       {
@@ -83,27 +148,21 @@
         "display_name": "Sales And Marketing",
         "type": "department",
         "order": 1,
-        "children": [],
         "_meta": {
           "path": "entities/function/sales-and-marketing",
-          "files": ["overview.yaml", "_triage.yaml", "pipeline.yaml", "territories.yaml", "playbooks.yaml", "channels.yaml", "campaigns.yaml", "brand_assets.yaml"]
-        }
-      },
-      {
-        "name": "finance-and-admin",
-        "display_name": "Finance And Admin",
-        "type": "department",
-        "order": 1,
-        "children": [],
-        "_meta": {
-          "path": "entities/function/finance-and-admin",
-          "files": ["overview.yaml", "_triage.yaml", "financials.yaml", "budget.yaml", "forecasts.yaml", "hiring_plan.yaml", "programs.yaml", "org_chart.yaml"]
+          "files": [
+            "overview.yaml",
+            "_triage.yaml",
+            "pipeline.yaml",
+            "territories.yaml",
+            "playbooks.yaml",
+            "channels.yaml",
+            "campaigns.yaml",
+            "brand_assets.yaml"
+          ],
+          "folders": []
         }
       }
-    ],
-    "_meta": {
-      "path": "entities/organization",
-      "files": ["overview.yaml", "brand.yaml", "strategy.yaml", "governance.yaml", "_triage.yaml", "competitors.yaml", "vendors.yaml", "partners.yaml", "investors.yaml"]
-    }
+    ]
   }
 }
