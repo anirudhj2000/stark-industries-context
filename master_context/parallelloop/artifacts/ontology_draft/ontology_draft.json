@@ -1,181 +1,103 @@
 {
-  "structure_type": "product_centric",
+  "structure_type": "functional",
+  "levels": [
+    {"entity_type": "organization", "order": 0, "path_pattern": "entities/organization"},
+    {"entity_type": "department", "order": 1, "path_pattern": "entities/function/{name}"},
+    {"entity_type": "team", "order": 2, "path_pattern": "entities/function/{parent}/teams/{name}"}
+  ],
   "organization": {
     "name": "organization",
-    "type": "organization",
     "display_name": "Organization",
+    "type": "organization",
     "order": 0,
     "children": [
       {
-        "name": "mobile_app",
-        "type": "product",
-        "display_name": "Mobile App",
+        "name": "engineering",
+        "display_name": "Engineering",
+        "type": "department",
         "order": 1,
         "children": [
           {
-            "name": "engineering",
-            "type": "function",
-            "display_name": "Engineering",
+            "name": "firmware",
+            "display_name": "Firmware",
+            "type": "team",
             "order": 2,
-            "children": [
-              {
-                "name": "frontend",
-                "type": "team",
-                "display_name": "Frontend",
-                "order": 3,
-                "children": [],
-                "_meta": {
-                  "path": "entities/product/mobile_app/functions/engineering/teams/frontend",
-                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "design_tokens.yaml", "component_library.yaml"]
-                }
-              },
-              {
-                "name": "backend",
-                "type": "team",
-                "display_name": "Backend",
-                "order": 3,
-                "children": [],
-                "_meta": {
-                  "path": "entities/product/mobile_app/functions/engineering/teams/backend",
-                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
-                }
-              }
-            ],
+            "children": [],
             "_meta": {
-              "path": "entities/product/mobile_app/functions/engineering",
+              "path": "entities/function/engineering/teams/firmware",
               "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
+            }
+          },
+          {
+            "name": "software",
+            "display_name": "Software",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/engineering/teams/software",
+              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
+            }
+          },
+          {
+            "name": "hardware",
+            "display_name": "Hardware",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/engineering/teams/hardware",
+              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml"]
             }
           }
         ],
         "_meta": {
-          "path": "entities/product/mobile_app",
-          "files": ["overview.yaml", "_triage.yaml"]
+          "path": "entities/function/engineering",
+          "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
         }
       },
       {
-        "name": "newsletter",
-        "type": "product",
-        "display_name": "Newsletter",
+        "name": "product",
+        "display_name": "Product",
+        "type": "department",
         "order": 1,
-        "children": [
-          {
-            "name": "engineering",
-            "type": "function",
-            "display_name": "Engineering",
-            "order": 2,
-            "children": [
-              {
-                "name": "frontend",
-                "type": "team",
-                "display_name": "Frontend",
-                "order": 3,
-                "children": [],
-                "_meta": {
-                  "path": "entities/product/newsletter/functions/engineering/teams/frontend",
-                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "design_tokens.yaml", "component_library.yaml"]
-                }
-              },
-              {
-                "name": "backend",
-                "type": "team",
-                "display_name": "Backend",
-                "order": 3,
-                "children": [],
-                "_meta": {
-                  "path": "entities/product/newsletter/functions/engineering/teams/backend",
-                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
-                }
-              }
-            ],
-            "_meta": {
-              "path": "entities/product/newsletter/functions/engineering",
-              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
-            }
-          },
-          {
-            "name": "editorial",
-            "type": "function",
-            "display_name": "Editorial",
-            "order": 2,
-            "children": [
-              {
-                "name": "politics",
-                "type": "team",
-                "display_name": "Politics",
-                "order": 3,
-                "children": [
-                  {
-                    "name": "local_politics",
-                    "type": "team",
-                    "display_name": "Local Politics",
-                    "order": 4,
-                    "children": [],
-                    "_meta": {
-                      "path": "entities/product/newsletter/functions/editorial/teams/politics/teams/local_politics",
-                      "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
-                    }
-                  },
-                  {
-                    "name": "international_politics",
-                    "type": "team",
-                    "display_name": "International Politics",
-                    "order": 4,
-                    "children": [],
-                    "_meta": {
-                      "path": "entities/product/newsletter/functions/editorial/teams/politics/teams/international_politics",
-                      "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
-                    }
-                  }
-                ],
-                "_meta": {
-                  "path": "entities/product/newsletter/functions/editorial/teams/politics",
-                  "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
-                }
-              },
-              {
-                "name": "business_finance",
-                "type": "team",
-                "display_name": "Business Finance",
-                "order": 3,
-                "children": [],
-                "_meta": {
-                  "path": "entities/product/newsletter/functions/editorial/teams/business_finance",
-                  "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "sources.yaml"]
-                }
-              }
-            ],
-            "_meta": {
-              "path": "entities/product/newsletter/functions/editorial",
-              "files": ["overview.yaml", "_triage.yaml", "style_guide.yaml", "content_calendar.yaml"]
-            }
-          },
-          {
-            "name": "research",
-            "type": "function",
-            "display_name": "Research",
-            "order": 2,
-            "children": [
-              {
-                "name": "fact_checking",
-                "type": "team",
-                "display_name": "Fact Checking",
-                "order": 3,
-                "children": [],
-                "_meta": {
-                  "path": "entities/product/newsletter/functions/research/teams/fact_checking",
-                  "files": ["overview.yaml", "_triage.yaml", "verification_process.yaml", "sources.yaml"]
-                }
-              }
-            ],
-            "_meta": {
-              "path": "entities/product/newsletter/functions/research",
-              "files": ["overview.yaml", "_triage.yaml", "research_methods.yaml", "sources.yaml"]
-            }
-          }
-        ],
+        "children": [],
         "_meta": {
-          "path": "entities/product/newsletter",
-          "files": ["overview.yaml", "_triage.yaml"]
+          "path": "entities/function/product",
+          "files": ["overview.yaml", "_triage.yaml", "roadmap.yaml", "metrics.yaml"]
+        }
+      },
+      {
+        "name": "operations",
+        "display_name": "Operations",
+        "type": "department",
+        "order": 1,
+        "children": [],
+        "_meta": {
+          "path": "entities/function/operations",
+          "files": ["overview.yaml", "_triage.yaml", "processes.yaml", "slas.yaml", "runbooks.yaml"]
+        }
+      },
+      {
+        "name": "sales-and-marketing",
+        "display_name": "Sales And Marketing",
+        "type": "department",
+        "order": 1,
+        "children": [],
+        "_meta": {
+          "path": "entities/function/sales-and-marketing",
+          "files": ["overview.yaml", "_triage.yaml", "pipeline.yaml", "territories.yaml", "playbooks.yaml", "channels.yaml", "campaigns.yaml", "brand_assets.yaml"]
+        }
+      },
+      {
+        "name": "finance-and-admin",
+        "display_name": "Finance And Admin",
+        "type": "department",
+        "order": 1,
+        "children": [],
+        "_meta": {
+          "path": "entities/function/finance-and-admin",
+          "files": ["overview.yaml", "_triage.yaml", "financials.yaml", "budget.yaml", "forecasts.yaml", "hiring_plan.yaml", "programs.yaml", "org_chart.yaml"]
         }
       }
     ],
