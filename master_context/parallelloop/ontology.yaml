@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: product_centric
 template: null
-generated_at: '2026-01-15T14:51:19.973188+00:00'
+generated_at: '2026-01-15T14:54:48.870838+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -139,3 +139,11 @@ entities:
       order: 2
       level: function
       path: entities/product/newsletter/functions/research
+      children:
+      - name: RD Researcher
+        slug: rd-researcher
+        description: RD Researcher
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/team/rd-researcher
