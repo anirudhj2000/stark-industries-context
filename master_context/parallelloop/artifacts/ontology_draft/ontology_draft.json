@@ -111,6 +111,17 @@
         }
       },
       {
+        "name": "growth",
+        "display_name": "Growth",
+        "type": "department",
+        "order": 1,
+        "_meta": {
+          "path": "entities/function/growth",
+          "files": [],
+          "folders": []
+        }
+      },
+      {
         "name": "operations",
         "display_name": "Operations",
         "type": "department",

@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: functional
 template: null
-generated_at: '2026-01-15T23:08:58.958854+00:00'
+generated_at: '2026-01-16T00:03:21.438519+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -66,6 +66,13 @@ entities:
     order: 1
     level: department
     path: entities/function/finance-and-admin
+  - name: Growth
+    slug: growth
+    description: Growth
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/function/growth
   - name: Operations
     slug: operations
     description: ''
