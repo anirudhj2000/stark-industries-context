@@ -2,95 +2,68 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: functional
-template: null
-generated_at: '2026-01-16T00:03:21.438519+00:00'
+structure_type: enterprise
+template: enterprise
+generated_at: '2026-01-16T00:19:47.281748+00:00'
 levels:
-- name: Organization
-  slug: organization
-  order: 0
-  skipped: false
-  template_name: null
-- name: Department
-  slug: department
+- name: LOB
+  slug: lob
   order: 1
   skipped: false
-  template_name: null
-- name: Team
-  slug: team
+  template_name: LOB
+- name: Function
+  slug: function
   order: 2
   skipped: false
-  template_name: null
+  template_name: Function
+- name: Team
+  slug: team
+  order: 3
+  skipped: false
+  template_name: Team
 entities:
-- name: Organization
-  slug: organization
-  description: ''
-  entity_type: organization
-  order: 0
-  level: organization
-  path: entities/organization
+- name: Retail
+  slug: retail
+  description: Consumer retail business unit
+  entity_type: lob
+  order: 1
+  level: lob
+  path: entities/lob/retail
   children:
-  - name: Engineering
-    slug: engineering
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/function/engineering
+  - name: Marketing
+    slug: marketing
+    description: Brand strategy and marketing
+    entity_type: function
+    order: 2
+    level: function
+    path: entities/function/marketing
     children:
-    - name: Firmware
-      slug: firmware
-      description: ''
+    - name: Brand Team
+      slug: brand-team
+      description: Brand identity and design
       entity_type: team
-      order: 2
+      order: 3
       level: team
-      path: entities/function/engineering/teams/firmware
-    - name: Hardware
-      slug: hardware
-      description: ''
+      path: entities/team/brand-team
+    - name: Digital Team
+      slug: digital-team
+      description: Digital marketing and SEO
       entity_type: team
-      order: 2
+      order: 3
       level: team
-      path: entities/function/engineering/teams/hardware
-    - name: Software
-      slug: software
-      description: ''
+      path: entities/team/digital-team
+  - name: Sales
+    slug: sales
+    description: Sales and business development
+    entity_type: function
+    order: 2
+    level: function
+    path: entities/function/sales
+    children:
+    - name: Inside Sales
+      slug: inside-sales
+      description: Inside sales team
       entity_type: team
-      order: 2
+      order: 3
       level: team
-      path: entities/function/engineering/teams/software
-  - name: Finance And Admin
-    slug: finance-and-admin
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/function/finance-and-admin
-  - name: Growth
-    slug: growth
-    description: Growth
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/function/growth
-  - name: Operations
-    slug: operations
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/function/operations
-  - name: Product
-    slug: product
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/function/product
-  - name: Sales And Marketing
-    slug: sales-and-marketing
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/function/sales-and-marketing
+      path: entities/team/inside-sales

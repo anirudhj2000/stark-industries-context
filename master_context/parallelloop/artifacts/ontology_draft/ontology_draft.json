@@ -1,178 +1,74 @@
 {
   "structure_type": "functional",
   "organization": {
-    "name": "organization",
-    "display_name": "Organization",
-    "type": "organization",
-    "order": 0,
+    "name": "retail",
+    "display_name": "Retail",
+    "type": "lob",
+    "order": 1,
     "_meta": {
-      "path": "entities/organization",
-      "files": [
-        "overview.yaml",
-        "brand.yaml",
-        "strategy.yaml",
-        "governance.yaml",
-        "_triage.yaml",
-        "competitors.yaml",
-        "vendors.yaml",
-        "partners.yaml",
-        "investors.yaml"
-      ],
+      "path": "entities/lob/retail",
+      "files": [],
       "folders": []
     },
     "children": [
       {
-        "name": "engineering",
-        "display_name": "Engineering",
-        "type": "department",
-        "order": 1,
+        "name": "marketing",
+        "display_name": "Marketing",
+        "type": "function",
+        "order": 2,
         "_meta": {
-          "path": "entities/function/engineering",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "tech_stack.yaml",
-            "system_architecture.yaml",
-            "api_integrations.yaml"
-          ],
+          "path": "entities/function/marketing",
+          "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "firmware",
-            "display_name": "Firmware",
+            "name": "brand-team",
+            "display_name": "Brand Team",
             "type": "team",
-            "order": 2,
+            "order": 3,
             "_meta": {
-              "path": "entities/function/engineering/teams/firmware",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml",
-                "tech_stack.yaml",
-                "system_architecture.yaml",
-                "api_integrations.yaml"
-              ],
+              "path": "entities/team/brand-team",
+              "files": [],
               "folders": []
             }
           },
           {
-            "name": "hardware",
-            "display_name": "Hardware",
+            "name": "digital-team",
+            "display_name": "Digital Team",
             "type": "team",
-            "order": 2,
+            "order": 3,
             "_meta": {
-              "path": "entities/function/engineering/teams/hardware",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml",
-                "tech_stack.yaml",
-                "system_architecture.yaml"
-              ],
-              "folders": []
-            }
-          },
-          {
-            "name": "software",
-            "display_name": "Software",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/function/engineering/teams/software",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml",
-                "tech_stack.yaml",
-                "system_architecture.yaml",
-                "api_integrations.yaml"
-              ],
+              "path": "entities/team/digital-team",
+              "files": [],
               "folders": []
             }
           }
         ]
       },
       {
-        "name": "finance-and-admin",
-        "display_name": "Finance And Admin",
-        "type": "department",
-        "order": 1,
+        "name": "sales",
+        "display_name": "Sales",
+        "type": "function",
+        "order": 2,
         "_meta": {
-          "path": "entities/function/finance-and-admin",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "financials.yaml",
-            "budget.yaml",
-            "forecasts.yaml",
-            "hiring_plan.yaml",
-            "programs.yaml",
-            "org_chart.yaml"
-          ],
-          "folders": []
-        }
-      },
-      {
-        "name": "growth",
-        "display_name": "Growth",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/function/growth",
+          "path": "entities/function/sales",
           "files": [],
           "folders": []
-        }
-      },
-      {
-        "name": "operations",
-        "display_name": "Operations",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/function/operations",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "processes.yaml",
-            "slas.yaml",
-            "runbooks.yaml"
-          ],
-          "folders": []
-        }
-      },
-      {
-        "name": "product",
-        "display_name": "Product",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/function/product",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "roadmap.yaml",
-            "metrics.yaml"
-          ],
-          "folders": []
-        }
-      },
-      {
-        "name": "sales-and-marketing",
-        "display_name": "Sales And Marketing",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/function/sales-and-marketing",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "pipeline.yaml",
-            "territories.yaml",
-            "playbooks.yaml",
-            "channels.yaml",
-            "campaigns.yaml",
-            "brand_assets.yaml"
-          ],
-          "folders": []
-        }
+        },
+        "children": [
+          {
+            "name": "inside-sales",
+            "display_name": "Inside Sales",
+            "type": "team",
+            "order": 3,
+            "_meta": {
+              "path": "entities/team/inside-sales",
+              "files": [],
+              "folders": []
+            }
+          }
+        ]
       }
     ]
   }
