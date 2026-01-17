@@ -1,11 +1,5 @@
 {
-  "structure_type": "divisional",
-  "levels": [
-    {"entity_type": "organization", "order": 0, "path_pattern": "entities/organization"},
-    {"entity_type": "business_unit", "order": 1, "path_pattern": "entities/business-units/{name}"},
-    {"entity_type": "function", "order": 2, "path_pattern": "entities/business-units/{parent}/functions/{name}"},
-    {"entity_type": "team", "order": 3, "path_pattern": "entities/business-units/{grandparent}/functions/{parent}/teams/{name}"}
-  ],
+  "structure_type": "matrix",
   "organization": {
     "name": "parallelloop",
     "display_name": "Parallelloop AI",
@@ -13,7 +7,18 @@
     "order": 0,
     "_meta": {
       "path": "entities/organization",
-      "files": ["_triage.yaml", "brand.yaml", "competitors.yaml", "governance.yaml", "investors.yaml", "overview.yaml", "partners.yaml", "strategy.yaml", "vendors.yaml"]
+      "files": [
+        "_triage.yaml",
+        "brand.yaml",
+        "competitors.yaml",
+        "governance.yaml",
+        "investors.yaml",
+        "overview.yaml",
+        "partners.yaml",
+        "strategy.yaml",
+        "vendors.yaml"
+      ],
+      "folders": []
     },
     "children": [
       {
@@ -23,7 +28,11 @@
         "order": 1,
         "_meta": {
           "path": "entities/business-units/consumer",
-          "files": ["_triage.yaml", "overview.yaml"]
+          "files": [
+            "_triage.yaml",
+            "overview.yaml"
+          ],
+          "folders": []
         },
         "children": [
           {
@@ -33,7 +42,14 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/consumer/functions/consumer-engineering",
-              "files": ["_triage.yaml", "api_integrations.yaml", "overview.yaml", "system_architecture.yaml", "tech_stack.yaml"]
+              "files": [
+                "_triage.yaml",
+                "api_integrations.yaml",
+                "overview.yaml",
+                "system_architecture.yaml",
+                "tech_stack.yaml"
+              ],
+              "folders": []
             },
             "children": [
               {
@@ -43,7 +59,13 @@
                 "order": 3,
                 "_meta": {
                   "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile",
-                  "files": ["_triage.yaml", "app_releases.yaml", "overview.yaml", "tech_stack.yaml"]
+                  "files": [
+                    "_triage.yaml",
+                    "app_releases.yaml",
+                    "overview.yaml",
+                    "tech_stack.yaml"
+                  ],
+                  "folders": []
                 }
               },
               {
@@ -53,7 +75,13 @@
                 "order": 3,
                 "_meta": {
                   "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform",
-                  "files": ["_triage.yaml", "overview.yaml", "system_architecture.yaml", "tech_stack.yaml"]
+                  "files": [
+                    "_triage.yaml",
+                    "overview.yaml",
+                    "system_architecture.yaml",
+                    "tech_stack.yaml"
+                  ],
+                  "folders": []
                 }
               }
             ]
@@ -65,9 +93,14 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/consumer/functions/consumer-product",
-              "files": ["_triage.yaml", "metrics.yaml", "overview.yaml", "roadmap.yaml"]
-            },
-            "children": []
+              "files": [
+                "_triage.yaml",
+                "metrics.yaml",
+                "overview.yaml",
+                "roadmap.yaml"
+              ],
+              "folders": []
+            }
           },
           {
             "name": "consumer-sales",
@@ -76,7 +109,14 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/consumer/functions/consumer-sales",
-              "files": ["_triage.yaml", "overview.yaml", "pipeline.yaml", "playbooks.yaml", "territories.yaml"]
+              "files": [
+                "_triage.yaml",
+                "overview.yaml",
+                "pipeline.yaml",
+                "playbooks.yaml",
+                "territories.yaml"
+              ],
+              "folders": []
             },
             "children": [
               {
@@ -86,7 +126,11 @@
                 "order": 3,
                 "_meta": {
                   "path": "entities/business-units/consumer/functions/consumer-sales/teams/consumer-enterprise",
-                  "files": ["_triage.yaml", "overview.yaml"]
+                  "files": [
+                    "_triage.yaml",
+                    "overview.yaml"
+                  ],
+                  "folders": []
                 }
               }
             ]
@@ -100,7 +144,11 @@
         "order": 1,
         "_meta": {
           "path": "entities/business-units/enterprise-bu",
-          "files": ["_triage.yaml", "overview.yaml"]
+          "files": [
+            "_triage.yaml",
+            "overview.yaml"
+          ],
+          "folders": []
         },
         "children": [
           {
@@ -110,7 +158,14 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering",
-              "files": ["_triage.yaml", "api_integrations.yaml", "overview.yaml", "system_architecture.yaml", "tech_stack.yaml"]
+              "files": [
+                "_triage.yaml",
+                "api_integrations.yaml",
+                "overview.yaml",
+                "system_architecture.yaml",
+                "tech_stack.yaml"
+              ],
+              "folders": []
             },
             "children": [
               {
@@ -120,7 +175,11 @@
                 "order": 3,
                 "_meta": {
                   "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations",
-                  "files": ["_triage.yaml", "overview.yaml"]
+                  "files": [
+                    "_triage.yaml",
+                    "overview.yaml"
+                  ],
+                  "folders": []
                 }
               }
             ]
@@ -132,7 +191,14 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/enterprise-bu/functions/enterprise-sales",
-              "files": ["_triage.yaml", "overview.yaml", "pipeline.yaml", "playbooks.yaml", "territories.yaml"]
+              "files": [
+                "_triage.yaml",
+                "overview.yaml",
+                "pipeline.yaml",
+                "playbooks.yaml",
+                "territories.yaml"
+              ],
+              "folders": []
             },
             "children": [
               {
@@ -142,7 +208,11 @@
                 "order": 3,
                 "_meta": {
                   "path": "entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae",
-                  "files": ["_triage.yaml", "overview.yaml"]
+                  "files": [
+                    "_triage.yaml",
+                    "overview.yaml"
+                  ],
+                  "folders": []
                 }
               }
             ]

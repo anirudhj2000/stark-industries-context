@@ -14,7 +14,7 @@
     "properties": {
       "structure_type": {
         "type": "string",
-        "enum": ["flat", "functional", "divisional", "product_centric", "matrix"]
+        "enum": ["flat", "functional", "divisional", "product_centric", "matrix", "enterprise", "consumer"]
       },
       "version": {
         "type": "integer",
