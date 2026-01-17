@@ -85,6 +85,24 @@
                 }
               }
             ]
+          },
+          {
+            "name": "consumer-sales",
+            "display_name": "Sales",
+            "type": "function",
+            "order": 2,
+            "_meta": {
+              "path": "entities/business-units/consumer/functions/consumer-sales",
+              "files": [
+                "_triage.yaml",
+                "overview.yaml",
+                "pipeline.yaml",
+                "playbooks.yaml",
+                "territories.yaml"
+              ],
+              "folders": []
+            },
+            "children": []
           }
         ]
       },
