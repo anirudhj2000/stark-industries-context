@@ -88,16 +88,6 @@
                   "path": "entities/business-units/consumer/functions/consumer-sales/teams/consumer-enterprise",
                   "files": ["_triage.yaml", "overview.yaml"]
                 }
-              },
-              {
-                "name": "consumer-smb",
-                "display_name": "SMB",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/consumer/functions/consumer-sales/teams/consumer-smb",
-                  "files": ["_triage.yaml", "overview.yaml"]
-                }
               }
             ]
           }
