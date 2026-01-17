@@ -1,5 +1,5 @@
 {
-  "structure_type": "enterprise",
+  "structure_type": "matrix",
   "organization": {
     "name": "parallelloop",
     "display_name": "Parallelloop AI",
@@ -90,8 +90,7 @@
               "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering",
               "files": [],
               "folders": []
-            },
-            "children": []
+            }
           }
         ]
       }

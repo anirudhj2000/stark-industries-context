@@ -2,9 +2,9 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: enterprise
+structure_type: matrix
 template: enterprise
-generated_at: '2026-01-17T12:18:57.182271+00:00'
+generated_at: '2026-01-17T14:52:01.513376+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -87,26 +87,3 @@ entities:
       order: 2
       level: function
       path: entities/business-units/enterprise-bu/functions/enterprise-engineering
-      children:
-      - name: Integrations
-        slug: enterprise-integrations
-        description: Integrations team
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations
-    - name: Sales
-      slug: enterprise-sales
-      description: Sales function
-      entity_type: function
-      order: 2
-      level: function
-      path: entities/business-units/enterprise-bu/functions/enterprise-sales
-      children:
-      - name: Account Executives
-        slug: enterprise-ae
-        description: AE team
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae
