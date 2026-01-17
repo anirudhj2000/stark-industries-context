@@ -1,69 +1,45 @@
 {
-  "structure_type": "enterprise",
+  "structure_type": "matrix",
   "organization": {
-    "name": "retail",
-    "display_name": "Retail",
-    "type": "lob",
+    "name": "north-america",
+    "display_name": "North America",
+    "type": "region",
     "order": 1,
     "_meta": {
-      "path": "entities/lob/retail",
+      "path": "entities/region/north-america",
       "files": [],
       "folders": []
     },
     "children": [
       {
-        "name": "marketing",
-        "display_name": "Marketing",
+        "name": "engineering",
+        "display_name": "Engineering",
         "type": "function",
         "order": 2,
         "_meta": {
-          "path": "entities/function/marketing",
+          "path": "entities/region/north-america/functions/engineering",
           "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "brand-team",
-            "display_name": "Brand Team",
+            "name": "api-team",
+            "display_name": "API Team",
             "type": "team",
             "order": 3,
             "_meta": {
-              "path": "entities/team/brand-team",
+              "path": "entities/region/north-america/functions/engineering/teams/api-team",
               "files": [],
               "folders": []
             }
           },
           {
-            "name": "digital-team",
-            "display_name": "Digital Team",
+            "name": "platform-team",
+            "display_name": "Platform Team",
             "type": "team",
             "order": 3,
             "_meta": {
-              "path": "entities/team/digital-team",
-              "files": [],
-              "folders": []
-            }
-          }
-        ]
-      },
-      {
-        "name": "sales",
-        "display_name": "Sales",
-        "type": "function",
-        "order": 2,
-        "_meta": {
-          "path": "entities/function/sales",
-          "files": [],
-          "folders": []
-        },
-        "children": [
-          {
-            "name": "inside-sales",
-            "display_name": "Inside Sales",
-            "type": "team",
-            "order": 3,
-            "_meta": {
-              "path": "entities/team/inside-sales",
+              "path": "entities/region/north-america/functions/engineering/teams/platform-team",
               "files": [],
               "folders": []
             }
