@@ -1,5 +1,5 @@
 {
-  "structure_type": "smb",
+  "structure_type": "functional",
   "organization": {
     "name": "parallelloop",
     "display_name": "Parallelloop AI",
@@ -40,6 +40,45 @@
             "order": 2,
             "_meta": {
               "path": "entities/departments/engineering/teams/frontend",
+              "files": [],
+              "folders": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "marketing",
+        "display_name": "Marketing",
+        "type": "department",
+        "order": 1,
+        "_meta": {
+          "path": "entities/departments/marketing",
+          "files": [
+            "channels.yaml",
+            "campaigns.yaml",
+            "brand_assets.yaml"
+          ],
+          "folders": []
+        },
+        "children": [
+          {
+            "name": "brand",
+            "display_name": "Brand",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/marketing/teams/brand",
+              "files": [],
+              "folders": []
+            }
+          },
+          {
+            "name": "growth",
+            "display_name": "Growth",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/marketing/teams/growth",
               "files": [],
               "folders": []
             }

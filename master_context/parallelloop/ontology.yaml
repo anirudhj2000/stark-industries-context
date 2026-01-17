@@ -2,9 +2,9 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: smb
+structure_type: functional
 template: smb
-generated_at: '2026-01-17T20:32:23.639201+00:00'
+generated_at: '2026-01-17T21:04:56.651614+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -52,6 +52,28 @@ entities:
       order: 2
       level: team
       path: entities/departments/engineering/teams/frontend
+  - name: Marketing
+    slug: marketing
+    description: ''
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/departments/marketing
+    children:
+    - name: Brand
+      slug: brand
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/marketing/teams/brand
+    - name: Growth
+      slug: growth
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/marketing/teams/growth
   - name: Product
     slug: product
     description: Product department
