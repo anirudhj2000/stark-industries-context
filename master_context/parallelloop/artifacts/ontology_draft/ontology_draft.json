@@ -55,7 +55,20 @@
           "path": "entities/departments/product",
           "files": [],
           "folders": []
-        }
+        },
+        "children": [
+          {
+            "name": "smb-product",
+            "display_name": "SMB product",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/product/teams/smb-product",
+              "files": [],
+              "folders": []
+            }
+          }
+        ]
       },
       {
         "name": "sales",

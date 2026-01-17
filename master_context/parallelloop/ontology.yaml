@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: smb
 template: smb
-generated_at: '2026-01-17T20:13:08.619035+00:00'
+generated_at: '2026-01-17T20:32:23.639201+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -59,6 +59,14 @@ entities:
     order: 1
     level: department
     path: entities/departments/product
+    children:
+    - name: SMB product
+      slug: smb-product
+      description: SMB product
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/product/teams/smb-product
   - name: Sales
     slug: sales
     description: Sales department

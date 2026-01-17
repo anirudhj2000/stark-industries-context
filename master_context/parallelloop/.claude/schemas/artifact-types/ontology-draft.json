@@ -13,8 +13,7 @@
     "required": ["structure_type"],
     "properties": {
       "structure_type": {
-        "type": "string",
-        "enum": ["flat", "functional", "divisional", "product_centric", "matrix", "enterprise", "consumer"]
+        "type": "string"
       },
       "version": {
         "type": "integer",
