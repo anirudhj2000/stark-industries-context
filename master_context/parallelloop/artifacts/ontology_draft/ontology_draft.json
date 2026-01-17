@@ -87,22 +87,6 @@
             ]
           },
           {
-            "name": "consumer-product",
-            "display_name": "Product",
-            "type": "function",
-            "order": 2,
-            "_meta": {
-              "path": "entities/business-units/consumer/functions/consumer-product",
-              "files": [
-                "_triage.yaml",
-                "metrics.yaml",
-                "overview.yaml",
-                "roadmap.yaml"
-              ],
-              "folders": []
-            }
-          },
-          {
             "name": "consumer-sales",
             "display_name": "Sales",
             "type": "function",
