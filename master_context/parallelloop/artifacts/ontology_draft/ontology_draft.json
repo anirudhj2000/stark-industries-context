@@ -1,45 +1,58 @@
 {
   "structure_type": "enterprise",
   "organization": {
-    "name": "retail",
-    "display_name": "Retail",
-    "type": "lob",
-    "order": 1,
+    "name": "parallelloop",
+    "display_name": "Parallelloop AI",
+    "type": "organization",
+    "order": 0,
     "_meta": {
-      "path": "entities/lob/retail",
+      "path": "entities/organization",
       "files": [],
       "folders": []
     },
     "children": [
       {
-        "name": "marketing",
-        "display_name": "Marketing",
-        "type": "function",
-        "order": 2,
+        "name": "indonesia-unit",
+        "display_name": "Indonesia Unit",
+        "type": "business-unit",
+        "order": 1,
         "_meta": {
-          "path": "entities/lob/retail/functions/marketing",
+          "path": "entities/lob/indonesia-unit",
           "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "brand-team",
-            "display_name": "Brand Team",
-            "type": "team",
-            "order": 3,
+            "name": "engineering",
+            "display_name": "Engineering",
+            "type": "function",
+            "order": 2,
             "_meta": {
-              "path": "entities/lob/retail/functions/marketing/teams/brand-team",
+              "path": "entities/lob/indonesia-unit/functions/engineering",
               "files": [],
               "folders": []
-            }
+            },
+            "children": [
+              {
+                "name": "backend",
+                "display_name": "Backend",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/lob/indonesia-unit/functions/engineering/teams/backend",
+                  "files": [],
+                  "folders": []
+                }
+              }
+            ]
           },
           {
-            "name": "digital-team",
-            "display_name": "Digital Team",
-            "type": "team",
-            "order": 3,
+            "name": "sales",
+            "display_name": "Sales",
+            "type": "function",
+            "order": 2,
             "_meta": {
-              "path": "entities/lob/retail/functions/marketing/teams/digital-team",
+              "path": "entities/lob/indonesia-unit/functions/sales",
               "files": [],
               "folders": []
             }
@@ -47,23 +60,23 @@
         ]
       },
       {
-        "name": "sales",
-        "display_name": "Sales",
-        "type": "function",
-        "order": 2,
+        "name": "thailand-unit",
+        "display_name": "Thailand Unit",
+        "type": "business-unit",
+        "order": 1,
         "_meta": {
-          "path": "entities/lob/retail/functions/sales",
+          "path": "entities/lob/thailand-unit",
           "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "inside-sales",
-            "display_name": "Inside Sales",
-            "type": "team",
-            "order": 3,
+            "name": "marketing",
+            "display_name": "Marketing",
+            "type": "function",
+            "order": 2,
             "_meta": {
-              "path": "entities/lob/retail/functions/sales/teams/inside-sales",
+              "path": "entities/lob/thailand-unit/functions/marketing",
               "files": [],
               "folders": []
             }
