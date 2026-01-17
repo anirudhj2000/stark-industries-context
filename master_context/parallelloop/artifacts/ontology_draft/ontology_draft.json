@@ -1,45 +1,69 @@
 {
-  "structure_type": "matrix",
+  "structure_type": "enterprise",
   "organization": {
-    "name": "north-america",
-    "display_name": "North America",
-    "type": "region",
+    "name": "retail",
+    "display_name": "Retail",
+    "type": "lob",
     "order": 1,
     "_meta": {
-      "path": "entities/region/north-america",
+      "path": "entities/lob/retail",
       "files": [],
       "folders": []
     },
     "children": [
       {
-        "name": "engineering",
-        "display_name": "Engineering",
+        "name": "marketing",
+        "display_name": "Marketing",
         "type": "function",
         "order": 2,
         "_meta": {
-          "path": "entities/region/north-america/functions/engineering",
+          "path": "entities/lob/retail/functions/marketing",
           "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "api-team",
-            "display_name": "API Team",
+            "name": "brand-team",
+            "display_name": "Brand Team",
             "type": "team",
             "order": 3,
             "_meta": {
-              "path": "entities/region/north-america/functions/engineering/teams/api-team",
+              "path": "entities/lob/retail/functions/marketing/teams/brand-team",
               "files": [],
               "folders": []
             }
           },
           {
-            "name": "platform-team",
-            "display_name": "Platform Team",
+            "name": "digital-team",
+            "display_name": "Digital Team",
             "type": "team",
             "order": 3,
             "_meta": {
-              "path": "entities/region/north-america/functions/engineering/teams/platform-team",
+              "path": "entities/lob/retail/functions/marketing/teams/digital-team",
+              "files": [],
+              "folders": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "sales",
+        "display_name": "Sales",
+        "type": "function",
+        "order": 2,
+        "_meta": {
+          "path": "entities/lob/retail/functions/sales",
+          "files": [],
+          "folders": []
+        },
+        "children": [
+          {
+            "name": "inside-sales",
+            "display_name": "Inside Sales",
+            "type": "team",
+            "order": 3,
+            "_meta": {
+              "path": "entities/lob/retail/functions/sales/teams/inside-sales",
               "files": [],
               "folders": []
             }
