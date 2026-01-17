@@ -1,0 +1,75 @@
+{
+  "structure_type": "agency",
+  "organization": {
+    "name": "parallelloop",
+    "display_name": "Parallelloop AI",
+    "type": "organization",
+    "order": 0,
+    "_meta": {
+      "path": "entities/organization",
+      "files": [],
+      "folders": []
+    },
+    "children": [
+      {
+        "name": "acme-corp",
+        "display_name": "Acme Corp",
+        "type": "client",
+        "order": 1,
+        "_meta": {
+          "path": "entities/clients/acme-corp",
+          "files": [],
+          "folders": []
+        },
+        "children": [
+          {
+            "name": "acme-mobile",
+            "display_name": "Mobile App",
+            "type": "project",
+            "order": 2,
+            "_meta": {
+              "path": "entities/clients/acme-corp/projects/acme-mobile",
+              "files": [],
+              "folders": []
+            }
+          },
+          {
+            "name": "acme-website",
+            "display_name": "Website Redesign",
+            "type": "project",
+            "order": 2,
+            "_meta": {
+              "path": "entities/clients/acme-corp/projects/acme-website",
+              "files": [],
+              "folders": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "techstart",
+        "display_name": "TechStart",
+        "type": "client",
+        "order": 1,
+        "_meta": {
+          "path": "entities/clients/techstart",
+          "files": [],
+          "folders": []
+        },
+        "children": [
+          {
+            "name": "techstart-mvp",
+            "display_name": "MVP Build",
+            "type": "project",
+            "order": 2,
+            "_meta": {
+              "path": "entities/clients/techstart/projects/techstart-mvp",
+              "files": [],
+              "folders": []
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
