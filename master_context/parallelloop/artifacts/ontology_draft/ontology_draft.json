@@ -93,6 +93,22 @@
             }
           }
         ]
+      },
+      {
+        "name": "legal",
+        "display_name": "Legal",
+        "type": "department",
+        "order": 1,
+        "_meta": {
+          "path": "entities/departments/legal",
+          "files": [
+            "overview.yaml",
+            "_triage.yaml",
+            "contracts.yaml",
+            "intellectual_property.yaml"
+          ],
+          "folders": []
+        }
       }
     ]
   }

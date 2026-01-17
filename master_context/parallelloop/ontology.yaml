@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: matrix
 template: enterprise
-generated_at: '2026-01-17T14:52:01.513376+00:00'
+generated_at: '2026-01-17T14:53:18.005146+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -16,6 +16,11 @@ levels:
   order: 1
   skipped: false
   template_name: Business Unit
+- name: Department
+  slug: department
+  order: 1
+  skipped: false
+  template_name: null
 - name: Function
   slug: function
   order: 2
@@ -87,3 +92,10 @@ entities:
       order: 2
       level: function
       path: entities/business-units/enterprise-bu/functions/enterprise-engineering
+  - name: Legal
+    slug: legal
+    description: ''
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/departments/legal
