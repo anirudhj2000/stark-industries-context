@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: enterprise
 template: enterprise
-generated_at: '2026-01-17T08:21:55.488295+00:00'
+generated_at: '2026-01-17T09:58:01.599871+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -29,54 +29,84 @@ levels:
 entities:
 - name: Parallelloop AI
   slug: parallelloop
-  description: Root organization entity
+  description: Root organization
   entity_type: organization
   order: 0
   level: organization
   path: entities/organization
   children:
-  - name: Indonesia Unit
-    slug: indonesia-unit
-    description: ''
+  - name: Consumer
+    slug: consumer
+    description: Consumer products
     entity_type: business-unit
     order: 1
     level: business-unit
-    path: entities/lob/indonesia-unit
+    path: entities/organization/business-units/consumer
     children:
     - name: Engineering
-      slug: engineering
-      description: ''
+      slug: consumer-engineering
+      description: Engineering function
       entity_type: function
       order: 2
       level: function
-      path: entities/lob/indonesia-unit/functions/engineering
+      path: entities/organization/business-units/consumer/functions/consumer-engineering
       children:
-      - name: Backend
-        slug: backend
-        description: Backend
+      - name: Mobile
+        slug: consumer-mobile
+        description: Mobile team
         entity_type: team
         order: 3
         level: team
-        path: entities/lob/indonesia-unit/functions/engineering/teams/backend
-    - name: Sales
-      slug: sales
-      description: Sales
+        path: entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile
+      - name: Platform
+        slug: consumer-platform
+        description: Platform team
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-platform
+    - name: Product
+      slug: consumer-product
+      description: Product function
       entity_type: function
       order: 2
       level: function
-      path: entities/lob/indonesia-unit/functions/sales
-  - name: Thailand Unit
-    slug: thailand-unit
-    description: Thailand Unit
+      path: entities/organization/business-units/consumer/functions/consumer-product
+  - name: Enterprise
+    slug: enterprise-bu
+    description: Enterprise products
     entity_type: business-unit
     order: 1
     level: business-unit
-    path: entities/lob/thailand-unit
+    path: entities/organization/business-units/enterprise-bu
     children:
-    - name: Marketing
-      slug: marketing
-      description: Marketing
+    - name: Engineering
+      slug: enterprise-engineering
+      description: Engineering function
       entity_type: function
       order: 2
       level: function
-      path: entities/lob/thailand-unit/functions/marketing
+      path: entities/organization/business-units/enterprise-bu/functions/enterprise-engineering
+      children:
+      - name: Integrations
+        slug: enterprise-integrations
+        description: Integrations team
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/organization/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations
+    - name: Sales
+      slug: enterprise-sales
+      description: Sales function
+      entity_type: function
+      order: 2
+      level: function
+      path: entities/organization/business-units/enterprise-bu/functions/enterprise-sales
+      children:
+      - name: Account Executives
+        slug: enterprise-ae
+        description: AE team
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/organization/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae

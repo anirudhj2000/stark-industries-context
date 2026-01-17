@@ -1,11 +1,5 @@
 {
   "structure_type": "enterprise",
-  "levels": [
-    {"entity_type": "organization", "order": 0, "path_pattern": "entities/organization"},
-    {"entity_type": "business-unit", "order": 1, "path_pattern": "entities/lob/{name}"},
-    {"entity_type": "function", "order": 2, "path_pattern": "entities/lob/{parent}/functions/{name}"},
-    {"entity_type": "team", "order": 3, "path_pattern": "entities/lob/{grandparent}/functions/{parent}/teams/{name}"}
-  ],
   "organization": {
     "name": "parallelloop",
     "display_name": "Parallelloop AI",
@@ -13,129 +7,125 @@
     "order": 0,
     "_meta": {
       "path": "entities/organization",
-      "files": ["overview.yaml", "brand.yaml", "strategy.yaml", "governance.yaml", "_triage.yaml", "competitors.yaml", "vendors.yaml", "partners.yaml", "investors.yaml"],
+      "files": [],
       "folders": []
     },
     "children": [
       {
-        "name": "indonesia-unit",
-        "display_name": "Indonesia Unit",
+        "name": "consumer",
+        "display_name": "Consumer",
         "type": "business-unit",
         "order": 1,
         "_meta": {
-          "path": "entities/lob/indonesia-unit",
-          "files": ["overview.yaml", "_triage.yaml"],
+          "path": "entities/organization/business-units/consumer",
+          "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "engineering",
+            "name": "consumer-engineering",
             "display_name": "Engineering",
             "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/lob/indonesia-unit/functions/engineering",
-              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"],
+              "path": "entities/organization/business-units/consumer/functions/consumer-engineering",
+              "files": [],
               "folders": []
             },
             "children": [
               {
-                "name": "backend",
-                "display_name": "Backend",
+                "name": "consumer-mobile",
+                "display_name": "Mobile",
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/lob/indonesia-unit/functions/engineering/teams/backend",
-                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"],
+                  "path": "entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile",
+                  "files": [],
                   "folders": []
-                },
-                "children": []
+                }
               },
               {
-                "name": "frontend",
-                "display_name": "Frontend",
+                "name": "consumer-platform",
+                "display_name": "Platform",
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/lob/indonesia-unit/functions/engineering/teams/frontend",
-                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "design_tokens.yaml", "component_library.yaml"],
+                  "path": "entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-platform",
+                  "files": [],
                   "folders": []
-                },
-                "children": []
+                }
               }
             ]
           },
           {
-            "name": "sales",
-            "display_name": "Sales",
+            "name": "consumer-product",
+            "display_name": "Product",
             "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/lob/indonesia-unit/functions/sales",
-              "files": ["overview.yaml", "_triage.yaml", "pipeline.yaml", "territories.yaml", "playbooks.yaml"],
+              "path": "entities/organization/business-units/consumer/functions/consumer-product",
+              "files": [],
               "folders": []
-            },
-            "children": []
+            }
           }
         ]
       },
       {
-        "name": "thailand-unit",
-        "display_name": "Thailand Unit",
+        "name": "enterprise-bu",
+        "display_name": "Enterprise",
         "type": "business-unit",
         "order": 1,
         "_meta": {
-          "path": "entities/lob/thailand-unit",
-          "files": ["overview.yaml", "_triage.yaml"],
+          "path": "entities/organization/business-units/enterprise-bu",
+          "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "marketing",
-            "display_name": "Marketing",
+            "name": "enterprise-engineering",
+            "display_name": "Engineering",
             "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/lob/thailand-unit/functions/marketing",
-              "files": ["overview.yaml", "_triage.yaml", "channels.yaml", "campaigns.yaml", "brand_assets.yaml"],
-              "folders": []
-            },
-            "children": []
-          },
-          {
-            "name": "sales",
-            "display_name": "Sales",
-            "type": "function",
-            "order": 2,
-            "_meta": {
-              "path": "entities/lob/thailand-unit/functions/sales",
-              "files": ["overview.yaml", "_triage.yaml", "pipeline.yaml", "territories.yaml", "playbooks.yaml"],
+              "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-engineering",
+              "files": [],
               "folders": []
             },
             "children": [
               {
-                "name": "b2b",
-                "display_name": "B2B",
+                "name": "enterprise-integrations",
+                "display_name": "Integrations",
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/lob/thailand-unit/functions/sales/teams/b2b",
-                  "files": ["overview.yaml", "_triage.yaml"],
+                  "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations",
+                  "files": [],
                   "folders": []
-                },
-                "children": []
-              },
+                }
+              }
+            ]
+          },
+          {
+            "name": "enterprise-sales",
+            "display_name": "Sales",
+            "type": "function",
+            "order": 2,
+            "_meta": {
+              "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-sales",
+              "files": [],
+              "folders": []
+            },
+            "children": [
               {
-                "name": "d2c",
-                "display_name": "D2C",
+                "name": "enterprise-ae",
+                "display_name": "Account Executives",
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/lob/thailand-unit/functions/sales/teams/d2c",
-                  "files": ["overview.yaml", "_triage.yaml"],
+                  "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae",
+                  "files": [],
                   "folders": []
-                },
-                "children": []
+                }
               }
             ]
           }
