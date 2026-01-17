@@ -1,0 +1,40 @@
+id: team_78b71c6d_d2c-sales
+type: team
+name: D2c Sales
+slug: d2c-sales
+status: active
+external_ids:
+  team_id: 78b71c6d-3e4b-4222-92bd-9533358e1922
+  organization_slug: parallelloop
+profile:
+  description: 'Team: D2c Sales'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: 22749482-e28e-42ab-a5b2-0fc08d34e83f
+  entity_path: entities/departments/sales/teams/d2c-sales
+  level: team
+roster:
+- email: anirudh@parallelloop.ai
+  name: Anirudh Joshi
+  membership_id: a298b794-9814-45aa-b53f-37887da3ca9c
+  role: OWNER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-17T21:07:13.208969+00:00'
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-01-17T21:07:13.923705+00:00'
+  member_count: 1
+  active_member_count: 1
+change_history:
+- operation: roster_updated
+  timestamp: '2026-01-17T21:07:13.923705+00:00'
+  source: member_added
