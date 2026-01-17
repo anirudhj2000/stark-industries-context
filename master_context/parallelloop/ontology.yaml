@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: matrix
 template: null
-generated_at: '2026-01-17T11:06:41.924640+00:00'
+generated_at: '2026-01-17T11:29:16.505551+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -13,6 +13,11 @@ levels:
   template_name: null
 - name: Business Unit
   slug: business_unit
+  order: 1
+  skipped: false
+  template_name: null
+- name: Business Unit
+  slug: business-unit
   order: 1
   skipped: false
   template_name: null
@@ -65,13 +70,6 @@ entities:
         order: 3
         level: team
         path: entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform
-    - name: Product
-      slug: consumer-product
-      description: ''
-      entity_type: function
-      order: 2
-      level: function
-      path: entities/business-units/consumer/functions/consumer-product
     - name: Sales
       slug: consumer-sales
       description: ''
@@ -79,14 +77,6 @@ entities:
       order: 2
       level: function
       path: entities/business-units/consumer/functions/consumer-sales
-      children:
-      - name: Enterprise
-        slug: consumer-enterprise
-        description: ''
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/business-units/consumer/functions/consumer-sales/teams/consumer-enterprise
   - name: Enterprise
     slug: enterprise-bu
     description: ''
