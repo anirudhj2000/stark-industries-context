@@ -2,111 +2,146 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: enterprise
-template: enterprise
-generated_at: '2026-01-17T09:58:01.599871+00:00'
+structure_type: product_centric
+template: null
+generated_at: '2026-01-17T10:39:25.832615+00:00'
 levels:
 - name: Organization
   slug: organization
   order: 0
   skipped: false
-  template_name: Organization
-- name: Business Unit
-  slug: business-unit
+  template_name: null
+- name: Product
+  slug: product
   order: 1
   skipped: false
-  template_name: Business Unit
+  template_name: null
 - name: Function
   slug: function
   order: 2
   skipped: false
-  template_name: Function
+  template_name: null
 - name: Team
   slug: team
   order: 3
   skipped: false
-  template_name: Team
+  template_name: null
 entities:
-- name: Parallelloop AI
-  slug: parallelloop
-  description: Root organization
+- name: Organization
+  slug: organization
+  description: ''
   entity_type: organization
   order: 0
   level: organization
   path: entities/organization
   children:
-  - name: Consumer
-    slug: consumer
-    description: Consumer products
-    entity_type: business-unit
+  - name: Consumer App
+    slug: consumer-app
+    description: ''
+    entity_type: product
     order: 1
-    level: business-unit
-    path: entities/organization/business-units/consumer
+    level: product
+    path: entities/organization/products/consumer-app
     children:
     - name: Engineering
-      slug: consumer-engineering
-      description: Engineering function
+      slug: engineering
+      description: ''
       entity_type: function
       order: 2
       level: function
-      path: entities/organization/business-units/consumer/functions/consumer-engineering
+      path: entities/organization/products/consumer-app/functions/engineering
       children:
-      - name: Mobile
-        slug: consumer-mobile
-        description: Mobile team
+      - name: Backend
+        slug: backend
+        description: ''
         entity_type: team
         order: 3
         level: team
-        path: entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile
-      - name: Platform
-        slug: consumer-platform
-        description: Platform team
+        path: entities/organization/products/consumer-app/functions/engineering/teams/backend
+      - name: Frontend
+        slug: frontend
+        description: ''
         entity_type: team
         order: 3
         level: team
-        path: entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-platform
+        path: entities/organization/products/consumer-app/functions/engineering/teams/frontend
+    - name: Marketing
+      slug: marketing
+      description: ''
+      entity_type: function
+      order: 2
+      level: function
+      path: entities/organization/products/consumer-app/functions/marketing
+      children:
+      - name: Brand
+        slug: brand
+        description: ''
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/organization/products/consumer-app/functions/marketing/teams/brand
+      - name: Content
+        slug: content
+        description: ''
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/organization/products/consumer-app/functions/marketing/teams/content
+      - name: Growth
+        slug: growth
+        description: ''
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/organization/products/consumer-app/functions/marketing/teams/growth
+    - name: People
+      slug: people
+      description: ''
+      entity_type: function
+      order: 2
+      level: function
+      path: entities/organization/products/consumer-app/functions/people
+      children:
+      - name: People Ops
+        slug: people-ops
+        description: ''
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/organization/products/consumer-app/functions/people/teams/people-ops
+      - name: Recruiting
+        slug: recruiting
+        description: ''
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/organization/products/consumer-app/functions/people/teams/recruiting
     - name: Product
-      slug: consumer-product
-      description: Product function
+      slug: product
+      description: ''
       entity_type: function
       order: 2
       level: function
-      path: entities/organization/business-units/consumer/functions/consumer-product
-  - name: Enterprise
-    slug: enterprise-bu
-    description: Enterprise products
-    entity_type: business-unit
-    order: 1
-    level: business-unit
-    path: entities/organization/business-units/enterprise-bu
-    children:
-    - name: Engineering
-      slug: enterprise-engineering
-      description: Engineering function
-      entity_type: function
-      order: 2
-      level: function
-      path: entities/organization/business-units/enterprise-bu/functions/enterprise-engineering
-      children:
-      - name: Integrations
-        slug: enterprise-integrations
-        description: Integrations team
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/organization/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations
+      path: entities/organization/products/consumer-app/functions/product
     - name: Sales
-      slug: enterprise-sales
-      description: Sales function
+      slug: sales
+      description: ''
       entity_type: function
       order: 2
       level: function
-      path: entities/organization/business-units/enterprise-bu/functions/enterprise-sales
+      path: entities/organization/products/consumer-app/functions/sales
       children:
-      - name: Account Executives
-        slug: enterprise-ae
-        description: AE team
+      - name: Enterprise
+        slug: enterprise
+        description: ''
         entity_type: team
         order: 3
         level: team
-        path: entities/organization/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae
+        path: entities/organization/products/consumer-app/functions/sales/teams/enterprise
+      - name: SMB
+        slug: smb
+        description: ''
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/organization/products/consumer-app/functions/sales/teams/smb
