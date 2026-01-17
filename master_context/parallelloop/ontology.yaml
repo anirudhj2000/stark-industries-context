@@ -2,126 +2,68 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: functional
-template: null
-generated_at: '2026-01-17T03:44:54.688265+00:00'
+structure_type: enterprise
+template: enterprise
+generated_at: '2026-01-17T03:53:22.019742+00:00'
 levels:
-- name: Organization
-  slug: organization
-  order: 0
-  skipped: false
-  template_name: null
-- name: Department
-  slug: department
+- name: LOB
+  slug: lob
   order: 1
   skipped: false
-  template_name: null
-- name: Team
-  slug: team
+  template_name: LOB
+- name: Function
+  slug: function
   order: 2
   skipped: false
-  template_name: null
+  template_name: Function
+- name: Team
+  slug: team
+  order: 3
+  skipped: false
+  template_name: Team
 entities:
-- name: Organization
-  slug: organization
-  description: ''
-  entity_type: organization
-  order: 0
-  level: organization
-  path: entities/organization
+- name: Retail
+  slug: retail
+  description: Consumer retail business unit
+  entity_type: lob
+  order: 1
+  level: lob
+  path: entities/lob/retail
   children:
-  - name: Customer Success
-    slug: customer-success
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/function/customer-success
+  - name: Marketing
+    slug: marketing
+    description: Brand strategy and marketing
+    entity_type: function
+    order: 2
+    level: function
+    path: entities/function/marketing
     children:
-    - name: Onboarding
-      slug: onboarding
-      description: ''
+    - name: Brand Team
+      slug: brand-team
+      description: Brand identity and design
       entity_type: team
-      order: 2
+      order: 3
       level: team
-      path: entities/function/customer-success/teams/onboarding
-    - name: Renewals
-      slug: renewals
-      description: ''
+      path: entities/team/brand-team
+    - name: Digital Team
+      slug: digital-team
+      description: Digital marketing and SEO
       entity_type: team
-      order: 2
+      order: 3
       level: team
-      path: entities/function/customer-success/teams/renewals
-    - name: Support
-      slug: support
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/function/customer-success/teams/support
-  - name: Engineering
-    slug: engineering
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/function/engineering
-    children:
-    - name: Backend
-      slug: backend
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/function/engineering/teams/backend
-    - name: Frontend
-      slug: frontend
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/function/engineering/teams/frontend
-  - name: People
-    slug: people
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/function/people
-    children:
-    - name: People Ops
-      slug: people-ops
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/function/people/teams/people-ops
-    - name: Recruiting
-      slug: recruiting
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/function/people/teams/recruiting
+      path: entities/team/digital-team
   - name: Sales
     slug: sales
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
+    description: Sales and business development
+    entity_type: function
+    order: 2
+    level: function
     path: entities/function/sales
     children:
-    - name: Enterprise
-      slug: enterprise
-      description: ''
+    - name: Inside Sales
+      slug: inside-sales
+      description: Inside sales team
       entity_type: team
-      order: 2
+      order: 3
       level: team
-      path: entities/function/sales/teams/enterprise
-    - name: SMB
-      slug: smb
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/function/sales/teams/smb
+      path: entities/team/inside-sales
