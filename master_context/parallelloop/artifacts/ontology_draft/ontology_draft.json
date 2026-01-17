@@ -1,259 +1,129 @@
 {
-  "structure_type": "product_centric",
+  "structure_type": "enterprise",
   "organization": {
-    "name": "organization",
-    "display_name": "Organization",
+    "name": "parallelloop",
+    "display_name": "Parallelloop AI",
     "type": "organization",
     "order": 0,
     "_meta": {
       "path": "entities/organization",
-      "files": [
-        "_triage.yaml",
-        "brand.yaml",
-        "competitors.yaml",
-        "governance.yaml",
-        "investors.yaml",
-        "overview.yaml",
-        "partners.yaml",
-        "strategy.yaml",
-        "vendors.yaml"
-      ],
+      "files": [],
       "folders": []
     },
     "children": [
       {
-        "name": "consumer-app",
-        "display_name": "Consumer App",
-        "type": "product",
+        "name": "consumer",
+        "display_name": "Consumer",
+        "type": "business-unit",
         "order": 1,
         "_meta": {
-          "path": "entities/organization/products/consumer-app",
-          "files": [
-            "_triage.yaml",
-            "overview.yaml"
-          ],
+          "path": "entities/organization/business-units/consumer",
+          "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "engineering",
+            "name": "consumer-engineering",
             "display_name": "Engineering",
             "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/organization/products/consumer-app/functions/engineering",
-              "files": [
-                "_triage.yaml",
-                "api_integrations.yaml",
-                "overview.yaml",
-                "system_architecture.yaml",
-                "tech_stack.yaml"
-              ],
+              "path": "entities/organization/business-units/consumer/functions/consumer-engineering",
+              "files": [],
               "folders": []
             },
             "children": [
               {
-                "name": "backend",
-                "display_name": "Backend",
+                "name": "consumer-mobile",
+                "display_name": "Mobile",
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/organization/products/consumer-app/functions/engineering/teams/backend",
-                  "files": [
-                    "_triage.yaml",
-                    "api_integrations.yaml",
-                    "overview.yaml",
-                    "system_architecture.yaml",
-                    "tech_stack.yaml"
-                  ],
+                  "path": "entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile",
+                  "files": [],
                   "folders": []
                 }
               },
               {
-                "name": "frontend",
-                "display_name": "Frontend",
+                "name": "consumer-platform",
+                "display_name": "Platform",
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/organization/products/consumer-app/functions/engineering/teams/frontend",
-                  "files": [
-                    "_triage.yaml",
-                    "component_library.yaml",
-                    "design_tokens.yaml",
-                    "overview.yaml",
-                    "tech_stack.yaml"
-                  ],
+                  "path": "entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-platform",
+                  "files": [],
                   "folders": []
                 }
               }
             ]
           },
           {
-            "name": "marketing",
-            "display_name": "Marketing",
-            "type": "function",
-            "order": 2,
-            "_meta": {
-              "path": "entities/organization/products/consumer-app/functions/marketing",
-              "files": [
-                "_triage.yaml",
-                "brand_assets.yaml",
-                "campaigns.yaml",
-                "channels.yaml",
-                "overview.yaml"
-              ],
-              "folders": []
-            },
-            "children": [
-              {
-                "name": "brand",
-                "display_name": "Brand",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/organization/products/consumer-app/functions/marketing/teams/brand",
-                  "files": [
-                    "_triage.yaml",
-                    "overview.yaml"
-                  ],
-                  "folders": []
-                }
-              },
-              {
-                "name": "content",
-                "display_name": "Content",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/organization/products/consumer-app/functions/marketing/teams/content",
-                  "files": [
-                    "_triage.yaml",
-                    "overview.yaml"
-                  ],
-                  "folders": []
-                }
-              },
-              {
-                "name": "growth",
-                "display_name": "Growth",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/organization/products/consumer-app/functions/marketing/teams/growth",
-                  "files": [
-                    "_triage.yaml",
-                    "overview.yaml"
-                  ],
-                  "folders": []
-                }
-              }
-            ]
-          },
-          {
-            "name": "people",
-            "display_name": "People",
-            "type": "function",
-            "order": 2,
-            "_meta": {
-              "path": "entities/organization/products/consumer-app/functions/people",
-              "files": [
-                "_triage.yaml",
-                "hiring_plan.yaml",
-                "org_chart.yaml",
-                "overview.yaml",
-                "programs.yaml"
-              ],
-              "folders": []
-            },
-            "children": [
-              {
-                "name": "people-ops",
-                "display_name": "People Ops",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/organization/products/consumer-app/functions/people/teams/people-ops",
-                  "files": [
-                    "_triage.yaml",
-                    "overview.yaml"
-                  ],
-                  "folders": []
-                }
-              },
-              {
-                "name": "recruiting",
-                "display_name": "Recruiting",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/organization/products/consumer-app/functions/people/teams/recruiting",
-                  "files": [
-                    "_triage.yaml",
-                    "overview.yaml"
-                  ],
-                  "folders": []
-                }
-              }
-            ]
-          },
-          {
-            "name": "product",
+            "name": "consumer-product",
             "display_name": "Product",
             "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/organization/products/consumer-app/functions/product",
-              "files": [
-                "_triage.yaml",
-                "metrics.yaml",
-                "overview.yaml",
-                "roadmap.yaml"
-              ],
+              "path": "entities/organization/business-units/consumer/functions/consumer-product",
+              "files": [],
               "folders": []
             }
-          },
+          }
+        ]
+      },
+      {
+        "name": "enterprise-bu",
+        "display_name": "Enterprise",
+        "type": "business-unit",
+        "order": 1,
+        "_meta": {
+          "path": "entities/organization/business-units/enterprise-bu",
+          "files": [],
+          "folders": []
+        },
+        "children": [
           {
-            "name": "sales",
-            "display_name": "Sales",
+            "name": "enterprise-engineering",
+            "display_name": "Engineering",
             "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/organization/products/consumer-app/functions/sales",
-              "files": [
-                "_triage.yaml",
-                "overview.yaml",
-                "pipeline.yaml",
-                "playbooks.yaml",
-                "territories.yaml"
-              ],
+              "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-engineering",
+              "files": [],
               "folders": []
             },
             "children": [
               {
-                "name": "enterprise",
-                "display_name": "Enterprise",
+                "name": "enterprise-integrations",
+                "display_name": "Integrations",
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/organization/products/consumer-app/functions/sales/teams/enterprise",
-                  "files": [
-                    "_triage.yaml",
-                    "overview.yaml"
-                  ],
+                  "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations",
+                  "files": [],
                   "folders": []
                 }
-              },
+              }
+            ]
+          },
+          {
+            "name": "enterprise-sales",
+            "display_name": "Sales",
+            "type": "function",
+            "order": 2,
+            "_meta": {
+              "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-sales",
+              "files": [],
+              "folders": []
+            },
+            "children": [
               {
-                "name": "smb",
-                "display_name": "SMB",
+                "name": "enterprise-ae",
+                "display_name": "Account Executives",
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/organization/products/consumer-app/functions/sales/teams/smb",
-                  "files": [
-                    "_triage.yaml",
-                    "overview.yaml"
-                  ],
+                  "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae",
+                  "files": [],
                   "folders": []
                 }
               }
