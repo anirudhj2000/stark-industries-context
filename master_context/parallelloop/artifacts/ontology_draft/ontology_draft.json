@@ -91,19 +91,7 @@
               "files": [],
               "folders": []
             },
-            "children": [
-              {
-                "name": "enterprise-integrations",
-                "display_name": "Integrations",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations",
-                  "files": [],
-                  "folders": []
-                }
-              }
-            ]
+            "children": []
           }
         ]
       }
