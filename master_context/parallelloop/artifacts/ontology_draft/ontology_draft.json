@@ -66,20 +66,7 @@
               "path": "entities/business-units/consumer/functions/consumer-product",
               "files": [],
               "folders": []
-            },
-            "children": [
-              {
-                "name": "product",
-                "display_name": "Product",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/consumer/functions/consumer-product/teams/product",
-                  "files": [],
-                  "folders": []
-                }
-              }
-            ]
+            }
           }
         ]
       },

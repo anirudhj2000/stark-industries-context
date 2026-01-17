@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: enterprise
 template: enterprise
-generated_at: '2026-01-17T18:54:10.603569+00:00'
+generated_at: '2026-01-17T19:00:03.431422+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -72,14 +72,6 @@ entities:
       order: 2
       level: function
       path: entities/business-units/consumer/functions/consumer-product
-      children:
-      - name: Product
-        slug: product
-        description: Product
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/business-units/consumer/functions/consumer-product/teams/product
   - name: Enterprise
     slug: enterprise-bu
     description: Enterprise products
