@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: functional
 template: smb
-generated_at: '2026-01-17T21:04:56.651614+00:00'
+generated_at: '2026-01-17T21:05:55.584959+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -104,3 +104,10 @@ entities:
       order: 2
       level: team
       path: entities/departments/sales/teams/b2b-sales
+    - name: D2c Sales
+      slug: d2c-sales
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/sales/teams/d2c-sales

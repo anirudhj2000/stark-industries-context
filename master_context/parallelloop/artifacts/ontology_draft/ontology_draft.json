@@ -130,6 +130,17 @@
               "files": [],
               "folders": []
             }
+          },
+          {
+            "name": "d2c-sales",
+            "display_name": "D2c Sales",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/sales/teams/d2c-sales",
+              "files": [],
+              "folders": []
+            }
           }
         ]
       }
