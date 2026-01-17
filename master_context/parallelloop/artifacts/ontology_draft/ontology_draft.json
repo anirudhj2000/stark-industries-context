@@ -1,5 +1,11 @@
 {
   "structure_type": "enterprise",
+  "levels": [
+    {"entity_type": "organization", "order": 0, "path_pattern": "entities/organization"},
+    {"entity_type": "business-unit", "order": 1, "path_pattern": "entities/lob/{name}"},
+    {"entity_type": "function", "order": 2, "path_pattern": "entities/lob/{parent}/functions/{name}"},
+    {"entity_type": "team", "order": 3, "path_pattern": "entities/lob/{grandparent}/functions/{parent}/teams/{name}"}
+  ],
   "organization": {
     "name": "parallelloop",
     "display_name": "Parallelloop AI",
@@ -7,7 +13,7 @@
     "order": 0,
     "_meta": {
       "path": "entities/organization",
-      "files": [],
+      "files": ["overview.yaml", "brand.yaml", "strategy.yaml", "governance.yaml", "_triage.yaml", "competitors.yaml", "vendors.yaml", "partners.yaml", "investors.yaml"],
       "folders": []
     },
     "children": [
@@ -18,7 +24,7 @@
         "order": 1,
         "_meta": {
           "path": "entities/lob/indonesia-unit",
-          "files": [],
+          "files": ["overview.yaml", "_triage.yaml"],
           "folders": []
         },
         "children": [
@@ -29,7 +35,7 @@
             "order": 2,
             "_meta": {
               "path": "entities/lob/indonesia-unit/functions/engineering",
-              "files": [],
+              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"],
               "folders": []
             },
             "children": [
@@ -40,9 +46,22 @@
                 "order": 3,
                 "_meta": {
                   "path": "entities/lob/indonesia-unit/functions/engineering/teams/backend",
-                  "files": [],
+                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"],
                   "folders": []
-                }
+                },
+                "children": []
+              },
+              {
+                "name": "frontend",
+                "display_name": "Frontend",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/lob/indonesia-unit/functions/engineering/teams/frontend",
+                  "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "design_tokens.yaml", "component_library.yaml"],
+                  "folders": []
+                },
+                "children": []
               }
             ]
           },
@@ -53,9 +72,10 @@
             "order": 2,
             "_meta": {
               "path": "entities/lob/indonesia-unit/functions/sales",
-              "files": [],
+              "files": ["overview.yaml", "_triage.yaml", "pipeline.yaml", "territories.yaml", "playbooks.yaml"],
               "folders": []
-            }
+            },
+            "children": []
           }
         ]
       },
@@ -66,7 +86,7 @@
         "order": 1,
         "_meta": {
           "path": "entities/lob/thailand-unit",
-          "files": [],
+          "files": ["overview.yaml", "_triage.yaml"],
           "folders": []
         },
         "children": [
@@ -77,9 +97,47 @@
             "order": 2,
             "_meta": {
               "path": "entities/lob/thailand-unit/functions/marketing",
-              "files": [],
+              "files": ["overview.yaml", "_triage.yaml", "channels.yaml", "campaigns.yaml", "brand_assets.yaml"],
               "folders": []
-            }
+            },
+            "children": []
+          },
+          {
+            "name": "sales",
+            "display_name": "Sales",
+            "type": "function",
+            "order": 2,
+            "_meta": {
+              "path": "entities/lob/thailand-unit/functions/sales",
+              "files": ["overview.yaml", "_triage.yaml", "pipeline.yaml", "territories.yaml", "playbooks.yaml"],
+              "folders": []
+            },
+            "children": [
+              {
+                "name": "b2b",
+                "display_name": "B2B",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/lob/thailand-unit/functions/sales/teams/b2b",
+                  "files": ["overview.yaml", "_triage.yaml"],
+                  "folders": []
+                },
+                "children": []
+              },
+              {
+                "name": "d2c",
+                "display_name": "D2C",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/lob/thailand-unit/functions/sales/teams/d2c",
+                  "files": ["overview.yaml", "_triage.yaml"],
+                  "folders": []
+                },
+                "children": []
+              }
+            ]
           }
         ]
       }
