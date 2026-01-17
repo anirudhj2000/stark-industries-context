@@ -1,6 +1,7 @@
 ---
 name: summarize-answers
 description: Use when question thread has new responses to summarize - supports both org-level and project-level contexts via context_type field. Reads thread[] from QA tracker artifact, writes summary.md to summaries/ directory, updates summary_cursor, commits to git, returns structured JSON.
+disable-model-invocation: true
 ---
 
 # Summarize Answers Skill

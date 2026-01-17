@@ -29,7 +29,8 @@ json_schema:
 
   node:
     # Display fields (rendered in UI)
-    name: "<entity_name>"
+    name: "<slug>"  # Slug format: lowercase, hyphens only (e.g., "data-engineering"). See name_format rules.
+    display_name: "<display_name>"  # Human-readable name (e.g., "Data Engineering")
     type: "<entity_type>"  # from structure.levels
     order: "<level>"  # hierarchy depth from structures.<type>.levels[].level
     children: []
@@ -37,6 +38,43 @@ json_schema:
     _meta:
       path: "<from levels.path with {name} substituted>"
       files: ["overview.yaml", "_triage.yaml", ...]  # base + function_config files (no folders, file-based only)
+
+# =============================================================================
+# NAME FORMAT (SLUG RULES)
+# =============================================================================
+name_format:
+  type: slug
+  description: |
+    The `name` field must be a valid slug for URL and filesystem compatibility.
+    Applied to ALL entity names before storing in JSON.
+
+  rules:
+    - lowercase only
+    - replace spaces with hyphens
+    - replace underscores with hyphens
+    - remove special characters (keep alphanumeric and hyphens only)
+    - no leading/trailing hyphens
+    - no consecutive hyphens
+
+  algorithm:
+    1_lowercase: "Convert to lowercase"
+    2_replace_spaces: "Replace spaces with hyphens"
+    3_replace_underscores: "Replace underscores with hyphens"
+    4_remove_special: "Remove characters not matching [a-z0-9-]"
+    5_collapse_hyphens: "Replace multiple consecutive hyphens with single hyphen"
+    6_trim_hyphens: "Remove leading and trailing hyphens"
+
+  examples:
+    - input: "Data Engineering"
+      output: "data-engineering"
+    - input: "customer_success"
+      output: "customer-success"
+    - input: "Team #1"
+      output: "team-1"
+    - input: "IT"
+      output: "it"
+    - input: "SRE"
+      output: "sre"
 
 # =============================================================================
 # STRUCTURE DEFINITIONS
@@ -177,7 +215,7 @@ industry_functions:
 
   retail:
     signals: [retail, ecommerce, shop, store, marketplace]
-    functions: [merchandising, operations, marketing, fulfillment, customer_success, finance]
+    functions: [merchandising, operations, marketing, fulfillment, customer-success, finance]
 
   insurance:
     signals: [insurance, underwriting, claims, policy, actuarial, reinsurance]
@@ -185,11 +223,11 @@ industry_functions:
 
   manufacturing:
     signals: [food, fmcg, grocery, cpg, manufacturing, production]
-    functions: [supply_chain, operations, manufacturing_quality, marketing, sales, fulfillment]
+    functions: [supply-chain, operations, manufacturing-quality, marketing, sales, fulfillment]
 
   healthcare:
     signals: [health, medical, clinical, patient, care, pharma]
-    functions: [clinical, operations, compliance, technology, revenue_cycle, people]
+    functions: [clinical, operations, compliance, technology, revenue-cycle, people]
 
   default:
     functions: [operations, finance, sales]
@@ -213,7 +251,7 @@ function_config:
     default_teams: []
   data:
     files: [data_models.yaml, data_pipelines.yaml, data_catalog.yaml]
-    default_teams: [data_engineering, analytics]
+    default_teams: [data-engineering, analytics]
 
   # Business functions
   finance:
@@ -230,7 +268,7 @@ function_config:
     default_teams: []
   people:
     files: [hiring_plan.yaml, programs.yaml, org_chart.yaml]
-    default_teams: [recruiting, people_ops]
+    default_teams: [recruiting, people-ops]
   legal:
     files: [contracts.yaml, intellectual_property.yaml]
     default_teams: []
@@ -250,7 +288,7 @@ function_config:
     default_teams: []
 
   # Customer-facing
-  customer_success:
+  customer-success:
     files: [health_metrics.yaml, slas.yaml]
     default_teams: [onboarding, support, renewals]
 
@@ -268,16 +306,16 @@ function_config:
   # Industry-specific: Retail
   fulfillment:
     files: [warehouse_ops.yaml, shipping.yaml, returns.yaml]
-    default_teams: [warehouse_ops, shipping]
+    default_teams: [warehouse-ops, shipping]
   merchandising:
     files: [assortment.yaml, pricing.yaml, promotions.yaml]
     default_teams: [buyers, planners]
 
   # Industry-specific: Manufacturing
-  supply_chain:
+  supply-chain:
     files: [suppliers.yaml, inventory.yaml, logistics.yaml]
     default_teams: [procurement, logistics]
-  manufacturing_quality:
+  manufacturing-quality:
     files: [standards.yaml, inspections.yaml, certifications.yaml]
     default_teams: []
 
@@ -285,7 +323,7 @@ function_config:
   clinical:
     files: [protocols.yaml, workflows.yaml]
     default_teams: []
-  revenue_cycle:
+  revenue-cycle:
     files: [billing.yaml, collections.yaml]
     default_teams: []
   technology:
@@ -327,7 +365,7 @@ team_config:
     files: [data_models.yaml, data_pipelines.yaml]
   analytics:
     files: [dashboards.yaml, metrics.yaml]
-  data_engineering:
+  data-engineering:
     files: [data_pipelines.yaml, data_catalog.yaml]
 
   # Product teams
@@ -357,3 +395,79 @@ generation_rules:
     - Unknown industry: Ask clarifying question OR use default functions
     - Unknown function: Leave children empty
     - User skips: Use minimal defaults
+
+# =============================================================================
+# DISPLAY NAME GENERATION
+# =============================================================================
+# How to generate human-readable display_name from normalized name
+
+display_name_rules:
+  description: |
+    Convert normalized entity name to human-readable display name.
+    Applied automatically during JSON generation for every node.
+
+  algorithm:
+    1_replace_separators: "Replace underscores '_' and hyphens '-' with spaces"
+    2_title_case: "Capitalize first letter of each word"
+    3_preserve_acronyms: "Keep common acronyms uppercase (see list below)"
+
+  examples:
+    - name: "engineering"
+      display_name: "Engineering"
+    - name: "data-engineering"
+      display_name: "Data Engineering"
+    - name: "customer-success"
+      display_name: "Customer Success"
+    - name: "it"
+      display_name: "IT"
+    - name: "sre"
+      display_name: "SRE"
+    - name: "qa"
+      display_name: "QA"
+    - name: "hr"
+      display_name: "HR"
+    - name: "manufacturing-quality"
+      display_name: "Manufacturing Quality"
+    - name: "api-integrations"
+      display_name: "API Integrations"
+    - name: "team-1"
+      display_name: "Team 1"
+
+  acronyms_to_preserve: [IT, HR, QA, SRE, API, CTO, CEO, CFO, COO, VP, SVP, EVP, LOB, SMB]
+
+# =============================================================================
+# ENTITY DELETION RULES
+# =============================================================================
+# Safety checks before removing entities from the structure
+
+deletion_rules:
+  description: |
+    Before deleting/removing an entity from the ontology structure,
+    verify no people are assigned to that entity. If people exist,
+    block the deletion and guide the user to reassign/remove them first.
+
+  check_sequence:
+    1_identify_entity: "Get the entity name and path from the structure"
+    2_scan_people: "Scan entities/person/*/overview.yaml for team: field matches"
+    3_check_children: "Recursively check all child entities for assigned people"
+    4_block_or_allow: "If people found, block deletion with list; otherwise allow"
+
+  people_check:
+    location: "entities/person/{person_name}/overview.yaml"
+    field: "team"
+    match_type: "exact match on entity name (normalized, case-insensitive)"
+
+  # IMPORTANT: Use this EXACT format. Do NOT mention Playbook or any app name.
+  blocking_response_template: |
+    Cannot delete '{entity_name}' - these people are currently assigned:
+    - {person_name}
+
+    Please reassign or remove them from the portal first.
+
+  # Do NOT say "ask me again" or mention any app by name.
+
+  edge_cases:
+    no_person_directory: "Allow deletion (no people to check)"
+    person_without_team_field: "Ignore that person (not assigned anywhere)"
+    case_sensitivity: "Normalize both entity name and team field before comparing"
+    recursive_children: "When deleting parent, check ALL descendants too"

@@ -1,6 +1,7 @@
 ---
 name: transcription
 description: Use when processing AUDIO sources or generating meeting notes from recordings - supports both org-level and project-level contexts via context_type field. Transcribes audio files and creates structured minutes with topics, decisions, action items, and entity/vocabulary enrichment.
+disable-model-invocation: true
 ---
 
 # Transcription - Meeting Notes Generation

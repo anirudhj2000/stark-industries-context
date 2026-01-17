@@ -1,6 +1,7 @@
 ---
 name: summarize-answers
 description: Generate AI summary of question responses from QA tracker artifact, write summary.md to summaries/ directory. Supports both org and project contexts via context_type.
+disable-model-invocation: true
 ---
 
 # Summarize Question Answers

@@ -1,6 +1,7 @@
 ---
 name: harvest-answers
 description: Use when harvesting a Q&A answer into an entity after summarize-answers has run - reads existing summary, updates entity field that had the gap, tracks harvest provenance via cursor
+disable-model-invocation: true
 ---
 
 # Harvest Answers

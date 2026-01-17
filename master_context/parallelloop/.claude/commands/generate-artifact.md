@@ -1,6 +1,7 @@
 ---
 name: generate-artifact
 description: Generate project artifacts (PRD, Technical Spec, User Stories, API Spec, Database Schema). Routes to appropriate skill based on artifact_type parameter.
+disable-model-invocation: true
 ---
 
 # Generate Artifact Command

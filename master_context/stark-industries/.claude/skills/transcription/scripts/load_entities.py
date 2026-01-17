@@ -1,1 +1,0 @@
-../../../scripts/load_entities.py

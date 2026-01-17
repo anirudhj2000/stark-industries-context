@@ -3,6 +3,7 @@ name: generate-artifact
 description: Generate project artifacts using templates and project context
 version: 1.0.0
 author: GSD Team
+disable-model-invocation: true
 ---
 
 # Generate Artifact Skill

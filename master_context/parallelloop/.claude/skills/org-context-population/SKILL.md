@@ -1,6 +1,7 @@
 ---
 name: org-context-population
 description: Extract entities from source documents into entities/ structure. Use when processing meetings, SOPs, company overviews, financial reports, org charts, or technical docs after source extraction (structured.json exists). NOT for raw source processing (use source extraction first), single field updates (edit directly), or pure code docs without organizational context.
+disable-model-invocation: true
 ---
 
 # Organizational Context Population

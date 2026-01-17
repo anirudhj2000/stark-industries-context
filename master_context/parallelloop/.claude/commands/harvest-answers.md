@@ -1,6 +1,7 @@
 ---
 name: harvest-answers
 description: Harvest a Q&A answer into an entity after summarize-answers has run - reads existing summary, updates entity field, tracks harvest via cursor
+disable-model-invocation: true
 ---
 
 # Harvest Question Answers to Entity

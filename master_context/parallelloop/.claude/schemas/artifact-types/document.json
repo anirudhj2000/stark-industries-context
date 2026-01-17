@@ -14,7 +14,7 @@
     "properties": {
       "document_type": {
         "type": "string",
-        "enum": ["prd", "tdd", "frd", "report", "spec", "guide", "brainstorm"]
+        "enum": ["prd", "tdd", "frd", "report", "spec", "guide", "brainstorm", "project_experiment"]
       },
       "title": {
         "type": "string"

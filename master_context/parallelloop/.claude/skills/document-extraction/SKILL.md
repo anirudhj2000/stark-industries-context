@@ -1,6 +1,7 @@
 ---
 name: document-extraction
 description: Use when processing DOCUMENT sources (PDF, DOCX, TXT, XLS, XLSX) - supports both org-level and project-level contexts via context_type field. Extracts content with entity/vocabulary enrichment into clean markdown with footnote-style annotations.
+disable-model-invocation: true
 ---
 
 # Document Extraction

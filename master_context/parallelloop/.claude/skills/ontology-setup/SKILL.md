@@ -28,19 +28,68 @@ When invoked with `mode: infer_files`, skip the full ontology workflow and retur
 
 ### Process
 
-1. **Read `references/templates.yaml`** (always required)
-2. **Determine base files from order level:**
+1. **Determine base files from order level:**
    - `order: 0` (organization) → `[overview.yaml, brand.yaml, strategy.yaml, governance.yaml, _triage.yaml, competitors.yaml, vendors.yaml, partners.yaml, investors.yaml]`
    - `order: 1` (department/function/lob) → `[overview.yaml, _triage.yaml]`
    - `order: 2+` (team) → `[overview.yaml, _triage.yaml]`
 
-3. **Add function-specific files** (if `entity_type` is department/function OR `order == 1`):
-   - Look up `function_config.<name>.files` in templates.yaml
+2. **Add function-specific files** (if `entity_type` is department/function OR `order == 1`):
+   - Look up entity name in **Function Config Lookup Table** below
    - Add those files to the list
 
-4. **Add team-specific files** (if `entity_type` is team OR `order >= 2`):
-   - Look up `team_config.<name>.files` in templates.yaml
+3. **Add team-specific files** (if `entity_type` is team OR `order >= 2`):
+   - Look up entity name in **Team Config Lookup Table** below
    - Add those files to the list
+
+### Function Config Lookup Table
+
+| Function Name | Files |
+|---------------|-------|
+| `engineering` | `tech_stack.yaml, system_architecture.yaml, api_integrations.yaml` |
+| `product` | `roadmap.yaml, metrics.yaml` |
+| `design` | `design_system.yaml, ux_research.yaml` |
+| `data` | `data_models.yaml, data_pipelines.yaml, data_catalog.yaml` |
+| `finance` | `financials.yaml, budget.yaml, forecasts.yaml` |
+| `sales` | `pipeline.yaml, territories.yaml, playbooks.yaml` |
+| `marketing` | `channels.yaml, campaigns.yaml, brand_assets.yaml` |
+| `operations` | `processes.yaml, slas.yaml, runbooks.yaml` |
+| `people` | `hiring_plan.yaml, programs.yaml, org_chart.yaml` |
+| `legal` | `contracts.yaml, intellectual_property.yaml` |
+| `it` | `infrastructure.yaml, vendor_systems.yaml` |
+| `security` | `policies.yaml, incidents.yaml, access_controls.yaml` |
+| `compliance` | `regulations.yaml, licenses.yaml` |
+| `risk` | `risk_framework.yaml, limits.yaml` |
+| `customer-success` | `health_metrics.yaml, slas.yaml` |
+| `underwriting` | `guidelines.yaml, risk_appetite.yaml, pricing.yaml` |
+| `claims` | `workflows.yaml, reserves.yaml, fraud.yaml` |
+| `actuarial` | `models.yaml, assumptions.yaml` |
+| `fulfillment` | `warehouse_ops.yaml, shipping.yaml, returns.yaml` |
+| `merchandising` | `assortment.yaml, pricing.yaml, promotions.yaml` |
+| `supply-chain` | `suppliers.yaml, inventory.yaml, logistics.yaml` |
+| `manufacturing-quality` | `standards.yaml, inspections.yaml, certifications.yaml` |
+| `clinical` | `protocols.yaml, workflows.yaml` |
+| `revenue-cycle` | `billing.yaml, collections.yaml` |
+| `technology` | `systems.yaml, integrations.yaml` |
+
+### Team Config Lookup Table
+
+| Team Name | Files |
+|-----------|-------|
+| `backend` | `tech_stack.yaml, system_architecture.yaml, api_integrations.yaml` |
+| `frontend` | `tech_stack.yaml, design_tokens.yaml, component_library.yaml` |
+| `mobile` | `tech_stack.yaml, app_releases.yaml` |
+| `devops` | `infrastructure.yaml, ci_cd.yaml, monitoring.yaml` |
+| `platform` | `tech_stack.yaml, system_architecture.yaml` |
+| `sre` | `runbooks.yaml, slas.yaml, incidents.yaml` |
+| `infra` | `infrastructure.yaml, ci_cd.yaml` |
+| `design` | `design_system.yaml, ux_research.yaml` |
+| `ux` | `design_system.yaml, ux_research.yaml` |
+| `data` | `data_models.yaml, data_pipelines.yaml` |
+| `analytics` | `dashboards.yaml, metrics.yaml` |
+| `data-engineering` | `data_pipelines.yaml, data_catalog.yaml` |
+| `product` | `roadmap.yaml, metrics.yaml` |
+| `qa` | `test_strategy.yaml, test_cases.yaml` |
+| `quality` | `test_strategy.yaml, test_cases.yaml` |
 
 ### Output Format
 
@@ -64,12 +113,62 @@ Return ONLY a JSON object with the files array:
 
 ### Important
 
-- **No user interaction** in this mode - just read templates and return files
+- **No user interaction** in this mode - just return files based on lookup tables
 - **Normalize entity name** to lowercase with hyphens before lookup
 - **Deduplicate** the final file list
 - **Sort alphabetically** for consistency
+- **If entity not in lookup tables**, use only base files for that order level
 
 ---
+
+---
+
+## CRITICAL: CHECK LOCK STATUS BEFORE GENERATION
+
+**Before generating any ontology structure, you MUST check if manual editing is in progress.**
+
+### Lock Check Process
+
+1. **Call the lock status API** to check `edit_mode`
+2. **If `edit_mode == "manual"`** → STOP and inform the user:
+   ```
+   Cannot generate ontology structure while manual editing is in progress.
+
+   Please either:
+   - Apply your manual changes first, or
+   - Discard manual changes to allow chat generation
+   ```
+3. **If `edit_mode == "none"` or `edit_mode == "chat_pending"`** → Proceed with generation
+
+### Why This Matters
+
+The ontology system uses bidirectional locking:
+- **Manual mode** blocks chat generation (user is actively editing in UI)
+- **Chat pending mode** blocks manual editing (AI draft awaiting review)
+
+This prevents conflicts where chat-generated structures overwrite manual work.
+
+---
+
+## OUTPUT IS PREVIEW-ONLY UNTIL USER ACCEPTS
+
+**Important**: When this skill generates `ontology_draft.json`, it does NOT immediately apply to the database.
+
+### What Happens After Generation
+
+1. Skill writes `artifacts/ontology_draft/ontology_draft.json`
+2. System detects the file and shows a **preview dialog** to the user
+3. User reviews the structure visually
+4. User clicks **Accept** to import the draft into the database
+5. User clicks **Apply** to commit changes to git (folder structures + ontology.yaml)
+
+**Until the user accepts**, the draft is just a preview. If they cancel, the draft is discarded.
+
+### Implications for the Skill
+
+- Do NOT tell users "I've created your org structure" - say "I've prepared a draft for your review"
+- Do NOT mention database changes - the draft hasn't been imported yet
+- DO mention they'll see a preview where they can accept or cancel
 
 ---
 
@@ -119,11 +218,11 @@ Let's set up your organization structure! How is your company organized?
 5. Flat - Minimal hierarchy, self-organizing teams
 ```
 
-**At completion**: Just describe the result naturally.
+**At completion**: Describe the draft and mention the preview dialog.
 ```
-I've set up the organizational structure for your company. It's a Functional structure with 4 departments and 6 teams total.
+I've prepared a draft organizational structure for your review. It's a Functional structure with 4 departments and 6 teams total.
 
-Would you like me to make any changes before finalizing?
+You should see a preview dialog where you can review the structure visually. Click Accept to import it, or Cancel to discard.
 ```
 
 ## Output Path
@@ -137,18 +236,42 @@ This is a **singleton** - one draft per organization. The skill always writes to
 ## Workflow
 
 ```
-0. READ references/templates.yaml FIRST (mandatory, no exceptions)
-1. Ask org structure type (1 question)
-2. Ask follow-up based on type (1 question)
-3. [If uncertain] Ask one clarifying question
-4. Show inferred structure → User confirms or modifies
+0. CHECK LOCK STATUS (mandatory - block if edit_mode == "manual")
+1. READ references/templates.yaml (mandatory, no exceptions)
+2. Ask org structure type (1 question)
+3. Ask follow-up based on type (1 question)
+4. [If uncertain] Ask one clarifying question
+5. Show inferred structure → User confirms or modifies
    - FOR MODIFICATIONS: If user requests entity deletion, run safety check first
    - See "Entity Deletion Safety Check" section below
-5. Build COMPLETE JSON using templates.yaml → Write artifact
+6. Build COMPLETE JSON using templates.yaml → Write artifact
    - Include display_name for EVERY node (auto-generated from name)
+7. Tell user about preview dialog (Accept/Cancel)
 ```
 
-### Step 0: Load Templates (MANDATORY)
+### Step 0: Check Lock Status (MANDATORY)
+
+**This step happens BEFORE any user interaction or template loading.**
+
+```python
+# Pseudo-code for lock check:
+lock_status = call_api("GET /api/v1/organizations/{org_id}/ontology/lock-status/")
+
+if lock_status.edit_mode == "manual":
+    # STOP - cannot generate while manual editing in progress
+    respond("""
+    Cannot generate ontology structure while manual editing is in progress.
+
+    Please either:
+    - Apply your manual changes first, or
+    - Discard manual changes to allow chat generation
+    """)
+    return  # Do not proceed
+
+# If edit_mode is "none" or "chat_pending", continue to Step 0b
+```
+
+### Step 0b: Load Templates (MANDATORY)
 
 **This step happens BEFORE any user interaction.**
 
@@ -229,7 +352,8 @@ Ask: **Confirm? (or describe changes)**
 1. Create folder: `artifacts/ontology_draft/` (if it doesn't exist)
 2. Build COMPLETE `ontology_draft.json` in ONE pass (see detailed instructions below)
 3. Write file to: `artifacts/ontology_draft/ontology_draft.json` (overwrites any existing draft)
-4. Describe the result naturally (no JSON shown to user)
+4. Tell the user a draft has been prepared and they'll see a preview dialog
+5. Remind them to click Accept to import, or Cancel to discard
 
 **DO NOT run git add, git commit, or git push.** The task runner handles all git operations.
 

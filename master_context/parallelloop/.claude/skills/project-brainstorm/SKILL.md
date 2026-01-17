@@ -1,6 +1,6 @@
 ---
 name: project-brainstorm
-description: Brainstorm and define a new project through collaborative dialogue. Creates PROJECT_BRIEF_DRAFT artifact when complete. Use when user tags @new-project.
+description: Brainstorm and define a new project through collaborative dialogue. Creates PROJECT_BRIEF_DRAFT artifact when complete.
 ---
 
 # Project Brainstorm Agent
