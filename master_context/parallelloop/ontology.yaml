@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: enterprise
 template: enterprise
-generated_at: '2026-01-17T10:40:42.875505+00:00'
+generated_at: '2026-01-17T10:41:52.086139+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -41,7 +41,7 @@ entities:
     entity_type: business-unit
     order: 1
     level: business-unit
-    path: entities/organization/business-units/consumer
+    path: entities/business-units/consumer
     children:
     - name: Engineering
       slug: consumer-engineering
@@ -49,7 +49,7 @@ entities:
       entity_type: function
       order: 2
       level: function
-      path: entities/organization/business-units/consumer/functions/consumer-engineering
+      path: entities/business-units/consumer/functions/consumer-engineering
       children:
       - name: Mobile
         slug: consumer-mobile
@@ -57,28 +57,28 @@ entities:
         entity_type: team
         order: 3
         level: team
-        path: entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile
+        path: entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile
       - name: Platform
         slug: consumer-platform
         description: Platform team
         entity_type: team
         order: 3
         level: team
-        path: entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-platform
+        path: entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform
     - name: Product
       slug: consumer-product
       description: Product function
       entity_type: function
       order: 2
       level: function
-      path: entities/organization/business-units/consumer/functions/consumer-product
+      path: entities/business-units/consumer/functions/consumer-product
   - name: Enterprise
     slug: enterprise-bu
     description: Enterprise products
     entity_type: business-unit
     order: 1
     level: business-unit
-    path: entities/organization/business-units/enterprise-bu
+    path: entities/business-units/enterprise-bu
     children:
     - name: Engineering
       slug: enterprise-engineering
@@ -86,7 +86,7 @@ entities:
       entity_type: function
       order: 2
       level: function
-      path: entities/organization/business-units/enterprise-bu/functions/enterprise-engineering
+      path: entities/business-units/enterprise-bu/functions/enterprise-engineering
       children:
       - name: Integrations
         slug: enterprise-integrations
@@ -94,14 +94,14 @@ entities:
         entity_type: team
         order: 3
         level: team
-        path: entities/organization/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations
+        path: entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations
     - name: Sales
       slug: enterprise-sales
       description: Sales function
       entity_type: function
       order: 2
       level: function
-      path: entities/organization/business-units/enterprise-bu/functions/enterprise-sales
+      path: entities/business-units/enterprise-bu/functions/enterprise-sales
       children:
       - name: Account Executives
         slug: enterprise-ae
@@ -109,4 +109,4 @@ entities:
         entity_type: team
         order: 3
         level: team
-        path: entities/organization/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae
+        path: entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae

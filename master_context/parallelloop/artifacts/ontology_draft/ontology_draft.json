@@ -17,7 +17,7 @@
         "type": "business-unit",
         "order": 1,
         "_meta": {
-          "path": "entities/organization/business-units/consumer",
+          "path": "entities/business-units/consumer",
           "files": [],
           "folders": []
         },
@@ -28,7 +28,7 @@
             "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/organization/business-units/consumer/functions/consumer-engineering",
+              "path": "entities/business-units/consumer/functions/consumer-engineering",
               "files": [],
               "folders": []
             },
@@ -39,7 +39,7 @@
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile",
+                  "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile",
                   "files": [],
                   "folders": []
                 }
@@ -50,7 +50,7 @@
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/organization/business-units/consumer/functions/consumer-engineering/teams/consumer-platform",
+                  "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform",
                   "files": [],
                   "folders": []
                 }
@@ -63,7 +63,7 @@
             "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/organization/business-units/consumer/functions/consumer-product",
+              "path": "entities/business-units/consumer/functions/consumer-product",
               "files": [],
               "folders": []
             }
@@ -76,7 +76,7 @@
         "type": "business-unit",
         "order": 1,
         "_meta": {
-          "path": "entities/organization/business-units/enterprise-bu",
+          "path": "entities/business-units/enterprise-bu",
           "files": [],
           "folders": []
         },
@@ -87,7 +87,7 @@
             "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-engineering",
+              "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering",
               "files": [],
               "folders": []
             },
@@ -98,7 +98,7 @@
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations",
+                  "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations",
                   "files": [],
                   "folders": []
                 }
@@ -111,7 +111,7 @@
             "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-sales",
+              "path": "entities/business-units/enterprise-bu/functions/enterprise-sales",
               "files": [],
               "folders": []
             },
@@ -122,7 +122,7 @@
                 "type": "team",
                 "order": 3,
                 "_meta": {
-                  "path": "entities/organization/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae",
+                  "path": "entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae",
                   "files": [],
                   "folders": []
                 }
