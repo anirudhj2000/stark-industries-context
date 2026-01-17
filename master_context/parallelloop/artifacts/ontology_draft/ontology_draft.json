@@ -7,7 +7,15 @@
     "order": 0,
     "_meta": {
       "path": "entities/organization",
-      "files": [],
+      "files": [
+        "brand.yaml",
+        "competitors.yaml",
+        "governance.yaml",
+        "investors.yaml",
+        "partners.yaml",
+        "strategy.yaml",
+        "vendors.yaml"
+      ],
       "folders": []
     },
     "children": [
@@ -18,7 +26,11 @@
         "order": 1,
         "_meta": {
           "path": "entities/departments/engineering",
-          "files": [],
+          "files": [
+            "api_integrations.yaml",
+            "system_architecture.yaml",
+            "tech_stack.yaml"
+          ],
           "folders": []
         },
         "children": [
@@ -29,7 +41,11 @@
             "order": 2,
             "_meta": {
               "path": "entities/departments/engineering/teams/backend",
-              "files": [],
+              "files": [
+                "api_integrations.yaml",
+                "system_architecture.yaml",
+                "tech_stack.yaml"
+              ],
               "folders": []
             }
           },
@@ -40,7 +56,11 @@
             "order": 2,
             "_meta": {
               "path": "entities/departments/engineering/teams/frontend",
-              "files": [],
+              "files": [
+                "component_library.yaml",
+                "design_tokens.yaml",
+                "tech_stack.yaml"
+              ],
               "folders": []
             }
           }
@@ -53,7 +73,10 @@
         "order": 1,
         "_meta": {
           "path": "entities/departments/product",
-          "files": [],
+          "files": [
+            "metrics.yaml",
+            "roadmap.yaml"
+          ],
           "folders": []
         }
       },
@@ -64,7 +87,11 @@
         "order": 1,
         "_meta": {
           "path": "entities/departments/sales",
-          "files": [],
+          "files": [
+            "pipeline.yaml",
+            "playbooks.yaml",
+            "territories.yaml"
+          ],
           "folders": []
         }
       }
