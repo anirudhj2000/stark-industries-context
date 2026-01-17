@@ -1,5 +1,5 @@
 {
-  "structure_type": "matrix",
+  "structure_type": "enterprise",
   "organization": {
     "name": "parallelloop",
     "display_name": "Parallelloop AI",
@@ -66,7 +66,20 @@
               "path": "entities/business-units/consumer/functions/consumer-product",
               "files": [],
               "folders": []
-            }
+            },
+            "children": [
+              {
+                "name": "product",
+                "display_name": "Product",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/business-units/consumer/functions/consumer-product/teams/product",
+                  "files": [],
+                  "folders": []
+                }
+              }
+            ]
           }
         ]
       },
@@ -90,25 +103,46 @@
               "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering",
               "files": [],
               "folders": []
-            }
+            },
+            "children": [
+              {
+                "name": "enterprise-integrations",
+                "display_name": "Integrations",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations",
+                  "files": [],
+                  "folders": []
+                }
+              }
+            ]
+          },
+          {
+            "name": "enterprise-sales",
+            "display_name": "Sales",
+            "type": "function",
+            "order": 2,
+            "_meta": {
+              "path": "entities/business-units/enterprise-bu/functions/enterprise-sales",
+              "files": [],
+              "folders": []
+            },
+            "children": [
+              {
+                "name": "enterprise-ae",
+                "display_name": "Account Executives",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae",
+                  "files": [],
+                  "folders": []
+                }
+              }
+            ]
           }
         ]
-      },
-      {
-        "name": "legal",
-        "display_name": "Legal",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/departments/legal",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "contracts.yaml",
-            "intellectual_property.yaml"
-          ],
-          "folders": []
-        }
       }
     ]
   }
