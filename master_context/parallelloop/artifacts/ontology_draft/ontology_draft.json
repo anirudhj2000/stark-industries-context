@@ -1,181 +1,46 @@
 {
-  "structure_type": "functional",
+  "structure_type": "enterprise",
   "organization": {
-    "name": "organization",
-    "display_name": "Organization",
-    "type": "organization",
-    "order": 0,
+    "name": "retail",
+    "display_name": "Retail",
+    "type": "lob",
+    "order": 1,
     "_meta": {
-      "path": "entities/organization",
-      "files": [
-        "overview.yaml",
-        "brand.yaml",
-        "strategy.yaml",
-        "governance.yaml",
-        "_triage.yaml",
-        "competitors.yaml",
-        "vendors.yaml",
-        "partners.yaml",
-        "investors.yaml"
-      ],
+      "path": "entities/lob/retail",
+      "files": [],
       "folders": []
     },
     "children": [
       {
-        "name": "customer-success",
-        "display_name": "Customer Success",
-        "type": "department",
-        "order": 1,
+        "name": "marketing",
+        "display_name": "Marketing",
+        "type": "function",
+        "order": 2,
         "_meta": {
-          "path": "entities/function/customer-success",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "health_metrics.yaml",
-            "slas.yaml"
-          ],
+          "path": "entities/function/marketing",
+          "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "onboarding",
-            "display_name": "Onboarding",
+            "name": "brand-team",
+            "display_name": "Brand Team",
             "type": "team",
-            "order": 2,
+            "order": 3,
             "_meta": {
-              "path": "entities/function/customer-success/teams/onboarding",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml"
-              ],
+              "path": "entities/team/brand-team",
+              "files": [],
               "folders": []
             }
           },
           {
-            "name": "renewals",
-            "display_name": "Renewals",
+            "name": "digital-team",
+            "display_name": "Digital Team",
             "type": "team",
-            "order": 2,
+            "order": 3,
             "_meta": {
-              "path": "entities/function/customer-success/teams/renewals",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml"
-              ],
-              "folders": []
-            }
-          },
-          {
-            "name": "support",
-            "display_name": "Support",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/function/customer-success/teams/support",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml"
-              ],
-              "folders": []
-            }
-          }
-        ]
-      },
-      {
-        "name": "engineering",
-        "display_name": "Engineering",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/function/engineering",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "tech_stack.yaml",
-            "system_architecture.yaml",
-            "api_integrations.yaml"
-          ],
-          "folders": []
-        },
-        "children": [
-          {
-            "name": "backend",
-            "display_name": "Backend",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/function/engineering/teams/backend",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml",
-                "tech_stack.yaml",
-                "system_architecture.yaml",
-                "api_integrations.yaml"
-              ],
-              "folders": []
-            }
-          },
-          {
-            "name": "frontend",
-            "display_name": "Frontend",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/function/engineering/teams/frontend",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml",
-                "tech_stack.yaml",
-                "design_tokens.yaml",
-                "component_library.yaml"
-              ],
-              "folders": []
-            }
-          }
-        ]
-      },
-      {
-        "name": "people",
-        "display_name": "People",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/function/people",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "hiring_plan.yaml",
-            "programs.yaml",
-            "org_chart.yaml"
-          ],
-          "folders": []
-        },
-        "children": [
-          {
-            "name": "people-ops",
-            "display_name": "People Ops",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/function/people/teams/people-ops",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml"
-              ],
-              "folders": []
-            }
-          },
-          {
-            "name": "recruiting",
-            "display_name": "Recruiting",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/function/people/teams/recruiting",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml"
-              ],
+              "path": "entities/team/digital-team",
+              "files": [],
               "folders": []
             }
           }
@@ -184,45 +49,22 @@
       {
         "name": "sales",
         "display_name": "Sales",
-        "type": "department",
-        "order": 1,
+        "type": "function",
+        "order": 2,
         "_meta": {
           "path": "entities/function/sales",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "pipeline.yaml",
-            "territories.yaml",
-            "playbooks.yaml"
-          ],
+          "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "enterprise",
-            "display_name": "Enterprise",
+            "name": "inside-sales",
+            "display_name": "Inside Sales",
             "type": "team",
-            "order": 2,
+            "order": 3,
             "_meta": {
-              "path": "entities/function/sales/teams/enterprise",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml"
-              ],
-              "folders": []
-            }
-          },
-          {
-            "name": "smb",
-            "display_name": "SMB",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/function/sales/teams/smb",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml"
-              ],
+              "path": "entities/team/inside-sales",
+              "files": [],
               "folders": []
             }
           }
