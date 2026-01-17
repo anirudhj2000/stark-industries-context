@@ -58,17 +58,6 @@
         },
         "children": [
           {
-            "name": "b2b-sales",
-            "display_name": "B2b Sales",
-            "type": "team",
-            "order": 3,
-            "_meta": {
-              "path": "entities/lob/retail/functions/sales/teams/b2b-sales",
-              "files": [],
-              "folders": []
-            }
-          },
-          {
             "name": "inside-sales",
             "display_name": "Inside Sales",
             "type": "team",

@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: enterprise
 template: enterprise
-generated_at: '2026-01-17T07:51:41.330359+00:00'
+generated_at: '2026-01-17T07:56:14.109424+00:00'
 levels:
 - name: LOB
   slug: lob
@@ -60,14 +60,6 @@ entities:
     level: function
     path: entities/lob/retail/functions/sales
     children:
-    - name: B2b Sales
-      slug: b2b-sales
-      description: B2b Sales for the organisation , where we talk to business clients
-        and manage expectations
-      entity_type: team
-      order: 3
-      level: team
-      path: entities/lob/retail/functions/sales/teams/b2b-sales
     - name: Inside Sales
       slug: inside-sales
       description: Inside sales team
