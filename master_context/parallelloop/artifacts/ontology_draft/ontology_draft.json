@@ -7,15 +7,7 @@
     "order": 0,
     "_meta": {
       "path": "entities/organization",
-      "files": [
-        "brand.yaml",
-        "competitors.yaml",
-        "governance.yaml",
-        "investors.yaml",
-        "partners.yaml",
-        "strategy.yaml",
-        "vendors.yaml"
-      ],
+      "files": [],
       "folders": []
     },
     "children": [
@@ -26,11 +18,7 @@
         "order": 1,
         "_meta": {
           "path": "entities/departments/engineering",
-          "files": [
-            "api_integrations.yaml",
-            "system_architecture.yaml",
-            "tech_stack.yaml"
-          ],
+          "files": [],
           "folders": []
         },
         "children": [
@@ -41,11 +29,7 @@
             "order": 2,
             "_meta": {
               "path": "entities/departments/engineering/teams/backend",
-              "files": [
-                "api_integrations.yaml",
-                "system_architecture.yaml",
-                "tech_stack.yaml"
-              ],
+              "files": [],
               "folders": []
             }
           },
@@ -56,11 +40,7 @@
             "order": 2,
             "_meta": {
               "path": "entities/departments/engineering/teams/frontend",
-              "files": [
-                "component_library.yaml",
-                "design_tokens.yaml",
-                "tech_stack.yaml"
-              ],
+              "files": [],
               "folders": []
             }
           }
@@ -73,10 +53,7 @@
         "order": 1,
         "_meta": {
           "path": "entities/departments/product",
-          "files": [
-            "metrics.yaml",
-            "roadmap.yaml"
-          ],
+          "files": [],
           "folders": []
         }
       },
@@ -87,13 +64,22 @@
         "order": 1,
         "_meta": {
           "path": "entities/departments/sales",
-          "files": [
-            "pipeline.yaml",
-            "playbooks.yaml",
-            "territories.yaml"
-          ],
+          "files": [],
           "folders": []
-        }
+        },
+        "children": [
+          {
+            "name": "b2b-sales",
+            "display_name": "B2b Sales",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/sales/teams/b2b-sales",
+              "files": [],
+              "folders": []
+            }
+          }
+        ]
       }
     ]
   }
