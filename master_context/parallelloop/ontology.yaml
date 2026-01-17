@@ -2,25 +2,25 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: agency
-template: agency
-generated_at: '2026-01-17T19:25:32.829290+00:00'
+structure_type: smb
+template: smb
+generated_at: '2026-01-17T19:52:11.324888+00:00'
 levels:
 - name: Organization
   slug: organization
   order: 0
   skipped: false
   template_name: Organization
-- name: Client
-  slug: client
+- name: Department
+  slug: department
   order: 1
   skipped: false
-  template_name: Client
-- name: Project
-  slug: project
+  template_name: Department
+- name: Team
+  slug: team
   order: 2
   skipped: false
-  template_name: Project
+  template_name: Team
 entities:
 - name: Parallelloop AI
   slug: parallelloop
@@ -30,40 +30,39 @@ entities:
   level: organization
   path: entities/organization
   children:
-  - name: Acme Corp
-    slug: acme-corp
-    description: Enterprise client
-    entity_type: client
+  - name: Engineering
+    slug: engineering
+    description: Engineering department
+    entity_type: department
     order: 1
-    level: client
-    path: entities/clients/acme-corp
+    level: department
+    path: entities/departments/engineering
     children:
-    - name: Mobile App
-      slug: acme-mobile
-      description: Mobile project
-      entity_type: project
+    - name: Backend
+      slug: backend
+      description: Backend team
+      entity_type: team
       order: 2
-      level: project
-      path: entities/clients/acme-corp/projects/acme-mobile
-    - name: Website Redesign
-      slug: acme-website
-      description: Web project
-      entity_type: project
+      level: team
+      path: entities/departments/engineering/teams/backend
+    - name: Frontend
+      slug: frontend
+      description: Frontend team
+      entity_type: team
       order: 2
-      level: project
-      path: entities/clients/acme-corp/projects/acme-website
-  - name: TechStart
-    slug: techstart
-    description: Startup client
-    entity_type: client
+      level: team
+      path: entities/departments/engineering/teams/frontend
+  - name: Product
+    slug: product
+    description: Product department
+    entity_type: department
     order: 1
-    level: client
-    path: entities/clients/techstart
-    children:
-    - name: MVP Build
-      slug: techstart-mvp
-      description: MVP project
-      entity_type: project
-      order: 2
-      level: project
-      path: entities/clients/techstart/projects/techstart-mvp
+    level: department
+    path: entities/departments/product
+  - name: Sales
+    slug: sales
+    description: Sales department
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/departments/sales

@@ -1,5 +1,5 @@
 {
-  "structure_type": "agency",
+  "structure_type": "smb",
   "organization": {
     "name": "parallelloop",
     "display_name": "Parallelloop AI",
@@ -12,34 +12,34 @@
     },
     "children": [
       {
-        "name": "acme-corp",
-        "display_name": "Acme Corp",
-        "type": "client",
+        "name": "engineering",
+        "display_name": "Engineering",
+        "type": "department",
         "order": 1,
         "_meta": {
-          "path": "entities/clients/acme-corp",
+          "path": "entities/departments/engineering",
           "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "acme-mobile",
-            "display_name": "Mobile App",
-            "type": "project",
+            "name": "backend",
+            "display_name": "Backend",
+            "type": "team",
             "order": 2,
             "_meta": {
-              "path": "entities/clients/acme-corp/projects/acme-mobile",
+              "path": "entities/departments/engineering/teams/backend",
               "files": [],
               "folders": []
             }
           },
           {
-            "name": "acme-website",
-            "display_name": "Website Redesign",
-            "type": "project",
+            "name": "frontend",
+            "display_name": "Frontend",
+            "type": "team",
             "order": 2,
             "_meta": {
-              "path": "entities/clients/acme-corp/projects/acme-website",
+              "path": "entities/departments/engineering/teams/frontend",
               "files": [],
               "folders": []
             }
@@ -47,28 +47,26 @@
         ]
       },
       {
-        "name": "techstart",
-        "display_name": "TechStart",
-        "type": "client",
+        "name": "product",
+        "display_name": "Product",
+        "type": "department",
         "order": 1,
         "_meta": {
-          "path": "entities/clients/techstart",
+          "path": "entities/departments/product",
           "files": [],
           "folders": []
-        },
-        "children": [
-          {
-            "name": "techstart-mvp",
-            "display_name": "MVP Build",
-            "type": "project",
-            "order": 2,
-            "_meta": {
-              "path": "entities/clients/techstart/projects/techstart-mvp",
-              "files": [],
-              "folders": []
-            }
-          }
-        ]
+        }
+      },
+      {
+        "name": "sales",
+        "display_name": "Sales",
+        "type": "department",
+        "order": 1,
+        "_meta": {
+          "path": "entities/departments/sales",
+          "files": [],
+          "folders": []
+        }
       }
     ]
   }
