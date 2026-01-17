@@ -104,18 +104,6 @@
                 }
               }
             ]
-          },
-          {
-            "name": "enterprise-sales",
-            "display_name": "Sales",
-            "type": "function",
-            "order": 2,
-            "_meta": {
-              "path": "entities/business-units/enterprise-bu/functions/enterprise-sales",
-              "files": [],
-              "folders": []
-            },
-            "children": []
           }
         ]
       }
