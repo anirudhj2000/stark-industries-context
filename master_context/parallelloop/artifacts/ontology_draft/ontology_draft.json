@@ -115,19 +115,7 @@
               "files": [],
               "folders": []
             },
-            "children": [
-              {
-                "name": "enterprise-ae",
-                "display_name": "Account Executives",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae",
-                  "files": [],
-                  "folders": []
-                }
-              }
-            ]
+            "children": []
           }
         ]
       }
