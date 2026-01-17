@@ -2,39 +2,34 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: matrix
-template: null
-generated_at: '2026-01-17T11:32:42.122683+00:00'
+structure_type: enterprise
+template: enterprise
+generated_at: '2026-01-17T11:57:56.719288+00:00'
 levels:
 - name: Organization
   slug: organization
   order: 0
   skipped: false
-  template_name: null
-- name: Business Unit
-  slug: business_unit
-  order: 1
-  skipped: false
-  template_name: null
+  template_name: Organization
 - name: Business Unit
   slug: business-unit
   order: 1
   skipped: false
-  template_name: null
+  template_name: Business Unit
 - name: Function
   slug: function
   order: 2
   skipped: false
-  template_name: null
+  template_name: Function
 - name: Team
   slug: team
   order: 3
   skipped: false
-  template_name: null
+  template_name: Team
 entities:
 - name: Parallelloop AI
   slug: parallelloop
-  description: ''
+  description: Root organization
   entity_type: organization
   order: 0
   level: organization
@@ -42,7 +37,7 @@ entities:
   children:
   - name: Consumer
     slug: consumer
-    description: ''
+    description: Consumer products
     entity_type: business-unit
     order: 1
     level: business-unit
@@ -50,7 +45,7 @@ entities:
     children:
     - name: Engineering
       slug: consumer-engineering
-      description: ''
+      description: Engineering function
       entity_type: function
       order: 2
       level: function
@@ -58,43 +53,28 @@ entities:
       children:
       - name: Mobile
         slug: consumer-mobile
-        description: ''
+        description: Mobile team
         entity_type: team
         order: 3
         level: team
         path: entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile
       - name: Platform
         slug: consumer-platform
-        description: ''
+        description: Platform team
         entity_type: team
         order: 3
         level: team
         path: entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform
-    - name: Sales
-      slug: consumer-sales
-      description: ''
+    - name: Product
+      slug: consumer-product
+      description: Product function
       entity_type: function
       order: 2
       level: function
-      path: entities/business-units/consumer/functions/consumer-sales
-      children:
-      - name: Enterprise
-        slug: consumer-enterprise
-        description: ''
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/business-units/consumer/functions/consumer-sales/teams/consumer-enterprise
-      - name: SMB
-        slug: consumer-smb
-        description: ''
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/business-units/consumer/functions/consumer-sales/teams/consumer-smb
+      path: entities/business-units/consumer/functions/consumer-product
   - name: Enterprise
     slug: enterprise-bu
-    description: ''
+    description: Enterprise products
     entity_type: business-unit
     order: 1
     level: business-unit
@@ -102,7 +82,7 @@ entities:
     children:
     - name: Engineering
       slug: enterprise-engineering
-      description: ''
+      description: Engineering function
       entity_type: function
       order: 2
       level: function
@@ -110,14 +90,14 @@ entities:
       children:
       - name: Integrations
         slug: enterprise-integrations
-        description: ''
+        description: Integrations team
         entity_type: team
         order: 3
         level: team
         path: entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations
     - name: Sales
       slug: enterprise-sales
-      description: ''
+      description: Sales function
       entity_type: function
       order: 2
       level: function
@@ -125,7 +105,7 @@ entities:
       children:
       - name: Account Executives
         slug: enterprise-ae
-        description: ''
+        description: AE team
         entity_type: team
         order: 3
         level: team
