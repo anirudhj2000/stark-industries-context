@@ -149,7 +149,31 @@
             "forecasts.yaml"
           ],
           "folders": []
-        }
+        },
+        "children": [
+          {
+            "name": "accounting",
+            "display_name": "Accounting",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/finance/teams/accounting",
+              "files": [],
+              "folders": []
+            }
+          },
+          {
+            "name": "financial-planning-analysis-fpa",
+            "display_name": "Financial Planning & Analysis (FP&A)",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/finance/teams/financial-planning-analysis-fpa",
+              "files": [],
+              "folders": []
+            }
+          }
+        ]
       },
       {
         "name": "operations",
