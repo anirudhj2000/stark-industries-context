@@ -159,7 +159,11 @@
         "order": 1,
         "_meta": {
           "path": "entities/departments/sales",
-          "files": [],
+          "files": [
+            "pipeline.yaml",
+            "playbooks.yaml",
+            "territories.yaml"
+          ],
           "folders": []
         },
         "children": [
