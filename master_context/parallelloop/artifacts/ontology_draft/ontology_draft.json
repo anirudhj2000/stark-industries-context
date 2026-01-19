@@ -7,7 +7,15 @@
     "order": 0,
     "_meta": {
       "path": "entities/organization",
-      "files": [],
+      "files": [
+        "brand.yaml",
+        "competitors.yaml",
+        "governance.yaml",
+        "investors.yaml",
+        "partners.yaml",
+        "strategy.yaml",
+        "vendors.yaml"
+      ],
       "folders": []
     },
     "children": [
@@ -18,7 +26,9 @@
         "order": 1,
         "_meta": {
           "path": "entities/business-units/consumer",
-          "files": [],
+          "files": [
+            "relationships.yaml"
+          ],
           "folders": []
         },
         "children": [
@@ -29,7 +39,11 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/consumer/functions/consumer-engineering",
-              "files": [],
+              "files": [
+                "api_integrations.yaml",
+                "system_architecture.yaml",
+                "tech_stack.yaml"
+              ],
               "folders": []
             },
             "children": [
@@ -40,7 +54,10 @@
                 "order": 3,
                 "_meta": {
                   "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile",
-                  "files": [],
+                  "files": [
+                    "app_releases.yaml",
+                    "tech_stack.yaml"
+                  ],
                   "folders": []
                 }
               },
@@ -51,7 +68,10 @@
                 "order": 3,
                 "_meta": {
                   "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform",
-                  "files": [],
+                  "files": [
+                    "system_architecture.yaml",
+                    "tech_stack.yaml"
+                  ],
                   "folders": []
                 }
               }
@@ -64,7 +84,10 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/consumer/functions/consumer-product",
-              "files": [],
+              "files": [
+                "metrics.yaml",
+                "roadmap.yaml"
+              ],
               "folders": []
             }
           }
@@ -88,7 +111,11 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering",
-              "files": [],
+              "files": [
+                "api_integrations.yaml",
+                "system_architecture.yaml",
+                "tech_stack.yaml"
+              ],
               "folders": []
             },
             "children": [
@@ -112,7 +139,11 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/enterprise-bu/functions/enterprise-sales",
-              "files": [],
+              "files": [
+                "pipeline.yaml",
+                "playbooks.yaml",
+                "territories.yaml"
+              ],
               "folders": []
             },
             "children": [
