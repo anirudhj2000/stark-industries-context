@@ -152,8 +152,8 @@
         },
         "children": [
           {
-            "name": "accounting-one",
-            "display_name": "Accounting one",
+            "name": "accounting",
+            "display_name": "Accounting",
             "type": "team",
             "order": 2,
             "_meta": {
