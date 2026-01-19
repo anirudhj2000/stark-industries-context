@@ -1,167 +1,110 @@
 {
-  "structure_type": "enterprise",
+  "structure_type": "functional",
+  "levels": [
+    {"entity_type": "organization", "order": 0, "path_pattern": "entities/organization"},
+    {"entity_type": "department", "order": 1, "path_pattern": "entities/function/{name}"},
+    {"entity_type": "team", "order": 2, "path_pattern": "entities/function/{parent}/teams/{name}"}
+  ],
   "organization": {
-    "name": "parallelloop",
-    "display_name": "Parallelloop AI",
+    "name": "organization",
+    "display_name": "Organization",
     "type": "organization",
     "order": 0,
-    "_meta": {
-      "path": "entities/organization",
-      "files": [
-        "brand.yaml",
-        "competitors.yaml",
-        "governance.yaml",
-        "investors.yaml",
-        "partners.yaml",
-        "strategy.yaml",
-        "vendors.yaml"
-      ],
-      "folders": []
-    },
     "children": [
       {
-        "name": "consumer",
-        "display_name": "Consumer",
-        "type": "business-unit",
+        "name": "engineering",
+        "display_name": "Engineering",
+        "type": "department",
         "order": 1,
-        "_meta": {
-          "path": "entities/business-units/consumer",
-          "files": [
-            "relationships.yaml"
-          ],
-          "folders": []
-        },
         "children": [
           {
-            "name": "consumer-engineering",
-            "display_name": "Engineering",
-            "type": "function",
+            "name": "frontend",
+            "display_name": "Frontend",
+            "type": "team",
             "order": 2,
+            "children": [],
             "_meta": {
-              "path": "entities/business-units/consumer/functions/consumer-engineering",
-              "files": [
-                "api_integrations.yaml",
-                "system_architecture.yaml",
-                "tech_stack.yaml"
-              ],
-              "folders": []
-            },
-            "children": [
-              {
-                "name": "consumer-mobile",
-                "display_name": "Mobile",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile",
-                  "files": [
-                    "app_releases.yaml",
-                    "tech_stack.yaml"
-                  ],
-                  "folders": []
-                }
-              },
-              {
-                "name": "consumer-platform",
-                "display_name": "Platform",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform",
-                  "files": [
-                    "system_architecture.yaml",
-                    "tech_stack.yaml"
-                  ],
-                  "folders": []
-                }
-              }
-            ]
+              "path": "entities/function/engineering/teams/frontend",
+              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "design_tokens.yaml", "component_library.yaml"]
+            }
           },
           {
-            "name": "consumer-product",
-            "display_name": "Product",
-            "type": "function",
+            "name": "backend",
+            "display_name": "Backend",
+            "type": "team",
             "order": 2,
+            "children": [],
             "_meta": {
-              "path": "entities/business-units/consumer/functions/consumer-product",
-              "files": [
-                "metrics.yaml",
-                "roadmap.yaml"
-              ],
-              "folders": []
+              "path": "entities/function/engineering/teams/backend",
+              "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
             }
           }
-        ]
+        ],
+        "_meta": {
+          "path": "entities/function/engineering",
+          "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
+        }
       },
       {
-        "name": "enterprise-bu",
-        "display_name": "Enterprise",
-        "type": "business-unit",
+        "name": "operations",
+        "display_name": "Operations",
+        "type": "department",
         "order": 1,
+        "children": [],
         "_meta": {
-          "path": "entities/business-units/enterprise-bu",
-          "files": [],
-          "folders": []
-        },
+          "path": "entities/function/operations",
+          "files": ["overview.yaml", "_triage.yaml", "processes.yaml", "slas.yaml", "runbooks.yaml"]
+        }
+      },
+      {
+        "name": "marketing",
+        "display_name": "Marketing",
+        "type": "department",
+        "order": 1,
         "children": [
           {
-            "name": "enterprise-engineering",
-            "display_name": "Engineering",
-            "type": "function",
+            "name": "growth",
+            "display_name": "Growth",
+            "type": "team",
             "order": 2,
+            "children": [],
             "_meta": {
-              "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering",
-              "files": [
-                "api_integrations.yaml",
-                "system_architecture.yaml",
-                "tech_stack.yaml"
-              ],
-              "folders": []
-            },
-            "children": [
-              {
-                "name": "enterprise-integrations",
-                "display_name": "Integrations",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations",
-                  "files": [],
-                  "folders": []
-                }
-              }
-            ]
+              "path": "entities/function/marketing/teams/growth",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
           },
           {
-            "name": "enterprise-sales",
-            "display_name": "Sales",
-            "type": "function",
+            "name": "content",
+            "display_name": "Content",
+            "type": "team",
             "order": 2,
+            "children": [],
             "_meta": {
-              "path": "entities/business-units/enterprise-bu/functions/enterprise-sales",
-              "files": [
-                "pipeline.yaml",
-                "playbooks.yaml",
-                "territories.yaml"
-              ],
-              "folders": []
-            },
-            "children": [
-              {
-                "name": "enterprise-ae",
-                "display_name": "Account Executives",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae",
-                  "files": [],
-                  "folders": []
-                }
-              }
-            ]
+              "path": "entities/function/marketing/teams/content",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
+          },
+          {
+            "name": "brand",
+            "display_name": "Brand",
+            "type": "team",
+            "order": 2,
+            "children": [],
+            "_meta": {
+              "path": "entities/function/marketing/teams/brand",
+              "files": ["overview.yaml", "_triage.yaml"]
+            }
           }
-        ]
+        ],
+        "_meta": {
+          "path": "entities/function/marketing",
+          "files": ["overview.yaml", "_triage.yaml", "channels.yaml", "campaigns.yaml", "brand_assets.yaml"]
+        }
       }
-    ]
+    ],
+    "_meta": {
+      "path": "entities/organization",
+      "files": ["overview.yaml", "brand.yaml", "strategy.yaml", "governance.yaml", "_triage.yaml", "competitors.yaml", "vendors.yaml", "partners.yaml", "investors.yaml"]
+    }
   }
 }
