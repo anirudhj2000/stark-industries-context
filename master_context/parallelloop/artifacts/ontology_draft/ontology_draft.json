@@ -64,20 +64,6 @@
               ],
               "folders": []
             }
-          },
-          {
-            "name": "support",
-            "display_name": "Support",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/departments/customer-experience/teams/support",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml"
-              ],
-              "folders": []
-            }
           }
         ]
       },
@@ -190,7 +176,23 @@
             "runbooks.yaml"
           ],
           "folders": []
-        }
+        },
+        "children": [
+          {
+            "name": "support",
+            "display_name": "Support",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/operations/teams/support",
+              "files": [
+                "overview.yaml",
+                "_triage.yaml"
+              ],
+              "folders": []
+            }
+          }
+        ]
       },
       {
         "name": "product",
