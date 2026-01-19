@@ -1,61 +1,169 @@
 {
-  "structure_type": "startup",
+  "structure_type": "functional",
   "organization": {
-    "name": "parallelloop",
-    "display_name": "Parallelloop AI",
+    "name": "organization",
+    "display_name": "Organization",
     "type": "organization",
     "order": 0,
     "_meta": {
       "path": "entities/organization",
       "files": [
+        "overview.yaml",
         "brand.yaml",
-        "competitors.yaml",
-        "governance.yaml",
-        "investors.yaml",
-        "partners.yaml",
         "strategy.yaml",
-        "vendors.yaml"
+        "governance.yaml",
+        "_triage.yaml",
+        "competitors.yaml",
+        "vendors.yaml",
+        "partners.yaml",
+        "investors.yaml"
       ],
       "folders": []
     },
     "children": [
       {
-        "name": "engineering",
-        "display_name": "Engineering",
-        "type": "team",
+        "name": "customer-experience",
+        "display_name": "Customer Experience",
+        "type": "department",
         "order": 1,
         "_meta": {
-          "path": "entities/teams/engineering",
+          "path": "entities/departments/customer-experience",
           "files": [
-            "api_integrations.yaml",
-            "system_architecture.yaml",
-            "tech_stack.yaml"
+            "overview.yaml",
+            "_triage.yaml",
+            "health_metrics.yaml",
+            "slas.yaml"
           ],
           "folders": []
-        }
+        },
+        "children": [
+          {
+            "name": "onboarding",
+            "display_name": "Onboarding",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/customer-experience/teams/onboarding",
+              "files": [
+                "overview.yaml",
+                "_triage.yaml"
+              ],
+              "folders": []
+            }
+          },
+          {
+            "name": "renewals",
+            "display_name": "Renewals",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/customer-experience/teams/renewals",
+              "files": [
+                "overview.yaml",
+                "_triage.yaml"
+              ],
+              "folders": []
+            }
+          },
+          {
+            "name": "support",
+            "display_name": "Support",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/customer-experience/teams/support",
+              "files": [
+                "overview.yaml",
+                "_triage.yaml"
+              ],
+              "folders": []
+            }
+          }
+        ]
       },
       {
-        "name": "growth",
-        "display_name": "Growth",
-        "type": "team",
+        "name": "engineering",
+        "display_name": "Engineering",
+        "type": "department",
         "order": 1,
         "_meta": {
-          "path": "entities/teams/growth",
-          "files": [],
+          "path": "entities/departments/engineering",
+          "files": [
+            "overview.yaml",
+            "_triage.yaml",
+            "tech_stack.yaml",
+            "system_architecture.yaml",
+            "api_integrations.yaml"
+          ],
+          "folders": []
+        },
+        "children": [
+          {
+            "name": "backend",
+            "display_name": "Backend",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/engineering/teams/backend",
+              "files": [
+                "overview.yaml",
+                "_triage.yaml",
+                "tech_stack.yaml",
+                "system_architecture.yaml",
+                "api_integrations.yaml"
+              ],
+              "folders": []
+            }
+          },
+          {
+            "name": "frontend",
+            "display_name": "Frontend",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/engineering/teams/frontend",
+              "files": [
+                "overview.yaml",
+                "_triage.yaml",
+                "tech_stack.yaml",
+                "design_tokens.yaml",
+                "component_library.yaml"
+              ],
+              "folders": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "finance",
+        "display_name": "Finance",
+        "type": "department",
+        "order": 1,
+        "_meta": {
+          "path": "entities/departments/finance",
+          "files": [
+            "overview.yaml",
+            "_triage.yaml",
+            "financials.yaml",
+            "budget.yaml",
+            "forecasts.yaml"
+          ],
           "folders": []
         }
       },
       {
         "name": "operations",
         "display_name": "Operations",
-        "type": "team",
+        "type": "department",
         "order": 1,
         "_meta": {
-          "path": "entities/teams/operations",
+          "path": "entities/departments/operations",
           "files": [
+            "overview.yaml",
+            "_triage.yaml",
             "processes.yaml",
-            "runbooks.yaml",
-            "slas.yaml"
+            "slas.yaml",
+            "runbooks.yaml"
           ],
           "folders": []
         }
@@ -63,13 +171,15 @@
       {
         "name": "product",
         "display_name": "Product",
-        "type": "team",
+        "type": "department",
         "order": 1,
         "_meta": {
-          "path": "entities/teams/product",
+          "path": "entities/departments/product",
           "files": [
-            "metrics.yaml",
-            "roadmap.yaml"
+            "overview.yaml",
+            "_triage.yaml",
+            "roadmap.yaml",
+            "metrics.yaml"
           ],
           "folders": []
         }
