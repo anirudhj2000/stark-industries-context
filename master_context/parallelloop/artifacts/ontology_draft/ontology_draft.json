@@ -151,6 +151,30 @@
           ],
           "folders": []
         }
+      },
+      {
+        "name": "sales",
+        "display_name": "Sales",
+        "type": "department",
+        "order": 1,
+        "_meta": {
+          "path": "entities/departments/sales",
+          "files": [],
+          "folders": []
+        },
+        "children": [
+          {
+            "name": "b2b-sales",
+            "display_name": "B2b sales",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/sales/teams/b2b-sales",
+              "files": [],
+              "folders": []
+            }
+          }
+        ]
       }
     ]
   }
