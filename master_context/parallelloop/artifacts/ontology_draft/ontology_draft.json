@@ -1,5 +1,10 @@
 {
   "structure_type": "functional",
+  "levels": [
+    {"entity_type": "organization", "order": 0, "path_pattern": "entities/organization"},
+    {"entity_type": "department", "order": 1, "path_pattern": "entities/departments/{name}"},
+    {"entity_type": "team", "order": 2, "path_pattern": "entities/departments/{parent}/teams/{name}"}
+  ],
   "organization": {
     "name": "organization",
     "display_name": "Organization",
@@ -160,6 +165,8 @@
         "_meta": {
           "path": "entities/departments/sales",
           "files": [
+            "overview.yaml",
+            "_triage.yaml",
             "pipeline.yaml",
             "playbooks.yaml",
             "territories.yaml"
@@ -169,12 +176,29 @@
         "children": [
           {
             "name": "b2b-sales",
-            "display_name": "B2b sales",
+            "display_name": "B2B Sales",
             "type": "team",
             "order": 2,
             "_meta": {
               "path": "entities/departments/sales/teams/b2b-sales",
-              "files": [],
+              "files": [
+                "overview.yaml",
+                "_triage.yaml"
+              ],
+              "folders": []
+            }
+          },
+          {
+            "name": "d2c-sales",
+            "display_name": "D2C Sales",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/sales/teams/d2c-sales",
+              "files": [
+                "overview.yaml",
+                "_triage.yaml"
+              ],
               "folders": []
             }
           }
