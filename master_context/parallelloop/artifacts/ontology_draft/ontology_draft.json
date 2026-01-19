@@ -102,8 +102,8 @@
             }
           },
           {
-            "name": "frontend",
-            "display_name": "Frontend",
+            "name": "ui-ux",
+            "display_name": "ui / ux",
             "type": "team",
             "order": 2,
             "_meta": {

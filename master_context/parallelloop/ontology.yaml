@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: functional
 template: null
-generated_at: '2026-01-19T12:27:31.646233+00:00'
+generated_at: '2026-01-19T12:34:59.455467+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -67,8 +67,8 @@ entities:
       order: 2
       level: team
       path: entities/departments/engineering/teams/backend
-    - name: Frontend
-      slug: frontend
+    - name: ui / ux
+      slug: ui-ux
       description: ''
       entity_type: team
       order: 2
