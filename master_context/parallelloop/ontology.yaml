@@ -2,111 +2,89 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: enterprise
-template: enterprise
-generated_at: '2026-01-19T06:51:37.270508+00:00'
+structure_type: functional
+template: null
+generated_at: '2026-01-19T10:26:02.748511+00:00'
 levels:
 - name: Organization
   slug: organization
   order: 0
   skipped: false
-  template_name: Organization
-- name: Business Unit
-  slug: business-unit
+  template_name: null
+- name: Department
+  slug: department
   order: 1
   skipped: false
-  template_name: Business Unit
-- name: Function
-  slug: function
-  order: 2
-  skipped: false
-  template_name: Function
+  template_name: null
 - name: Team
   slug: team
-  order: 3
+  order: 2
   skipped: false
-  template_name: Team
+  template_name: null
 entities:
-- name: Parallelloop AI
-  slug: parallelloop
-  description: Root organization
+- name: Organization
+  slug: organization
+  description: ''
   entity_type: organization
   order: 0
   level: organization
   path: entities/organization
   children:
-  - name: Consumer
-    slug: consumer
-    description: Consumer products
-    entity_type: business-unit
+  - name: Engineering
+    slug: engineering
+    description: ''
+    entity_type: department
     order: 1
-    level: business-unit
-    path: entities/business-units/consumer
+    level: department
+    path: entities/departments/engineering
     children:
-    - name: Engineering
-      slug: consumer-engineering
-      description: Engineering function
-      entity_type: function
+    - name: Backend
+      slug: backend
+      description: ''
+      entity_type: team
       order: 2
-      level: function
-      path: entities/business-units/consumer/functions/consumer-engineering
-      children:
-      - name: Mobile
-        slug: consumer-mobile
-        description: Mobile team
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile
-      - name: Platform
-        slug: consumer-platform
-        description: Platform team
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform
-    - name: Product
-      slug: consumer-product
-      description: Product function
-      entity_type: function
+      level: team
+      path: entities/departments/engineering/teams/backend
+    - name: Frontend
+      slug: frontend
+      description: ''
+      entity_type: team
       order: 2
-      level: function
-      path: entities/business-units/consumer/functions/consumer-product
-  - name: Enterprise
-    slug: enterprise-bu
-    description: Enterprise products
-    entity_type: business-unit
+      level: team
+      path: entities/departments/engineering/teams/frontend
+  - name: Marketing
+    slug: marketing
+    description: ''
+    entity_type: department
     order: 1
-    level: business-unit
-    path: entities/business-units/enterprise-bu
+    level: department
+    path: entities/departments/marketing
     children:
-    - name: Engineering
-      slug: enterprise-engineering
-      description: Engineering function
-      entity_type: function
+    - name: Brand
+      slug: brand
+      description: ''
+      entity_type: team
       order: 2
-      level: function
-      path: entities/business-units/enterprise-bu/functions/enterprise-engineering
-      children:
-      - name: Integrations
-        slug: enterprise-integrations
-        description: Integrations team
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations
-    - name: Sales
-      slug: enterprise-sales
-      description: Sales function
-      entity_type: function
+      level: team
+      path: entities/departments/marketing/teams/brand
+    - name: Content
+      slug: content
+      description: ''
+      entity_type: team
       order: 2
-      level: function
-      path: entities/business-units/enterprise-bu/functions/enterprise-sales
-      children:
-      - name: Account Executives
-        slug: enterprise-ae
-        description: AE team
-        entity_type: team
-        order: 3
-        level: team
-        path: entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae
+      level: team
+      path: entities/departments/marketing/teams/content
+    - name: Growth
+      slug: growth
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/marketing/teams/growth
+  - name: Operations
+    slug: operations
+    description: ''
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/departments/operations
