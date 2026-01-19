@@ -1,225 +1,135 @@
 {
-  "structure_type": "functional",
+  "structure_type": "enterprise",
   "organization": {
-    "name": "organization",
-    "display_name": "Organization",
+    "name": "parallelloop",
+    "display_name": "Parallelloop AI",
     "type": "organization",
     "order": 0,
     "_meta": {
       "path": "entities/organization",
-      "files": [
-        "overview.yaml",
-        "brand.yaml",
-        "strategy.yaml",
-        "governance.yaml",
-        "_triage.yaml",
-        "competitors.yaml",
-        "vendors.yaml",
-        "partners.yaml",
-        "investors.yaml"
-      ],
+      "files": [],
       "folders": []
     },
     "children": [
       {
-        "name": "customer-experience",
-        "display_name": "Customer Experience",
-        "type": "department",
+        "name": "consumer",
+        "display_name": "Consumer",
+        "type": "business-unit",
         "order": 1,
         "_meta": {
-          "path": "entities/departments/customer-experience",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "health_metrics.yaml",
-            "slas.yaml"
-          ],
-          "folders": []
-        },
-        "children": [
-          {
-            "name": "onboarding",
-            "display_name": "Onboarding",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/departments/customer-experience/teams/onboarding",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml"
-              ],
-              "folders": []
-            }
-          },
-          {
-            "name": "renewals",
-            "display_name": "Renewals",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/departments/customer-experience/teams/renewals",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml"
-              ],
-              "folders": []
-            }
-          }
-        ]
-      },
-      {
-        "name": "engineering",
-        "display_name": "Engineering",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/departments/engineering",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "tech_stack.yaml",
-            "system_architecture.yaml",
-            "api_integrations.yaml"
-          ],
-          "folders": []
-        },
-        "children": [
-          {
-            "name": "systems",
-            "display_name": "Systems",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/departments/engineering/teams/backend",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml",
-                "tech_stack.yaml",
-                "system_architecture.yaml",
-                "api_integrations.yaml"
-              ],
-              "folders": []
-            }
-          },
-          {
-            "name": "ui-ux",
-            "display_name": "ui / ux",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/departments/engineering/teams/frontend",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml",
-                "tech_stack.yaml",
-                "design_tokens.yaml",
-                "component_library.yaml"
-              ],
-              "folders": []
-            }
-          }
-        ]
-      },
-      {
-        "name": "finance",
-        "display_name": "Finance",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/departments/finance",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "financials.yaml",
-            "budget.yaml",
-            "forecasts.yaml"
-          ],
-          "folders": []
-        },
-        "children": [
-          {
-            "name": "accounting",
-            "display_name": "Accounting",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/departments/finance/teams/accounting",
-              "files": [],
-              "folders": []
-            }
-          },
-          {
-            "name": "financial-planning-analysis-fpa",
-            "display_name": "Financial Planning & Analysis (FP&A)",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/departments/finance/teams/financial-planning-analysis-fpa",
-              "files": [],
-              "folders": []
-            }
-          }
-        ]
-      },
-      {
-        "name": "hr",
-        "display_name": "HR",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/departments/hr",
+          "path": "entities/business-units/consumer",
           "files": [],
           "folders": []
-        }
-      },
-      {
-        "name": "operations",
-        "display_name": "Operations",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/departments/operations",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "processes.yaml",
-            "slas.yaml",
-            "runbooks.yaml"
-          ],
-          "folders": []
         },
         "children": [
           {
-            "name": "support",
-            "display_name": "Support",
-            "type": "team",
+            "name": "consumer-engineering",
+            "display_name": "Engineering",
+            "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/departments/operations/teams/support",
-              "files": [
-                "overview.yaml",
-                "_triage.yaml"
-              ],
+              "path": "entities/business-units/consumer/functions/consumer-engineering",
+              "files": [],
+              "folders": []
+            },
+            "children": [
+              {
+                "name": "consumer-mobile",
+                "display_name": "Mobile",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile",
+                  "files": [],
+                  "folders": []
+                }
+              },
+              {
+                "name": "consumer-platform",
+                "display_name": "Platform",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform",
+                  "files": [],
+                  "folders": []
+                }
+              }
+            ]
+          },
+          {
+            "name": "consumer-product",
+            "display_name": "Product",
+            "type": "function",
+            "order": 2,
+            "_meta": {
+              "path": "entities/business-units/consumer/functions/consumer-product",
+              "files": [],
               "folders": []
             }
           }
         ]
       },
       {
-        "name": "product",
-        "display_name": "Product",
-        "type": "department",
+        "name": "enterprise-bu",
+        "display_name": "Enterprise",
+        "type": "business-unit",
         "order": 1,
         "_meta": {
-          "path": "entities/departments/product",
-          "files": [
-            "overview.yaml",
-            "_triage.yaml",
-            "roadmap.yaml",
-            "metrics.yaml"
-          ],
+          "path": "entities/business-units/enterprise-bu",
+          "files": [],
           "folders": []
-        }
+        },
+        "children": [
+          {
+            "name": "enterprise-engineering",
+            "display_name": "Engineering",
+            "type": "function",
+            "order": 2,
+            "_meta": {
+              "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering",
+              "files": [],
+              "folders": []
+            },
+            "children": [
+              {
+                "name": "enterprise-integrations",
+                "display_name": "Integrations",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations",
+                  "files": [],
+                  "folders": []
+                }
+              }
+            ]
+          },
+          {
+            "name": "enterprise-sales",
+            "display_name": "Sales",
+            "type": "function",
+            "order": 2,
+            "_meta": {
+              "path": "entities/business-units/enterprise-bu/functions/enterprise-sales",
+              "files": [],
+              "folders": []
+            },
+            "children": [
+              {
+                "name": "enterprise-ae",
+                "display_name": "Account Executives",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae",
+                  "files": [],
+                  "folders": []
+                }
+              }
+            ]
+          }
+        ]
       }
     ]
   }

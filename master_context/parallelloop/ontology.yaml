@@ -2,126 +2,111 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: functional
-template: null
-generated_at: '2026-01-19T12:49:08.126507+00:00'
+structure_type: enterprise
+template: enterprise
+generated_at: '2026-01-19T13:31:34.241643+00:00'
 levels:
 - name: Organization
   slug: organization
   order: 0
   skipped: false
-  template_name: null
-- name: Department
-  slug: department
+  template_name: Organization
+- name: Business Unit
+  slug: business-unit
   order: 1
   skipped: false
-  template_name: null
-- name: Team
-  slug: team
+  template_name: Business Unit
+- name: Function
+  slug: function
   order: 2
   skipped: false
-  template_name: null
+  template_name: Function
+- name: Team
+  slug: team
+  order: 3
+  skipped: false
+  template_name: Team
 entities:
-- name: Organization
-  slug: organization
-  description: ''
+- name: Parallelloop AI
+  slug: parallelloop
+  description: Root organization
   entity_type: organization
   order: 0
   level: organization
   path: entities/organization
   children:
-  - name: Customer Experience
-    slug: customer-experience
-    description: ''
-    entity_type: department
+  - name: Consumer
+    slug: consumer
+    description: Consumer products
+    entity_type: business-unit
     order: 1
-    level: department
-    path: entities/departments/customer-experience
+    level: business-unit
+    path: entities/business-units/consumer
     children:
-    - name: Onboarding
-      slug: onboarding
-      description: ''
-      entity_type: team
+    - name: Engineering
+      slug: consumer-engineering
+      description: Engineering function
+      entity_type: function
       order: 2
-      level: team
-      path: entities/departments/customer-experience/teams/onboarding
-    - name: Renewals
-      slug: renewals
-      description: ''
-      entity_type: team
+      level: function
+      path: entities/business-units/consumer/functions/consumer-engineering
+      children:
+      - name: Mobile
+        slug: consumer-mobile
+        description: Mobile team
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile
+      - name: Platform
+        slug: consumer-platform
+        description: Platform team
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform
+    - name: Product
+      slug: consumer-product
+      description: Product function
+      entity_type: function
       order: 2
-      level: team
-      path: entities/departments/customer-experience/teams/renewals
-  - name: Engineering
-    slug: engineering
-    description: ''
-    entity_type: department
+      level: function
+      path: entities/business-units/consumer/functions/consumer-product
+  - name: Enterprise
+    slug: enterprise-bu
+    description: Enterprise products
+    entity_type: business-unit
     order: 1
-    level: department
-    path: entities/departments/engineering
+    level: business-unit
+    path: entities/business-units/enterprise-bu
     children:
-    - name: Systems
-      slug: systems
-      description: ''
-      entity_type: team
+    - name: Engineering
+      slug: enterprise-engineering
+      description: Engineering function
+      entity_type: function
       order: 2
-      level: team
-      path: entities/departments/engineering/teams/backend
-    - name: ui / ux
-      slug: ui-ux
-      description: ''
-      entity_type: team
+      level: function
+      path: entities/business-units/enterprise-bu/functions/enterprise-engineering
+      children:
+      - name: Integrations
+        slug: enterprise-integrations
+        description: Integrations team
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations
+    - name: Sales
+      slug: enterprise-sales
+      description: Sales function
+      entity_type: function
       order: 2
-      level: team
-      path: entities/departments/engineering/teams/frontend
-  - name: Finance
-    slug: finance
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/departments/finance
-    children:
-    - name: Accounting
-      slug: accounting
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/departments/finance/teams/accounting
-    - name: Financial Planning & Analysis (FP&A)
-      slug: financial-planning-analysis-fpa
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/departments/finance/teams/financial-planning-analysis-fpa
-  - name: HR
-    slug: hr
-    description: Human resource
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/departments/hr
-  - name: Operations
-    slug: operations
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/departments/operations
-    children:
-    - name: Support
-      slug: support
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/departments/operations/teams/support
-  - name: Product
-    slug: product
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/departments/product
+      level: function
+      path: entities/business-units/enterprise-bu/functions/enterprise-sales
+      children:
+      - name: Account Executives
+        slug: enterprise-ae
+        description: AE team
+        entity_type: team
+        order: 3
+        level: team
+        path: entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae
