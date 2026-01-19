@@ -1,0 +1,60 @@
+{
+  "structure_type": "startup",
+  "organization": {
+    "name": "parallelloop",
+    "display_name": "Parallelloop AI",
+    "type": "organization",
+    "order": 0,
+    "_meta": {
+      "path": "entities/organization",
+      "files": [],
+      "folders": []
+    },
+    "children": [
+      {
+        "name": "engineering",
+        "display_name": "Engineering",
+        "type": "team",
+        "order": 1,
+        "_meta": {
+          "path": "entities/teams/engineering",
+          "files": [],
+          "folders": []
+        }
+      },
+      {
+        "name": "growth",
+        "display_name": "Growth",
+        "type": "team",
+        "order": 1,
+        "_meta": {
+          "path": "entities/teams/growth",
+          "files": [],
+          "folders": []
+        }
+      },
+      {
+        "name": "operations",
+        "display_name": "Operations",
+        "type": "team",
+        "order": 1,
+        "_meta": {
+          "path": "entities/teams/operations",
+          "files": [],
+          "folders": []
+        }
+      },
+      {
+        "name": "product",
+        "display_name": "Product",
+        "type": "team",
+        "order": 1,
+        "_meta": {
+          "path": "entities/teams/product",
+          "files": [],
+          "folders": []
+        }
+      }
+    ]
+  }
+}
