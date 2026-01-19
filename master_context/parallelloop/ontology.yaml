@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: functional
 template: null
-generated_at: '2026-01-19T10:27:28.488555+00:00'
+generated_at: '2026-01-19T10:36:38.251480+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -88,6 +88,14 @@ entities:
     order: 1
     level: department
     path: entities/departments/operations
+    children:
+    - name: Operation Excellence
+      slug: operation-excellence
+      description: Operation Excellence
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/operations/teams/operation-excellence
   - name: Sales
     slug: sales
     description: ''
