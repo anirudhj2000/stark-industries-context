@@ -1,5 +1,5 @@
 {
-  "structure_type": "functional",
+  "structure_type": "enterprise",
   "organization": {
     "name": "parallelloop",
     "display_name": "Parallelloop AI",
@@ -12,34 +12,58 @@
     },
     "children": [
       {
-        "name": "engineering",
-        "display_name": "Engineering",
-        "type": "department",
+        "name": "consumer",
+        "display_name": "Consumer",
+        "type": "business-unit",
         "order": 1,
         "_meta": {
-          "path": "entities/departments/engineering",
+          "path": "entities/business-units/consumer",
           "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "backend",
-            "display_name": "Backend",
-            "type": "team",
+            "name": "consumer-engineering",
+            "display_name": "Engineering",
+            "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/departments/engineering/teams/backend",
+              "path": "entities/business-units/consumer/functions/consumer-engineering",
               "files": [],
               "folders": []
-            }
+            },
+            "children": [
+              {
+                "name": "consumer-mobile",
+                "display_name": "Mobile",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile",
+                  "files": [],
+                  "folders": []
+                }
+              },
+              {
+                "name": "consumer-platform",
+                "display_name": "Platform",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform",
+                  "files": [],
+                  "folders": []
+                }
+              }
+            ]
           },
           {
-            "name": "frontend",
-            "display_name": "Frontend",
-            "type": "team",
+            "name": "consumer-product",
+            "display_name": "Product",
+            "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/departments/engineering/teams/frontend",
+              "path": "entities/business-units/consumer/functions/consumer-product",
               "files": [],
               "folders": []
             }
@@ -47,100 +71,63 @@
         ]
       },
       {
-        "name": "marketing",
-        "display_name": "Marketing",
-        "type": "department",
+        "name": "enterprise-bu",
+        "display_name": "Enterprise",
+        "type": "business-unit",
         "order": 1,
         "_meta": {
-          "path": "entities/departments/marketing",
-          "files": [
-            "channels.yaml",
-            "campaigns.yaml",
-            "brand_assets.yaml"
-          ],
-          "folders": []
-        },
-        "children": [
-          {
-            "name": "brand",
-            "display_name": "Brand",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/departments/marketing/teams/brand",
-              "files": [],
-              "folders": []
-            }
-          },
-          {
-            "name": "growth",
-            "display_name": "Growth",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/departments/marketing/teams/growth",
-              "files": [],
-              "folders": []
-            }
-          }
-        ]
-      },
-      {
-        "name": "product",
-        "display_name": "Product",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/departments/product",
+          "path": "entities/business-units/enterprise-bu",
           "files": [],
           "folders": []
         },
         "children": [
           {
-            "name": "smb-product",
-            "display_name": "SMB product",
-            "type": "team",
+            "name": "enterprise-engineering",
+            "display_name": "Engineering",
+            "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/departments/product/teams/smb-product",
+              "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering",
               "files": [],
               "folders": []
-            }
-          }
-        ]
-      },
-      {
-        "name": "sales",
-        "display_name": "Sales",
-        "type": "department",
-        "order": 1,
-        "_meta": {
-          "path": "entities/departments/sales",
-          "files": [],
-          "folders": []
-        },
-        "children": [
-          {
-            "name": "b2b-sales",
-            "display_name": "B2b Sales",
-            "type": "team",
-            "order": 2,
-            "_meta": {
-              "path": "entities/departments/sales/teams/b2b-sales",
-              "files": [],
-              "folders": []
-            }
+            },
+            "children": [
+              {
+                "name": "enterprise-integrations",
+                "display_name": "Integrations",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations",
+                  "files": [],
+                  "folders": []
+                }
+              }
+            ]
           },
           {
-            "name": "d2c-sales",
-            "display_name": "D2c Sales",
-            "type": "team",
+            "name": "enterprise-sales",
+            "display_name": "Sales",
+            "type": "function",
             "order": 2,
             "_meta": {
-              "path": "entities/departments/sales/teams/d2c-sales",
+              "path": "entities/business-units/enterprise-bu/functions/enterprise-sales",
               "files": [],
               "folders": []
-            }
+            },
+            "children": [
+              {
+                "name": "enterprise-ae",
+                "display_name": "Account Executives",
+                "type": "team",
+                "order": 3,
+                "_meta": {
+                  "path": "entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae",
+                  "files": [],
+                  "folders": []
+                }
+              }
+            ]
           }
         ]
       }
