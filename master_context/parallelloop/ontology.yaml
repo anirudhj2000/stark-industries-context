@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: functional
 template: null
-generated_at: '2026-01-19T12:37:20.176239+00:00'
+generated_at: '2026-01-19T12:49:08.126507+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -96,6 +96,13 @@ entities:
       order: 2
       level: team
       path: entities/departments/finance/teams/financial-planning-analysis-fpa
+  - name: HR
+    slug: hr
+    description: Human resource
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/departments/hr
   - name: Operations
     slug: operations
     description: ''

@@ -162,6 +162,17 @@
         ]
       },
       {
+        "name": "hr",
+        "display_name": "HR",
+        "type": "department",
+        "order": 1,
+        "_meta": {
+          "path": "entities/departments/hr",
+          "files": [],
+          "folders": []
+        }
+      },
+      {
         "name": "operations",
         "display_name": "Operations",
         "type": "department",
