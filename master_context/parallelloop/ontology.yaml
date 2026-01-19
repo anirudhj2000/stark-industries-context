@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: functional
 template: null
-generated_at: '2026-01-19T12:34:59.455467+00:00'
+generated_at: '2026-01-19T12:37:20.176239+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -60,8 +60,8 @@ entities:
     level: department
     path: entities/departments/engineering
     children:
-    - name: Backend
-      slug: backend
+    - name: Systems
+      slug: systems
       description: ''
       entity_type: team
       order: 2

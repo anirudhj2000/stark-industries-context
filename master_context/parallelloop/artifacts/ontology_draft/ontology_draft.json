@@ -85,8 +85,8 @@
         },
         "children": [
           {
-            "name": "backend",
-            "display_name": "Backend",
+            "name": "systems",
+            "display_name": "Systems",
             "type": "team",
             "order": 2,
             "_meta": {
