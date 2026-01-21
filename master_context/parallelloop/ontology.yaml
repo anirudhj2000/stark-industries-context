@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: flat
 template: startup
-generated_at: '2026-01-21T09:07:11.430451+00:00'
+generated_at: '2026-01-21T09:07:42.363315+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -25,6 +25,13 @@ entities:
   level: organization
   path: entities/organization
   children:
+  - name: Engineering
+    slug: engineering
+    description: Engineering team
+    entity_type: team
+    order: 1
+    level: team
+    path: entities/teams/engineering
   - name: Operations
     slug: operations
     description: Finance and HR
@@ -46,10 +53,3 @@ entities:
     order: 1
     level: team
     path: entities/teams/sales-and-marketing
-  - name: Tech
-    slug: tech
-    description: ''
-    entity_type: team
-    order: 1
-    level: team
-    path: entities/teams/tech
