@@ -7,15 +7,7 @@
     "order": 0,
     "_meta": {
       "path": "entities/organization",
-      "files": [
-        "brand.yaml",
-        "competitors.yaml",
-        "governance.yaml",
-        "investors.yaml",
-        "partners.yaml",
-        "strategy.yaml",
-        "vendors.yaml"
-      ],
+      "files": [],
       "folders": []
     },
     "children": [
@@ -26,9 +18,7 @@
         "order": 1,
         "_meta": {
           "path": "entities/business-units/consumer",
-          "files": [
-            "relationships.yaml"
-          ],
+          "files": [],
           "folders": []
         },
         "children": [
@@ -39,11 +29,7 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/consumer/functions/consumer-engineering",
-              "files": [
-                "api_integrations.yaml",
-                "system_architecture.yaml",
-                "tech_stack.yaml"
-              ],
+              "files": [],
               "folders": []
             },
             "children": [
@@ -78,10 +64,7 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/consumer/functions/consumer-product",
-              "files": [
-                "metrics.yaml",
-                "roadmap.yaml"
-              ],
+              "files": [],
               "folders": []
             }
           }
@@ -94,9 +77,7 @@
         "order": 1,
         "_meta": {
           "path": "entities/business-units/enterprise-bu",
-          "files": [
-            "relationships.yaml"
-          ],
+          "files": [],
           "folders": []
         },
         "children": [
@@ -107,11 +88,7 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering",
-              "files": [
-                "api_integrations.yaml",
-                "system_architecture.yaml",
-                "tech_stack.yaml"
-              ],
+              "files": [],
               "folders": []
             },
             "children": [
@@ -135,11 +112,7 @@
             "order": 2,
             "_meta": {
               "path": "entities/business-units/enterprise-bu/functions/enterprise-sales",
-              "files": [
-                "pipeline.yaml",
-                "playbooks.yaml",
-                "territories.yaml"
-              ],
+              "files": [],
               "folders": []
             },
             "children": [
