@@ -1,6 +1,6 @@
 ---
 name: ontology-setup
-description: Infer organizational hierarchy and write ONTOLOGY_DRAFT JSON artifact. Use when (1) setting up new organization context, (2) user asks about org structure, (3) initializing entity hierarchies, or (4) user mentions "ontology", "org structure", "hierarchy", "departments", "teams", "company structure", "org chart", "divisions", or "business units". Supports Functional, Divisional, Product-Centric, Matrix, and Flat structures. Also supports "infer_files" mode for single-entity file inference.
+description: Use when setting up organization structure, or when user mentions "ontology", "org structure", "hierarchy", "departments", "teams", or "org chart". Creates ONTOLOGY_DRAFT artifact. Supports infer_files mode for single-entity inference.
 ---
 
 # CRITICAL: MODE DETECTION - READ THIS FIRST
@@ -21,19 +21,12 @@ description: Infer organizational hierarchy and write ONTOLOGY_DRAFT JSON artifa
 
 ## FORBIDDEN IN ALL MODES
 
-**NEVER do these things, regardless of which mode you are in:**
-
-- ❌ Create folders under `entities/`
-- ❌ Rename folders under `entities/` (renames happen during Apply)
-- ❌ Write files to `entities/*` paths
-- ❌ Use the Write tool on any path starting with `entities/`
+- ❌ Create/rename folders under `entities/`
+- ❌ Write to `entities/*` paths
 - ❌ Run git add, git commit, git push
-- ❌ Create .yaml files anywhere except `artifacts/ontology_draft/ontology_draft.json`
+- ❌ Create files anywhere except `artifacts/ontology_draft/ontology_draft.json`
 
-**Entity folders and files are created by the APPLY process, not by this skill.**
-
-**The `_meta.files` arrays in your draft JSON list files TO BE CREATED LATER by Apply.**
-**You store the file names in the JSON - you do NOT create the actual files.**
+Entity folders are created by APPLY, not this skill. The `_meta.files` arrays list files to be created later.
 
 ---
 
@@ -297,19 +290,9 @@ Ask: **Confirm? (or describe changes)**
 
 #### Display Name Generation
 
-For every node, generate `display_name` from `name` using these rules:
+See `references/templates.yaml` → `display_name_rules` section for the algorithm.
 
-1. Replace underscores `_` and hyphens `-` with spaces
-2. Capitalize first letter of each word (Title Case)
-3. Preserve common acronyms: IT, HR, QA, SRE, API, CTO, CEO, CFO, COO, VP, SVP, EVP, LOB, SMB
-
-**Examples:**
-- `"engineering"` → `"Engineering"`
-- `"data-engineering"` → `"Data Engineering"`
-- `"customer-success"` → `"Customer Success"`
-- `"it"` → `"IT"`
-- `"sre"` → `"SRE"`
-- `"team-1"` → `"Team 1"`
+**Key rules:** Replace hyphens/underscores with spaces, Title Case, preserve acronyms (IT, HR, QA, SRE, API).
 
 **Apply to EVERY node** including organization, departments, teams, LOBs, products, functions.
 
@@ -447,67 +430,15 @@ All rules in `references/templates.yaml`:
 
 ## Entity Deletion Safety Check
 
-When user requests to delete/remove an entity, check for assigned people first.
+See `references/deletion-rules.md` for full process.
 
-**Detection triggers:** "remove", "delete", "get rid of" + entity name
-
-**Check process:**
-1. Scan `entities/person/*/overview.yaml` for `team:` matching entity name (normalized, case-insensitive)
-2. For parent entities, also check all child teams recursively
-3. If no `entities/person/` directory exists, allow deletion
-
-**If people found → BLOCK (use this EXACT format, do NOT mention Playbook or any app name):**
-
-```
-Cannot delete '{entity_name}' - these people are currently assigned:
-- {person_name}
-- {person_name}
-
-Please reassign or remove them from the portal first.
-```
-
-Do NOT say "ask me again" or mention any app by name. Just list the people and the portal instruction.
-
-**If no people found → ALLOW** and proceed with removal.
-
-**Edge cases:**
-- Person without `team:` field → ignore
-- Team path like `engineering/backend` → match both parts
+**Quick reference:** Before deleting an entity, scan `entities/person/*/overview.yaml` for assigned people. If found, block deletion and list the people.
 
 ---
 
 ## Entity Rename Handling
 
-When user requests to rename an entity, update the `ontology_draft.json` ONLY.
+See `references/rename-rules.md` for full process.
 
-**Detection triggers:** "rename", "change name", "call it", "update name", "change X to Y"
-
-**CRITICAL: DO NOT directly modify entity folders.**
-
-**Process:**
-1. Load current `ontology_draft.json`
-2. Find the entity to rename (by current name)
-3. Update:
-   - `name` field (slugified version)
-   - `display_name` field (human-readable version)
-   - `_meta.path` field (update the entity name in the path)
-   - Update any child entity paths that reference the renamed parent
-4. Write updated JSON to `artifacts/ontology_draft/ontology_draft.json`
-5. Inform user: "I've updated the draft. The actual folder rename will happen when you Apply the changes."
-
-**Example:**
-User: "Rename consumer-mobile to mobile-apps"
-
-Update in ontology_draft.json:
-- `name`: "consumer-mobile" → "mobile-apps"
-- `display_name`: "Mobile" → "Mobile Apps"
-- `_meta.path`: "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile" → "entities/business-units/consumer/functions/consumer-engineering/teams/mobile-apps"
-
-**DO NOT:**
-- ❌ Use `mv` or any shell command on entities folder
-- ❌ Create new folders in entities/
-- ❌ Delete old folders in entities/
-- ❌ Modify any files in entities/
-
-The Apply process handles folder operations. You only modify the draft JSON.
+**Quick reference:** Update `ontology_draft.json` only. Do NOT modify entity folders directly - Apply handles folder operations.
 

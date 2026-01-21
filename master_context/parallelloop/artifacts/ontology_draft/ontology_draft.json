@@ -8,6 +8,8 @@
     "_meta": {
       "path": "entities/organization",
       "files": [
+        "overview.yaml",
+        "_triage.yaml",
         "brand.yaml",
         "competitors.yaml",
         "governance.yaml",
@@ -27,9 +29,28 @@
         "_meta": {
           "path": "entities/teams/engineering",
           "files": [
+            "overview.yaml",
+            "_triage.yaml",
             "api_integrations.yaml",
             "system_architecture.yaml",
             "tech_stack.yaml"
+          ],
+          "folders": []
+        }
+      },
+      {
+        "name": "marketing",
+        "display_name": "Marketing",
+        "type": "team",
+        "order": 1,
+        "_meta": {
+          "path": "entities/teams/marketing",
+          "files": [
+            "overview.yaml",
+            "_triage.yaml",
+            "brand_assets.yaml",
+            "campaigns.yaml",
+            "channels.yaml"
           ],
           "folders": []
         }
@@ -42,6 +63,8 @@
         "_meta": {
           "path": "entities/teams/operations",
           "files": [
+            "overview.yaml",
+            "_triage.yaml",
             "processes.yaml",
             "runbooks.yaml",
             "slas.yaml"
@@ -57,6 +80,8 @@
         "_meta": {
           "path": "entities/teams/product",
           "files": [
+            "overview.yaml",
+            "_triage.yaml",
             "metrics.yaml",
             "roadmap.yaml"
           ],
@@ -64,13 +89,15 @@
         }
       },
       {
-        "name": "sales-and-marketing",
-        "display_name": "Sales and Marketing",
+        "name": "sales",
+        "display_name": "Sales",
         "type": "team",
         "order": 1,
         "_meta": {
-          "path": "entities/teams/sales-and-marketing",
+          "path": "entities/teams/sales",
           "files": [
+            "overview.yaml",
+            "_triage.yaml",
             "pipeline.yaml",
             "playbooks.yaml",
             "territories.yaml"
