@@ -2,9 +2,9 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: startup
+structure_type: flat
 template: startup
-generated_at: '2026-01-21T08:54:22.790927+00:00'
+generated_at: '2026-01-21T08:58:33.162729+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -32,13 +32,6 @@ entities:
     order: 1
     level: team
     path: entities/teams/engineering
-  - name: Growth
-    slug: growth
-    description: Marketing and sales
-    entity_type: team
-    order: 1
-    level: team
-    path: entities/teams/growth
   - name: Operations
     slug: operations
     description: Finance and HR
@@ -53,3 +46,10 @@ entities:
     order: 1
     level: team
     path: entities/teams/product
+  - name: Sales
+    slug: sales
+    description: ''
+    entity_type: team
+    order: 1
+    level: team
+    path: entities/teams/sales

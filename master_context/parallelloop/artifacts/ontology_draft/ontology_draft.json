@@ -1,5 +1,5 @@
 {
-  "structure_type": "startup",
+  "structure_type": "flat",
   "organization": {
     "name": "parallelloop",
     "display_name": "Parallelloop AI",
@@ -35,17 +35,6 @@
         }
       },
       {
-        "name": "growth",
-        "display_name": "Growth",
-        "type": "team",
-        "order": 1,
-        "_meta": {
-          "path": "entities/teams/growth",
-          "files": [],
-          "folders": []
-        }
-      },
-      {
         "name": "operations",
         "display_name": "Operations",
         "type": "team",
@@ -70,6 +59,21 @@
           "files": [
             "metrics.yaml",
             "roadmap.yaml"
+          ],
+          "folders": []
+        }
+      },
+      {
+        "name": "sales",
+        "display_name": "Sales",
+        "type": "team",
+        "order": 1,
+        "_meta": {
+          "path": "entities/teams/sales",
+          "files": [
+            "pipeline.yaml",
+            "playbooks.yaml",
+            "territories.yaml"
           ],
           "folders": []
         }
