@@ -1,5 +1,5 @@
 {
-  "structure_type": "enterprise",
+  "structure_type": "startup",
   "organization": {
     "name": "parallelloop",
     "display_name": "Parallelloop AI",
@@ -7,158 +7,53 @@
     "order": 0,
     "_meta": {
       "path": "entities/organization",
-      "files": [
-        "brand.yaml",
-        "competitors.yaml",
-        "governance.yaml",
-        "investors.yaml",
-        "partners.yaml",
-        "strategy.yaml",
-        "vendors.yaml"
-      ],
+      "files": [],
       "folders": []
     },
     "children": [
       {
-        "name": "consumer",
-        "display_name": "Consumer",
-        "type": "business-unit",
+        "name": "engineering",
+        "display_name": "Engineering",
+        "type": "team",
         "order": 1,
         "_meta": {
-          "path": "entities/business-units/consumer",
+          "path": "entities/teams/engineering",
           "files": [],
           "folders": []
-        },
-        "children": [
-          {
-            "name": "consumer-engineering",
-            "display_name": "Engineering",
-            "type": "function",
-            "order": 2,
-            "_meta": {
-              "path": "entities/business-units/consumer/functions/consumer-engineering",
-              "files": [
-                "api_integrations.yaml",
-                "system_architecture.yaml",
-                "tech_stack.yaml"
-              ],
-              "folders": []
-            },
-            "children": [
-              {
-                "name": "consumer-mobile",
-                "display_name": "Mobile",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile",
-                  "files": [
-                    "app_releases.yaml",
-                    "tech_stack.yaml"
-                  ],
-                  "folders": []
-                }
-              },
-              {
-                "name": "consumer-platform",
-                "display_name": "Platform",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform",
-                  "files": [
-                    "system_architecture.yaml",
-                    "tech_stack.yaml"
-                  ],
-                  "folders": []
-                }
-              }
-            ]
-          },
-          {
-            "name": "consumer-product",
-            "display_name": "Product",
-            "type": "function",
-            "order": 2,
-            "_meta": {
-              "path": "entities/business-units/consumer/functions/consumer-product",
-              "files": [
-                "metrics.yaml",
-                "roadmap.yaml"
-              ],
-              "folders": []
-            }
-          }
-        ]
+        }
       },
       {
-        "name": "enterprise-bu",
-        "display_name": "Enterprise",
-        "type": "business-unit",
+        "name": "growth",
+        "display_name": "Growth",
+        "type": "team",
         "order": 1,
         "_meta": {
-          "path": "entities/business-units/enterprise-bu",
+          "path": "entities/teams/growth",
           "files": [],
           "folders": []
-        },
-        "children": [
-          {
-            "name": "enterprise-engineering",
-            "display_name": "Engineering",
-            "type": "function",
-            "order": 2,
-            "_meta": {
-              "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering",
-              "files": [
-                "api_integrations.yaml",
-                "system_architecture.yaml",
-                "tech_stack.yaml"
-              ],
-              "folders": []
-            },
-            "children": [
-              {
-                "name": "enterprise-integrations",
-                "display_name": "Integrations",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations",
-                  "files": [],
-                  "folders": []
-                }
-              }
-            ]
-          },
-          {
-            "name": "enterprise-sales",
-            "display_name": "Sales",
-            "type": "function",
-            "order": 2,
-            "_meta": {
-              "path": "entities/business-units/enterprise-bu/functions/enterprise-sales",
-              "files": [
-                "pipeline.yaml",
-                "playbooks.yaml",
-                "territories.yaml"
-              ],
-              "folders": []
-            },
-            "children": [
-              {
-                "name": "enterprise-ae",
-                "display_name": "Account Executives",
-                "type": "team",
-                "order": 3,
-                "_meta": {
-                  "path": "entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae",
-                  "files": [],
-                  "folders": []
-                }
-              }
-            ]
-          }
-        ]
+        }
+      },
+      {
+        "name": "operations",
+        "display_name": "Operations",
+        "type": "team",
+        "order": 1,
+        "_meta": {
+          "path": "entities/teams/operations",
+          "files": [],
+          "folders": []
+        }
+      },
+      {
+        "name": "product",
+        "display_name": "Product",
+        "type": "team",
+        "order": 1,
+        "_meta": {
+          "path": "entities/teams/product",
+          "files": [],
+          "folders": []
+        }
       }
     ]
   }

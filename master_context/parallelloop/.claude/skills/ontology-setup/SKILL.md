@@ -24,6 +24,7 @@ description: Infer organizational hierarchy and write ONTOLOGY_DRAFT JSON artifa
 **NEVER do these things, regardless of which mode you are in:**
 
 - ❌ Create folders under `entities/`
+- ❌ Rename folders under `entities/` (renames happen during Apply)
 - ❌ Write files to `entities/*` paths
 - ❌ Use the Write tool on any path starting with `entities/`
 - ❌ Run git add, git commit, git push
@@ -41,7 +42,6 @@ description: Infer organizational hierarchy and write ONTOLOGY_DRAFT JSON artifa
 Infer organizational hierarchy through collaborative dialogue and create an ONTOLOGY_DRAFT artifact.
 
 ---
-
 ## Mode: infer_files (Single Entity File Inference)
 
 When invoked with `mode: infer_files`, skip the full ontology workflow and return only the file list for a single entity.
@@ -70,24 +70,19 @@ The handler that calls this mode will create the files itself based on your JSON
 ### Process
 
 1. **Read `references/templates.yaml`** to get `function_config` and `team_config`
-
 2. **Determine base files from order level:**
    - `order: 0` (organization) → `[overview.yaml, brand.yaml, strategy.yaml, governance.yaml, _triage.yaml, competitors.yaml, vendors.yaml, partners.yaml, investors.yaml]`
    - `order: 1` (department/function/lob) → `[overview.yaml, _triage.yaml]`
    - `order: 2+` (team) → `[overview.yaml, _triage.yaml]`
-
 3. **Add function-specific files** (if `entity_type` is department/function OR `order == 1`):
    - Look up `function_config.<entity_name>.files` in templates.yaml
    - Add those files to the list
-
 4. **Add team-specific files** (if `entity_type` is team OR `order >= 2`):
    - Look up `team_config.<entity_name>.files` in templates.yaml
    - Add those files to the list
 
 ### Output Format
-
 Return ONLY a JSON object with the files array:
-
 ```json
 {
   "files": ["overview.yaml", "_triage.yaml", "tech_stack.yaml", "system_architecture.yaml", "api_integrations.yaml"]
@@ -478,4 +473,41 @@ Do NOT say "ask me again" or mention any app by name. Just list the people and t
 **Edge cases:**
 - Person without `team:` field → ignore
 - Team path like `engineering/backend` → match both parts
+
+---
+
+## Entity Rename Handling
+
+When user requests to rename an entity, update the `ontology_draft.json` ONLY.
+
+**Detection triggers:** "rename", "change name", "call it", "update name", "change X to Y"
+
+**CRITICAL: DO NOT directly modify entity folders.**
+
+**Process:**
+1. Load current `ontology_draft.json`
+2. Find the entity to rename (by current name)
+3. Update:
+   - `name` field (slugified version)
+   - `display_name` field (human-readable version)
+   - `_meta.path` field (update the entity name in the path)
+   - Update any child entity paths that reference the renamed parent
+4. Write updated JSON to `artifacts/ontology_draft/ontology_draft.json`
+5. Inform user: "I've updated the draft. The actual folder rename will happen when you Apply the changes."
+
+**Example:**
+User: "Rename consumer-mobile to mobile-apps"
+
+Update in ontology_draft.json:
+- `name`: "consumer-mobile" → "mobile-apps"
+- `display_name`: "Mobile" → "Mobile Apps"
+- `_meta.path`: "entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile" → "entities/business-units/consumer/functions/consumer-engineering/teams/mobile-apps"
+
+**DO NOT:**
+- ❌ Use `mv` or any shell command on entities folder
+- ❌ Create new folders in entities/
+- ❌ Delete old folders in entities/
+- ❌ Modify any files in entities/
+
+The Apply process handles folder operations. You only modify the draft JSON.
 
