@@ -49,12 +49,12 @@
         }
       },
       {
-        "name": "sales",
-        "display_name": "Sales",
+        "name": "sales-and-marketing",
+        "display_name": "Sales and Marketing",
         "type": "team",
         "order": 1,
         "_meta": {
-          "path": "entities/teams/sales",
+          "path": "entities/teams/sales-and-marketing",
           "files": [
             "pipeline.yaml",
             "playbooks.yaml",
