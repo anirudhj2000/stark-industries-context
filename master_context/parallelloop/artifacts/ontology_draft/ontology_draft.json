@@ -7,7 +7,15 @@
     "order": 0,
     "_meta": {
       "path": "entities/organization",
-      "files": [],
+      "files": [
+        "brand.yaml",
+        "competitors.yaml",
+        "governance.yaml",
+        "investors.yaml",
+        "partners.yaml",
+        "strategy.yaml",
+        "vendors.yaml"
+      ],
       "folders": []
     },
     "children": [
@@ -18,7 +26,11 @@
         "order": 1,
         "_meta": {
           "path": "entities/teams/engineering",
-          "files": [],
+          "files": [
+            "api_integrations.yaml",
+            "system_architecture.yaml",
+            "tech_stack.yaml"
+          ],
           "folders": []
         }
       },
@@ -40,7 +52,11 @@
         "order": 1,
         "_meta": {
           "path": "entities/teams/operations",
-          "files": [],
+          "files": [
+            "processes.yaml",
+            "runbooks.yaml",
+            "slas.yaml"
+          ],
           "folders": []
         }
       },
@@ -51,7 +67,10 @@
         "order": 1,
         "_meta": {
           "path": "entities/teams/product",
-          "files": [],
+          "files": [
+            "metrics.yaml",
+            "roadmap.yaml"
+          ],
           "folders": []
         }
       }
