@@ -150,6 +150,17 @@
             }
           },
           {
+            "name": "devops",
+            "display_name": "Devops",
+            "type": "team",
+            "order": 2,
+            "_meta": {
+              "path": "entities/departments/tech/teams/devops",
+              "files": [],
+              "folders": []
+            }
+          },
+          {
             "name": "frontend",
             "display_name": "Frontend",
             "type": "team",
