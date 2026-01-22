@@ -156,7 +156,11 @@
             "order": 2,
             "_meta": {
               "path": "entities/departments/tech/teams/devops",
-              "files": [],
+              "files": [
+                "ci_cd.yaml",
+                "infrastructure.yaml",
+                "monitoring.yaml"
+              ],
               "folders": []
             }
           },
