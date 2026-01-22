@@ -4,7 +4,7 @@ organization_name: Parallelloop AI
 organization_slug: parallelloop
 structure_type: functional
 template: null
-generated_at: '2026-01-22T15:53:06.391881+00:00'
+generated_at: '2026-01-22T20:12:29.613630+00:00'
 levels:
 - name: Organization
   slug: organization
@@ -30,93 +30,13 @@ entities:
   level: organization
   path: entities/organization
   children:
-  - name: Customer Success
-    slug: customer-success
+  - name: HR
+    slug: hr
     description: ''
     entity_type: department
     order: 1
     level: department
-    path: entities/departments/customer-success
-    children:
-    - name: Onboarding
-      slug: onboarding
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/departments/customer-success/teams/onboarding
-    - name: Renewals
-      slug: renewals
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/departments/customer-success/teams/renewals
-    - name: Support
-      slug: support
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/departments/customer-success/teams/support
-  - name: Engineering
-    slug: engineering
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/departments/engineering
-    children:
-    - name: Backend
-      slug: backend
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/departments/engineering/teams/backend
-    - name: Frontend
-      slug: frontend
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/departments/engineering/teams/frontend
-  - name: Finance
-    slug: finance
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/departments/finance
-  - name: Marketing
-    slug: marketing
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/departments/marketing
-    children:
-    - name: Brand
-      slug: brand
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/departments/marketing/teams/brand
-    - name: Growth
-      slug: growth
-      description: ''
-      entity_type: team
-      order: 2
-      level: team
-      path: entities/departments/marketing/teams/growth
-  - name: People
-    slug: people
-    description: ''
-    entity_type: department
-    order: 1
-    level: department
-    path: entities/departments/people
+    path: entities/departments/hr
     children:
     - name: People Ops
       slug: people-ops
@@ -124,14 +44,14 @@ entities:
       entity_type: team
       order: 2
       level: team
-      path: entities/departments/people/teams/people-ops
+      path: entities/departments/hr/teams/people-ops
     - name: Recruiting
       slug: recruiting
       description: ''
       entity_type: team
       order: 2
       level: team
-      path: entities/departments/people/teams/recruiting
+      path: entities/departments/hr/teams/recruiting
   - name: Sales
     slug: sales
     description: ''
@@ -154,3 +74,25 @@ entities:
       order: 2
       level: team
       path: entities/departments/sales/teams/smb
+  - name: Tech
+    slug: tech
+    description: ''
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/departments/tech
+    children:
+    - name: Backend
+      slug: backend
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/tech/teams/backend
+    - name: Frontend
+      slug: frontend
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/tech/teams/frontend
