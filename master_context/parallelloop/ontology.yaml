@@ -2,61 +2,155 @@
 version: '1.1'
 organization_name: Parallelloop AI
 organization_slug: parallelloop
-structure_type: flat
-template: startup
-generated_at: '2026-01-21T09:31:23.962876+00:00'
+structure_type: functional
+template: null
+generated_at: '2026-01-22T15:53:06.391881+00:00'
 levels:
 - name: Organization
   slug: organization
   order: 0
   skipped: false
-  template_name: Organization
-- name: Team
-  slug: team
+  template_name: null
+- name: Department
+  slug: department
   order: 1
   skipped: false
-  template_name: Team
+  template_name: null
+- name: Team
+  slug: team
+  order: 2
+  skipped: false
+  template_name: null
 entities:
-- name: Parallelloop AI
-  slug: parallelloop
-  description: Root organization
+- name: Organization
+  slug: organization
+  description: ''
   entity_type: organization
   order: 0
   level: organization
   path: entities/organization
   children:
+  - name: Customer Success
+    slug: customer-success
+    description: ''
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/departments/customer-success
+    children:
+    - name: Onboarding
+      slug: onboarding
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/customer-success/teams/onboarding
+    - name: Renewals
+      slug: renewals
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/customer-success/teams/renewals
+    - name: Support
+      slug: support
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/customer-success/teams/support
   - name: Engineering
     slug: engineering
-    description: Engineering team
-    entity_type: team
+    description: ''
+    entity_type: department
     order: 1
-    level: team
-    path: entities/teams/engineering
+    level: department
+    path: entities/departments/engineering
+    children:
+    - name: Backend
+      slug: backend
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/engineering/teams/backend
+    - name: Frontend
+      slug: frontend
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/engineering/teams/frontend
+  - name: Finance
+    slug: finance
+    description: ''
+    entity_type: department
+    order: 1
+    level: department
+    path: entities/departments/finance
   - name: Marketing
     slug: marketing
     description: ''
-    entity_type: team
+    entity_type: department
     order: 1
-    level: team
-    path: entities/teams/marketing
-  - name: Operations
-    slug: operations
-    description: Finance and HR
-    entity_type: team
+    level: department
+    path: entities/departments/marketing
+    children:
+    - name: Brand
+      slug: brand
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/marketing/teams/brand
+    - name: Growth
+      slug: growth
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/marketing/teams/growth
+  - name: People
+    slug: people
+    description: ''
+    entity_type: department
     order: 1
-    level: team
-    path: entities/teams/operations
-  - name: Product
-    slug: product
-    description: Product and design
-    entity_type: team
-    order: 1
-    level: team
-    path: entities/teams/product
+    level: department
+    path: entities/departments/people
+    children:
+    - name: People Ops
+      slug: people-ops
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/people/teams/people-ops
+    - name: Recruiting
+      slug: recruiting
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/people/teams/recruiting
   - name: Sales
     slug: sales
     description: ''
-    entity_type: team
+    entity_type: department
     order: 1
-    level: team
-    path: entities/teams/sales
+    level: department
+    path: entities/departments/sales
+    children:
+    - name: Enterprise
+      slug: enterprise
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/sales/teams/enterprise
+    - name: SMB
+      slug: smb
+      description: ''
+      entity_type: team
+      order: 2
+      level: team
+      path: entities/departments/sales/teams/smb
