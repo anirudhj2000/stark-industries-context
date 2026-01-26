@@ -1,39 +1,14 @@
 {
   "id": "HTML_COMPONENT",
   "name": "HTML Component",
-  "description": "Server-driven UI component",
-  "file_types": ["json", "html"],
-  "render": {
-    "component": "DynamicRenderer",
-    "supports_preview": true,
-    "interactive": true
-  },
+  "description": "Static HTML page or UI component",
+  "file_types": ["html"],
   "metadata_schema": {
     "type": "object",
-    "required": ["component_type", "data"],
+    "required": [],
     "properties": {
-      "component_type": {
-        "type": "string",
-        "enum": ["card", "table", "chart", "form", "timeline", "kanban"]
-      },
-      "data": {
-        "type": "object",
-        "description": "JSON data the component renders"
-      },
       "title": {
         "type": "string"
-      },
-      "actions": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "label": {"type": "string"},
-            "action_type": {"type": "string", "enum": ["link", "callback", "command"]},
-            "target": {"type": "string"}
-          }
-        },
-        "default": []
       }
     }
   }

@@ -21,21 +21,27 @@ Transcribe audio files and generate structured meeting notes with entity/vocabul
 
 ## Output Path Resolution (CRITICAL)
 
-**Read `context_type` from payload to determine output path:**
+**Read `is_worktree_mode` and `context_type` from payload to determine output path:**
 
-| context_type | project_id | Output Base Path |
-|--------------|------------|------------------|
-| `"project"` | Present | `project_workspaces/project_{project_id}/sources/{source_id}/` |
-| `"org"` or missing | N/A | `sources/{source_id}/` |
+| is_worktree_mode | context_type | Output Base Path |
+|------------------|--------------|------------------|
+| `True` | Any | `sources/{source_id}/` |
+| `False` | `"project"` | `project_workspaces/project_{project_id}/sources/{source_id}/` |
+| `False` | `"org"` | `sources/{source_id}/` |
 
 **Example:**
 ```python
 # From payload
+is_worktree_mode = payload.get("is_worktree_mode", False)
 context_type = payload.get("context_type", "org")
 project_id = payload.get("project_id")
 source_id = payload.get("source_id")
 
-if context_type == "project" and project_id:
+# Worktree mode: workspace IS the isolated project, use sources/ directly
+# Folder mode: workspace is shared, use project_workspaces/ for project context
+if is_worktree_mode:
+    output_base = f"sources/{source_id}"
+elif context_type == "project" and project_id:
     output_base = f"project_workspaces/project_{project_id}/sources/{source_id}"
 else:
     output_base = f"sources/{source_id}"
@@ -94,6 +100,7 @@ with open(payload_path, 'r') as f:
 # Extract key information
 org_slug = manifest['org']['slug']
 source_id = payload['source_id']
+is_worktree_mode = payload.get('is_worktree_mode', False)
 context_type = payload.get('context_type', 'project')
 project_id = payload.get('project_id')
 ```
@@ -103,7 +110,11 @@ project_id = payload.get('project_id')
 ### Step 0.5: Resolve Output Path
 
 ```python
-if context_type == "project" and project_id:
+# Worktree mode: workspace IS the isolated project, use sources/ directly
+# Folder mode: workspace is shared, use project_workspaces/ for project context
+if is_worktree_mode:
+    output_base = f"sources/{source_id}"
+elif context_type == "project" and project_id:
     output_base = f"project_workspaces/project_{project_id}/sources/{source_id}"
 else:
     output_base = f"sources/{source_id}"

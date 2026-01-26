@@ -1,91 +1,42 @@
-# Product Requirements Document (PRD)
+# PRD: {project_name}
 
-## Document Information
-- **Project:** {{project_name}}
-- **Version:** 1.0
-- **Last Updated:** {{date}}
-- **Author:** AI-Generated, Review Required
+**Version**: 1.0
+**Date**: {date}
+**Status**: Draft
 
----
+## Problem Statement
 
-## 1. Executive Summary
+{problem_description}
 
-{{executive_summary}}
+## Goals & Objectives
 
-## 2. Problem Statement
+{goals_list}
 
-### 2.1 Current State
-{{current_state}}
+## Target Users
 
-### 2.2 Pain Points
-{{pain_points}}
+{user_description}
 
-### 2.3 Target Users
-{{target_users}}
+## Requirements
 
-## 3. Goals & Success Metrics
+### Functional Requirements
 
-### 3.1 Primary Goals
-{{primary_goals}}
+{functional_requirements}
 
-### 3.2 Success Metrics
-| Metric | Current | Target | Measurement Method |
-|--------|---------|--------|-------------------|
-{{success_metrics_table}}
+### Non-Functional Requirements
 
-## 4. User Stories
+{non_functional_requirements}
 
-### 4.1 Core User Stories
-{{core_user_stories}}
+## Success Metrics
 
-### 4.2 Edge Cases
-{{edge_cases}}
+{success_metrics}
 
-## 5. Functional Requirements
+## Constraints
 
-### 5.1 Must Have (P0)
-{{must_have_requirements}}
+{constraints}
 
-### 5.2 Should Have (P1)
-{{should_have_requirements}}
+## Open Questions
 
-### 5.3 Nice to Have (P2)
-{{nice_to_have_requirements}}
-
-## 6. Non-Functional Requirements
-
-### 6.1 Performance
-{{performance_requirements}}
-
-### 6.2 Security
-{{security_requirements}}
-
-### 6.3 Scalability
-{{scalability_requirements}}
-
-## 7. Constraints & Assumptions
-
-### 7.1 Technical Constraints
-{{technical_constraints}}
-
-### 7.2 Business Constraints
-{{business_constraints}}
-
-### 7.3 Assumptions
-{{assumptions}}
-
-## 8. Dependencies
-
-{{dependencies}}
-
-## 9. Timeline & Milestones
-
-{{timeline}}
-
-## 10. Open Questions
-
-{{open_questions}}
+{open_questions}
 
 ---
-
-*This document was AI-generated based on project context and requires human review.*
+*Generated via @prd brainstorm agent*

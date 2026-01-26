@@ -1,0 +1,40 @@
+id: team_6167363d_enterprise
+type: team
+name: Enterprise
+slug: enterprise-10
+status: active
+external_ids:
+  team_id: 6167363d-a887-4c60-8b27-d664ac0a7bd1
+  organization_slug: parallelloop
+profile:
+  description: 'team: Enterprise'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: acbc2099-cc43-4fc2-b19b-da00e4ff66d6
+  entity_path: entities/departments/sales/teams/enterprise
+  level: team
+roster:
+- email: anirudhjoshi985@gmail.com
+  name: ''
+  membership_id: 60c27e0d-6186-4499-90b9-555c068b2791
+  role: MEMBER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-01-26T07:15:13.252405+00:00'
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-01-26T07:15:16.517773+00:00'
+  member_count: 1
+  active_member_count: 1
+change_history:
+- operation: roster_updated
+  timestamp: '2026-01-26T07:15:16.517773+00:00'
+  source: member_added

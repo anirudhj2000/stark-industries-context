@@ -98,7 +98,7 @@ Wait for user confirmation before generating.
 
 On user confirmation ("yes", "create it", "looks good", "generate"):
 
-1. Load template from `references/prd-template.md` (relative to this skill)
+1. Load template from `.claude/templates/prd.md`
 2. Fill sections using gathered information
 3. Create output directory:
    ```bash

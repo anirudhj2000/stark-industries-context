@@ -1,77 +1,111 @@
 ---
 name: generate-artifact
-description: Generate project artifacts using templates and project context
-version: 1.0.0
-author: GSD Team
-disable-model-invocation: true
+description: Use when user says "create a doc", "save this as...", or "generate a PRD/TDD/FRD" and there's enough context in the conversation. Creates immediately WITHOUT dialogue - for dialogue-based creation use prd-brainstorm/tdd-brainstorm/frd-brainstorm instead.
 ---
 
 # Generate Artifact Skill
 
-This skill generates project artifacts (PRD, TDD, FRD, etc.) using templates and accumulated project context.
+Create documents immediately from conversation context. No dialogue - just generate.
 
-## Input Parameters
+**When to use this vs brainstorm skills:**
+| Skill | Trigger | Behavior |
+|-------|---------|----------|
+| `generate-artifact` | "create a PRD", "save this" | Immediate - extracts from conversation |
+| `prd-brainstorm` | "@prd let's brainstorm" | Dialogue - asks questions first |
 
-The skill receives these parameters via structured output:
+## Artifact Type Detection
 
-- `artifact_type`: Type of artifact to generate (PRD, TDD, FRD, etc.)
-- `template_path`: Path to template file in workspace (e.g., `.claude/templates/prd.md`)
-- `project_id`: Project identifier
-- `project_context_path`: Path to project workspace (e.g., `project_workspaces/project_123/`)
-- `custom_prompt`: Optional custom instructions for generation
-- `output_path`: Where to write the generated artifact
+| User Says | Type | Prefix |
+|-----------|------|--------|
+| "create a PRD" | PRD | `art_prd_` |
+| "create a TDD" | TDD | `art_tdd_` |
+| "create an FRD" | FRD | `art_frd_` |
+| "create meeting notes" | NOTES | `art_notes_` |
+| "create a doc" | **Infer** | varies |
+| "save this" | **Infer** | varies |
 
-## Workflow
+**Context inference for "create a doc":**
+- Product requirements discussed → PRD
+- Technical architecture discussed → TDD
+- Feature specifications discussed → FRD
+- Meeting/discussion topics → NOTES
+- Unclear → ask user: "What type of document? PRD, TDD, FRD, or meeting notes?"
 
-1. **Load Template**: Read the template file from `template_path`
-2. **Gather Context**:
-   - Read PROJECT_BRIEF from project workspace
-   - Read QA_TRACKER for answered questions and insights
-   - Read any existing artifacts in the phase
-   - Read sources summaries if available
-3. **Generate Content**: Use Claude to fill in template with project context
-4. **Write Output**: Save generated artifact to `output_path`
-5. **Return structured output** (task runner handles git)
+## Process
 
-**DO NOT run git add, git commit, or git push.** The task runner handles all git operations.
+### 1. Read Payload (if provided)
 
-## Output Schema
-
-```json
-{
-  "type": "object",
-  "properties": {
-    "status": {"type": "string", "enum": ["success", "error"]},
-    "artifact_type": {"type": "string"},
-    "output_path": {"type": "string"},
-    "files_written": {"type": "array", "items": {"type": "string"}},
-    "commit_message": {"type": "string"},
-    "sections_generated": {"type": "array", "items": {"type": "string"}},
-    "context_sources_used": {"type": "array", "items": {"type": "string"}},
-    "error": {"type": "string"}
-  },
-  "required": ["status", "artifact_type", "files_written", "commit_message"]
-}
+If payload file exists (second argument):
+```bash
+# Read project_id from payload
+project_id=$(jq -r '.project_id // empty' "$PAYLOAD_FILE")
 ```
 
-## Execution
+### 2. Detect Artifact Type
 
-When invoked:
+Parse user request and conversation context to determine type.
 
-1. Parse input parameters from payload
-2. Validate template exists at `template_path`
-3. Load project context from project workspace:
-   - `{project_context_path}/artifacts/project_brief/structured.md`
-   - `{project_context_path}/artifacts/qa_tracker/state.json`
-   - `{project_context_path}/sources/*/structured.md`
-4. Read template and identify sections to populate
-5. Generate content for each section using accumulated context
-6. Write generated content to `output_path`
-7. Return structured output with `files_written` and `commit_message`
+### 3. Find Template
 
-**DO NOT run git add, git commit, or git push.** The task runner handles all git operations.
+```bash
+# Search for template
+template_path=".claude/templates/${type}.md"  # e.g., prd.md, tdd.md
+```
+
+- If template exists → use it
+- If not → infer structure from artifact type
+
+### 4. Generate Content
+
+Extract from conversation:
+- Main topic/subject
+- Key points discussed
+- Decisions made
+- Requirements (if applicable)
+- Action items (if applicable)
+
+Fill template or create inferred structure.
+
+### 5. Write Output
+
+```bash
+artifact_id=$(uuidgen | tr '[:upper:]' '[:lower:]' | cut -c1-8)
+
+# With project context:
+if [ -n "$project_id" ]; then
+  output_dir="project_workspaces/project_${project_id}/artifacts/art_${type}_${project_id}_${artifact_id}"
+else
+  output_dir="artifacts/art_${type}_${artifact_id}"
+fi
+
+mkdir -p "$output_dir"
+# Write content.md
+```
+
+### 6. Respond
+
+Describe what was created naturally:
+```
+I've created the PRD for [project name]. It covers [key sections].
+
+Would you like me to make any changes?
+```
+
+**DO NOT run git commands.** Task runner handles git.
 
 ## Error Handling
 
-- If template not found: Return error with suggestion to sync templates
-- If project context insufficient: Return partial generation with warnings
+**Not enough context:**
+```
+I don't have enough context to create this document.
+Could you share more about [missing element]?
+```
+
+**Ambiguous type:**
+```
+What type of document would you like?
+- A) PRD (product requirements)
+- B) TDD (technical design)
+- C) FRD (functional requirements)
+- D) Meeting notes
+```

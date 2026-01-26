@@ -31,7 +31,7 @@ Artifacts are written to: `project_workspaces/project_{project_id}/artifacts/art
 
 ## Process
 
-1. Read `templates/experiment-launch.md` (relative to this skill)
+1. Load template from `.claude/templates/experiment_launch.md`
 2. Understand what information the template needs
 3. Ask ONE question per turn to gather required information
 4. When user confirms ("yes", "create it", "generate"):

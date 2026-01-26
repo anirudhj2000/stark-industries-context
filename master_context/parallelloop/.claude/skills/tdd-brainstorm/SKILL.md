@@ -136,7 +136,7 @@ Ready to generate, or anything to add?
 
 On user confirmation:
 
-1. Load template from `references/tdd-template.md` (relative to this skill)
+1. Load template from `.claude/templates/tdd.md`
 2. Fill sections using gathered information + PRD/FRD context
 3. Create output directory and write `content.md`
 4. Describe the result naturally (no JSON)

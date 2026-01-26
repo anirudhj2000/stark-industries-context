@@ -1,120 +1,69 @@
-# Technical Design Document (TDD)
+# TDD: {project_name}
 
-## Document Information
-- **Project:** {{project_name}}
-- **Version:** 1.0
-- **Last Updated:** {{date}}
-- **Author:** AI-Generated, Review Required
+**Version**: 1.0
+**Date**: {date}
+**Status**: Draft
+**Based on**: {prd_frd_reference}
 
----
+## System Architecture
 
-## 1. Overview
+{architecture_overview}
 
-### 1.1 Purpose
-{{purpose}}
+### Component Diagram
 
-### 1.2 Scope
-{{scope}}
+{component_diagram}
 
-### 1.3 Definitions
-{{definitions}}
+## Data Model
 
-## 2. System Architecture
+{data_model}
 
-### 2.1 High-Level Architecture
-{{high_level_architecture}}
+### Database Schema
 
-### 2.2 Component Diagram
-{{component_diagram}}
+{database_schema}
 
-### 2.3 Technology Stack
-| Layer | Technology | Rationale |
-|-------|------------|-----------|
-{{tech_stack_table}}
+## API Design
 
-## 3. Data Model
+{api_design}
 
-### 3.1 Entity Relationship Diagram
-{{erd}}
+### Endpoints
 
-### 3.2 Data Dictionary
-{{data_dictionary}}
+{api_endpoints}
 
-### 3.3 Data Flow
-{{data_flow}}
+## Security
 
-## 4. API Design
+### Authentication
 
-### 4.1 API Endpoints
-{{api_endpoints}}
+{authentication}
 
-### 4.2 Request/Response Schemas
-{{api_schemas}}
+### Authorization
 
-### 4.3 Authentication & Authorization
-{{auth_design}}
+{authorization}
 
-## 5. Integration Points
+### Data Protection
 
-### 5.1 External Services
-{{external_services}}
+{data_protection}
 
-### 5.2 Internal Services
-{{internal_services}}
+## Deployment
 
-## 6. Security Considerations
+### Infrastructure
 
-### 6.1 Threat Model
-{{threat_model}}
+{infrastructure}
 
-### 6.2 Security Controls
-{{security_controls}}
+### CI/CD Pipeline
 
-## 7. Performance Considerations
+{cicd}
 
-### 7.1 Performance Requirements
-{{performance_requirements}}
+## Testing Strategy
 
-### 7.2 Optimization Strategies
-{{optimization_strategies}}
+{testing_strategy}
 
-### 7.3 Caching Strategy
-{{caching_strategy}}
+## Performance Requirements
 
-## 8. Deployment Strategy
+{performance}
 
-### 8.1 Infrastructure
-{{infrastructure}}
+## Open Questions
 
-### 8.2 CI/CD Pipeline
-{{cicd}}
-
-### 8.3 Monitoring & Alerting
-{{monitoring}}
-
-## 9. Testing Strategy
-
-### 9.1 Unit Testing
-{{unit_testing}}
-
-### 9.2 Integration Testing
-{{integration_testing}}
-
-### 9.3 Performance Testing
-{{performance_testing}}
-
-## 10. Migration Plan
-
-{{migration_plan}}
-
-## 11. Rollback Strategy
-
-{{rollback_strategy}}
-
-## 12. Open Technical Questions
-
-{{open_questions}}
+{open_questions}
 
 ---
-
-*This document was AI-generated based on project context and requires human review.*
+*Generated via @tdd brainstorm agent*
