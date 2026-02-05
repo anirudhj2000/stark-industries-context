@@ -1,0 +1,67 @@
+{
+  "source_id": "42a3be99-9159-4d72-8b59-1cc10dd37ed8",
+  "source_type": "integration_slack_thread",
+  "output_file": "structured.md",
+
+  "events": [
+    {
+      "timestamp": "2026-02-05T14:13:38Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "42a3be99-9159-4d72-8b59-1cc10dd37ed8.md",
+        "file_size_bytes": 1728,
+        "file_format": "Markdown (Slack Thread)",
+        "message_count": 3
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:13:39Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "messages_processed": 3,
+        "word_count": 254,
+        "tables_found": 0,
+        "images_found": 0
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:13:40Z",
+      "event": "org_context_loaded",
+      "status": "success",
+      "details": {
+        "vocabulary_terms": 0,
+        "entities_indexed": 1
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:13:41Z",
+      "event": "enrichment_completed",
+      "status": "success",
+      "metrics": {
+        "entities_found": [],
+        "vocabulary_normalized": ["PL", "UI/UX", "AI"]
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:13:42Z",
+      "event": "content_verification",
+      "status": "success",
+      "metrics": {
+        "extracted_words": 254,
+        "output_words": 268,
+        "preservation_ratio": 0.95
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:13:43Z",
+      "event": "output_created",
+      "status": "success",
+      "files": [
+        "structured.md",
+        "ingest_log.json"
+      ]
+    }
+  ]
+}
