@@ -1,0 +1,84 @@
+{
+  "source_id": "8afa8230-f502-49d3-8a50-a2035c18ab12",
+  "source_type": "AUDIO",
+  "output_files": ["structured.md", "transcript.md", "ingest_log.json"],
+
+  "events": [
+    {
+      "timestamp": "2026-02-05T08:19:50Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_size_bytes": 8601600,
+        "file_format": "M4A",
+        "duration_seconds": 1010
+      }
+    },
+    {
+      "timestamp": "2026-02-05T08:19:55Z",
+      "event": "transcription_started",
+      "engine": "aws_transcribe",
+      "language": "en-US"
+    },
+    {
+      "timestamp": "2026-02-05T08:21:20Z",
+      "event": "transcription_completed",
+      "status": "success",
+      "metrics": {
+        "duration_seconds": 85,
+        "word_count": 1242,
+        "speaker_count": 3,
+        "confidence": null
+      }
+    },
+    {
+      "timestamp": "2026-02-05T08:21:25Z",
+      "event": "transcript_created",
+      "status": "success",
+      "file": "transcript.md"
+    },
+    {
+      "timestamp": "2026-02-05T08:21:30Z",
+      "event": "org_context_loaded",
+      "status": "success",
+      "details": {
+        "vocabulary_terms": 0,
+        "entities_indexed": 1
+      }
+    },
+    {
+      "timestamp": "2026-02-05T08:22:00Z",
+      "event": "topics_extracted",
+      "status": "success",
+      "metrics": {
+        "topics_identified": 6,
+        "topics_enriched_with_org_context": 0
+      }
+    },
+    {
+      "timestamp": "2026-02-05T08:22:30Z",
+      "event": "meeting_notes_generated",
+      "status": "success",
+      "metrics": {
+        "topics": 6,
+        "decisions": 6,
+        "action_items": 4
+      }
+    },
+    {
+      "timestamp": "2026-02-05T08:22:45Z",
+      "event": "enrichment_completed",
+      "status": "success",
+      "metrics": {
+        "vocabulary_normalized": 0,
+        "entities_linked": 0
+      }
+    },
+    {
+      "timestamp": "2026-02-05T08:23:00Z",
+      "event": "structured_outputs_created",
+      "status": "success",
+      "files": ["structured.md", "transcript.md", "ingest_log.json"]
+    }
+  ]
+}
