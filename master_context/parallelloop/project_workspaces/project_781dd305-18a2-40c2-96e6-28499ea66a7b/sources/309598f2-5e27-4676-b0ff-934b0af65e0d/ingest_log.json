@@ -4,29 +4,29 @@
   "output_file": "structured.md",
   "events": [
     {
-      "timestamp": "2026-02-11T12:07:22Z",
+      "timestamp": "2026-02-11T12:51:49Z",
       "event": "file_verified",
       "status": "success",
       "details": {
         "file_name": "309598f2-5e27-4676-b0ff-934b0af65e0d.md",
-        "file_size_bytes": 2542,
-        "file_format": "MD",
-        "message_count": 1
+        "file_size_bytes": 4260,
+        "file_format": "Slack Thread",
+        "message_count": 10
       }
     },
     {
-      "timestamp": "2026-02-11T12:07:23Z",
+      "timestamp": "2026-02-11T12:51:50Z",
       "event": "extraction_completed",
       "status": "success",
       "metrics": {
-        "messages_processed": 1,
-        "word_count": 384,
+        "messages_processed": 10,
+        "word_count": 656,
         "tables_found": 0,
         "images_found": 0
       }
     },
     {
-      "timestamp": "2026-02-11T12:07:24Z",
+      "timestamp": "2026-02-11T12:51:51Z",
       "event": "org_context_loaded",
       "status": "success",
       "details": {
@@ -35,26 +35,26 @@
       }
     },
     {
-      "timestamp": "2026-02-11T12:07:25Z",
+      "timestamp": "2026-02-11T12:51:52Z",
       "event": "enrichment_completed",
       "status": "success",
       "metrics": {
         "entities_found": [],
-        "vocabulary_normalized": ["PL", "PRD", "BAU", "PM", "DNS"]
+        "vocabulary_normalized": ["PL", "PRD", "BAU", "PM", "DNS", "HTML"]
       }
     },
     {
-      "timestamp": "2026-02-11T12:07:26Z",
+      "timestamp": "2026-02-11T12:51:53Z",
       "event": "content_verification",
       "status": "success",
       "metrics": {
-        "extracted_words": 384,
-        "output_words": 400,
+        "extracted_words": 656,
+        "output_words": 680,
         "preservation_ratio": 0.96
       }
     },
     {
-      "timestamp": "2026-02-11T12:07:27Z",
+      "timestamp": "2026-02-11T12:51:54Z",
       "event": "output_created",
       "status": "success",
       "files": [
