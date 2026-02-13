@@ -2,7 +2,7 @@
   "bucket": "tgsd-context-upload-test",
   "key": "local/uploads/org_df0e7d4a-54d6-4254-aa35-07ea36053783/proj_e8269347-c9a4-4272-b291-1603affd1c67/raw/integration_slack_thread/149f79c7-d44d-4574-acbe-60e0c4403c16.md",
   "region": "us-east-1",
-  "checksum": "ed109eb1ec6a457fdf8f97079159711cd28f0b351c0b4068a8f0ada907cc17ff",
-  "size_bytes": 2897,
-  "updated_at": "2026-02-13T00:56:11.753737Z"
+  "checksum": "0b0eba8eabcd56a59b6f79f983b33df354b5b969974bc0f2b21819a05082e20f",
+  "size_bytes": 3317,
+  "updated_at": "2026-02-13T03:28:38.118566Z"
 }
