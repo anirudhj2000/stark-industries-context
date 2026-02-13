@@ -2,9 +2,9 @@
 
 **Source ID**: 7df8ce6d-f7d1-466b-947b-2c2340a16d4e
 **Format**: Slack Thread (Markdown)
-**Messages**: 1
-**Word Count**: 301
-**Processed**: 2026-02-13T00:46:06Z
+**Messages**: 3
+**Word Count**: 372
+**Processed**: 2026-02-13T00:52:07Z
 
 ---
 
@@ -12,9 +12,9 @@
 
 **Anirudh Joshi** (12:36 AM, Feb 13, 2026)
 
-<!channel> had a call with Param for feedback and new feature request. The great news is that Arnab (CEO) and Rajan (CTO) are now mandating and pushing everyone to use **PL**[^v:PL]!
+@channel had a call with Param for feedback and new feature request. The great news is that Arnab (CEO) and Rajan (CTO) are now mandating and pushing everyone to use **PL**[^v:PL]!
 
-Rajan in particular was not a convert earlier.. and a bit skeptical tbh, but now has mandated all **PRD**[^v:PRD]s to be produced via **PL**[^v:PL] only. give them their **PRD**[^v:PRD] template! :laughing:
+Rajan in particular was not a convert earlier.. and a bit skeptical tbh, but now has mandated all **PRD**[^v:PRD]s to be produced via **PL**[^v:PL] only. give them their **PRD**[^v:PRD] template! 😆
 
 Param is again praising our meeting transcript quality and rates the platform 9/10.. he also asked when we would be public because they are telling their friends outside of Leap about us, but people can't get to our website -> there is a separate [parallelloop.io](http://parallelloop.io) which is quite fishy. I explained that we are focused on our design partners for now.
 
@@ -44,6 +44,18 @@ No complaints this time around, but instead painting a vision describe below tha
 - Marketing tracking (Google Ads, Meta Ads conversion tracking) needs to be handled
 - Rajen is open to taking code and putting it elsewhere, or building internal infrastructure
 - Param prefers single pl
+
+---
+
+**Anirudh Joshi** (12:50 AM, Feb 13, 2026)
+
+Lets us schedule a meeting on Monday to further discuss the **DNS**[^v:DNS] change that they have requested
+
+---
+
+**Anirudh Joshi** (12:50 AM, Feb 13, 2026)
+
+@Parallelloop, track this change and assign it to me if needed
 
 ---
 
