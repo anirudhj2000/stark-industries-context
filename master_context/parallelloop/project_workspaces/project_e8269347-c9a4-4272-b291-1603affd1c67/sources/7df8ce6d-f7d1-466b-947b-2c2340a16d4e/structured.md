@@ -2,9 +2,9 @@
 
 **Source ID**: 7df8ce6d-f7d1-466b-947b-2c2340a16d4e
 **Format**: Slack Thread (Markdown)
-**Messages**: 4
-**Word Count**: 387
-**Processed**: 2026-02-13T00:56:11Z
+**Messages**: 8
+**Word Count**: 461
+**Processed**: 2026-02-13T03:35:27Z
 
 ---
 
@@ -19,7 +19,7 @@
 
 @channel had a call with Param for feedback and new feature request. The great news is that Arnab (CEO) and Rajan (CTO) are now mandating and pushing everyone to use **PL**[^v:PL]!
 
-Rajan in particular was not a convert earlier.. and a bit skeptical tbh, but now has mandated all **PRD**[^v:PRD]s to be produced via **PL**[^v:PL] only. give them their **PRD**[^v:PRD] template! 😆
+Rajan in particular was not a convert earlier.. and a bit skeptical tbh, but now has mandated all **PRD**[^v:PRD]s to be produced via **PL**[^v:PL] only. give them their **PRD**[^v:PRD] template! :laughing:
 
 Param is again praising our meeting transcript quality and rates the platform 9/10.. he also asked when we would be public because they are telling their friends outside of Leap about us, but people can't get to our website -> there is a separate [parallelloop.io](http://parallelloop.io) which is quite fishy. I explained that we are focused on our design partners for now.
 
@@ -54,19 +54,43 @@ No complaints this time around, but instead painting a vision describe below tha
 
 **Anirudh Joshi** (12:50 AM, Feb 13, 2026)
 
-Lets us schedule a meeting on momday to futher discuss the **DNS**[^v:DNS] change that they have requested
+Lets us schedule a meeting on monday to further discuss the **DNS**[^v:DNS] change that they have requested
 
 ---
 
 **Anirudh Joshi** (12:50 AM, Feb 13, 2026)
 
-@Parallelloop , track this change and assign it to me if needed
+@Parallelloop, track this change and assign it to me if needed
 
 ---
 
 **Anirudh Joshi** (12:54 AM, Feb 13, 2026)
 
-@Parallelloop , explain what is going on here
+@Parallelloop, explain what is going on here
+
+---
+
+**Anirudh Joshi** (02:33 AM, Feb 13, 2026)
+
+@Parallelloop, explain what is going on here
+
+---
+
+**Anirudh Joshi** (02:33 AM, Feb 13, 2026)
+
+@Parallelloop, explain what is going on here
+
+---
+
+**Anirudh Joshi** (02:35 AM, Feb 13, 2026)
+
+@Parallelloop, create a action item for Subdomain task, assign it to me
+
+---
+
+**Anirudh Joshi** (03:28 AM, Feb 13, 2026)
+
+@Parallelloop, create a action item for Subdomain task, assign it to me
 
 ---
 
