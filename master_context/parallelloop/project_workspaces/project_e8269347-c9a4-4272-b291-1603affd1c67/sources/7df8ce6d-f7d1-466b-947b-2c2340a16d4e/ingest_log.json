@@ -5,29 +5,29 @@
 
   "events": [
     {
-      "timestamp": "2026-02-13T00:52:07Z",
+      "timestamp": "2026-02-13T00:56:11Z",
       "event": "file_verified",
       "status": "success",
       "details": {
         "file_name": "149f79c7-d44d-4574-acbe-60e0c4403c16.md",
-        "file_size_bytes": 2806,
+        "file_size_bytes": 2897,
         "file_format": "Markdown (Slack Thread)",
-        "message_count": 3
+        "message_count": 4
       }
     },
     {
-      "timestamp": "2026-02-13T00:52:08Z",
+      "timestamp": "2026-02-13T00:56:12Z",
       "event": "extraction_completed",
       "status": "success",
       "metrics": {
-        "messages_processed": 3,
-        "word_count": 372,
+        "messages_processed": 4,
+        "word_count": 387,
         "tables_found": 0,
         "images_found": 0
       }
     },
     {
-      "timestamp": "2026-02-13T00:52:09Z",
+      "timestamp": "2026-02-13T00:56:13Z",
       "event": "org_context_loaded",
       "status": "success",
       "details": {
@@ -36,7 +36,7 @@
       }
     },
     {
-      "timestamp": "2026-02-13T00:52:10Z",
+      "timestamp": "2026-02-13T00:56:14Z",
       "event": "enrichment_completed",
       "status": "success",
       "metrics": {
@@ -45,17 +45,17 @@
       }
     },
     {
-      "timestamp": "2026-02-13T00:52:11Z",
+      "timestamp": "2026-02-13T00:56:15Z",
       "event": "content_verification",
       "status": "success",
       "metrics": {
-        "extracted_words": 372,
-        "output_words": 385,
+        "extracted_words": 387,
+        "output_words": 400,
         "preservation_ratio": 0.97
       }
     },
     {
-      "timestamp": "2026-02-13T00:52:12Z",
+      "timestamp": "2026-02-13T00:56:16Z",
       "event": "output_created",
       "status": "success",
       "files": [
