@@ -1,0 +1,67 @@
+{
+  "source_id": "7df8ce6d-f7d1-466b-947b-2c2340a16d4e",
+  "source_type": "integration_slack_thread",
+  "output_file": "structured.md",
+
+  "events": [
+    {
+      "timestamp": "2026-02-13T00:46:06Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "149f79c7-d44d-4574-acbe-60e0c4403c16.md",
+        "file_size_bytes": 2557,
+        "file_format": "Markdown (Slack Thread)",
+        "message_count": 1
+      }
+    },
+    {
+      "timestamp": "2026-02-13T00:46:07Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "messages_processed": 1,
+        "word_count": 301,
+        "tables_found": 0,
+        "images_found": 0
+      }
+    },
+    {
+      "timestamp": "2026-02-13T00:46:08Z",
+      "event": "org_context_loaded",
+      "status": "success",
+      "details": {
+        "vocabulary_terms": 0,
+        "entities_indexed": 1
+      }
+    },
+    {
+      "timestamp": "2026-02-13T00:46:09Z",
+      "event": "enrichment_completed",
+      "status": "success",
+      "metrics": {
+        "entities_found": [],
+        "vocabulary_normalized": ["PL", "PRD", "PM", "DNS"]
+      }
+    },
+    {
+      "timestamp": "2026-02-13T00:46:10Z",
+      "event": "content_verification",
+      "status": "success",
+      "metrics": {
+        "extracted_words": 301,
+        "output_words": 310,
+        "preservation_ratio": 0.97
+      }
+    },
+    {
+      "timestamp": "2026-02-13T00:46:11Z",
+      "event": "output_created",
+      "status": "success",
+      "files": [
+        "structured.md",
+        "ingest_log.json"
+      ]
+    }
+  ]
+}
