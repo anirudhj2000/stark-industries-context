@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Benchmarks Dashboard | February 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a24;
+            --bg-hover: #22222e;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-cyan: #06b6d4;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: #2a2a3a;
+            --gradient-1: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --gradient-2: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+            --gradient-3: linear-gradient(135deg, #f59e0b 0%, #f43f5e 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .dashboard {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 1.5rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .header .update-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: var(--accent-blue);
+        }
+
+        .update-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-emerald);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            padding: 0.5rem;
+            background: var(--bg-secondary);
+            border-radius: 1rem;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: none;
+            border-radius: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            color: var(--text-primary);
+            background: var(--bg-hover);
+        }
+
+        .nav-tab.active {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+        @media (max-width: 1200px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .card-value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* Tier Badges */
+        .tier-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .tier-s { background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%); color: #000; }
+        .tier-a { background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%); color: #fff; }
+        .tier-b { background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%); color: #fff; }
+        .tier-c { background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%); color: #fff; }
+
+        /* Model Rankings Table */
+        .rankings-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title .icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-1);
+            border-radius: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .table-container {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover {
+            background: var(--bg-hover);
+        }
+
+        .model-name {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .model-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        .logo-openai { background: linear-gradient(135deg, #00a67e 0%, #00d4aa 100%); }
+        .logo-anthropic { background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%); }
+        .logo-google { background: linear-gradient(135deg, #4285f4 0%, #34a853 50%, #ea4335 100%); }
+        .logo-deepseek { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
+        .logo-xai { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border: 1px solid var(--border-color); }
+        .logo-kimi { background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%); }
+        .logo-qwen { background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%); }
+        .logo-mimo { background: linear-gradient(135deg, #14b8a6 0%, #10b981 100%); }
+
+        .score-bar {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .score-bar-fill {
+            height: 8px;
+            border-radius: 4px;
+            min-width: 20px;
+        }
+
+        .score-value {
+            font-weight: 600;
+            min-width: 45px;
+        }
+
+        .rank-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .rank-1 { background: linear-gradient(135deg, #ffd700 0%, #ffed4a 100%); color: #000; }
+        .rank-2 { background: linear-gradient(135deg, #c0c0c0 0%, #e5e5e5 100%); color: #000; }
+        .rank-3 { background: linear-gradient(135deg, #cd7f32 0%, #daa520 100%); color: #000; }
+        .rank-other { background: var(--bg-secondary); color: var(--text-secondary); }
+
+        /* Benchmark Charts Section */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 1024px) {
+            .charts-grid { grid-template-columns: 1fr; }
+        }
+
+        .chart-card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+        }
+
+        .chart-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+
+        /* Pricing Comparison */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent-blue);
+        }
+
+        .pricing-card.featured::before {
+            content: 'BEST VALUE';
+            position: absolute;
+            top: 12px;
+            right: -35px;
+            background: var(--gradient-1);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.25rem 2.5rem;
+            transform: rotate(45deg);
+        }
+
+        .pricing-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-model {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .pricing-provider {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-value {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-unit {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features .check {
+            color: var(--accent-emerald);
+        }
+
+        /* Context Window Comparison */
+        .context-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .context-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .context-label {
+            width: 140px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .context-bar {
+            flex: 1;
+            height: 24px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .context-bar-fill {
+            height: 100%;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Stats Summary */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 1024px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Leaderboard by Category */
+        .category-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-tab:hover,
+        .category-tab.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
+        }
+
+        .footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Responsive Table */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header animate-in">
+            <h1>🤖 AI Model Benchmarks 2026</h1>
+            <p class="subtitle">Comprehensive rankings across all major metrics • GPT-5 • Claude 4.5 • Gemini 3 • DeepSeek • Grok</p>
+            <div class="update-badge">
+                <span class="pulse"></span>
+                Last updated: February 26, 2026
+            </div>
+        </header>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid animate-in">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: var(--gradient-1);">🏆</div>
+                <div class="stat-value" style="color: var(--accent-blue);">12</div>
+                <div class="stat-label">S-Tier Models</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: var(--gradient-2);">📊</div>
+                <div class="stat-value" style="color: var(--accent-emerald);">8</div>
+                <div class="stat-label">Benchmark Categories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: var(--gradient-3);">⚡</div>
+                <div class="stat-value" style="color: var(--accent-amber);">100%</div>
+                <div class="stat-label">Top AIME Score</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);">💰</div>
+                <div class="stat-value" style="color: var(--accent-rose);">$0.20</div>
+                <div class="stat-label">Lowest $/1M Tokens</div>
+            </div>
+        </div>
+
+        <!-- Overall Model Rankings -->
+        <section class="rankings-section animate-in">
+            <h2 class="section-title">
+                <span class="icon">🏅</span>
+                Overall Model Rankings (S-Tier)
+            </h2>
+            <div class="table-container">
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Model</th>
+                                <th>Tier</th>
+                                <th>MMLU</th>
+                                <th>HumanEval</th>
+                                <th>SWE-Bench</th>
+                                <th>MATH-500</th>
+                                <th>GPQA</th>
+                                <th>Parameters</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="rank-badge rank-1">1</span></td>
+                                <td>
+                                    <div class="model-name">
+                                        <div class="model-logo logo-kimi">K</div>
+                                        <div>
+                                            <strong>Kimi K2.5</strong>
+                                            <div style="font-size: 0.75rem; color: var(--text-muted);">Moonshot AI</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="tier-badge tier-s">S</span></td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 92%; background: var(--gradient-1);"></div>
+                                        <span class="score-value">92.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 99%; background: var(--gradient-2);"></div>
+                                        <span class="score-value" style="color: var(--accent-emerald);">99.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 78%; background: var(--accent-purple);"></div>
+                                        <span class="score-value">78.2</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 98%; background: var(--gradient-3);"></div>
+                                        <span class="score-value">98.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 87.6%; background: var(--accent-cyan);"></div>
+                                        <span class="score-value">87.6</span>
+                                    </div>
+                                </td>
+                                <td>1T (32B active)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-2">2</span></td>
+                                <td>
+                                    <div class="model-name">
+                                        <div class="model-logo logo-openai">GPT</div>
+                                        <div>
+                                            <strong>GPT-5.2</strong>
+                                            <div style="font-size: 0.75rem; color: var(--text-muted);">OpenAI</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="tier-badge tier-s">S</span></td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 91%; background: var(--gradient-1);"></div>
+                                        <span class="score-value">91.2</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 95%; background: var(--gradient-2);"></div>
+                                        <span class="score-value">95.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 80%; background: var(--accent-purple);"></div>
+                                        <span class="score-value">80.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 100%; background: var(--gradient-3);"></div>
+                                        <span class="score-value" style="color: var(--accent-amber);">100.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 93.2%; background: var(--accent-cyan);"></div>
+                                        <span class="score-value" style="color: var(--accent-cyan);">93.2</span>
+                                    </div>
+                                </td>
+                                <td>~2T</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-3">3</span></td>
+                                <td>
+                                    <div class="model-name">
+                                        <div class="model-logo logo-anthropic">C</div>
+                                        <div>
+                                            <strong>Claude Opus 4.6</strong>
+                                            <div style="font-size: 0.75rem; color: var(--text-muted);">Anthropic</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="tier-badge tier-s">S</span></td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 90.5%; background: var(--gradient-1);"></div>
+                                        <span class="score-value">90.5</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 95%; background: var(--gradient-2);"></div>
+                                        <span class="score-value">95.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 80.8%; background: var(--accent-purple);"></div>
+                                        <span class="score-value" style="color: var(--accent-purple);">80.8</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 100%; background: var(--gradient-3);"></div>
+                                        <span class="score-value" style="color: var(--accent-amber);">100.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 91.3%; background: var(--accent-cyan);"></div>
+                                        <span class="score-value">91.3</span>
+                                    </div>
+                                </td>
+                                <td>~1.5T</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">4</span></td>
+                                <td>
+                                    <div class="model-name">
+                                        <div class="model-logo logo-deepseek">DS</div>
+                                        <div>
+                                            <strong>DeepSeek V3.2</strong>
+                                            <div style="font-size: 0.75rem; color: var(--text-muted);">DeepSeek</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="tier-badge tier-s">S</span></td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 91%; background: var(--gradient-1);"></div>
+                                        <span class="score-value">91.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 92%; background: var(--gradient-2);"></div>
+                                        <span class="score-value">92.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 72%; background: var(--accent-purple);"></div>
+                                        <span class="score-value">72.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 97.5%; background: var(--gradient-3);"></div>
+                                        <span class="score-value">97.5</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 85%; background: var(--accent-cyan);"></div>
+                                        <span class="score-value">85.0</span>
+                                    </div>
+                                </td>
+                                <td>685B MoE</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">5</span></td>
+                                <td>
+                                    <div class="model-name">
+                                        <div class="model-logo logo-google">G</div>
+                                        <div>
+                                            <strong>Gemini 3 Pro</strong>
+                                            <div style="font-size: 0.75rem; color: var(--text-muted);">Google DeepMind</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="tier-badge tier-s">S</span></td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 89.8%; background: var(--gradient-1);"></div>
+                                        <span class="score-value">89.8</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 93%; background: var(--gradient-2);"></div>
+                                        <span class="score-value">93.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 68%; background: var(--accent-purple);"></div>
+                                        <span class="score-value">68.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 95%; background: var(--gradient-3);"></div>
+                                        <span class="score-value">95.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 88%; background: var(--accent-cyan);"></div>
+                                        <span class="score-value">88.0</span>
+                                    </div>
+                                </td>
+                                <td>~1.8T MoE</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">6</span></td>
+                                <td>
+                                    <div class="model-name">
+                                        <div class="model-logo logo-xai">X</div>
+                                        <div>
+                                            <strong>Grok 4</strong>
+                                            <div style="font-size: 0.75rem; color: var(--text-muted);">xAI</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="tier-badge tier-s">S</span></td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 89%; background: var(--gradient-1);"></div>
+                                        <span class="score-value">89.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 91%; background: var(--gradient-2);"></div>
+                                        <span class="score-value">91.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 70%; background: var(--accent-purple);"></div>
+                                        <span class="score-value">70.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 94%; background: var(--gradient-3);"></div>
+                                        <span class="score-value">94.0</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="score-bar">
+                                        <div class="score-bar-fill" style="width: 86%; background: var(--accent-cyan);"></div>
+                                        <span class="score-value">86.0</span>
+                                    </div>
+                                </td>
+                                <td>~2T</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benchmark Charts -->
+        <section class="animate-in">
+            <h2 class="section-title">
+                <span class="icon">📊</span>
+                Benchmark Comparisons
+            </h2>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>🧠 Reasoning (GPQA Diamond)</h3>
+                    <div class="chart-container">
+                        <canvas id="gpqaChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>💻 Coding (SWE-Bench Verified)</h3>
+                    <div class="chart-container">
+                        <canvas id="sweChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>🔢 Mathematics (AIME 2026)</h3>
+                    <div class="chart-container">
+                        <canvas id="mathChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>📚 Knowledge (MMLU-Pro)</h3>
+                    <div class="chart-container">
+                        <canvas id="mmluChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Rankings -->
+        <section class="rankings-section animate-in">
+            <h2 class="section-title">
+                <span class="icon">🎯</span>
+                Rankings by Category
+            </h2>
+
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="coding">💻 Coding</button>
+                <button class="category-tab" data-category="math">🔢 Math</button>
+                <button class="category-tab" data-category="reasoning">🧠 Reasoning</button>
+                <button class="category-tab" data-category="knowledge">📚 Knowledge</button>
+                <button class="category-tab" data-category="multimodal">🖼️ Multimodal</button>
+            </div>
+
+            <div class="table-container">
+                <div class="table-responsive">
+                    <table class="data-table" id="categoryTable">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Model</th>
+                                <th>SWE-Bench</th>
+                                <th>HumanEval</th>
+                                <th>LiveCodeBench</th>
+                                <th>Strengths</th>
+                            </tr>
+                        </thead>
+                        <tbody id="categoryTableBody">
+                            <tr>
+                                <td><span class="rank-badge rank-1">1</span></td>
+                                <td><strong>Claude Opus 4.5</strong></td>
+                                <td><span style="color: var(--accent-emerald); font-weight: 600;">80.9%</span></td>
+                                <td>95.0%</td>
+                                <td>76.0%</td>
+                                <td>Agentic coding, complex debugging</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-2">2</span></td>
+                                <td><strong>GPT-5.2</strong></td>
+                                <td>80.0%</td>
+                                <td>95.0%</td>
+                                <td><span style="color: var(--accent-emerald); font-weight: 600;">80.0%</span></td>
+                                <td>Fast iteration, broad language support</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-3">3</span></td>
+                                <td><strong>Kimi K2.5</strong></td>
+                                <td>78.2%</td>
+                                <td><span style="color: var(--accent-emerald); font-weight: 600;">99.0%</span></td>
+                                <td>75.0%</td>
+                                <td>Best raw code generation</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">4</span></td>
+                                <td><strong>GPT-5</strong></td>
+                                <td>74.9%</td>
+                                <td>94.0%</td>
+                                <td>78.0%</td>
+                                <td>Balanced performance</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">5</span></td>
+                                <td><strong>DeepSeek V3.2</strong></td>
+                                <td>72.0%</td>
+                                <td>92.0%</td>
+                                <td>72.0%</td>
+                                <td>Cost-effective, strong math integration</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Context Window Comparison -->
+        <section class="rankings-section animate-in">
+            <h2 class="section-title">
+                <span class="icon">📏</span>
+                Context Window Comparison
+            </h2>
+            <div class="card" style="padding: 2rem;">
+                <div class="context-bars">
+                    <div class="context-item">
+                        <span class="context-label">Grok 4.1 Fast</span>
+                        <div class="context-bar">
+                            <div class="context-bar-fill" style="width: 100%; background: var(--gradient-1);">2M tokens</div>
+                        </div>
+                    </div>
+                    <div class="context-item">
+                        <span class="context-label">GPT-4.1</span>
+                        <div class="context-bar">
+                            <div class="context-bar-fill" style="width: 50%; background: var(--gradient-2);">1M tokens</div>
+                        </div>
+                    </div>
+                    <div class="context-item">
+                        <span class="context-label">Gemini 2.5 Pro</span>
+                        <div class="context-bar">
+                            <div class="context-bar-fill" style="width: 50%; background: var(--accent-purple);">1M tokens</div>
+                        </div>
+                    </div>
+                    <div class="context-item">
+                        <span class="context-label">GPT-5</span>
+                        <div class="context-bar">
+                            <div class="context-bar-fill" style="width: 20%; background: var(--accent-blue);">400K tokens</div>
+                        </div>
+                    </div>
+                    <div class="context-item">
+                        <span class="context-label">Kimi K2.5</span>
+                        <div class="context-bar">
+                            <div class="context-bar-fill" style="width: 13.1%; background: var(--accent-rose);">262K tokens</div>
+                        </div>
+                    </div>
+                    <div class="context-item">
+                        <span class="context-label">Claude 4.5</span>
+                        <div class="context-bar">
+                            <div class="context-bar-fill" style="width: 10%; background: var(--accent-amber);">200K tokens</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Comparison -->
+        <section class="rankings-section animate-in">
+            <h2 class="section-title">
+                <span class="icon">💰</span>
+                Pricing Comparison (per 1M tokens)
+            </h2>
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <div class="model-logo logo-xai" style="width: 48px; height: 48px;">X</div>
+                        <div>
+                            <div class="pricing-model">Grok 4.1 Fast</div>
+                            <div class="pricing-provider">xAI</div>
+                        </div>
+                    </div>
+                    <div class="pricing-value" style="color: var(--accent-emerald);">$0.20</div>
+                    <div class="pricing-unit">Input / $0.60 Output</div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> 2M context window</li>
+                        <li><span class="check">✓</span> Fast inference</li>
+                        <li><span class="check">✓</span> Real-time data access</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="model-logo logo-deepseek" style="width: 48px; height: 48px;">DS</div>
+                        <div>
+                            <div class="pricing-model">DeepSeek R1</div>
+                            <div class="pricing-provider">DeepSeek</div>
+                        </div>
+                    </div>
+                    <div class="pricing-value" style="color: var(--accent-blue);">$0.55</div>
+                    <div class="pricing-unit">Input / $2.19 Output</div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Strong reasoning</li>
+                        <li><span class="check">✓</span> 97.3% MATH-500</li>
+                        <li><span class="check">✓</span> Open weights</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="model-logo logo-openai" style="width: 48px; height: 48px;">GPT</div>
+                        <div>
+                            <div class="pricing-model">GPT-5</div>
+                            <div class="pricing-provider">OpenAI</div>
+                        </div>
+                    </div>
+                    <div class="pricing-value">$1.25</div>
+                    <div class="pricing-unit">Input / $5.00 Output</div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> 400K context</li>
+                        <li><span class="check">✓</span> 100% AIME score</li>
+                        <li><span class="check">✓</span> Best reasoning</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="model-logo logo-anthropic" style="width: 48px; height: 48px;">C</div>
+                        <div>
+                            <div class="pricing-model">Claude Opus 4.5</div>
+                            <div class="pricing-provider">Anthropic</div>
+                        </div>
+                    </div>
+                    <div class="pricing-value">$5.00</div>
+                    <div class="pricing-unit">Input / $25.00 Output</div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> 66% cost reduction</li>
+                        <li><span class="check">✓</span> Best SWE-Bench</li>
+                        <li><span class="check">✓</span> Agentic workflows</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="model-logo logo-google" style="width: 48px; height: 48px;">G</div>
+                        <div>
+                            <div class="pricing-model">Gemini 3 Pro</div>
+                            <div class="pricing-provider">Google</div>
+                        </div>
+                    </div>
+                    <div class="pricing-value">$1.25</div>
+                    <div class="pricing-unit">Input / $5.00 Output</div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> 1M context</li>
+                        <li><span class="check">✓</span> Best multimodal</li>
+                        <li><span class="check">✓</span> Workspace integration</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="model-logo logo-kimi" style="width: 48px; height: 48px;">K</div>
+                        <div>
+                            <div class="pricing-model">Kimi K2.5</div>
+                            <div class="pricing-provider">Moonshot</div>
+                        </div>
+                    </div>
+                    <div class="pricing-value">$0.80</div>
+                    <div class="pricing-unit">Input / $3.20 Output</div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> 99.0 HumanEval</li>
+                        <li><span class="check">✓</span> 262K context</li>
+                        <li><span class="check">✓</span> MoE efficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Source Rankings -->
+        <section class="rankings-section animate-in">
+            <h2 class="section-title">
+                <span class="icon">🔓</span>
+                Open Source Model Rankings
+            </h2>
+            <div class="table-container">
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Model</th>
+                                <th>Parameters</th>
+                                <th>MMLU</th>
+                                <th>MATH-500</th>
+                                <th>HumanEval</th>
+                                <th>License</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="rank-badge rank-1">1</span></td>
+                                <td><strong>DeepSeek R1</strong></td>
+                                <td>671B MoE</td>
+                                <td>90.8%</td>
+                                <td><span style="color: var(--accent-amber); font-weight: 600;">97.3%</span></td>
+                                <td>90.2%</td>
+                                <td>MIT</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-2">2</span></td>
+                                <td><strong>Qwen 3 235B</strong></td>
+                                <td>235B</td>
+                                <td>89.5%</td>
+                                <td>92.3%</td>
+                                <td>88.0%</td>
+                                <td>Apache 2.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-3">3</span></td>
+                                <td><strong>MiMo-V2-Flash</strong></td>
+                                <td>70B</td>
+                                <td>86.7%</td>
+                                <td>94.1%</td>
+                                <td>84.8%</td>
+                                <td>Apache 2.0</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">4</span></td>
+                                <td><strong>Llama 4 405B</strong></td>
+                                <td>405B</td>
+                                <td>88.2%</td>
+                                <td>89.0%</td>
+                                <td>86.5%</td>
+                                <td>Meta License</td>
+                            </tr>
+                            <tr>
+                                <td><span class="rank-badge rank-other">5</span></td>
+                                <td><strong>Mistral Large 2</strong></td>
+                                <td>123B</td>
+                                <td>85.0%</td>
+                                <td>85.5%</td>
+                                <td>82.0%</td>
+                                <td>Apache 2.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Case Recommendations -->
+        <section class="rankings-section animate-in">
+            <h2 class="section-title">
+                <span class="icon">🎯</span>
+                Recommended Models by Use Case
+            </h2>
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3 style="margin-bottom: 1rem; color: var(--accent-blue);">💻 Coding & Development</h3>
+                    <ol style="padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Claude Opus 4.5</strong> - Best for agentic coding</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">GPT-5.2</strong> - Fast iteration</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Kimi K2.5</strong> - Raw code generation</li>
+                    </ol>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 1rem; color: var(--accent-purple);">🧠 Reasoning & Analysis</h3>
+                    <ol style="padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">GPT-5.2</strong> - GPQA Diamond leader</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Claude Opus 4.6</strong> - Adaptive reasoning</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">DeepSeek R1</strong> - Cost-effective reasoning</li>
+                    </ol>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 1rem; color: var(--accent-emerald);">🔢 Mathematics</h3>
+                    <ol style="padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">GPT-5</strong> - 100% AIME score</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Claude Opus 4.6</strong> - 100% AIME score</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Kimi K2.5</strong> - 98% MATH-500</li>
+                    </ol>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 1rem; color: var(--accent-amber);">📄 Long Context</h3>
+                    <ol style="padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Grok 4.1 Fast</strong> - 2M tokens</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Gemini 2.5 Pro</strong> - 1M tokens</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">GPT-4.1</strong> - 1M tokens</li>
+                    </ol>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 1rem; color: var(--accent-rose);">💰 Budget-Friendly</h3>
+                    <ol style="padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Grok 4.1 Fast</strong> - $0.20/1M</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">DeepSeek R1</strong> - $0.55/1M</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Kimi K2.5</strong> - $0.80/1M</li>
+                    </ol>
+                </div>
+                <div class="card">
+                    <h3 style="margin-bottom: 1rem; color: var(--accent-cyan);">🏢 Enterprise</h3>
+                    <ol style="padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Claude 4.5</strong> - Compliance, nuanced</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">Gemini 3 Pro</strong> - Workspace integration</li>
+                        <li style="margin-bottom: 0.5rem;"><strong style="color: var(--text-primary);">GPT-5</strong> - Broad capabilities</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Data sourced from <a href="https://lmcouncil.ai/benchmarks">LM Council</a>, <a href="https://llm-stats.com">LLM Stats</a>, <a href="https://www.onyx.app/llm-leaderboard">Onyx AI</a>, and <a href="https://klu.ai/llm-leaderboard">Klu</a></p>
+            <p style="margin-top: 0.5rem;">Last updated: February 26, 2026 • Parallelloop AI</p>
+        </footer>
+    </div>
+
+    <script>
+        // Chart.js Configuration
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.borderColor = '#2a2a3a';
+
+        // GPQA Diamond Chart
+        new Chart(document.getElementById('gpqaChart'), {
+            type: 'bar',
+            data: {
+                labels: ['GPT-5.2', 'Claude 4.6', 'Gemini 3', 'Kimi K2.5', 'Grok 4', 'DeepSeek V3.2'],
+                datasets: [{
+                    label: 'GPQA Diamond Score (%)',
+                    data: [93.2, 91.3, 88.0, 87.6, 86.0, 85.0],
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(66, 133, 244, 0.8)',
+                        'rgba(236, 72, 153, 0.8)',
+                        'rgba(99, 102, 241, 0.8)',
+                        'rgba(139, 92, 246, 0.8)'
+                    ],
+                    borderRadius: 8,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        min: 80,
+                        max: 100,
+                        grid: { color: '#2a2a3a' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // SWE-Bench Chart
+        new Chart(document.getElementById('sweChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Claude 4.5', 'GPT-5.2', 'Kimi K2.5', 'GPT-5', 'DeepSeek V3.1', 'Gemini 2.5'],
+                datasets: [{
+                    label: 'SWE-Bench Verified (%)',
+                    data: [80.9, 80.0, 78.2, 74.9, 66.0, 63.8],
+                    backgroundColor: [
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(236, 72, 153, 0.8)',
+                        'rgba(16, 185, 129, 0.8)',
+                        'rgba(139, 92, 246, 0.8)',
+                        'rgba(66, 133, 244, 0.8)'
+                    ],
+                    borderRadius: 8,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        min: 50,
+                        max: 100,
+                        grid: { color: '#2a2a3a' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // AIME Math Chart
+        new Chart(document.getElementById('mathChart'), {
+            type: 'bar',
+            data: {
+                labels: ['GPT-5', 'Claude 4.6', 'Kimi K2.5', 'MiMo-V2', 'Qwen 3', 'DeepSeek R1'],
+                datasets: [{
+                    label: 'AIME 2026 Score (%)',
+                    data: [100, 100, 98.0, 94.1, 92.3, 87.5],
+                    backgroundColor: [
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(236, 72, 153, 0.8)',
+                        'rgba(20, 184, 166, 0.8)',
+                        'rgba(6, 182, 212, 0.8)',
+                        'rgba(139, 92, 246, 0.8)'
+                    ],
+                    borderRadius: 8,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        min: 80,
+                        max: 100,
+                        grid: { color: '#2a2a3a' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // MMLU-Pro Chart
+        new Chart(document.getElementById('mmluChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Gemini 3 Pro', 'Claude 4.5', 'Kimi K2.5', 'GPT-5.2', 'DeepSeek V3.2', 'MiMo-V2'],
+                datasets: [{
+                    label: 'MMLU-Pro Score (%)',
+                    data: [89.8, 89.5, 87.1, 86.5, 85.0, 84.9],
+                    backgroundColor: [
+                        'rgba(66, 133, 244, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(236, 72, 153, 0.8)',
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(139, 92, 246, 0.8)',
+                        'rgba(20, 184, 166, 0.8)'
+                    ],
+                    borderRadius: 8,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        min: 80,
+                        max: 95,
+                        grid: { color: '#2a2a3a' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Category Tab Switching
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const categoryTableBody = document.getElementById('categoryTableBody');
+
+        const categoryData = {
+            coding: {
+                headers: ['SWE-Bench', 'HumanEval', 'LiveCodeBench', 'Strengths'],
+                rows: [
+                    ['Claude Opus 4.5', '80.9%', '95.0%', '76.0%', 'Agentic coding, complex debugging'],
+                    ['GPT-5.2', '80.0%', '95.0%', '80.0%', 'Fast iteration, broad language support'],
+                    ['Kimi K2.5', '78.2%', '99.0%', '75.0%', 'Best raw code generation'],
+                    ['GPT-5', '74.9%', '94.0%', '78.0%', 'Balanced performance'],
+                    ['DeepSeek V3.2', '72.0%', '92.0%', '72.0%', 'Cost-effective, strong math integration']
+                ]
+            },
+            math: {
+                headers: ['AIME 2026', 'MATH-500', 'GSM8K', 'Strengths'],
+                rows: [
+                    ['GPT-5', '100.0%', '99.2%', '99.8%', 'Perfect competition math'],
+                    ['Claude Opus 4.6', '100.0%', '98.5%', '99.5%', 'Chain-of-thought excellence'],
+                    ['Kimi K2.5', '96.0%', '98.0%', '99.2%', 'Strong step-by-step reasoning'],
+                    ['DeepSeek R1', '87.5%', '97.3%', '98.8%', 'Cost-effective math reasoning'],
+                    ['Qwen 3 235B', '92.3%', '95.0%', '98.0%', 'Open source leader']
+                ]
+            },
+            reasoning: {
+                headers: ['GPQA', 'GRIND', 'ARC-AGI', 'Strengths'],
+                rows: [
+                    ['GPT-5.2', '93.2%', '88.5%', '85.0%', 'Deep analytical reasoning'],
+                    ['Claude Opus 4.6', '91.3%', '92.0%', '82.0%', 'Adaptive reasoning, GRIND leader'],
+                    ['Gemini 3 Pro', '88.0%', '85.0%', '80.0%', 'Multimodal reasoning'],
+                    ['Kimi K2.5', '87.6%', '84.0%', '78.5%', 'Efficient MoE reasoning'],
+                    ['Grok 4', '86.0%', '83.0%', '79.0%', 'Real-time context integration']
+                ]
+            },
+            knowledge: {
+                headers: ['MMLU', 'MMLU-Pro', 'TriviaQA', 'Strengths'],
+                rows: [
+                    ['Kimi K2.5', '92.0%', '87.1%', '94.5%', 'Broadest knowledge base'],
+                    ['GPT-5.2', '91.2%', '86.5%', '93.8%', 'Up-to-date information'],
+                    ['DeepSeek V3.2', '91.0%', '85.0%', '93.0%', 'Strong factual recall'],
+                    ['Claude Opus 4.6', '90.5%', '89.5%', '92.5%', 'Nuanced understanding'],
+                    ['Gemini 3 Pro', '89.8%', '89.8%', '94.0%', 'Search integration']
+                ]
+            },
+            multimodal: {
+                headers: ['MMMU', 'VQAv2', 'DocVQA', 'Strengths'],
+                rows: [
+                    ['Gemini 3 Pro', '78.5%', '92.0%', '95.0%', 'Best overall multimodal'],
+                    ['GPT-5.2', '75.0%', '90.5%', '93.5%', 'Strong vision-language'],
+                    ['Claude Opus 4.6', '72.0%', '89.0%', '92.0%', 'Document understanding'],
+                    ['Grok 4', '70.0%', '88.0%', '90.0%', 'Real-time visual analysis'],
+                    ['Kimi K2.5', '68.5%', '87.0%', '88.5%', 'Efficient processing']
+                ]
+            }
+        };
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const category = tab.dataset.category;
+                const data = categoryData[category];
+
+                // Update table headers
+                const headerRow = document.querySelector('#categoryTable thead tr');
+                headerRow.innerHTML = '<th>Rank</th><th>Model</th>' +
+                    data.headers.map(h => `<th>${h}</th>`).join('');
+
+                // Update table body
+                categoryTableBody.innerHTML = data.rows.map((row, index) => {
+                    const rankClass = index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : 'rank-other';
+                    return `
+                        <tr>
+                            <td><span class="rank-badge ${rankClass}">${index + 1}</span></td>
+                            <td><strong>${row[0]}</strong></td>
+                            ${row.slice(1, 4).map((val, i) => {
+                                const isTop = (i === 0 && index === 0) || (val.includes('99') || val.includes('100'));
+                                return `<td><span style="${isTop ? 'color: var(--accent-emerald); font-weight: 600;' : ''}">${val}</span></td>`;
+                            }).join('')}
+                            <td>${row[4]}</td>
+                        </tr>
+                    `;
+                }).join('');
+            });
+        });
+    </script>
+</body>
+</html>
