@@ -1,0 +1,44 @@
+version: '1.0'
+entity_id: df0e7d4a-54d6-4254-aa35-07ea36053783
+entity_type: organization
+organization_id: df0e7d4a-54d6-4254-aa35-07ea36053783
+organization_name: parallelloop
+context_type: vocabulary
+updated_at: '2026-03-08T06:45:00.000000'
+data:
+  terms:
+  - term: API
+    definition: Application Programming Interface
+    term_type: acronym
+    synonyms:
+    - interface
+    - programming interface
+  - term: Kubernetes
+    definition: Container orchestration platform
+    term_type: technical
+    synonyms:
+    - k8s
+    - kube
+  - term: Slack
+    definition: Team communication platform
+    term_type: brand
+    synonyms:
+    - slack app
+    - slack chat
+  - term: CI/CD
+    definition: Continuous Integration and Continuous Deployment
+    term_type: acronym
+    synonyms:
+    - continuous delivery
+    - cicd
+  - term: Microservices
+    definition: Architectural pattern of small independent services
+    term_type: technical
+    synonyms:
+    - micro services
+    - service oriented
+  - term: OKR
+    definition: Objectives and Key Results
+    term_type: acronym
+    context: management
+    synonyms: []
