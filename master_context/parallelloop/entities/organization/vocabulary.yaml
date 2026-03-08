@@ -4,7 +4,7 @@ entity_type: organization
 organization_id: df0e7d4a-54d6-4254-aa35-07ea36053783
 organization_name: parallelloop
 context_type: vocabulary
-updated_at: '2026-03-08T06:50:00.000000'
+updated_at: '2026-03-08T06:55:00.000000'
 data:
   terms:
   - term: API
@@ -46,4 +46,9 @@ data:
     definition: Looks good to me
     term_type: acronym
     context: code-review
+    synonyms: []
+  - term: GLHF
+    definition: Good luck have fun
+    term_type: acronym
+    context: casual
     synonyms: []
