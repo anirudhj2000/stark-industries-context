@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Models Dashboard — 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #0c0c0f;
@@ -499,7 +498,7 @@
         }
     </style>
 </head>
-<body>
+<body style="cursor: crosshair;">
     <div class="container">
         <header>
             <div>
@@ -513,11 +512,11 @@
             </div>
             <div class="controls">
                 <button class="btn active" onclick="toggleView('all')">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="10" height="10" rx="1"/></svg>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="10" height="10" rx="1"></rect></svg>
                     All Models
                 </button>
                 <button class="btn" onclick="toggleView('rankings')">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13h2V7H3v6zM7 13h2V4H7v9zM11 13h2v-4h-2v4z"/></svg>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13h2V7H3v6zM7 13h2V4H7v9zM11 13h2v-4h-2v4z"></path></svg>
                     Rankings
                 </button>
             </div>
@@ -529,13 +528,10 @@
                 <div class="stat-label">Models Tracked</div>
                 <div class="stat-value accent">12</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-label">Avg MMLU Score</div>
-                <div class="stat-value purple">89.2%</div>
-            </div>
+            
             <div class="stat-card">
                 <div class="stat-label">Max Context</div>
-                <div class="stat-value blue">2M</div>
+                
             </div>
             <div class="stat-card">
                 <div class="stat-label">Top HumanEval</div>
@@ -577,7 +573,258 @@
                             </tr>
                         </thead>
                         <tbody id="models-body">
-                        </tbody>
+                <tr data-provider="anthropic">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo anthropic">A</div>
+                            <div class="model-info">
+                                <span class="model-name">Claude 4 Opus</span>
+                                <span class="model-provider">Anthropic</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">93.1%</span></td>
+                    <td><span class="score top">96.4%</span></td>
+                    <td><span class="score top">97.8%</span></td>
+                    <td><span class="score top">62.1%</span></td>
+                    <td><span class="score top">9.7</span></td>
+                    <td><span class="context-window">500K</span></td>
+                    <td><span class="price">$15.00</span></td>
+                    <td><span class="price">$75.00</span></td>
+                    <td><span class="badge new">✨ New</span></td>
+                </tr>
+            
+                <tr data-provider="openai">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo openai">O</div>
+                            <div class="model-info">
+                                <span class="model-name">GPT-4.5 Turbo</span>
+                                <span class="model-provider">OpenAI</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">92.8%</span></td>
+                    <td><span class="score top">95.2%</span></td>
+                    <td><span class="score top">97.1%</span></td>
+                    <td><span class="score top">61.3%</span></td>
+                    <td><span class="score top">9.6</span></td>
+                    <td><span class="context-window">256K</span></td>
+                    <td><span class="price">$10.00</span></td>
+                    <td><span class="price">$30.00</span></td>
+                    <td><span class="badge new">✨ New</span></td>
+                </tr>
+            
+                <tr data-provider="google">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo google">G</div>
+                            <div class="model-info">
+                                <span class="model-name">Gemini 2.0 Ultra</span>
+                                <span class="model-provider">Google</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">91.9%</span></td>
+                    <td><span class="score top">94.8%</span></td>
+                    <td><span class="score top">96.9%</span></td>
+                    <td><span class="score top">60.7%</span></td>
+                    <td><span class="score top">9.5</span></td>
+                    <td><span class="context-window">2M</span></td>
+                    <td><span class="price">$12.50</span></td>
+                    <td><span class="price">$37.50</span></td>
+                    <td><span class="badge new">✨ New</span></td>
+                </tr>
+            
+                <tr data-provider="meta">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo meta">M</div>
+                            <div class="model-info">
+                                <span class="model-name">Llama 4 405B</span>
+                                <span class="model-provider">Meta</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">90.8%</span></td>
+                    <td><span class="score top">93.1%</span></td>
+                    <td><span class="score top">95.7%</span></td>
+                    <td><span class="score high">58.9%</span></td>
+                    <td><span class="score top">9.4</span></td>
+                    <td><span class="context-window">256K</span></td>
+                    <td><span class="price">Free</span></td>
+                    <td><span class="price">Free</span></td>
+                    <td><span class="badge new">✨ New</span></td>
+                </tr>
+            
+                <tr data-provider="anthropic">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo anthropic">A</div>
+                            <div class="model-info">
+                                <span class="model-name">Claude 3.5 Sonnet</span>
+                                <span class="model-provider">Anthropic</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">90.4%</span></td>
+                    <td><span class="score top">93.7%</span></td>
+                    <td><span class="score top">96.4%</span></td>
+                    <td><span class="score top">59.4%</span></td>
+                    <td><span class="score top">9.5</span></td>
+                    <td><span class="context-window">200K</span></td>
+                    <td><span class="price">$3.00</span></td>
+                    <td><span class="price">$15.00</span></td>
+                    <td>—</td>
+                </tr>
+            
+                <tr data-provider="xai">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo xai">x</div>
+                            <div class="model-info">
+                                <span class="model-name">Grok-3</span>
+                                <span class="model-provider">xAI</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">89.7%</span></td>
+                    <td><span class="score high">90.3%</span></td>
+                    <td><span class="score top">94.1%</span></td>
+                    <td><span class="score high">54.2%</span></td>
+                    <td><span class="score top">9.3</span></td>
+                    <td><span class="context-window">128K</span></td>
+                    <td><span class="price">$5.00</span></td>
+                    <td><span class="price">$15.00</span></td>
+                    <td><span class="badge new">✨ New</span></td>
+                </tr>
+            
+                <tr data-provider="mistral">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo mistral">M</div>
+                            <div class="model-info">
+                                <span class="model-name">Mistral Large 3</span>
+                                <span class="model-provider">Mistral</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">88.9%</span></td>
+                    <td><span class="score high">89.4%</span></td>
+                    <td><span class="score top">93.2%</span></td>
+                    <td><span class="score high">52.8%</span></td>
+                    <td><span class="score high">9.2</span></td>
+                    <td><span class="context-window">128K</span></td>
+                    <td><span class="price">$4.00</span></td>
+                    <td><span class="price">$12.00</span></td>
+                    <td><span class="badge updated">🔄 Updated</span></td>
+                </tr>
+            
+                <tr data-provider="openai">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo openai">O</div>
+                            <div class="model-info">
+                                <span class="model-name">GPT-4o</span>
+                                <span class="model-provider">OpenAI</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">88.7%</span></td>
+                    <td><span class="score high">91%</span></td>
+                    <td><span class="score top">95.3%</span></td>
+                    <td><span class="score high">53.6%</span></td>
+                    <td><span class="score top">9.3</span></td>
+                    <td><span class="context-window">128K</span></td>
+                    <td><span class="price">$2.50</span></td>
+                    <td><span class="price">$10.00</span></td>
+                    <td>—</td>
+                </tr>
+            
+                <tr data-provider="deepseek">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo deepseek">D</div>
+                            <div class="model-info">
+                                <span class="model-name">DeepSeek V3</span>
+                                <span class="model-provider">DeepSeek</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score high">87.6%</span></td>
+                    <td><span class="score high">88.2%</span></td>
+                    <td><span class="score high">92.4%</span></td>
+                    <td><span class="score mid">51.3%</span></td>
+                    <td><span class="score high">9</span></td>
+                    <td><span class="context-window">64K</span></td>
+                    <td><span class="price">$0.14</span></td>
+                    <td><span class="price">$0.28</span></td>
+                    <td>—</td>
+                </tr>
+            
+                <tr data-provider="google">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo google">G</div>
+                            <div class="model-info">
+                                <span class="model-name">Gemini 1.5 Pro</span>
+                                <span class="model-provider">Google</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score high">86.5%</span></td>
+                    <td><span class="score high">84.1%</span></td>
+                    <td><span class="score high">91.7%</span></td>
+                    <td><span class="score mid">49%</span></td>
+                    <td><span class="score high">9.1</span></td>
+                    <td><span class="context-window">1M</span></td>
+                    <td><span class="price">$1.25</span></td>
+                    <td><span class="price">$5.00</span></td>
+                    <td>—</td>
+                </tr>
+            
+                <tr data-provider="meta">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo meta">M</div>
+                            <div class="model-info">
+                                <span class="model-name">Llama 3.2 70B</span>
+                                <span class="model-provider">Meta</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score high">85.3%</span></td>
+                    <td><span class="score mid">81.7%</span></td>
+                    <td><span class="score high">89.5%</span></td>
+                    <td><span class="score mid">46.7%</span></td>
+                    <td><span class="score high">8.9</span></td>
+                    <td><span class="context-window">128K</span></td>
+                    <td><span class="price">Free</span></td>
+                    <td><span class="price">Free</span></td>
+                    <td>—</td>
+                </tr>
+            
+                <tr data-provider="cohere">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo cohere">C</div>
+                            <div class="model-info">
+                                <span class="model-name">Command R+</span>
+                                <span class="model-provider">Cohere</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score high">82.1%</span></td>
+                    <td><span class="score mid">75.8%</span></td>
+                    <td><span class="score high">84.3%</span></td>
+                    <td><span class="score low">41.2%</span></td>
+                    <td><span class="score high">8.4</span></td>
+                    <td><span class="context-window">128K</span></td>
+                    <td><span class="price">$2.50</span></td>
+                    <td><span class="price">$10.00</span></td>
+                    <td>—</td>
+                </tr>
+            </tbody>
                     </table>
                 </div>
             </div>
@@ -967,5 +1214,7 @@
         // Initialize
         renderTable();
     </script>
-</body>
-</html>
+
+
+
+</body></html>
