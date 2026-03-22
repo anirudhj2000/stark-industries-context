@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How LLMs Are Trained</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0b0f;
+            --surface: #12141a;
+            --surface-light: #1a1d26;
+            --accent-cyan: #00f5d4;
+            --accent-purple: #9b5de5;
+            --accent-pink: #f15bb5;
+            --accent-yellow: #fee440;
+            --accent-blue: #00bbf9;
+            --text: #f0f0f0;
+            --text-muted: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated background grid */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 245, 212, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Progress bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--surface);
+            z-index: 100;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            transition: width 0.5s ease-out;
+        }
+
+        /* Navigation dots */
+        .nav-dots {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--surface-light);
+            border: 2px solid var(--text-muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot:hover {
+            transform: scale(1.3);
+            border-color: var(--accent-cyan);
+        }
+
+        .nav-dot.active {
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px var(--accent-cyan);
+        }
+
+        /* Slide container */
+        .slides-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(100px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .slide.prev {
+            transform: translateX(-100px);
+        }
+
+        .slide-content {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Slide number */
+        .slide-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            letter-spacing: 0.2em;
+        }
+
+        .slide-number span {
+            color: var(--accent-cyan);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* Interactive elements */
+        .interactive-area {
+            margin-top: 3rem;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        /* Data flow visualization */
+        .data-flow {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .data-node {
+            background: var(--surface);
+            border: 1px solid var(--surface-light);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+
+        .data-node:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 40px rgba(0, 245, 212, 0.2);
+        }
+
+        .data-node.active {
+            border-color: var(--accent-cyan);
+            background: linear-gradient(135deg, var(--surface) 0%, rgba(0, 245, 212, 0.1) 100%);
+        }
+
+        .data-node-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-node-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .data-arrow {
+            color: var(--accent-cyan);
+            font-size: 1.5rem;
+            animation: arrowPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes arrowPulse {
+            0%, 100% { opacity: 0.3; transform: translateX(0); }
+            50% { opacity: 1; transform: translateX(5px); }
+        }
+
+        /* Info panel */
+        .info-panel {
+            background: var(--surface);
+            border: 1px solid var(--surface-light);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .info-panel.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .info-panel h3 {
+            color: var(--accent-cyan);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-panel p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Token visualization */
+        .token-demo {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .token-input {
+            width: 100%;
+            background: var(--surface-light);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 1rem;
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .token-input:focus {
+            border-color: var(--accent-cyan);
+        }
+
+        .tokens-display {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            min-height: 60px;
+        }
+
+        .token {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            animation: tokenPop 0.3s ease-out backwards;
+        }
+
+        @keyframes tokenPop {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Neural network visualization */
+        .neural-viz {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            padding: 2rem;
+        }
+
+        .layer {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .neuron {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--surface-light);
+            border: 2px solid var(--text-muted);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .neuron:hover {
+            transform: scale(1.2);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px var(--accent-cyan);
+        }
+
+        .neuron.active {
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px var(--accent-cyan);
+        }
+
+        .layer-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Training steps */
+        .training-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .step-card {
+            background: var(--surface);
+            border: 1px solid var(--surface-light);
+            border-radius: 16px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-cyan);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover::before,
+        .step-card.active::before {
+            transform: scaleY(1);
+        }
+
+        .step-card:hover {
+            transform: translateX(10px);
+            border-color: var(--accent-cyan);
+        }
+
+        .step-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            opacity: 0.5;
+        }
+
+        .step-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+
+        .step-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* RLHF interactive */
+        .rlhf-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .rlhf-demo {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .response-card {
+            background: var(--surface);
+            border: 2px solid var(--surface-light);
+            border-radius: 16px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .response-card:hover {
+            border-color: var(--accent-purple);
+        }
+
+        .response-card.selected {
+            border-color: var(--accent-cyan);
+            background: linear-gradient(135deg, var(--surface) 0%, rgba(0, 245, 212, 0.1) 100%);
+        }
+
+        .response-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .response-text {
+            line-height: 1.6;
+        }
+
+        .feedback-result {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--surface);
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+
+        .feedback-result.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feedback-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation buttons */
+        .nav-buttons {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: var(--surface);
+            border: 1px solid var(--surface-light);
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-btn:hover {
+            background: var(--surface-light);
+            border-color: var(--accent-cyan);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Keyboard hint */
+        .keyboard-hint {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .key {
+            background: var(--surface-light);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid var(--surface);
+        }
+
+        /* Animations */
+        .stagger-in > * {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .slide.active .stagger-in > *:nth-child(1) { animation: slideIn 0.5s 0.1s forwards; }
+        .slide.active .stagger-in > *:nth-child(2) { animation: slideIn 0.5s 0.2s forwards; }
+        .slide.active .stagger-in > *:nth-child(3) { animation: slideIn 0.5s 0.3s forwards; }
+        .slide.active .stagger-in > *:nth-child(4) { animation: slideIn 0.5s 0.4s forwards; }
+        .slide.active .stagger-in > *:nth-child(5) { animation: slideIn 0.5s 0.5s forwards; }
+
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Glow effects */
+        .glow-cyan { text-shadow: 0 0 30px var(--accent-cyan); }
+        .glow-purple { text-shadow: 0 0 30px var(--accent-purple); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide { padding: 2rem; }
+            .nav-dots { right: 1rem; }
+            .neural-viz { gap: 1.5rem; }
+            .neuron { width: 30px; height: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <nav class="nav-dots" id="navDots"></nav>
+
+    <div class="slides-wrapper">
+        <!-- Slide 1: Intro / Data Collection -->
+        <div class="slide active" data-slide="0">
+            <div class="slide-content stagger-in">
+                <div class="slide-number">SLIDE <span>01</span> / 05</div>
+                <h1>How LLMs<br/>Are Trained</h1>
+                <p class="subtitle">
+                    Large Language Models learn from massive datasets through a multi-stage process.
+                    Click on each source below to explore how data flows into training.
+                </p>
+                <div class="interactive-area">
+                    <div class="data-flow">
+                        <div class="data-node" data-info="books">
+                            <div class="data-node-icon">📚</div>
+                            <div class="data-node-label">Books</div>
+                        </div>
+                        <div class="data-arrow">→</div>
+                        <div class="data-node" data-info="web">
+                            <div class="data-node-icon">🌐</div>
+                            <div class="data-node-label">Web Pages</div>
+                        </div>
+                        <div class="data-arrow">→</div>
+                        <div class="data-node" data-info="code">
+                            <div class="data-node-icon">💻</div>
+                            <div class="data-node-label">Code</div>
+                        </div>
+                        <div class="data-arrow">→</div>
+                        <div class="data-node" data-info="papers">
+                            <div class="data-node-icon">📄</div>
+                            <div class="data-node-label">Papers</div>
+                        </div>
+                        <div class="data-arrow">→</div>
+                        <div class="data-node highlight" data-info="model">
+                            <div class="data-node-icon">🧠</div>
+                            <div class="data-node-label">LLM</div>
+                        </div>
+                    </div>
+                    <div class="info-panel" id="dataInfoPanel">
+                        <h3 id="infoPanelTitle">Select a data source</h3>
+                        <p id="infoPanelContent">Click on any node above to learn about different data sources used in LLM training.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Tokenization -->
+        <div class="slide" data-slide="1">
+            <div class="slide-content stagger-in">
+                <div class="slide-number">SLIDE <span>02</span> / 05</div>
+                <h2>Tokenization</h2>
+                <p class="subtitle">
+                    Text is broken into tokens—subword units that the model can understand.
+                    Type something below to see tokenization in action!
+                </p>
+                <div class="token-demo">
+                    <input type="text" class="token-input" id="tokenInput" placeholder="Type something to see tokens...">
+                    <div class="tokens-display" id="tokensDisplay"></div>
+                </div>
+                <div class="info-panel visible" style="margin-top: 2rem;">
+                    <h3>Why Subword Tokenization?</h3>
+                    <p>Instead of treating each word or character separately, LLMs use subword tokenization (like BPE or WordPiece). This balances vocabulary size with the ability to handle rare words by breaking them into known pieces. For example, "unbelievable" might become ["un", "believ", "able"].</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Pre-training -->
+        <div class="slide" data-slide="2">
+            <div class="slide-content stagger-in">
+                <div class="slide-number">SLIDE <span>03</span> / 05</div>
+                <h2>Pre-training</h2>
+                <p class="subtitle">
+                    The model learns to predict the next token by processing billions of examples.
+                    Hover over neurons to see activation patterns!
+                </p>
+                <div class="neural-viz" id="neuralViz">
+                    <div class="layer">
+                        <div class="neuron" data-layer="input"></div>
+                        <div class="neuron" data-layer="input"></div>
+                        <div class="neuron" data-layer="input"></div>
+                        <div class="neuron" data-layer="input"></div>
+                        <div class="layer-label">Input</div>
+                    </div>
+                    <div class="layer">
+                        <div class="neuron" data-layer="hidden1"></div>
+                        <div class="neuron" data-layer="hidden1"></div>
+                        <div class="neuron" data-layer="hidden1"></div>
+                        <div class="neuron" data-layer="hidden1"></div>
+                        <div class="neuron" data-layer="hidden1"></div>
+                        <div class="neuron" data-layer="hidden1"></div>
+                        <div class="layer-label">Hidden 1</div>
+                    </div>
+                    <div class="layer">
+                        <div class="neuron" data-layer="hidden2"></div>
+                        <div class="neuron" data-layer="hidden2"></div>
+                        <div class="neuron" data-layer="hidden2"></div>
+                        <div class="neuron" data-layer="hidden2"></div>
+                        <div class="neuron" data-layer="hidden2"></div>
+                        <div class="neuron" data-layer="hidden2"></div>
+                        <div class="layer-label">Hidden 2</div>
+                    </div>
+                    <div class="layer">
+                        <div class="neuron" data-layer="output"></div>
+                        <div class="neuron" data-layer="output"></div>
+                        <div class="neuron" data-layer="output"></div>
+                        <div class="layer-label">Output</div>
+                    </div>
+                </div>
+                <div class="training-steps">
+                    <div class="step-card" data-step="1">
+                        <div class="step-number">01</div>
+                        <div class="step-title">Forward Pass</div>
+                        <div class="step-desc">Input flows through layers, making predictions</div>
+                    </div>
+                    <div class="step-card" data-step="2">
+                        <div class="step-number">02</div>
+                        <div class="step-title">Loss Calculation</div>
+                        <div class="step-desc">Compare prediction to actual next token</div>
+                    </div>
+                    <div class="step-card" data-step="3">
+                        <div class="step-number">03</div>
+                        <div class="step-title">Backpropagation</div>
+                        <div class="step-desc">Compute gradients to update weights</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Fine-tuning -->
+        <div class="slide" data-slide="3">
+            <div class="slide-content stagger-in">
+                <div class="slide-number">SLIDE <span>04</span> / 05</div>
+                <h2>Fine-tuning</h2>
+                <p class="subtitle">
+                    After pre-training, models are fine-tuned on specific tasks with curated datasets.
+                    Click each stage to explore the fine-tuning pipeline.
+                </p>
+                <div class="data-flow" style="margin-top: 3rem;">
+                    <div class="data-node" data-finetune="base">
+                        <div class="data-node-icon">🧠</div>
+                        <div class="data-node-label">Base Model</div>
+                    </div>
+                    <div class="data-arrow">→</div>
+                    <div class="data-node" data-finetune="sft">
+                        <div class="data-node-icon">📝</div>
+                        <div class="data-node-label">SFT</div>
+                    </div>
+                    <div class="data-arrow">→</div>
+                    <div class="data-node" data-finetune="reward">
+                        <div class="data-node-icon">⭐</div>
+                        <div class="data-node-label">Reward Model</div>
+                    </div>
+                    <div class="data-arrow">→</div>
+                    <div class="data-node" data-finetune="ppo">
+                        <div class="data-node-icon">🎯</div>
+                        <div class="data-node-label">PPO</div>
+                    </div>
+                </div>
+                <div class="info-panel" id="finetunePanel">
+                    <h3 id="finetunePanelTitle">Supervised Fine-Tuning (SFT)</h3>
+                    <p id="finetunePanelContent">The base model is trained on high-quality demonstration data—examples of desired behavior written by humans. This teaches the model to follow instructions and produce helpful responses.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: RLHF -->
+        <div class="slide" data-slide="4">
+            <div class="slide-content stagger-in">
+                <div class="slide-number">SLIDE <span>05</span> / 05</div>
+                <h2>RLHF</h2>
+                <p class="subtitle">
+                    Reinforcement Learning from Human Feedback aligns the model with human preferences.
+                    Try it yourself—which response is better?
+                </p>
+                <div class="rlhf-demo">
+                    <div class="response-card" data-response="A">
+                        <div class="response-label">Response A</div>
+                        <div class="response-text">
+                            The capital of France is Paris. It's located in the north-central part of the country and has been the capital since the 10th century.
+                        </div>
+                    </div>
+                    <div class="response-card" data-response="B">
+                        <div class="response-label">Response B</div>
+                        <div class="response-text">
+                            Paris is the capital. It's a city in Europe where people live and there are buildings. The Eiffel Tower is tall.
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-result" id="feedbackResult">
+                    <div class="feedback-icon">✨</div>
+                    <h3>Great choice!</h3>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">
+                        Human feedback like this is collected at scale to train a reward model,
+                        which then guides the LLM to produce better responses through reinforcement learning.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button class="nav-btn" id="prevBtn" disabled>
+            ← Previous
+        </button>
+        <button class="nav-btn" id="nextBtn">
+            Next →
+        </button>
+    </div>
+
+    <div class="keyboard-hint">
+        Press <span class="key">←</span> <span class="key">→</span> to navigate
+    </div>
+
+    <script>
+        // State
+        let currentSlide = 0;
+        const totalSlides = 5;
+
+        // Elements
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progressBar');
+        const navDotsContainer = document.getElementById('navDots');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Initialize navigation dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = `nav-dot ${i === 0 ? 'active' : ''}`;
+            dot.addEventListener('click', () => goToSlide(i));
+            navDotsContainer.appendChild(dot);
+        }
+
+        // Navigation functions
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'prev');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index < currentSlide) {
+                    slide.classList.add('prev');
+                }
+            });
+
+            // Update progress
+            progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+
+            // Update dots
+            document.querySelectorAll('.nav-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+
+            // Update buttons
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+        }
+
+        function goToSlide(index) {
+            if (index >= 0 && index < totalSlides) {
+                currentSlide = index;
+                updateSlide();
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        // Event listeners
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Slide 1: Data source interactions
+        const dataInfo = {
+            books: {
+                title: '📚 Books & Literature',
+                content: 'Millions of books provide rich, well-structured text covering diverse topics, writing styles, and domains. This includes fiction, non-fiction, textbooks, and historical documents.'
+            },
+            web: {
+                title: '🌐 Web Pages',
+                content: 'Common Crawl and curated web datasets contain trillions of tokens from websites, forums, blogs, and online discussions—capturing the full diversity of human communication.'
+            },
+            code: {
+                title: '💻 Source Code',
+                content: 'GitHub repositories and code documentation teach models programming languages, logical reasoning, and problem-solving patterns across hundreds of programming languages.'
+            },
+            papers: {
+                title: '📄 Scientific Papers',
+                content: 'arXiv, PubMed, and academic databases provide technical knowledge, research methodologies, and domain expertise across sciences, mathematics, and engineering.'
+            },
+            model: {
+                title: '🧠 The Trained LLM',
+                content: 'All this data (often 1-10+ trillion tokens) flows through the training process, teaching the model patterns of language, knowledge, and reasoning capabilities.'
+            }
+        };
+
+        document.querySelectorAll('[data-info]').forEach(node => {
+            node.addEventListener('click', () => {
+                const info = dataInfo[node.dataset.info];
+                const panel = document.getElementById('dataInfoPanel');
+                document.getElementById('infoPanelTitle').textContent = info.title;
+                document.getElementById('infoPanelContent').textContent = info.content;
+                panel.classList.add('visible');
+
+                document.querySelectorAll('[data-info]').forEach(n => n.classList.remove('active'));
+                node.classList.add('active');
+            });
+        });
+
+        // Slide 2: Tokenization demo
+        const tokenInput = document.getElementById('tokenInput');
+        const tokensDisplay = document.getElementById('tokensDisplay');
+
+        function tokenize(text) {
+            // Simplified BPE-like tokenization for demo
+            const tokens = [];
+            let remaining = text;
+
+            const commonSubwords = [
+                'ing', 'tion', 'ed', 'er', 'ly', 'un', 'pre', 're', 'ness',
+                'ment', 'able', 'ful', 'less', 'the', 'and', 'for', 'are',
+                'but', 'not', 'you', 'all', 'can', 'had', 'her', 'was',
+                'one', 'our', 'out', 'day', 'get', 'has', 'him', 'his'
+            ];
+
+            while (remaining.length > 0) {
+                let found = false;
+
+                // Try to match common subwords
+                for (const subword of commonSubwords) {
+                    if (remaining.toLowerCase().startsWith(subword)) {
+                        tokens.push(remaining.slice(0, subword.length));
+                        remaining = remaining.slice(subword.length);
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    // Take single character or space-delimited word
+                    if (remaining[0] === ' ') {
+                        tokens.push('▁');
+                        remaining = remaining.slice(1);
+                    } else {
+                        const nextSpace = remaining.indexOf(' ');
+                        if (nextSpace > 0 && nextSpace <= 4) {
+                            tokens.push(remaining.slice(0, nextSpace));
+                            remaining = remaining.slice(nextSpace);
+                        } else {
+                            tokens.push(remaining.slice(0, Math.min(3, remaining.length)));
+                            remaining = remaining.slice(Math.min(3, remaining.length));
+                        }
+                    }
+                }
+            }
+
+            return tokens;
+        }
+
+        tokenInput.addEventListener('input', (e) => {
+            const text = e.target.value;
+            const tokens = tokenize(text);
+
+            tokensDisplay.innerHTML = tokens.map((token, i) =>
+                `<span class="token" style="animation-delay: ${i * 0.05}s">${token}</span>`
+            ).join('');
+        });
+
+        // Slide 3: Neural network interaction
+        const neurons = document.querySelectorAll('.neuron');
+
+        neurons.forEach(neuron => {
+            neuron.addEventListener('mouseenter', () => {
+                const layer = neuron.dataset.layer;
+                // Activate random neurons in same layer
+                document.querySelectorAll(`[data-layer="${layer}"]`).forEach(n => {
+                    if (Math.random() > 0.3) {
+                        n.classList.add('active');
+                    }
+                });
+            });
+
+            neuron.addEventListener('mouseleave', () => {
+                setTimeout(() => {
+                    neurons.forEach(n => n.classList.remove('active'));
+                }, 300);
+            });
+        });
+
+        // Step cards interaction
+        document.querySelectorAll('.step-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.step-card').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+            });
+        });
+
+        // Slide 4: Fine-tuning interactions
+        const finetuneInfo = {
+            base: {
+                title: '🧠 Base Model',
+                content: 'The pre-trained model has learned language patterns but lacks instruction-following abilities. It can complete text but may not respond helpfully to questions.'
+            },
+            sft: {
+                title: '📝 Supervised Fine-Tuning',
+                content: 'High-quality demonstrations teach the model to follow instructions. Human experts write ideal responses to prompts, showing the model the desired behavior.'
+            },
+            reward: {
+                title: '⭐ Reward Model',
+                content: 'A separate model learns to predict human preferences by training on comparison data—which responses humans rated as better or worse.'
+            },
+            ppo: {
+                title: '🎯 PPO Training',
+                content: 'Proximal Policy Optimization uses the reward model to guide updates. The LLM generates responses, gets scores, and adjusts to maximize the reward signal.'
+            }
+        };
+
+        document.querySelectorAll('[data-finetune]').forEach(node => {
+            node.addEventListener('click', () => {
+                const info = finetuneInfo[node.dataset.finetune];
+                const panel = document.getElementById('finetunePanel');
+                document.getElementById('finetunePanelTitle').textContent = info.title;
+                document.getElementById('finetunePanelContent').textContent = info.content;
+                panel.classList.add('visible');
+
+                document.querySelectorAll('[data-finetune]').forEach(n => n.classList.remove('active'));
+                node.classList.add('active');
+            });
+        });
+
+        // Slide 5: RLHF demo
+        document.querySelectorAll('.response-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.response-card').forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                document.getElementById('feedbackResult').classList.add('visible');
+            });
+        });
+
+        // Initialize
+        updateSlide();
+    </script>
+</body>
+</html>
