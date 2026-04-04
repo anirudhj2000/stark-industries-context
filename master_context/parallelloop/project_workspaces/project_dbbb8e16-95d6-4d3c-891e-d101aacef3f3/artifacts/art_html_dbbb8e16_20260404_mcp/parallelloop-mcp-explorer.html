@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallelloop MCP Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0d0d12;
+            --bg-secondary: #13131a;
+            --bg-card: #1a1a24;
+            --bg-hover: #22222e;
+            --border: #2a2a3a;
+            --text-primary: #f0f0f5;
+            --text-secondary: #8888a0;
+            --text-muted: #5555668;
+            --accent-cyan: #00d4ff;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-green: #22c55e;
+            --accent-amber: #f59e0b;
+            --accent-blue: #3b82f6;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #a855f7 100%);
+            --gradient-2: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);
+            --gradient-3: linear-gradient(135deg, #22c55e 0%, #00d4ff 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-glow-1 {
+            top: -200px;
+            left: -200px;
+            background: var(--accent-cyan);
+        }
+
+        .bg-glow-2 {
+            bottom: -200px;
+            right: -200px;
+            background: var(--accent-purple);
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 8px 32px rgba(0,212,255,0.3);
+        }
+
+        .logo-text h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-text p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .user-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .user-info {
+            text-align: left;
+        }
+
+        .user-name {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .user-role {
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 12px 40px rgba(0,212,255,0.15);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-icon.cyan { background: rgba(0,212,255,0.15); color: var(--accent-cyan); }
+        .stat-icon.purple { background: rgba(168,85,247,0.15); color: var(--accent-purple); }
+        .stat-icon.pink { background: rgba(236,72,153,0.15); color: var(--accent-pink); }
+        .stat-icon.green { background: rgba(34,197,94,0.15); color: var(--accent-green); }
+        .stat-icon.amber { background: rgba(245,158,11,0.15); color: var(--accent-amber); }
+        .stat-icon.blue { background: rgba(59,130,246,0.15); color: var(--accent-blue); }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Tool Showcase */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .section-badge {
+            padding: 0.25rem 0.75rem;
+            background: rgba(0,212,255,0.1);
+            border: 1px solid rgba(0,212,255,0.3);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .tool-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            border-color: var(--accent-purple);
+            box-shadow: 0 12px 40px rgba(168,85,247,0.15);
+        }
+
+        .tool-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.125rem;
+        }
+
+        .tool-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .tool-desc {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .tool-content {
+            padding: 1.25rem 1.5rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .tool-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .tool-content::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        .tool-content::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        /* Data Items */
+        .data-item {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .data-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .data-item:hover {
+            border-color: var(--border);
+            background: var(--bg-hover);
+        }
+
+        .data-item-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-item-title {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .data-item-badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+        }
+
+        .badge-active { background: rgba(34,197,94,0.15); color: var(--accent-green); }
+        .badge-draft { background: rgba(245,158,11,0.15); color: var(--accent-amber); }
+        .badge-setup { background: rgba(59,130,246,0.15); color: var(--accent-blue); }
+        .badge-owner { background: rgba(168,85,247,0.15); color: var(--accent-purple); }
+        .badge-general { background: rgba(0,212,255,0.15); color: var(--accent-cyan); }
+
+        .data-item-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .data-item-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            opacity: 0.5;
+        }
+
+        /* Code Preview */
+        .code-preview {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            overflow-x: auto;
+            color: var(--text-secondary);
+        }
+
+        .code-preview .key { color: var(--accent-cyan); }
+        .code-preview .string { color: var(--accent-green); }
+        .code-preview .number { color: var(--accent-amber); }
+        .code-preview .bool { color: var(--accent-purple); }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .footer a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-card, .tool-card {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.15s; }
+        .stat-card:nth-child(3) { animation-delay: 0.2s; }
+        .stat-card:nth-child(4) { animation-delay: 0.25s; }
+        .stat-card:nth-child(5) { animation-delay: 0.3s; }
+        .stat-card:nth-child(6) { animation-delay: 0.35s; }
+
+        .tool-card:nth-child(1) { animation-delay: 0.2s; }
+        .tool-card:nth-child(2) { animation-delay: 0.25s; }
+        .tool-card:nth-child(3) { animation-delay: 0.3s; }
+        .tool-card:nth-child(4) { animation-delay: 0.35s; }
+        .tool-card:nth-child(5) { animation-delay: 0.4s; }
+        .tool-card:nth-child(6) { animation-delay: 0.45s; }
+        .tool-card:nth-child(7) { animation-delay: 0.5s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .logo-section {
+                flex-direction: column;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo-icon">PL</div>
+                <div class="logo-text">
+                    <h1>Parallelloop MCP Explorer</h1>
+                    <p>Model Context Protocol Capabilities Dashboard</p>
+                </div>
+            </div>
+            <div class="user-badge" id="user-badge">
+                <div class="user-avatar" id="user-avatar">AJ</div>
+                <div class="user-info">
+                    <div class="user-name" id="user-name">Anirudh Joshi</div>
+                    <div class="user-role" id="user-role">OWNER</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid" id="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon cyan">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+                </div>
+                <div class="stat-value" id="stat-projects">4</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <div class="stat-value" id="stat-teams">1</div>
+                <div class="stat-label">Teams</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon pink">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div class="stat-value" id="stat-members">1</div>
+                <div class="stat-label">Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div class="stat-value" id="stat-artifacts">8</div>
+                <div class="stat-label">Artifacts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon amber">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                </div>
+                <div class="stat-value" id="stat-sources">0</div>
+                <div class="stat-label">Sources</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="stat-value" id="stat-actions">0</div>
+                <div class="stat-label">Actions</div>
+            </div>
+        </div>
+
+        <!-- MCP Tools Section -->
+        <div class="section-header">
+            <h2>MCP Tool Capabilities</h2>
+            <span class="section-badge">7 Tools Available</span>
+        </div>
+
+        <div class="tools-grid" id="tools-grid">
+            <!-- get_me -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon cyan">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div>
+                        <div class="tool-name">get_me</div>
+                        <div class="tool-desc">Current authenticated user profile</div>
+                    </div>
+                </div>
+                <div class="tool-content" id="tool-getme">
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Anirudh Joshi</span>
+                            <span class="data-item-badge badge-owner">OWNER</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span>anirudh@parallelloop.ai</span>
+                            <span>2 organizations</span>
+                        </div>
+                    </div>
+                    <div class="code-preview">
+<span class="key">"organizations"</span>: [
+  { <span class="key">"name"</span>: <span class="string">"Parallelloop AI"</span> },
+  { <span class="key">"name"</span>: <span class="string">"Test Org B"</span> }
+]</div>
+                </div>
+            </div>
+
+            <!-- list_projects -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon purple">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+                    </div>
+                    <div>
+                        <div class="tool-name">list_projects</div>
+                        <div class="tool-desc">All projects in organization</div>
+                    </div>
+                </div>
+                <div class="tool-content" id="tool-projects">
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Random Project two</span>
+                            <span class="data-item-badge badge-setup">SETUP</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span>PRODUCT_DEVELOPMENT</span>
+                            <span>Apr 4, 2026</span>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Random project one</span>
+                            <span class="data-item-badge badge-setup">SETUP</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span>PRODUCT_DEVELOPMENT</span>
+                            <span>Apr 4, 2026</span>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">My Workspace</span>
+                            <span class="data-item-badge badge-active">ACTIVE</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span>PERSONAL_SCRATCHPAD</span>
+                            <span>Apr 3, 2026</span>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Organization Context</span>
+                            <span class="data-item-badge badge-setup">SETUP</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span>ORGANIZATION_ONBOARDING</span>
+                            <span>Apr 3, 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- list_teams -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon pink">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <div>
+                        <div class="tool-name">list_teams</div>
+                        <div class="tool-desc">Teams with member counts</div>
+                    </div>
+                </div>
+                <div class="tool-content" id="tool-teams">
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">All Team Members</span>
+                            <span class="data-item-badge badge-general">GENERAL</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span>1 member</span>
+                            <span>Default team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- list_members -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon green">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                    </div>
+                    <div>
+                        <div class="tool-name">list_members</div>
+                        <div class="tool-desc">All organization members</div>
+                    </div>
+                </div>
+                <div class="tool-content" id="tool-members">
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Anirudh Joshi</span>
+                            <span class="data-item-badge badge-owner">OWNER</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span>anirudh@parallelloop.ai</span>
+                            <span>Joined Apr 3, 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- list_artifacts -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon amber">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div>
+                        <div class="tool-name">list_artifacts</div>
+                        <div class="tool-desc">PRDs, specs, meeting notes</div>
+                    </div>
+                </div>
+                <div class="tool-content" id="tool-artifacts">
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">QA Tracker</span>
+                            <span class="data-item-badge badge-draft">DRAFT</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span>QA_TRACKER</span>
+                            <span>Random Project two</span>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Project Members</span>
+                            <span class="data-item-badge badge-draft">DRAFT</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span>PROJECT_MEMBERS</span>
+                            <span>Random Project two</span>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Vocabulary Glossary</span>
+                            <span class="data-item-badge badge-draft">DRAFT</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span>VOCABULARY_GLOSSARY</span>
+                            <span>Organization Context</span>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Ontology Setup</span>
+                            <span class="data-item-badge badge-draft">DRAFT</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span>ONTOLOGY_SETUP</span>
+                            <span>Organization Context</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- list_sources -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon blue">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    </div>
+                    <div>
+                        <div class="tool-name">list_sources</div>
+                        <div class="tool-desc">Transcripts, documents, exports</div>
+                    </div>
+                </div>
+                <div class="tool-content" id="tool-sources">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">&#128196;</div>
+                        <p>No sources uploaded yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- list_actions -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon cyan">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div>
+                        <div class="tool-name">list_actions</div>
+                        <div class="tool-desc">Questions, decisions, blockers</div>
+                    </div>
+                </div>
+                <div class="tool-content" id="tool-actions">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">&#9989;</div>
+                        <p>No open actions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Capabilities -->
+        <div class="section-header">
+            <h2>Additional MCP Capabilities</h2>
+            <span class="section-badge">Deep Dive Tools</span>
+        </div>
+
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon purple">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <div>
+                        <div class="tool-name">search_context</div>
+                        <div class="tool-desc">Semantic search across all content</div>
+                    </div>
+                </div>
+                <div class="tool-content">
+                    <div class="code-preview">
+<span class="key">// Example usage</span>
+search_context({
+  <span class="key">"query"</span>: <span class="string">"product roadmap Q2"</span>,
+  <span class="key">"project_id"</span>: <span class="string">"uuid"</span>,
+  <span class="key">"scope"</span>: <span class="string">"all"</span>,
+  <span class="key">"max_results"</span>: <span class="number">10</span>
+})</div>
+                    <div class="data-item" style="margin-top: 1rem;">
+                        <div class="data-item-meta">
+                            <span>Searches artifacts, sources, and entities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon green">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                    </div>
+                    <div>
+                        <div class="tool-name">get_artifact_content</div>
+                        <div class="tool-desc">Full content of any artifact</div>
+                    </div>
+                </div>
+                <div class="tool-content">
+                    <div class="code-preview">
+<span class="key">// Example usage</span>
+get_artifact_content({
+  <span class="key">"artifact_id"</span>: <span class="string">"uuid"</span>
+})
+
+<span class="key">// Returns</span>
+{
+  <span class="key">"content"</span>: <span class="string">"# PRD: Feature X..."</span>,
+  <span class="key">"file_type"</span>: <span class="string">"md"</span>
+}</div>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon pink">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <div>
+                        <div class="tool-name">get_team_members</div>
+                        <div class="tool-desc">Members of a specific team</div>
+                    </div>
+                </div>
+                <div class="tool-content">
+                    <div class="code-preview">
+<span class="key">// Example usage</span>
+get_team_members({
+  <span class="key">"team_slug"</span>: <span class="string">"engineering"</span>
+})
+
+<span class="key">// Returns people with</span>
+{
+  <span class="key">"members"</span>: [{
+    <span class="key">"name"</span>, <span class="key">"email"</span>, <span class="key">"title"</span>,
+    <span class="key">"department"</span>, <span class="key">"role"</span>
+  }]
+}</div>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon amber">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 10h8M8 14h4"/></svg>
+                    </div>
+                    <div>
+                        <div class="tool-name">get_action_detail</div>
+                        <div class="tool-desc">Full thread with responses</div>
+                    </div>
+                </div>
+                <div class="tool-content">
+                    <div class="code-preview">
+<span class="key">// Example usage</span>
+get_action_detail({
+  <span class="key">"action_id"</span>: <span class="string">"uuid"</span>
+})
+
+<span class="key">// Returns full discussion</span>
+{
+  <span class="key">"thread"</span>: [{
+    <span class="key">"author"</span>, <span class="key">"content"</span>,
+    <span class="key">"timestamp"</span>, <span class="key">"attachments"</span>
+  }]
+}</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Parallelloop MCP v1.0 &middot; <span id="timestamp">April 4, 2026</span> &middot; Powered by Model Context Protocol</p>
+        </footer>
+    </div>
+
+    <script>
+        // Configuration
+        const ORG_ID = 'df0e7d4a-54d6-4254-aa35-07ea36053783';
+
+        // Data from MCP calls (fetched at generation time)
+        const mcpData = {
+            user: {
+                id: "1f039cb1-450d-4f70-917b-85ce50d60ec7",
+                email: "anirudh@parallelloop.ai",
+                first_name: "Anirudh",
+                last_name: "Joshi",
+                organizations: [
+                    { name: "Parallelloop AI", role: "OWNER" },
+                    { name: "Test Org B", role: "OWNER" }
+                ]
+            },
+            projects: {
+                count: 4,
+                items: [
+                    { name: "Random Project two", type: "PRODUCT_DEVELOPMENT", status: "setup_in_progress" },
+                    { name: "Random project one", type: "PRODUCT_DEVELOPMENT", status: "setup_in_progress" },
+                    { name: "My Workspace", type: "PERSONAL_SCRATCHPAD", status: "active" },
+                    { name: "Organization Context", type: "ORGANIZATION_ONBOARDING", status: "setup_in_progress" }
+                ]
+            },
+            teams: {
+                count: 1,
+                items: [
+                    { name: "All Team Members", type: "GENERAL", member_count: 1, is_default: true }
+                ]
+            },
+            members: {
+                count: 1,
+                items: [
+                    { name: "Anirudh Joshi", email: "anirudh@parallelloop.ai", role: "OWNER" }
+                ]
+            },
+            artifacts: {
+                count: 8,
+                items: [
+                    { title: "QA Tracker", type: "QA_TRACKER", status: "draft" },
+                    { title: "Project Members", type: "PROJECT_MEMBERS", status: "draft" },
+                    { title: "Vocabulary Glossary", type: "VOCABULARY_GLOSSARY", status: "draft" },
+                    { title: "Ontology Setup", type: "ONTOLOGY_SETUP", status: "draft" }
+                ]
+            },
+            sources: { count: 0, items: [] },
+            actions: { count: 0, items: [] }
+        };
+
+        // Update stats
+        document.getElementById('stat-projects').textContent = mcpData.projects.count;
+        document.getElementById('stat-teams').textContent = mcpData.teams.count;
+        document.getElementById('stat-members').textContent = mcpData.members.count;
+        document.getElementById('stat-artifacts').textContent = mcpData.artifacts.count;
+        document.getElementById('stat-sources').textContent = mcpData.sources.count;
+        document.getElementById('stat-actions').textContent = mcpData.actions.count;
+
+        // Update user badge
+        const initials = mcpData.user.first_name[0] + mcpData.user.last_name[0];
+        document.getElementById('user-avatar').textContent = initials;
+        document.getElementById('user-name').textContent = `${mcpData.user.first_name} ${mcpData.user.last_name}`;
+        document.getElementById('user-role').textContent = mcpData.user.organizations[0]?.role || 'MEMBER';
+
+        // Update timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        console.log('Parallelloop MCP Explorer loaded successfully');
+        console.log('Organization:', ORG_ID);
+        console.log('User:', mcpData.user.email);
+    </script>
+</body>
+</html>
