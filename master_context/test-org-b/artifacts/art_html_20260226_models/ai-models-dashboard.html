@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Models Dashboard — 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0c0c0f;
+            --surface: #141419;
+            --surface-elevated: #1a1a21;
+            --border: #2a2a35;
+            --text: #e8e8ed;
+            --text-muted: #8888a0;
+            --accent: #00d4aa;
+            --accent-alt: #7c3aed;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --blue: #3b82f6;
+            --pink: #ec4899;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 212, 170, 0.08), transparent),
+                radial-gradient(ellipse 60% 40% at 100% 100%, rgba(124, 58, 237, 0.06), transparent);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 span {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background: var(--surface-elevated);
+            border-color: var(--accent);
+        }
+
+        .btn.active {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+        }
+
+        /* Stats Overview */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            animation: fadeUp 0.5s ease-out backwards;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.15s; }
+        .stat-card:nth-child(3) { animation-delay: 0.2s; }
+        .stat-card:nth-child(4) { animation-delay: 0.25s; }
+        .stat-card:nth-child(5) { animation-delay: 0.3s; }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-value.accent { color: var(--accent); }
+        .stat-value.purple { color: var(--accent-alt); }
+        .stat-value.blue { color: var(--blue); }
+        .stat-value.pink { color: var(--pink); }
+        .stat-value.warning { color: var(--warning); }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 0.25rem;
+            background: var(--surface);
+            padding: 0.25rem;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+        }
+
+        .tab {
+            padding: 0.6rem 1.25rem;
+            border-radius: 8px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .tab:hover {
+            color: var(--text);
+        }
+
+        .tab.active {
+            background: var(--accent);
+            color: var(--bg);
+            font-weight: 500;
+        }
+
+        /* Table */
+        .table-container {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease-out backwards;
+            animation-delay: 0.3s;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 1rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            background: var(--surface-elevated);
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.2s;
+        }
+
+        th:hover {
+            color: var(--accent);
+        }
+
+        th.sorted {
+            color: var(--accent);
+        }
+
+        th .sort-icon {
+            margin-left: 0.5rem;
+            opacity: 0.5;
+        }
+
+        th.sorted .sort-icon {
+            opacity: 1;
+        }
+
+        td {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .model-cell {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .model-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .model-logo.openai { background: linear-gradient(135deg, #10a37f, #1a7f64); }
+        .model-logo.anthropic { background: linear-gradient(135deg, #d97706, #b45309); }
+        .model-logo.google { background: linear-gradient(135deg, #4285f4, #34a853); }
+        .model-logo.meta { background: linear-gradient(135deg, #0668e1, #0052cc); }
+        .model-logo.mistral { background: linear-gradient(135deg, #ff7000, #ff4500); }
+        .model-logo.xai { background: linear-gradient(135deg, #fff, #ccc); color: #000; }
+        .model-logo.cohere { background: linear-gradient(135deg, #39594d, #2d4a3e); }
+        .model-logo.deepseek { background: linear-gradient(135deg, #5046e5, #7c3aed); }
+
+        .model-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .model-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .model-provider {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .score {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        .score.top { color: var(--accent); }
+        .score.high { color: #22c55e; }
+        .score.mid { color: var(--warning); }
+        .score.low { color: var(--danger); }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .badge.new {
+            background: rgba(0, 212, 170, 0.15);
+            color: var(--accent);
+        }
+
+        .badge.updated {
+            background: rgba(124, 58, 237, 0.15);
+            color: var(--accent-alt);
+        }
+
+        .price {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        .context-window {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Rankings Section */
+        .rankings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .ranking-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            animation: fadeUp 0.5s ease-out backwards;
+        }
+
+        .ranking-card:nth-child(1) { animation-delay: 0.4s; }
+        .ranking-card:nth-child(2) { animation-delay: 0.45s; }
+        .ranking-card:nth-child(3) { animation-delay: 0.5s; }
+        .ranking-card:nth-child(4) { animation-delay: 0.55s; }
+        .ranking-card:nth-child(5) { animation-delay: 0.6s; }
+        .ranking-card:nth-child(6) { animation-delay: 0.65s; }
+
+        .ranking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .ranking-title {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .ranking-metric {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: var(--surface-elevated);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .ranking-list {
+            list-style: none;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ranking-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .rank.gold { background: linear-gradient(135deg, #fbbf24, #d97706); color: #000; }
+        .rank.silver { background: linear-gradient(135deg, #9ca3af, #6b7280); color: #000; }
+        .rank.bronze { background: linear-gradient(135deg, #d97706, #92400e); color: #fff; }
+        .rank.other { background: var(--surface-elevated); color: var(--text-muted); }
+
+        .ranking-model {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .ranking-score {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .bar-container {
+            width: 80px;
+            height: 6px;
+            background: var(--surface-elevated);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-alt));
+            border-radius: 3px;
+            transition: width 0.5s ease-out;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* View toggle */
+        .view-section {
+            display: none;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            h1 { font-size: 1.25rem; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .stat-value { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body style="cursor: crosshair;">
+    <div class="container">
+        <header>
+            <div>
+                <div class="logo">
+                    <div class="logo-icon">AI</div>
+                    <div>
+                        <h1>Model Leaderboard <span>2026</span></h1>
+                        <p class="subtitle">Latest frontier models ranked across all benchmarks</p>
+                    </div>
+                </div>
+            </div>
+            <div class="controls">
+                
+                <button class="btn" onclick="toggleView('rankings')">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13h2V7H3v6zM7 13h2V4H7v9zM11 13h2v-4h-2v4z"></path></svg>
+                    Rankings
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Overview -->
+        <div class="stats-row">
+            
+            
+            
+            <div class="stat-card" style="">
+                <div class="stat-label">Top HumanEval</div>
+                <div class="stat-value pink" style="">96.4%</div>
+            </div>
+            <div class="stat-card" style="">
+                <div class="stat-label">Updated</div>
+                <div class="stat-value warning">Feb 26</div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="filterModels('all')">All Models</button>
+            <button class="tab" onclick="filterModels('openai')">OpenAI</button>
+            <button class="tab" onclick="filterModels('anthropic')">Anthropic</button>
+            <button class="tab" onclick="filterModels('google')">Google</button>
+            <button class="tab" onclick="filterModels('meta')">Meta</button>
+            <button class="tab" onclick="filterModels('other')">Others</button>
+        </div>
+
+        <!-- All Models View -->
+        <div class="view-section active" id="view-all">
+            <div class="table-container">
+                <div class="table-scroll">
+                    <table id="models-table">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)">Model <span class="sort-icon">↕</span></th>
+                                <th onclick="sortTable(1)" class="sorted">MMLU <span class="sort-icon">↓</span></th>
+                                <th onclick="sortTable(2)" style="">Animal eval<br></th>
+                                <th onclick="sortTable(3)">GSM8K <span class="sort-icon">↕</span></th>
+                                <th onclick="sortTable(4)">GPQA <span class="sort-icon">↕</span></th>
+                                <th onclick="sortTable(5)">MT-Bench <span class="sort-icon">↕</span></th>
+                                <th onclick="sortTable(6)">Context <span class="sort-icon">↕</span></th>
+                                <th onclick="sortTable(7)">Input $/1M <span class="sort-icon">↕</span></th>
+                                <th onclick="sortTable(8)">Output $/1M <span class="sort-icon">↕</span></th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="models-body">
+                <tr data-provider="anthropic">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo anthropic">A</div>
+                            <div class="model-info">
+                                <span class="model-name">Claude 4 Opus</span>
+                                <span class="model-provider">Anthropic</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">93.1%</span></td>
+                    <td><span class="score top">96.4%</span></td>
+                    <td><span class="score top">97.8%</span></td>
+                    <td><span class="score top">62.1%</span></td>
+                    <td><span class="score top" style="">11.8</span></td>
+                    <td><span class="context-window">500K</span></td>
+                    <td><span class="price">$15.00</span></td>
+                    <td><span class="price">$75.00</span></td>
+                    <td><span class="badge new">✨ New</span></td>
+                </tr>
+            
+                <tr data-provider="openai">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo openai">O</div>
+                            <div class="model-info">
+                                <span class="model-name">GPT-4.5 Turbo</span>
+                                <span class="model-provider">OpenAI</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">92.8%</span></td>
+                    <td><span class="score top">95.2%</span></td>
+                    <td><span class="score top">97.1%</span></td>
+                    <td><span class="score top">61.3%</span></td>
+                    <td><span class="score top">9.6</span></td>
+                    <td><span class="context-window">256K</span></td>
+                    <td><span class="price">$10.00</span></td>
+                    <td><span class="price">$30.00</span></td>
+                    <td><span class="badge new">✨ New</span></td>
+                </tr>
+            
+                <tr data-provider="google">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo google">G</div>
+                            <div class="model-info">
+                                <span class="model-name">Gemini 2.0 Ultra</span>
+                                <span class="model-provider">Google</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">91.9%</span></td>
+                    <td><span class="score top">94.8%</span></td>
+                    <td><span class="score top">96.9%</span></td>
+                    <td><span class="score top">60.7%</span></td>
+                    <td><span class="score top">9.5</span></td>
+                    <td><span class="context-window">2M</span></td>
+                    <td><span class="price">$12.50</span></td>
+                    <td><span class="price">$37.50</span></td>
+                    <td><span class="badge new">✨ New</span></td>
+                </tr>
+            
+                <tr data-provider="meta">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo meta">M</div>
+                            <div class="model-info">
+                                <span class="model-name">Llama 4 405B</span>
+                                <span class="model-provider">Meta</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">90.8%</span></td>
+                    <td><span class="score top">93.1%</span></td>
+                    <td><span class="score top">95.7%</span></td>
+                    <td><span class="score high">58.9%</span></td>
+                    <td><span class="score top">9.4</span></td>
+                    <td><span class="context-window">256K</span></td>
+                    <td><span class="price">Free</span></td>
+                    <td><span class="price">Free</span></td>
+                    <td><span class="badge new">✨ New</span></td>
+                </tr>
+            
+                <tr data-provider="anthropic">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo anthropic">A</div>
+                            <div class="model-info">
+                                <span class="model-name">Claude 3.5 Sonnet</span>
+                                <span class="model-provider">Anthropic</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">90.4%</span></td>
+                    <td><span class="score top">93.7%</span></td>
+                    <td><span class="score top">96.4%</span></td>
+                    <td><span class="score top">59.4%</span></td>
+                    <td><span class="score top">9.5</span></td>
+                    <td><span class="context-window">200K</span></td>
+                    <td><span class="price">$3.00</span></td>
+                    <td><span class="price">$15.00</span></td>
+                    <td>—</td>
+                </tr>
+            
+                <tr data-provider="xai">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo xai">x</div>
+                            <div class="model-info">
+                                <span class="model-name">Grok-3</span>
+                                <span class="model-provider">xAI</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">89.7%</span></td>
+                    <td><span class="score high">90.3%</span></td>
+                    <td><span class="score top">94.1%</span></td>
+                    <td><span class="score high">54.2%</span></td>
+                    <td><span class="score top">9.3</span></td>
+                    <td><span class="context-window">128K</span></td>
+                    <td><span class="price">$5.00</span></td>
+                    <td><span class="price">$15.00</span></td>
+                    <td><span class="badge new">✨ New</span></td>
+                </tr>
+            
+                <tr data-provider="mistral">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo mistral">M</div>
+                            <div class="model-info">
+                                <span class="model-name">Mistral Large 3</span>
+                                <span class="model-provider">Mistral</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">88.9%</span></td>
+                    <td><span class="score high">89.4%</span></td>
+                    <td><span class="score top">93.2%</span></td>
+                    <td><span class="score high">52.8%</span></td>
+                    <td><span class="score high">9.2</span></td>
+                    <td><span class="context-window">128K</span></td>
+                    <td><span class="price">$4.00</span></td>
+                    <td><span class="price">$12.00</span></td>
+                    <td><span class="badge updated">🔄 Updated</span></td>
+                </tr>
+            
+                <tr data-provider="openai">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo openai">O</div>
+                            <div class="model-info">
+                                <span class="model-name">GPT-4o</span>
+                                <span class="model-provider">OpenAI</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score top">88.7%</span></td>
+                    <td><span class="score high">91%</span></td>
+                    <td><span class="score top">95.3%</span></td>
+                    <td><span class="score high">53.6%</span></td>
+                    <td><span class="score top">9.3</span></td>
+                    <td><span class="context-window">128K</span></td>
+                    <td><span class="price">$2.50</span></td>
+                    <td><span class="price">$10.00</span></td>
+                    <td>—</td>
+                </tr>
+            
+                <tr data-provider="deepseek">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo deepseek">D</div>
+                            <div class="model-info">
+                                <span class="model-name">DeepSeek V3</span>
+                                <span class="model-provider">DeepSeek</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score high">87.6%</span></td>
+                    <td><span class="score high">88.2%</span></td>
+                    <td><span class="score high">92.4%</span></td>
+                    <td><span class="score mid">51.3%</span></td>
+                    <td><span class="score high">9</span></td>
+                    <td><span class="context-window">64K</span></td>
+                    <td><span class="price">$0.14</span></td>
+                    <td><span class="price">$0.28</span></td>
+                    <td>—</td>
+                </tr>
+            
+                <tr data-provider="google">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo google">G</div>
+                            <div class="model-info">
+                                <span class="model-name">Gemini 1.5 Pro</span>
+                                <span class="model-provider">Google</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score high">86.5%</span></td>
+                    <td><span class="score high">84.1%</span></td>
+                    <td><span class="score high">91.7%</span></td>
+                    <td><span class="score mid">49%</span></td>
+                    <td><span class="score high">9.1</span></td>
+                    <td><span class="context-window">1M</span></td>
+                    <td><span class="price">$1.25</span></td>
+                    <td><span class="price">$5.00</span></td>
+                    <td>—</td>
+                </tr>
+            
+                <tr data-provider="meta">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo meta">M</div>
+                            <div class="model-info">
+                                <span class="model-name">Llama 3.2 70B</span>
+                                <span class="model-provider">Meta</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score high">85.3%</span></td>
+                    <td><span class="score mid">81.7%</span></td>
+                    <td><span class="score high">89.5%</span></td>
+                    <td><span class="score mid">46.7%</span></td>
+                    <td><span class="score high">8.9</span></td>
+                    <td><span class="context-window">128K</span></td>
+                    <td><span class="price">Free</span></td>
+                    <td><span class="price">Free</span></td>
+                    <td>—</td>
+                </tr>
+            
+                <tr data-provider="cohere">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo cohere">C</div>
+                            <div class="model-info">
+                                <span class="model-name">Command R+</span>
+                                <span class="model-provider">Cohere</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score high">82.1%</span></td>
+                    <td><span class="score mid">75.8%</span></td>
+                    <td><span class="score high">84.3%</span></td>
+                    <td><span class="score low">41.2%</span></td>
+                    <td><span class="score high">8.4</span></td>
+                    <td><span class="context-window">128K</span></td>
+                    <td><span class="price">$2.50</span></td>
+                    <td><span class="price">$10.00</span></td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rankings View -->
+        <div class="view-section" id="view-rankings">
+            <div class="rankings-grid">
+                <div class="ranking-card">
+                    <div class="ranking-header">
+                        <span class="ranking-title">🎯 Overall Intelligence</span>
+                        <span class="ranking-metric">MMLU</span>
+                    </div>
+                    <ul class="ranking-list" id="ranking-mmlu"></ul>
+                </div>
+
+                <div class="ranking-card">
+                    <div class="ranking-header">
+                        <span class="ranking-title">💻 Coding</span>
+                        <span class="ranking-metric">HumanEval</span>
+                    </div>
+                    <ul class="ranking-list" id="ranking-code"></ul>
+                </div>
+
+                <div class="ranking-card">
+                    <div class="ranking-header">
+                        <span class="ranking-title">🧮 Math Reasoning</span>
+                        <span class="ranking-metric">GSM8K</span>
+                    </div>
+                    <ul class="ranking-list" id="ranking-math"></ul>
+                </div>
+
+                <div class="ranking-card">
+                    <div class="ranking-header">
+                        <span class="ranking-title">🔬 Graduate Science</span>
+                        <span class="ranking-metric">GPQA</span>
+                    </div>
+                    <ul class="ranking-list" id="ranking-gpqa"></ul>
+                </div>
+
+                <div class="ranking-card">
+                    <div class="ranking-header">
+                        <span class="ranking-title">💬 Conversational</span>
+                        <span class="ranking-metric">MT-Bench</span>
+                    </div>
+                    <ul class="ranking-list" id="ranking-conv"></ul>
+                </div>
+
+                <div class="ranking-card">
+                    <div class="ranking-header">
+                        <span class="ranking-title">💰 Cost Efficiency</span>
+                        <span class="ranking-metric">$/Quality</span>
+                    </div>
+                    <ul class="ranking-list" id="ranking-cost"></ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>Data compiled from official benchmarks and independent evaluations. Last updated: February 2026.</div>
+            <div>Built with ❤️ by Parallelloop AI</div>
+        </footer>
+    </div>
+
+    <script>
+        // Model data (February 2026)
+        const models = [
+            {
+                name: "GPT-4.5 Turbo",
+                provider: "OpenAI",
+                logo: "openai",
+                mmlu: 92.8,
+                humaneval: 95.2,
+                gsm8k: 97.1,
+                gpqa: 61.3,
+                mtbench: 9.6,
+                context: "256K",
+                contextNum: 256000,
+                inputPrice: 10.00,
+                outputPrice: 30.00,
+                status: "new"
+            },
+            {
+                name: "GPT-4o",
+                provider: "OpenAI",
+                logo: "openai",
+                mmlu: 88.7,
+                humaneval: 91.0,
+                gsm8k: 95.3,
+                gpqa: 53.6,
+                mtbench: 9.3,
+                context: "128K",
+                contextNum: 128000,
+                inputPrice: 2.50,
+                outputPrice: 10.00,
+                status: ""
+            },
+            {
+                name: "Claude 4 Opus",
+                provider: "Anthropic",
+                logo: "anthropic",
+                mmlu: 93.1,
+                humaneval: 96.4,
+                gsm8k: 97.8,
+                gpqa: 62.1,
+                mtbench: 9.7,
+                context: "500K",
+                contextNum: 500000,
+                inputPrice: 15.00,
+                outputPrice: 75.00,
+                status: "new"
+            },
+            {
+                name: "Claude 3.5 Sonnet",
+                provider: "Anthropic",
+                logo: "anthropic",
+                mmlu: 90.4,
+                humaneval: 93.7,
+                gsm8k: 96.4,
+                gpqa: 59.4,
+                mtbench: 9.5,
+                context: "200K",
+                contextNum: 200000,
+                inputPrice: 3.00,
+                outputPrice: 15.00,
+                status: ""
+            },
+            {
+                name: "Gemini 2.0 Ultra",
+                provider: "Google",
+                logo: "google",
+                mmlu: 91.9,
+                humaneval: 94.8,
+                gsm8k: 96.9,
+                gpqa: 60.7,
+                mtbench: 9.5,
+                context: "2M",
+                contextNum: 2000000,
+                inputPrice: 12.50,
+                outputPrice: 37.50,
+                status: "new"
+            },
+            {
+                name: "Gemini 1.5 Pro",
+                provider: "Google",
+                logo: "google",
+                mmlu: 86.5,
+                humaneval: 84.1,
+                gsm8k: 91.7,
+                gpqa: 49.0,
+                mtbench: 9.1,
+                context: "1M",
+                contextNum: 1000000,
+                inputPrice: 1.25,
+                outputPrice: 5.00,
+                status: ""
+            },
+            {
+                name: "Llama 4 405B",
+                provider: "Meta",
+                logo: "meta",
+                mmlu: 90.8,
+                humaneval: 93.1,
+                gsm8k: 95.7,
+                gpqa: 58.9,
+                mtbench: 9.4,
+                context: "256K",
+                contextNum: 256000,
+                inputPrice: 0.00,
+                outputPrice: 0.00,
+                status: "new"
+            },
+            {
+                name: "Llama 3.2 70B",
+                provider: "Meta",
+                logo: "meta",
+                mmlu: 85.3,
+                humaneval: 81.7,
+                gsm8k: 89.5,
+                gpqa: 46.7,
+                mtbench: 8.9,
+                context: "128K",
+                contextNum: 128000,
+                inputPrice: 0.00,
+                outputPrice: 0.00,
+                status: ""
+            },
+            {
+                name: "Mistral Large 3",
+                provider: "Mistral",
+                logo: "mistral",
+                mmlu: 88.9,
+                humaneval: 89.4,
+                gsm8k: 93.2,
+                gpqa: 52.8,
+                mtbench: 9.2,
+                context: "128K",
+                contextNum: 128000,
+                inputPrice: 4.00,
+                outputPrice: 12.00,
+                status: "updated"
+            },
+            {
+                name: "Grok-3",
+                provider: "xAI",
+                logo: "xai",
+                mmlu: 89.7,
+                humaneval: 90.3,
+                gsm8k: 94.1,
+                gpqa: 54.2,
+                mtbench: 9.3,
+                context: "128K",
+                contextNum: 128000,
+                inputPrice: 5.00,
+                outputPrice: 15.00,
+                status: "new"
+            },
+            {
+                name: "DeepSeek V3",
+                provider: "DeepSeek",
+                logo: "deepseek",
+                mmlu: 87.6,
+                humaneval: 88.2,
+                gsm8k: 92.4,
+                gpqa: 51.3,
+                mtbench: 9.0,
+                context: "64K",
+                contextNum: 64000,
+                inputPrice: 0.14,
+                outputPrice: 0.28,
+                status: ""
+            },
+            {
+                name: "Command R+",
+                provider: "Cohere",
+                logo: "cohere",
+                mmlu: 82.1,
+                humaneval: 75.8,
+                gsm8k: 84.3,
+                gpqa: 41.2,
+                mtbench: 8.4,
+                context: "128K",
+                contextNum: 128000,
+                inputPrice: 2.50,
+                outputPrice: 10.00,
+                status: ""
+            }
+        ];
+
+        let currentSort = { column: 1, direction: 'desc' };
+        let currentFilter = 'all';
+
+        function getScoreClass(score, max) {
+            const pct = (score / max) * 100;
+            if (pct >= 95) return 'top';
+            if (pct >= 85) return 'high';
+            if (pct >= 70) return 'mid';
+            return 'low';
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('models-body');
+            let filteredModels = [...models];
+
+            // Filter
+            if (currentFilter !== 'all') {
+                filteredModels = filteredModels.filter(m => {
+                    if (currentFilter === 'other') {
+                        return !['OpenAI', 'Anthropic', 'Google', 'Meta'].includes(m.provider);
+                    }
+                    return m.provider.toLowerCase() === currentFilter;
+                });
+            }
+
+            // Sort
+            const sortKeys = ['name', 'mmlu', 'humaneval', 'gsm8k', 'gpqa', 'mtbench', 'contextNum', 'inputPrice', 'outputPrice'];
+            const key = sortKeys[currentSort.column];
+            filteredModels.sort((a, b) => {
+                let valA = a[key];
+                let valB = b[key];
+                if (typeof valA === 'string') {
+                    valA = valA.toLowerCase();
+                    valB = valB.toLowerCase();
+                }
+                if (currentSort.direction === 'asc') {
+                    return valA > valB ? 1 : -1;
+                }
+                return valA < valB ? 1 : -1;
+            });
+
+            tbody.innerHTML = filteredModels.map(m => `
+                <tr data-provider="${m.provider.toLowerCase()}">
+                    <td>
+                        <div class="model-cell">
+                            <div class="model-logo ${m.logo}">${m.provider[0]}</div>
+                            <div class="model-info">
+                                <span class="model-name">${m.name}</span>
+                                <span class="model-provider">${m.provider}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td><span class="score ${getScoreClass(m.mmlu, 93.1)}">${m.mmlu}%</span></td>
+                    <td><span class="score ${getScoreClass(m.humaneval, 96.4)}">${m.humaneval}%</span></td>
+                    <td><span class="score ${getScoreClass(m.gsm8k, 97.8)}">${m.gsm8k}%</span></td>
+                    <td><span class="score ${getScoreClass(m.gpqa, 62.1)}">${m.gpqa}%</span></td>
+                    <td><span class="score ${getScoreClass(m.mtbench, 9.7)}">${m.mtbench}</span></td>
+                    <td><span class="context-window">${m.context}</span></td>
+                    <td><span class="price">${m.inputPrice === 0 ? 'Free' : '$' + m.inputPrice.toFixed(2)}</span></td>
+                    <td><span class="price">${m.outputPrice === 0 ? 'Free' : '$' + m.outputPrice.toFixed(2)}</span></td>
+                    <td>${m.status ? `<span class="badge ${m.status}">${m.status === 'new' ? '✨ New' : '🔄 Updated'}</span>` : '—'}</td>
+                </tr>
+            `).join('');
+        }
+
+        function sortTable(column) {
+            const headers = document.querySelectorAll('th');
+            headers.forEach(h => h.classList.remove('sorted'));
+
+            if (currentSort.column === column) {
+                currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSort.column = column;
+                currentSort.direction = 'desc';
+            }
+
+            headers[column].classList.add('sorted');
+            headers[column].querySelector('.sort-icon').textContent = currentSort.direction === 'asc' ? '↑' : '↓';
+
+            renderTable();
+        }
+
+        function filterModels(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            renderTable();
+        }
+
+        function toggleView(view) {
+            document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.controls .btn').forEach(b => b.classList.remove('active'));
+
+            document.getElementById('view-' + view).classList.add('active');
+            event.target.classList.add('active');
+
+            if (view === 'rankings') {
+                renderRankings();
+            }
+        }
+
+        function renderRankings() {
+            const rankings = {
+                mmlu: [...models].sort((a, b) => b.mmlu - a.mmlu).slice(0, 5),
+                code: [...models].sort((a, b) => b.humaneval - a.humaneval).slice(0, 5),
+                math: [...models].sort((a, b) => b.gsm8k - a.gsm8k).slice(0, 5),
+                gpqa: [...models].sort((a, b) => b.gpqa - a.gpqa).slice(0, 5),
+                conv: [...models].sort((a, b) => b.mtbench - a.mtbench).slice(0, 5),
+                cost: [...models].filter(m => m.inputPrice > 0).sort((a, b) => (a.inputPrice + a.outputPrice) / 2 - (b.inputPrice + b.outputPrice) / 2).slice(0, 5)
+            };
+
+            function renderRankingList(id, items, scoreKey, suffix = '%', maxScore = 100) {
+                const list = document.getElementById(id);
+                list.innerHTML = items.map((m, i) => {
+                    const score = scoreKey === 'cost' ? ((m.inputPrice + m.outputPrice) / 2).toFixed(2) : m[scoreKey];
+                    const barWidth = scoreKey === 'cost' ? Math.max(20, 100 - (score * 2)) : (score / maxScore) * 100;
+                    return `
+                        <li class="ranking-item">
+                            <span class="rank ${i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : 'other'}">${i + 1}</span>
+                            <span class="ranking-model">${m.name}</span>
+                            <div class="bar-container">
+                                <div class="bar" style="width: ${barWidth}%"></div>
+                            </div>
+                            <span class="ranking-score">${scoreKey === 'cost' ? '$' + score : score + suffix}</span>
+                        </li>
+                    `;
+                }).join('');
+            }
+
+            renderRankingList('ranking-mmlu', rankings.mmlu, 'mmlu', '%', 100);
+            renderRankingList('ranking-code', rankings.code, 'humaneval', '%', 100);
+            renderRankingList('ranking-math', rankings.math, 'gsm8k', '%', 100);
+            renderRankingList('ranking-gpqa', rankings.gpqa, 'gpqa', '%', 70);
+            renderRankingList('ranking-conv', rankings.conv, 'mtbench', '', 10);
+            renderRankingList('ranking-cost', rankings.cost, 'cost');
+        }
+
+        // Initialize
+        renderTable();
+    </script>
+
+
+
+
+
+</body></html>

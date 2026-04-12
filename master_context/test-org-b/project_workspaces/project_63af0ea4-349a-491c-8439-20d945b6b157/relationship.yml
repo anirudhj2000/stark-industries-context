@@ -1,0 +1,17 @@
+id: project_63af0ea4-349a-491c-8439-20d945b6b157
+metadata:
+  created_at: '2026-02-25T03:38:38.567476+00:00'
+  updated_at: '2026-02-25T03:38:38.567784+00:00'
+project_members:
+- email: anirudh@parallelloop.ai
+  is_active: true
+  is_owner: true
+  joined_at: '2026-02-25T03:38:36.025791+00:00'
+  membership_id: 805d6a7f-3782-4458-a847-2c03af076653
+  name: Anirudh Joshi
+  removed_at: null
+  role: PROJECT_LEAD
+  teams: []
+project_name: Random Organsation
+project_slug: random-organsation
+type: project_relationship

@@ -1,0 +1,43 @@
+id: 5989d4ad_
+type: person
+name: ' '
+status: active
+external_ids:
+  bulk_import_item_id: 5989d4ad-cff2-4aaa-9457-b6acd9694a53
+  email: anirudhjoshi985@gmail.com
+profile:
+  email: anirudhjoshi985@gmail.com
+  first_name: ''
+  last_name: ''
+  primary_role: ''
+  department: ''
+  function: ''
+  timezone: UTC
+  location: ''
+  pronouns: ''
+  about: ''
+  expertise_tags: []
+  context_description: ''
+  responsibilities: []
+  manager_email: null
+rbac_scope:
+  teams:
+  - name: Enterprise
+    slug: enterprise-10
+    role: MEMBER
+    team_role: MEMBER
+    entity_path: entities/departments/sales/teams/enterprise
+  org_role: MEMBER
+metadata:
+  source: created
+  created_at: '2026-01-26T07:15:16.526606+00:00'
+  data_quality: minimal
+change_history:
+- operation: create
+  timestamp: '2026-01-26T07:15:16.526606+00:00'
+  source: created
+  reference_id: 5989d4ad-cff2-4aaa-9457-b6acd9694a53
+- operation: team_added
+  timestamp: '2026-01-26T07:15:16.540243+00:00'
+  source: team_sync
+  team_slug: enterprise-10

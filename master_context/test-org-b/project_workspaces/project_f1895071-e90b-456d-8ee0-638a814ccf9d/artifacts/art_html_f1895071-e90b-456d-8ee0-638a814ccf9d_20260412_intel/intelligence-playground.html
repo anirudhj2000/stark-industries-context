@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Query Playground</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --border-color: #2a2a3a;
+            --text-primary: #f0f0f5;
+            --text-secondary: #8888a0;
+            --text-muted: #5a5a70;
+            --purple-accent: #a78bfa;
+            --purple-glow: rgba(167, 139, 250, 0.15);
+            --purple-border: rgba(167, 139, 250, 0.3);
+            --teal-accent: #22d3ee;
+            --teal-glow: rgba(34, 211, 238, 0.15);
+            --teal-border: rgba(34, 211, 238, 0.3);
+            --error-color: #f87171;
+            --success-color: #4ade80;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--purple-accent), var(--teal-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .panel.purple {
+            border-color: var(--purple-border);
+            box-shadow: 0 0 40px var(--purple-glow);
+        }
+
+        .panel.teal {
+            border-color: var(--teal-border);
+            box-shadow: 0 0 40px var(--teal-glow);
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .panel-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .purple .panel-icon {
+            background: var(--purple-glow);
+            border: 1px solid var(--purple-border);
+        }
+
+        .teal .panel-icon {
+            background: var(--teal-glow);
+            border: 1px solid var(--teal-border);
+        }
+
+        .panel-title h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .purple .panel-title h2 {
+            color: var(--purple-accent);
+        }
+
+        .teal .panel-title h2 {
+            color: var(--teal-accent);
+        }
+
+        .panel-title p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            resize: vertical;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        textarea:focus, input[type="text"]:focus {
+            outline: none;
+        }
+
+        .purple textarea:focus, .purple input[type="text"]:focus {
+            border-color: var(--purple-accent);
+            box-shadow: 0 0 0 3px var(--purple-glow);
+        }
+
+        .teal textarea:focus, .teal input[type="text"]:focus {
+            border-color: var(--teal-accent);
+            box-shadow: 0 0 0 3px var(--teal-glow);
+        }
+
+        textarea.prompt {
+            min-height: 120px;
+        }
+
+        textarea.schema {
+            min-height: 80px;
+            font-size: 0.8rem;
+        }
+
+        .schema-hint {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.875rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .purple .btn {
+            background: linear-gradient(135deg, var(--purple-accent), #8b5cf6);
+            color: #0a0a0f;
+        }
+
+        .purple .btn:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px var(--purple-glow);
+        }
+
+        .teal .btn {
+            background: linear-gradient(135deg, var(--teal-accent), #06b6d4);
+            color: #0a0a0f;
+        }
+
+        .teal .btn:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px var(--teal-glow);
+        }
+
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid transparent;
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .response-area {
+            margin-top: 1.5rem;
+            min-height: 200px;
+        }
+
+        .response-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .response-header h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .usage-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+        }
+
+        .response-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            min-height: 150px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .response-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .structured-output {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .structured-output h4 {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .structured-output pre {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            background: var(--bg-primary);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+
+        .placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .placeholder-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.5;
+        }
+
+        .loading-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            gap: 1rem;
+        }
+
+        .loading-state .spinner {
+            width: 32px;
+            height: 32px;
+        }
+
+        .purple .loading-state .spinner {
+            border-top-color: var(--purple-accent);
+        }
+
+        .teal .loading-state .spinner {
+            border-top-color: var(--teal-accent);
+        }
+
+        .loading-state p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .loading-state .hint {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .error-state {
+            background: rgba(248, 113, 113, 0.1);
+            border: 1px solid rgba(248, 113, 113, 0.3);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            color: var(--error-color);
+        }
+
+        .error-state p {
+            font-size: 0.9rem;
+        }
+
+        .compare-hint {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            background: var(--bg-secondary);
+            border-radius: 0.75rem;
+            border: 1px dashed var(--border-color);
+        }
+
+        .compare-hint p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .compare-hint strong {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Intelligence Query Playground</h1>
+        <p>Compare AI responses with and without organizational context</p>
+    </div>
+
+    <div class="container">
+        <!-- Left Panel: With Org Context -->
+        <div class="panel purple">
+            <div class="panel-header">
+                <div class="panel-icon">🧠</div>
+                <div class="panel-title">
+                    <h2>Intelligence Query</h2>
+                    <p>With organizational context</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="prompt-context">Prompt</label>
+                <textarea id="prompt-context" class="prompt" placeholder="Ask anything about your organization, projects, documents, or people..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="schema-context">Output Schema (optional)</label>
+                <textarea id="schema-context" class="schema" placeholder='{"type": "object", "properties": {"summary": {"type": "string"}}}'></textarea>
+                <p class="schema-hint">JSON Schema for structured output</p>
+            </div>
+
+            <button class="btn" id="btn-context" onclick="runQuery('context')">
+                <span>Run Query</span>
+            </button>
+
+            <div class="response-area" id="response-area-context">
+                <div class="response-header">
+                    <h3>Response</h3>
+                    <span class="usage-badge" id="usage-context" style="display: none;"></span>
+                </div>
+                <div class="response-content" id="response-content-context">
+                    <div class="placeholder">
+                        <div class="placeholder-icon">🔮</div>
+                        <p>Response will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Raw (No Context) -->
+        <div class="panel teal">
+            <div class="panel-header">
+                <div class="panel-icon">⚡</div>
+                <div class="panel-title">
+                    <h2>Intelligence Query Raw</h2>
+                    <p>General knowledge only</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="prompt-raw">Prompt</label>
+                <textarea id="prompt-raw" class="prompt" placeholder="Ask general knowledge questions, request analysis, or any task without org data..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="schema-raw">Output Schema (optional)</label>
+                <textarea id="schema-raw" class="schema" placeholder='{"type": "object", "properties": {"answer": {"type": "string"}}}'></textarea>
+                <p class="schema-hint">JSON Schema for structured output</p>
+            </div>
+
+            <button class="btn" id="btn-raw" onclick="runQuery('raw')">
+                <span>Run Query</span>
+            </button>
+
+            <div class="response-area" id="response-area-raw">
+                <div class="response-header">
+                    <h3>Response</h3>
+                    <span class="usage-badge" id="usage-raw" style="display: none;"></span>
+                </div>
+                <div class="response-content" id="response-content-raw">
+                    <div class="placeholder">
+                        <div class="placeholder-icon">💬</div>
+                        <p>Response will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="compare-hint">
+        <p><strong>Tip:</strong> Try the same prompt on both sides to see how organizational context changes the response.</p>
+    </div>
+
+    <script>
+        const PLAYBOOK_API_URL = 'http://host.docker.internal:8000';
+        const ORG_ID = 'd5f0c224-731b-47cf-9a97-c820c32c06b4';
+
+        async function executeTool(toolName, params) {
+            const response = await fetch(`${PLAYBOOK_API_URL}/api/v1/integrations/tools/execute/`, {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Org-ID': ORG_ID,
+                },
+                body: JSON.stringify({
+                    organization_id: ORG_ID,
+                    tool_name: toolName,
+                    params: params,
+                }),
+            });
+            const result = await response.json();
+            if (!result.success) {
+                throw new Error(result.error?.message || 'API request failed');
+            }
+            if (!result.data.successful) {
+                throw new Error(result.data.error || 'Tool execution failed');
+            }
+            return result.data.data;
+        }
+
+        async function queryIntelligence(prompt, outputSchema = null) {
+            const params = { prompt };
+            if (outputSchema) params.output_schema = outputSchema;
+            return await executeTool('PARALLELLOOP_INTELLIGENCE_QUERY', params);
+        }
+
+        async function queryIntelligenceRaw(prompt, outputSchema = null) {
+            const params = { prompt };
+            if (outputSchema) params.output_schema = outputSchema;
+            return await executeTool('PARALLELLOOP_INTELLIGENCE_QUERY_RAW', params);
+        }
+
+        function showLoading(type) {
+            const content = document.getElementById(`response-content-${type}`);
+            const usage = document.getElementById(`usage-${type}`);
+            usage.style.display = 'none';
+            content.innerHTML = `
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Processing query...</p>
+                    <span class="hint">This may take up to 2 minutes</span>
+                </div>
+            `;
+        }
+
+        function showError(type, message) {
+            const content = document.getElementById(`response-content-${type}`);
+            content.innerHTML = `
+                <div class="error-state">
+                    <p>${escapeHtml(message)}</p>
+                </div>
+            `;
+        }
+
+        function showResponse(type, data) {
+            const content = document.getElementById(`response-content-${type}`);
+            const usage = document.getElementById(`usage-${type}`);
+
+            // Show usage stats
+            if (data.usage) {
+                usage.textContent = `${data.usage.input_tokens} in / ${data.usage.output_tokens} out`;
+                usage.style.display = 'inline-block';
+            }
+
+            // Build response HTML
+            let html = `<div class="response-text">${escapeHtml(data.response)}</div>`;
+
+            if (data.structured_output) {
+                html += `
+                    <div class="structured-output">
+                        <h4>Structured Output</h4>
+                        <pre>${escapeHtml(JSON.stringify(data.structured_output, null, 2))}</pre>
+                    </div>
+                `;
+            }
+
+            content.innerHTML = html;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        async function runQuery(type) {
+            const promptEl = document.getElementById(`prompt-${type}`);
+            const schemaEl = document.getElementById(`schema-${type}`);
+            const btn = document.getElementById(`btn-${type}`);
+
+            const prompt = promptEl.value.trim();
+            if (!prompt) {
+                alert('Please enter a prompt');
+                return;
+            }
+
+            let outputSchema = null;
+            const schemaText = schemaEl.value.trim();
+            if (schemaText) {
+                try {
+                    outputSchema = JSON.stringify(JSON.parse(schemaText));
+                } catch (e) {
+                    alert('Invalid JSON schema');
+                    return;
+                }
+            }
+
+            // Update button state
+            btn.disabled = true;
+            btn.innerHTML = '<div class="spinner"></div><span>Processing...</span>';
+
+            showLoading(type);
+
+            try {
+                let data;
+                if (type === 'context') {
+                    data = await queryIntelligence(prompt, outputSchema);
+                } else {
+                    data = await queryIntelligenceRaw(prompt, outputSchema);
+                }
+                showResponse(type, data);
+            } catch (error) {
+                showError(type, error.message);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span>Run Query</span>';
+            }
+        }
+    </script>
+</body>
+</html>

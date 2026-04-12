@@ -1,0 +1,69 @@
+{
+  "source_id": "4bf8bc9e-0ec5-4111-8d17-17b3d9e9817e",
+  "source_type": "DOCUMENT",
+  "output_file": "structured.md",
+
+  "events": [
+    {
+      "timestamp": "2026-02-02T12:27:15Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "61439802-647a-477c-a87a-533bf0e96b0e.md",
+        "file_size_bytes": 1628,
+        "file_format": "MD",
+        "page_count": 1
+      }
+    },
+    {
+      "timestamp": "2026-02-02T12:27:20Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "pages_processed": 1,
+        "pages_no_text": [],
+        "ocr_used_on_pages": [],
+        "word_count": 182,
+        "tables_found": 0,
+        "images_found": 0
+      }
+    },
+    {
+      "timestamp": "2026-02-02T12:27:22Z",
+      "event": "org_context_loaded",
+      "status": "success",
+      "details": {
+        "vocabulary_terms": 0,
+        "entities_indexed": 1
+      }
+    },
+    {
+      "timestamp": "2026-02-02T12:27:25Z",
+      "event": "enrichment_completed",
+      "status": "success",
+      "metrics": {
+        "entities_found": [],
+        "vocabulary_normalized": []
+      }
+    },
+    {
+      "timestamp": "2026-02-02T12:27:28Z",
+      "event": "content_verification",
+      "status": "success",
+      "metrics": {
+        "extracted_words": 182,
+        "output_words": 182,
+        "preservation_ratio": 1.0
+      }
+    },
+    {
+      "timestamp": "2026-02-02T12:27:30Z",
+      "event": "output_created",
+      "status": "success",
+      "files": [
+        "structured.md",
+        "ingest_log.json"
+      ]
+    }
+  ]
+}

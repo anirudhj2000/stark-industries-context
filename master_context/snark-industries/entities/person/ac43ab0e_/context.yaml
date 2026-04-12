@@ -1,0 +1,34 @@
+id: ac43ab0e_
+type: person
+name: ' '
+status: active
+external_ids:
+  bulk_import_item_id: ac43ab0e-1322-4ded-aba9-0f3d9be0854e
+  email: chrisday@gmail.com
+profile:
+  email: chrisday@gmail.com
+  first_name: ''
+  last_name: ''
+  primary_role: ''
+  department: ''
+  function: ''
+  timezone: UTC
+  location: ''
+  pronouns: ''
+  about: ''
+  expertise_tags: []
+  context_description: ''
+  responsibilities: []
+  manager_email: null
+rbac_scope:
+  teams: []
+  org_role: ADMIN
+metadata:
+  source: created
+  created_at: '2026-04-03T14:29:35.593971+00:00'
+  data_quality: minimal
+change_history:
+- operation: create
+  timestamp: '2026-04-03T14:29:35.593971+00:00'
+  source: created
+  reference_id: ac43ab0e-1322-4ded-aba9-0f3d9be0854e

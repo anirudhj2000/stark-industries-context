@@ -1,0 +1,26 @@
+{
+  "name": "Active Days Counter",
+  "slug": "active-days-counter",
+  "type": "PRODUCT_DEVELOPMENT",
+  "description": "Build a feature that displays the total number of active days a user has spent on the portal, based on engagement actions like clicks, views, and transactions. Displayed on user profile/dashboard to motivate engagement.",
+  "goals": [
+    "Increase user engagement by providing visible activity metrics",
+    "Motivate users to return to the portal regularly",
+    "Create foundation for future gamification features",
+    "Deliver a quick win with immediate value"
+  ],
+  "audience": "All portal users",
+  "constraints": [
+    "Timeline: 1-2 weeks",
+    "Keep implementation simple",
+    "Must work for all existing users"
+  ],
+  "success_criteria": [
+    "Counter visible on user profile/dashboard",
+    "Accurately reflects engagement-based activity",
+    "Shipped within 2 weeks",
+    "No negative performance impact"
+  ],
+  "created_at": "2026-01-24",
+  "status": "draft"
+}

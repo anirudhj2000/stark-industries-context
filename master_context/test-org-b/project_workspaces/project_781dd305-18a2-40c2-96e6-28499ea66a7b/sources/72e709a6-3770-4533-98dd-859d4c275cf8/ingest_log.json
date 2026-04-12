@@ -1,0 +1,67 @@
+{
+  "source_id": "72e709a6-3770-4533-98dd-859d4c275cf8",
+  "source_type": "integration_slack_thread",
+  "output_file": "structured.md",
+
+  "events": [
+    {
+      "timestamp": "2026-02-11T09:49:45Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "72e709a6-3770-4533-98dd-859d4c275cf8.md",
+        "file_size_bytes": 3636,
+        "file_format": "MD",
+        "message_count": 5
+      }
+    },
+    {
+      "timestamp": "2026-02-11T09:49:46Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "messages_processed": 5,
+        "word_count": 450,
+        "tables_found": 0,
+        "images_found": 0
+      }
+    },
+    {
+      "timestamp": "2026-02-11T09:49:47Z",
+      "event": "org_context_loaded",
+      "status": "success",
+      "details": {
+        "vocabulary_terms": 0,
+        "entities_indexed": 1
+      }
+    },
+    {
+      "timestamp": "2026-02-11T09:49:48Z",
+      "event": "enrichment_completed",
+      "status": "success",
+      "metrics": {
+        "entities_found": ["anirudh_joshi"],
+        "vocabulary_normalized": []
+      }
+    },
+    {
+      "timestamp": "2026-02-11T09:49:49Z",
+      "event": "content_verification",
+      "status": "success",
+      "metrics": {
+        "extracted_words": 450,
+        "output_words": 480,
+        "preservation_ratio": 0.94
+      }
+    },
+    {
+      "timestamp": "2026-02-11T09:49:50Z",
+      "event": "output_created",
+      "status": "success",
+      "files": [
+        "structured.md",
+        "ingest_log.json"
+      ]
+    }
+  ]
+}

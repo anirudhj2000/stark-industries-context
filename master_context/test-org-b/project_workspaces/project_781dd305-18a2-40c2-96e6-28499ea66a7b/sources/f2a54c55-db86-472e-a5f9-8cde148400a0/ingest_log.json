@@ -1,0 +1,67 @@
+{
+  "source_id": "f2a54c55-db86-472e-a5f9-8cde148400a0",
+  "source_type": "integration_slack_thread",
+  "output_file": "structured.md",
+
+  "events": [
+    {
+      "timestamp": "2026-02-11T10:08:05Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "f2a54c55-db86-472e-a5f9-8cde148400a0.md",
+        "file_size_bytes": 3905,
+        "file_format": "Markdown (Slack Thread)",
+        "message_count": 8
+      }
+    },
+    {
+      "timestamp": "2026-02-11T10:08:06Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "messages_processed": 8,
+        "word_count": 594,
+        "tables_found": 0,
+        "images_found": 0
+      }
+    },
+    {
+      "timestamp": "2026-02-11T10:08:07Z",
+      "event": "org_context_loaded",
+      "status": "success",
+      "details": {
+        "vocabulary_terms": 0,
+        "entities_indexed": 1
+      }
+    },
+    {
+      "timestamp": "2026-02-11T10:08:08Z",
+      "event": "enrichment_completed",
+      "status": "success",
+      "metrics": {
+        "entities_found": [],
+        "vocabulary_normalized": ["PL", "PRD", "CTO", "BAU", "PM", "DNS"]
+      }
+    },
+    {
+      "timestamp": "2026-02-11T10:08:09Z",
+      "event": "content_verification",
+      "status": "success",
+      "metrics": {
+        "extracted_words": 594,
+        "output_words": 620,
+        "preservation_ratio": 0.96
+      }
+    },
+    {
+      "timestamp": "2026-02-11T10:08:10Z",
+      "event": "output_created",
+      "status": "success",
+      "files": [
+        "structured.md",
+        "ingest_log.json"
+      ]
+    }
+  ]
+}

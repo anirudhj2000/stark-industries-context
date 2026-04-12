@@ -1,0 +1,67 @@
+{
+  "source_id": "89533a7f-1cfa-4138-95fa-8a38dad3939c",
+  "source_type": "integration_slack_thread",
+  "output_file": "structured.md",
+
+  "events": [
+    {
+      "timestamp": "2026-02-05T14:14:05Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "89533a7f-1cfa-4138-95fa-8a38dad3939c.md",
+        "file_size_bytes": 1819,
+        "file_format": "Slack Thread (Markdown)",
+        "message_count": 4
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:14:06Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "messages_processed": 4,
+        "word_count": 267,
+        "tables_found": 1,
+        "images_found": 0
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:14:07Z",
+      "event": "org_context_loaded",
+      "status": "success",
+      "details": {
+        "vocabulary_terms": 0,
+        "entities_indexed": 1
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:14:08Z",
+      "event": "enrichment_completed",
+      "status": "success",
+      "metrics": {
+        "entities_found": [],
+        "vocabulary_normalized": []
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:14:09Z",
+      "event": "content_verification",
+      "status": "success",
+      "metrics": {
+        "extracted_words": 267,
+        "output_words": 289,
+        "preservation_ratio": 1.08
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:14:10Z",
+      "event": "output_created",
+      "status": "success",
+      "files": [
+        "structured.md",
+        "ingest_log.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "source_id": "bea4fa40-632b-431e-bfa6-36d82c2465cc",
+  "source_type": "integration_slack_thread",
+  "output_file": "structured.md",
+
+  "events": [
+    {
+      "timestamp": "2026-02-05T14:16:51Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "bea4fa40-632b-431e-bfa6-36d82c2465cc.md",
+        "file_size_bytes": 1573,
+        "file_format": "Slack Thread (Markdown)",
+        "message_count": 1
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:16:52Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "lines_processed": 34,
+        "paragraphs_processed": 5,
+        "word_count": 231,
+        "tables_found": 0,
+        "images_found": 0
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:16:53Z",
+      "event": "org_context_loaded",
+      "status": "success",
+      "details": {
+        "vocabulary_terms": 0,
+        "entities_indexed": 1
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:16:54Z",
+      "event": "enrichment_completed",
+      "status": "success",
+      "metrics": {
+        "entities_found": [],
+        "vocabulary_normalized": []
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:16:55Z",
+      "event": "content_verification",
+      "status": "success",
+      "metrics": {
+        "extracted_words": 231,
+        "output_words": 228,
+        "preservation_ratio": 0.99
+      }
+    },
+    {
+      "timestamp": "2026-02-05T14:16:56Z",
+      "event": "output_created",
+      "status": "success",
+      "files": [
+        "structured.md",
+        "ingest_log.json"
+      ]
+    }
+  ]
+}

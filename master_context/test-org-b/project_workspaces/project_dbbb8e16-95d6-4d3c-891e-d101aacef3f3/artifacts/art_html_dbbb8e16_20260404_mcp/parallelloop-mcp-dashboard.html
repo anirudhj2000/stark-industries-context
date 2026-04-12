@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallelloop MCP Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0b0f;
+            --bg-secondary: #12141c;
+            --bg-tertiary: #1a1d2a;
+            --bg-card: #161923;
+            --accent-primary: #6366f1;
+            --accent-secondary: #8b5cf6;
+            --accent-tertiary: #a78bfa;
+            --accent-cyan: #22d3ee;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-rose: #f43f5e;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: #2a2f3e;
+            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
+            --gradient-card: linear-gradient(145deg, #1a1d2a 0%, #12141c 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-glow {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 70% 80%, rgba(139, 92, 246, 0.06) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 0;
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.3);
+        }
+
+        .header-text h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-text p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .user-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--bg-tertiary);
+            padding: 0.75rem 1.25rem;
+            border-radius: 100px;
+            border: 1px solid var(--border-color);
+        }
+
+        .user-avatar {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .user-info {
+            text-align: right;
+        }
+
+        .user-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .user-role {
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--gradient-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-icon.projects { background: rgba(99, 102, 241, 0.15); color: var(--accent-primary); }
+        .stat-icon.teams { background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan); }
+        .stat-icon.artifacts { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); }
+        .stat-icon.actions { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Tool Cards */
+        .tool-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-tertiary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tool-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tool-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.125rem;
+        }
+
+        .tool-name {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .tool-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.35rem 0.75rem;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent-tertiary);
+            border-radius: 100px;
+            font-weight: 500;
+        }
+
+        .tool-content {
+            padding: 1.25rem 1.5rem;
+            max-height: 320px;
+            overflow-y: auto;
+        }
+
+        .tool-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .tool-content::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        .tool-content::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        /* Data Items */
+        .data-item {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .data-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .data-item:hover {
+            border-color: var(--border-color);
+            background: var(--bg-tertiary);
+        }
+
+        .data-item-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-item-title {
+            font-weight: 600;
+            font-size: 0.9375rem;
+            color: var(--text-primary);
+        }
+
+        .data-item-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        .status-badge {
+            font-size: 0.6875rem;
+            padding: 0.25rem 0.625rem;
+            border-radius: 100px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+        .status-active { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); }
+        .status-setup { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); }
+        .status-default { background: rgba(99, 102, 241, 0.15); color: var(--accent-primary); }
+
+        .type-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.6875rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            border-radius: 6px;
+        }
+
+        /* Member List */
+        .member-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.875rem 1rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            margin-bottom: 0.75rem;
+        }
+
+        .member-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .member-info {
+            flex: 1;
+        }
+
+        .member-name {
+            font-weight: 600;
+            font-size: 0.9375rem;
+        }
+
+        .member-email {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .empty-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .empty-text {
+            font-size: 0.9375rem;
+        }
+
+        /* Tool Catalog */
+        .tool-catalog {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .catalog-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .catalog-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .catalog-item:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .catalog-item-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .catalog-item-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--accent-tertiary);
+            margin-bottom: 0.5rem;
+        }
+
+        .catalog-item-desc {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .catalog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .catalog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .loading {
+            background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 8px;
+            height: 1rem;
+        }
+
+        /* Staggered animation */
+        .stat-card, .tool-card, .catalog-item {
+            opacity: 0;
+            animation: fadeSlideUp 0.5s ease forwards;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .tool-card:nth-child(1) { animation-delay: 0.3s; }
+        .tool-card:nth-child(2) { animation-delay: 0.4s; }
+        .tool-card:nth-child(3) { animation-delay: 0.5s; }
+        .tool-card:nth-child(4) { animation-delay: 0.6s; }
+
+        .catalog-item:nth-child(1) { animation-delay: 0.5s; }
+        .catalog-item:nth-child(2) { animation-delay: 0.55s; }
+        .catalog-item:nth-child(3) { animation-delay: 0.6s; }
+        .catalog-item:nth-child(4) { animation-delay: 0.65s; }
+        .catalog-item:nth-child(5) { animation-delay: 0.7s; }
+        .catalog-item:nth-child(6) { animation-delay: 0.75s; }
+        .catalog-item:nth-child(7) { animation-delay: 0.8s; }
+        .catalog-item:nth-child(8) { animation-delay: 0.85s; }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo">PL</div>
+                <div class="header-text">
+                    <h1>Parallelloop MCP Explorer</h1>
+                    <p>Model Context Protocol Capabilities Dashboard</p>
+                </div>
+            </div>
+            <div class="user-badge">
+                <div class="user-avatar">AJ</div>
+                <div class="user-info">
+                    <div class="user-name">Anirudh Joshi</div>
+                    <div class="user-role">OWNER</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon projects">&#128194;</div>
+                <div class="stat-value">4</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon teams">&#128101;</div>
+                <div class="stat-value">1</div>
+                <div class="stat-label">Teams</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon artifacts">&#128196;</div>
+                <div class="stat-value">0</div>
+                <div class="stat-label">Artifacts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon actions">&#9889;</div>
+                <div class="stat-value">0</div>
+                <div class="stat-label">Actions</div>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Projects -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-title">
+                        <div class="tool-icon" style="background: rgba(99, 102, 241, 0.15); color: var(--accent-primary);">&#128194;</div>
+                        <span class="tool-name">Projects</span>
+                    </div>
+                    <span class="tool-badge">list_projects</span>
+                </div>
+                <div class="tool-content">
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Random Project two</span>
+                            <span class="status-badge status-setup">Setup</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span class="type-badge">PRODUCT_DEVELOPMENT</span>
+                            <span>Created Apr 4, 2026</span>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Random project one</span>
+                            <span class="status-badge status-setup">Setup</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span class="type-badge">PRODUCT_DEVELOPMENT</span>
+                            <span>Created Apr 4, 2026</span>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">My Workspace</span>
+                            <span class="status-badge status-active">Active</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span class="type-badge">PERSONAL_SCRATCHPAD</span>
+                            <span>Created Apr 3, 2026</span>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Organization Context</span>
+                            <span class="status-badge status-default">Default</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span class="type-badge">ORGANIZATION_ONBOARDING</span>
+                            <span>Created Apr 3, 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teams -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-title">
+                        <div class="tool-icon" style="background: rgba(34, 211, 238, 0.15); color: var(--accent-cyan);">&#128101;</div>
+                        <span class="tool-name">Teams</span>
+                    </div>
+                    <span class="tool-badge">list_teams</span>
+                </div>
+                <div class="tool-content">
+                    <div class="data-item">
+                        <div class="data-item-header">
+                            <span class="data-item-title">All Team Members</span>
+                            <span class="status-badge status-default">Default</span>
+                        </div>
+                        <div class="data-item-meta">
+                            <span class="type-badge">GENERAL</span>
+                            <span>1 member</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current User -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-title">
+                        <div class="tool-icon" style="background: rgba(139, 92, 246, 0.15); color: var(--accent-secondary);">&#128100;</div>
+                        <span class="tool-name">Current User</span>
+                    </div>
+                    <span class="tool-badge">get_me</span>
+                </div>
+                <div class="tool-content">
+                    <div class="member-item">
+                        <div class="member-avatar" style="background: var(--gradient-primary);">AJ</div>
+                        <div class="member-info">
+                            <div class="member-name">Anirudh Joshi</div>
+                            <div class="member-email">anirudh@parallelloop.ai</div>
+                        </div>
+                    </div>
+                    <div class="data-item" style="margin-top: 1rem;">
+                        <div class="data-item-header">
+                            <span class="data-item-title">Organizations</span>
+                        </div>
+                        <div class="data-item-meta" style="flex-direction: column; align-items: flex-start; gap: 0.5rem; margin-top: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span class="type-badge">Parallelloop AI</span>
+                                <span class="status-badge status-active">OWNER</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span class="type-badge">Test Org B</span>
+                                <span class="status-badge status-active">OWNER</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-title">
+                        <div class="tool-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--accent-amber);">&#9889;</div>
+                        <span class="tool-name">Actions</span>
+                    </div>
+                    <span class="tool-badge">list_actions</span>
+                </div>
+                <div class="tool-content">
+                    <div class="empty-state">
+                        <div class="empty-icon">&#128203;</div>
+                        <p class="empty-text">No actions yet.<br>Questions, decisions, and blockers will appear here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tool Catalog -->
+        <div class="tool-catalog">
+            <h2 class="catalog-title">
+                <span>&#128295;</span>
+                MCP Tool Catalog
+            </h2>
+            <div class="catalog-grid">
+                <div class="catalog-item">
+                    <div class="catalog-item-icon">&#128194;</div>
+                    <div class="catalog-item-name">list_projects</div>
+                    <div class="catalog-item-desc">List all projects with names, types, and statuses</div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-item-icon">&#128101;</div>
+                    <div class="catalog-item-name">list_teams</div>
+                    <div class="catalog-item-desc">List teams with member counts and descriptions</div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-item-icon">&#128100;</div>
+                    <div class="catalog-item-name">get_me</div>
+                    <div class="catalog-item-desc">Get current user profile and org memberships</div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-item-icon">&#128101;</div>
+                    <div class="catalog-item-name">list_members</div>
+                    <div class="catalog-item-desc">List all members across the organization</div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-item-icon">&#128196;</div>
+                    <div class="catalog-item-name">list_artifacts</div>
+                    <div class="catalog-item-desc">List PRDs, specs, and meeting notes</div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-item-icon">&#128193;</div>
+                    <div class="catalog-item-name">list_sources</div>
+                    <div class="catalog-item-desc">List transcripts, documents, and chat exports</div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-item-icon">&#9889;</div>
+                    <div class="catalog-item-name">list_actions</div>
+                    <div class="catalog-item-desc">List questions, decisions, and blockers</div>
+                </div>
+                <div class="catalog-item">
+                    <div class="catalog-item-icon">&#128269;</div>
+                    <div class="catalog-item-name">search_context</div>
+                    <div class="catalog-item-desc">Semantic search across all org content</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
