@@ -215,7 +215,7 @@
 
         .main-grid {
             display: grid;
-            grid-template-columns: 1fr 400px;
+            grid-template-columns: 1fr;
             gap: 24px;
         }
 
@@ -313,16 +313,11 @@
         }
 
         .trace-table tr {
-            cursor: pointer;
             transition: background 0.15s ease;
         }
 
         .trace-table tbody tr:hover {
             background: var(--bg-hover);
-        }
-
-        .trace-table tbody tr.selected {
-            background: var(--accent-cyan-dim);
         }
 
         .trace-id {
@@ -391,109 +386,6 @@
         .timestamp {
             font-size: 12px;
             color: var(--text-muted);
-        }
-
-        .observation-panel {
-            height: fit-content;
-            max-height: calc(600px + 57px);
-        }
-
-        .observation-list {
-            padding: 12px;
-        }
-
-        .observation-item {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 14px;
-            margin-bottom: 10px;
-            transition: all 0.2s ease;
-        }
-
-        .observation-item:hover {
-            border-color: var(--accent-cyan);
-        }
-
-        .observation-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .observation-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-        }
-
-        .observation-name {
-            font-weight: 500;
-            font-size: 14px;
-            max-width: 200px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .observation-type {
-            font-size: 10px;
-            font-weight: 700;
-            padding: 3px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .observation-type.generation {
-            background: var(--accent-purple-dim);
-            color: var(--accent-purple);
-        }
-
-        .observation-type.span {
-            background: var(--accent-cyan-dim);
-            color: var(--accent-cyan);
-        }
-
-        .observation-type.event {
-            background: var(--accent-amber-dim);
-            color: var(--accent-amber);
-        }
-
-        .observation-meta {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            font-size: 12px;
-        }
-
-        .meta-item {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .meta-label {
-            color: var(--text-muted);
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        .meta-value {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--text-secondary);
-        }
-
-        .model-badge {
-            display: inline-block;
-            background: var(--bg-hover);
-            border: 1px solid var(--border);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            color: var(--accent-cyan);
-            margin-top: 10px;
         }
 
         .empty-state {
@@ -600,114 +492,6 @@
 
         .retry-btn:hover {
             background: rgba(248, 81, 73, 0.25);
-        }
-
-        .trace-detail-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-        }
-
-        .trace-detail-modal.open {
-            display: flex;
-        }
-
-        .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            width: 100%;
-            max-width: 900px;
-            max-height: 80vh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 24px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .modal-title {
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .modal-close {
-            width: 32px;
-            height: 32px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text-secondary);
-            font-size: 18px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-
-        .modal-close:hover {
-            background: var(--bg-hover);
-            color: var(--text-primary);
-        }
-
-        .modal-body {
-            padding: 24px;
-            overflow-y: auto;
-            flex: 1;
-        }
-
-        .span-tree {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 13px;
-        }
-
-        .span-node {
-            padding: 10px 12px;
-            margin-bottom: 4px;
-            background: var(--bg-secondary);
-            border-radius: 6px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-left: 3px solid var(--accent-cyan);
-        }
-
-        .span-node[data-depth="1"] {
-            margin-left: 24px;
-            border-left-color: var(--accent-purple);
-        }
-
-        .span-node[data-depth="2"] {
-            margin-left: 48px;
-            border-left-color: var(--accent-amber);
-        }
-
-        .span-node[data-depth="3"] {
-            margin-left: 72px;
-            border-left-color: var(--accent-green);
-        }
-
-        .span-name {
-            font-weight: 500;
-        }
-
-        .span-duration {
-            color: var(--text-muted);
         }
 
         @media (max-width: 1200px) {
@@ -830,41 +614,6 @@
                 </div>
             </div>
 
-            <div class="panel observation-panel">
-                <div class="panel-header">
-                    <div class="panel-title">
-                        <span class="panel-title-icon"></span>
-                        Observations
-                    </div>
-                    <div class="panel-actions">
-                        <select class="filter-select" id="obs-type-select" onchange="loadObservations()">
-                            <option value="">All Types</option>
-                            <option value="GENERATION">Generations</option>
-                            <option value="SPAN">Spans</option>
-                            <option value="EVENT">Events</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="panel-body" id="observations-panel">
-                    <div class="empty-state">
-                        <div class="empty-icon">📊</div>
-                        <div class="empty-title">Select a trace</div>
-                        <div class="empty-message">Click on a trace to view its observations</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="trace-detail-modal" id="trace-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title" id="modal-title">Trace Details</div>
-                <button class="modal-close" onclick="closeModal()">&times;</button>
-            </div>
-            <div class="modal-body" id="modal-body">
-                <!-- Trace detail content -->
-            </div>
         </div>
     </div>
 
@@ -875,7 +624,6 @@
 
         // State
         let traces = [];
-        let selectedTraceId = null;
 
         // API Helper
         async function executeLangfuseTool(toolName, params = {}) {
@@ -993,7 +741,7 @@
                     </thead>
                     <tbody>
                         ${traces.map(trace => `
-                            <tr onclick="selectTrace('${trace.id}')" class="${selectedTraceId === trace.id ? 'selected' : ''}">
+                            <tr>
                                 <td><span class="trace-id">${trace.id ? trace.id.substring(0, 8) : '--'}</span></td>
                                 <td><span class="trace-name" title="${trace.name || '--'}">${trace.name || '--'}</span></td>
                                 <td>
@@ -1009,45 +757,6 @@
                         `).join('')}
                     </tbody>
                 </table>
-            `;
-        }
-
-        function renderObservations(observations) {
-            const panel = document.getElementById('observations-panel');
-
-            if (!observations || !observations.length) {
-                panel.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-icon">📊</div>
-                        <div class="empty-title">No observations</div>
-                        <div class="empty-message">This trace has no observations</div>
-                    </div>
-                `;
-                return;
-            }
-
-            panel.innerHTML = `
-                <div class="observation-list">
-                    ${observations.map(obs => `
-                        <div class="observation-item">
-                            <div class="observation-header">
-                                <span class="observation-name" title="${obs.name || '--'}">${obs.name || '--'}</span>
-                                <span class="observation-type ${(obs.type || '').toLowerCase()}">${obs.type || '--'}</span>
-                            </div>
-                            <div class="observation-meta">
-                                <div class="meta-item">
-                                    <span class="meta-label">Duration</span>
-                                    <span class="meta-value">${formatLatency(obs.latency || obs.duration)}</span>
-                                </div>
-                                <div class="meta-item">
-                                    <span class="meta-label">Tokens</span>
-                                    <span class="meta-value">${formatTokens(obs.usage)}</span>
-                                </div>
-                            </div>
-                            ${obs.model ? `<div class="model-badge">${obs.model}</div>` : ''}
-                        </div>
-                    `).join('')}
-                </div>
             `;
         }
 
@@ -1109,8 +818,7 @@
                 const limit = parseInt(document.getElementById('limit-select').value);
                 const data = await executeLangfuseTool('LANGFUSE_MCP_FETCH_TRACES', {
                     age: 1440,
-                    limit: limit,
-                    include_observations: true
+                    limit: limit
                 });
 
                 // Handle both array and object with traces property
@@ -1127,62 +835,13 @@
             }
         }
 
-        async function selectTrace(traceId) {
-            selectedTraceId = traceId;
-
-            // Update selected row styling
-            document.querySelectorAll('.trace-table tbody tr').forEach(row => {
-                row.classList.remove('selected');
-            });
-            event.currentTarget.classList.add('selected');
-
-            await loadObservations();
-        }
-
-        async function loadObservations() {
-            if (!selectedTraceId) return;
-
-            showLoadingState('observations-panel');
-
-            try {
-                const obsType = document.getElementById('obs-type-select').value;
-                const params = {
-                    age: 1440,
-                    trace_id: selectedTraceId,
-                    limit: 50
-                };
-                if (obsType) params.type = obsType;
-
-                const data = await executeLangfuseTool('LANGFUSE_MCP_FETCH_OBSERVATIONS', params);
-                const observations = Array.isArray(data) ? data : (data.observations || data.data || []);
-                renderObservations(observations);
-            } catch (error) {
-                console.error('Failed to load observations:', error);
-                showError('observations-panel', error.message, 'loadObservations()');
-            }
-        }
-
         async function refreshData() {
             await loadTraces();
-        }
-
-        function closeModal() {
-            document.getElementById('trace-modal').classList.remove('open');
         }
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             loadTraces();
-        });
-
-        // Close modal on escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
-
-        // Close modal on backdrop click
-        document.getElementById('trace-modal').addEventListener('click', (e) => {
-            if (e.target === e.currentTarget) closeModal();
         });
     </script>
 </body>
