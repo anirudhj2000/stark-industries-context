@@ -1,0 +1,59 @@
+{
+  "source_id": "4fe5b20d-3cda-4e04-ba1d-8936411b7d63",
+  "source_title": "google_meet:xfa-qive-mgj - 2026-04-23 12:49",
+  "source_type": "document",
+  "upload_type": "transcript",
+  "context_type": "project",
+  "project_id": "781dd305-18a2-40c2-96e6-28499ea66a7b",
+  "processing_timeline": [
+    {
+      "stage": "file_received",
+      "timestamp": "2026-04-23T12:49:14.260753+00:00",
+      "status": "success",
+      "details": "JSON transcript received from Recall.ai"
+    },
+    {
+      "stage": "transcript_parsed",
+      "timestamp": "2026-04-23T12:49:15.000000+00:00",
+      "status": "success",
+      "details": "Parsed 1 participant, 12 utterances"
+    },
+    {
+      "stage": "entities_loaded",
+      "timestamp": "2026-04-23T12:49:15.500000+00:00",
+      "status": "success",
+      "details": "Loaded 1 person entity"
+    },
+    {
+      "stage": "topics_extracted",
+      "timestamp": "2026-04-23T12:49:16.000000+00:00",
+      "status": "success",
+      "details": "Extracted 3 discussion topics"
+    },
+    {
+      "stage": "meeting_notes_generated",
+      "timestamp": "2026-04-23T12:49:17.000000+00:00",
+      "status": "success",
+      "details": "Generated enriched meeting notes with organizational context"
+    }
+  ],
+  "participants": [
+    {
+      "name": "Anirudh Joshi",
+      "is_host": true,
+      "platform": "mobile_app"
+    }
+  ],
+  "metrics": {
+    "total_duration_seconds": 85,
+    "utterance_count": 12,
+    "word_count": 156,
+    "participant_count": 1
+  },
+  "input_file": "raw/transcript.json",
+  "output_files": [
+    "transcript.md",
+    "ingest_log.json"
+  ],
+  "artifact_created": "art_meeting_notes_4fe5b20d-3cda-4e04-ba1d-8936411b7d63/meeting_notes.md"
+}
