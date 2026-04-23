@@ -1,0 +1,25 @@
+action_id: act_20260423_jaksb
+agent_sdk_ref_id: act_20260423_jaksb
+title: Further discussion needed on AI code review workflows
+text: Follow-up discussion on AI-assisted code review processes, particularly around
+  AI agents reviewing their own work without human oversight. Need to address reliability
+  concerns and quality assurance.
+action_type: clarification
+priority: normal
+status: open
+source:
+  artifact_path: project_workspaces/project_781dd305-18a2-40c2-96e6-28499ea66a7b/artifacts/art_meeting_notes_4fe5b20d-3cda-4e04-ba1d-8936411b7d63/meeting_notes.md
+  artifact_type: MEETING_NOTES
+  excerpt: '- [ ] Further discussion needed on AI code review workflows'
+  extracted_at: '2026-04-23T12:51:33.216840Z'
+suggested_assignees: []
+deadline: null
+thread: []
+summary_cursor: null
+harvest_cursor: null
+last_summarized_at: null
+last_harvested_at: null
+is_actionable_by_ai: false
+ai_execution_config: null
+created_at: '2026-04-23T12:51:33.216840Z'
+updated_at: '2026-04-23T12:51:33.216840Z'
