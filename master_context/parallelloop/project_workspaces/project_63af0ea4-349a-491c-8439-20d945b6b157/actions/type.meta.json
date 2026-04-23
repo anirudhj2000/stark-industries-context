@@ -1,0 +1,10 @@
+{
+  "source_artifact": {
+    "artifact_id": "8a012b44-c0a6-4ad9-97bc-e478026a1c5d",
+    "artifact_path": "project_workspaces/project_63af0ea4-349a-491c-8439-20d945b6b157/artifacts/art_meeting_notes_9c4d62e9-3358-4784-a79b-07478ef01e16/meeting_notes.md",
+    "artifact_type": "MEETING_NOTES"
+  },
+  "extracted_at": "2026-04-23T00:00:00Z",
+  "actions_count": 0,
+  "notes": "No action items were identified in this recording. The transcript represents a test recording with fragmentary speech content."
+}
