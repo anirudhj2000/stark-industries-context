@@ -1,0 +1,81 @@
+{
+  "source_id": "a2dd4571-186f-4e1b-baef-ba9d1ae49b90",
+  "source_title": "Recall Auto add test",
+  "processing_timeline": [
+    {
+      "step": "manifest_loaded",
+      "timestamp": "2026-04-23T14:36:53.526062Z",
+      "status": "success"
+    },
+    {
+      "step": "transcript_retrieved",
+      "timestamp": "2026-04-23T14:37:00.000000Z",
+      "status": "success",
+      "details": {
+        "format": "json",
+        "source": "raw/transcript.json",
+        "platform": "google_meet"
+      }
+    },
+    {
+      "step": "entities_loaded",
+      "timestamp": "2026-04-23T14:37:01.000000Z",
+      "status": "success",
+      "details": {
+        "total_entities": 1,
+        "entity_types": ["person"]
+      }
+    },
+    {
+      "step": "vocabulary_loaded",
+      "timestamp": "2026-04-23T14:37:02.000000Z",
+      "status": "success",
+      "details": {
+        "terms_count": 8
+      }
+    },
+    {
+      "step": "topics_extracted",
+      "timestamp": "2026-04-23T14:37:05.000000Z",
+      "status": "success",
+      "details": {
+        "topics_count": 3,
+        "decisions_count": 0,
+        "actions_count": 0
+      }
+    },
+    {
+      "step": "enrichment_applied",
+      "timestamp": "2026-04-23T14:37:08.000000Z",
+      "status": "success",
+      "details": {
+        "entities_linked": 1,
+        "vocabulary_normalized": 0
+      }
+    },
+    {
+      "step": "artifact_created",
+      "timestamp": "2026-04-23T14:37:10.000000Z",
+      "status": "success",
+      "details": {
+        "artifact_type": "MEETING_NOTES",
+        "artifact_path": "artifacts/art_meeting_notes_a2dd4571-186f-4e1b-baef-ba9d1ae49b90/meeting_notes.md"
+      }
+    }
+  ],
+  "metrics": {
+    "word_count": 312,
+    "num_topics": 3,
+    "num_decisions": 0,
+    "num_actions": 0,
+    "vocabulary_normalized": 0,
+    "entities_linked": 1,
+    "processing_duration_seconds": 17
+  },
+  "input_metadata": {
+    "participant_count": 1,
+    "recording_duration_seconds": 183,
+    "language": "en-US",
+    "platform": "Google Meet"
+  }
+}
