@@ -1,0 +1,67 @@
+{
+  "source_id": "b981de2f-c4f7-4e95-923e-f9e9a0071c03",
+  "source_title": "Test call -1",
+  "upload_type": "transcript",
+  "context_type": "org",
+  "processing_timeline": [
+    {
+      "step": "manifest_read",
+      "timestamp": "2026-04-23T14:53:11.408338+00:00",
+      "status": "success"
+    },
+    {
+      "step": "transcript_read",
+      "timestamp": "2026-04-23T14:53:15.000000+00:00",
+      "status": "success",
+      "details": {
+        "source_file": "raw/transcript.md",
+        "word_count": 594
+      }
+    },
+    {
+      "step": "entity_loading",
+      "timestamp": "2026-04-23T14:53:16.000000+00:00",
+      "status": "success",
+      "details": {
+        "total_entities": 1,
+        "entity_types": ["person"]
+      }
+    },
+    {
+      "step": "topic_extraction",
+      "timestamp": "2026-04-23T14:53:18.000000+00:00",
+      "status": "success",
+      "details": {
+        "topics_count": 4,
+        "decisions_count": 0,
+        "actions_count": 0
+      }
+    },
+    {
+      "step": "enrichment",
+      "timestamp": "2026-04-23T14:53:20.000000+00:00",
+      "status": "success",
+      "details": {
+        "vocabulary_normalized": 1,
+        "entities_linked": 2
+      }
+    },
+    {
+      "step": "artifact_creation",
+      "timestamp": "2026-04-23T14:53:22.000000+00:00",
+      "status": "success",
+      "details": {
+        "artifact_path": "artifacts/art_meeting_notes_b981de2f-c4f7-4e95-923e-f9e9a0071c03/meeting_notes.md"
+      }
+    }
+  ],
+  "metrics": {
+    "word_count": 594,
+    "num_topics": 4,
+    "num_decisions": 0,
+    "num_actions": 0,
+    "vocabulary_normalized": 1,
+    "entities_linked": 2
+  },
+  "completed_at": "2026-04-23T14:53:22.000000+00:00"
+}
