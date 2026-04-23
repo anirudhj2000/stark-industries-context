@@ -1,0 +1,97 @@
+{
+  "source_id": "9c4d62e9-3358-4784-a79b-07478ef01e16",
+  "source_title": "Test recall",
+  "processing_started": "2026-04-23T12:46:10.021535+00:00",
+  "processing_completed": "2026-04-23T12:47:00.000000+00:00",
+  "context_type": "project",
+  "project_id": "63af0ea4-349a-491c-8439-20d945b6b157",
+  "pipeline": {
+    "steps": [
+      {
+        "name": "read_manifest",
+        "status": "completed",
+        "timestamp": "2026-04-23T12:46:10.021535+00:00"
+      },
+      {
+        "name": "read_payload",
+        "status": "completed",
+        "timestamp": "2026-04-23T12:46:10.100000+00:00"
+      },
+      {
+        "name": "parse_transcript_json",
+        "status": "completed",
+        "timestamp": "2026-04-23T12:46:15.000000+00:00",
+        "details": {
+          "format": "json",
+          "participants_found": 1,
+          "word_segments": 18
+        }
+      },
+      {
+        "name": "load_entities",
+        "status": "completed",
+        "timestamp": "2026-04-23T12:46:20.000000+00:00",
+        "details": {
+          "entities_loaded": 1,
+          "types": ["person"]
+        }
+      },
+      {
+        "name": "extract_topics",
+        "status": "completed",
+        "timestamp": "2026-04-23T12:46:30.000000+00:00",
+        "details": {
+          "topics_identified": 1,
+          "note": "Fragmentary test recording - limited topic extraction possible"
+        }
+      },
+      {
+        "name": "generate_meeting_notes",
+        "status": "completed",
+        "timestamp": "2026-04-23T12:46:50.000000+00:00"
+      },
+      {
+        "name": "create_artifact",
+        "status": "completed",
+        "timestamp": "2026-04-23T12:47:00.000000+00:00"
+      }
+    ]
+  },
+  "input": {
+    "source_type": "document",
+    "upload_type": "transcript",
+    "file_format": "json",
+    "file_path": "raw/transcript.json"
+  },
+  "transcript_metadata": {
+    "recording_date": "2026-04-23",
+    "recording_start": "2026-04-23T12:43:24.861135Z",
+    "recording_end": "2026-04-23T12:45:34.959949Z",
+    "duration_seconds": 130,
+    "language": "en-US",
+    "participants": [
+      {
+        "name": "Anirudh Joshi",
+        "is_host": true,
+        "platform": "mobile_app"
+      }
+    ]
+  },
+  "enrichment": {
+    "entities_matched": [],
+    "vocabulary_normalized": [],
+    "note": "Test recording with fragmentary content - minimal enrichment applicable"
+  },
+  "metrics": {
+    "word_count": 147,
+    "num_topics": 1,
+    "num_decisions": 0,
+    "num_actions": 0,
+    "vocabulary_normalized": 0,
+    "entities_linked": 0
+  },
+  "outputs": {
+    "transcript_md": "transcript.md",
+    "artifact_path": "project_workspaces/project_63af0ea4-349a-491c-8439-20d945b6b157/artifacts/art_meeting_notes_9c4d62e9-3358-4784-a79b-07478ef01e16/meeting_notes.md"
+  }
+}
