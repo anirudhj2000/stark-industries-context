@@ -1,0 +1,17 @@
+id: project_eba2ccc8-7bfe-419c-85a9-39e7c4e27ef1
+metadata:
+  created_at: '2026-04-26T10:06:56.454565+00:00'
+  updated_at: '2026-04-26T10:06:56.454638+00:00'
+project_members:
+- email: throwaway@example.com
+  is_active: true
+  is_owner: true
+  joined_at: '2026-04-26T10:06:55.377638+00:00'
+  membership_id: ae2b7707-7ef8-4334-a80f-959f7303615f
+  name: ''
+  removed_at: null
+  role: PROJECT_LEAD
+  teams: []
+project_name: My Workspace (throwaway@example.com)
+project_slug: my-workspace-throwawayexamplecom
+type: project_relationship

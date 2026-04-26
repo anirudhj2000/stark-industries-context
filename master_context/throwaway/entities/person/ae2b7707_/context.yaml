@@ -1,34 +1,46 @@
-id: ae2b7707_
-type: person
-name: ' '
-status: active
+change_history:
+- operation: create
+  reference_id: ae2b7707-7ef8-4334-a80f-959f7303615f
+  source: created
+  timestamp: '2026-04-26T10:06:55.808972+00:00'
+- operation: project_assignment_update
+  project_id: eba2ccc8-7bfe-419c-85a9-39e7c4e27ef1
+  source: playbook_sync
+  timestamp: '2026-04-26T10:06:56.452018+00:00'
 external_ids:
   bulk_import_item_id: ae2b7707-7ef8-4334-a80f-959f7303615f
   email: throwaway@example.com
-profile:
-  email: throwaway@example.com
-  first_name: ''
-  last_name: ''
-  primary_role: ''
-  department: ''
-  function: ''
-  timezone: UTC
-  location: ''
-  pronouns: ''
-  about: ''
-  expertise_tags: []
-  context_description: ''
-  responsibilities: []
-  manager_email: null
-rbac_scope:
-  teams: []
-  org_role: OWNER
+id: ae2b7707_
 metadata:
-  source: created
   created_at: '2026-04-26T10:06:55.808972+00:00'
   data_quality: minimal
-change_history:
-- operation: create
-  timestamp: '2026-04-26T10:06:55.808972+00:00'
   source: created
-  reference_id: ae2b7707-7ef8-4334-a80f-959f7303615f
+name: ' '
+profile:
+  about: ''
+  context_description: ''
+  department: ''
+  email: throwaway@example.com
+  expertise_tags: []
+  first_name: ''
+  function: ''
+  last_name: ''
+  location: ''
+  manager_email: null
+  primary_role: ''
+  pronouns: ''
+  responsibilities: []
+  timezone: UTC
+project_assignments:
+- is_active: true
+  is_owner: true
+  joined_at: '2026-04-26T10:06:55.377638+00:00'
+  project_id: eba2ccc8-7bfe-419c-85a9-39e7c4e27ef1
+  project_name: My Workspace (throwaway@example.com)
+  project_slug: my-workspace-throwawayexamplecom
+  role: PROJECT_LEAD
+rbac_scope:
+  org_role: OWNER
+  teams: []
+status: active
+type: person
