@@ -1,0 +1,8 @@
+{
+  "bucket": "tgsd-context-upload-test",
+  "key": "local/uploads/org_d5f0c224-731b-47cf-9a97-c820c32c06b4/proj_f1895071-e90b-456d-8ee0-638a814ccf9d/raw/other/1b0460dc-2614-4602-b3f2-d6eb06531374.png",
+  "region": "us-east-1",
+  "checksum": "60e7795d378e3bf1c95ba6ab52f4f87c40a9948622d9a546d6de5d3cee554ddd",
+  "size_bytes": 1052707,
+  "updated_at": "2026-04-20T08:08:11.137423Z"
+}
