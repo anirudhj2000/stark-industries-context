@@ -1,0 +1,19 @@
+{
+  "job_id": "b9529e6b-21b5-44ee-b493-191548f86965",
+  "source_id": "7a3b3ec5-b88d-45ba-9195-3f235f58d8b3",
+  "source_title": "919398542806-1615628001@g.us",
+  "source_description": "WhatsApp chat captured from 919398542806",
+  "project_id": "3334d975-ecb1-4dc0-8a75-72d406caec7d",
+  "context_type": "project",
+  "source_type": "integration_whatsapp_chat",
+  "upload_type": "",
+  "participants": [],
+  "external_participants": [],
+  "number_of_participants": null,
+  "trigger": "whatsapp_chat_sync",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/context/webhooks/completion/",
+  "is_worktree_mode": false,
+  "output_base": "project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/sources/7a3b3ec5-b88d-45ba-9195-3f235f58d8b3",
+  "primary_file_path": "project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/sources/7a3b3ec5-b88d-45ba-9195-3f235f58d8b3/structured.md",
+  "s3_presigned_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_3334d975-ecb1-4dc0-8a75-72d406caec7d/raw/integration_whatsapp_chat/1686d783-c584-4fc6-8ad3-99bec92d163d.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260429%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260429T033257Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=dd15a9a4a36f37ec0acfddb4b828c00780205e7b2a865481a89810d7507eaefa"
+}
