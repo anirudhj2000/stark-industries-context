@@ -1,0 +1,17 @@
+id: project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd
+metadata:
+  created_at: '2026-04-30T13:46:56.089021+00:00'
+  updated_at: '2026-04-30T13:46:56.101124+00:00'
+project_members:
+- email: anirudh@parallelloop.ai
+  is_active: true
+  is_owner: true
+  joined_at: '2026-04-30T13:46:54.233368+00:00'
+  membership_id: ea025972-7d3d-459d-8798-115b4a31232c
+  name: Anirudh Joshi
+  removed_at: null
+  role: PROJECT_LEAD
+  teams: []
+project_name: Sample Porj 2
+project_slug: sample-porj-2
+type: project_relationship
