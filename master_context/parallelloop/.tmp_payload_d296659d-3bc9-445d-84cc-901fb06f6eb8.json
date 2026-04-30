@@ -1,0 +1,19 @@
+{
+  "job_id": "d296659d-3bc9-445d-84cc-901fb06f6eb8",
+  "source_id": "810bbea9-3f5d-4cc5-bec3-7c86f31e800b",
+  "source_title": "WA Anirudh Joshi \u2014 2026-04-30 12:48 .jpg",
+  "source_description": "WhatsApp attachment from 19406025549",
+  "project_id": "8da05ca4-a365-48d8-b819-845a2e062c8b",
+  "context_type": "project",
+  "source_type": "document",
+  "upload_type": "",
+  "participants": [],
+  "external_participants": [],
+  "number_of_participants": null,
+  "trigger": "whatsapp_attachment_backfill",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/context/webhooks/completion/",
+  "is_worktree_mode": false,
+  "output_base": "project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/sources/810bbea9-3f5d-4cc5-bec3-7c86f31e800b",
+  "primary_file_path": "project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/sources/810bbea9-3f5d-4cc5-bec3-7c86f31e800b/structured.md",
+  "s3_presigned_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_8da05ca4-a365-48d8-b819-845a2e062c8b/raw/integration_whatsapp_attachment/585b418b-18e0-4b0d-adb4-d56fadaa3923.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260430%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260430T130823Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=7b9d9408a07414e4046982901982dc36c2fb7bf955b3613e2379070eecee3d30"
+}
