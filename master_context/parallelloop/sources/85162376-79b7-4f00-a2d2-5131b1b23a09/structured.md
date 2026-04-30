@@ -1,23 +1,32 @@
-# WhatsApp Chat: 918799310968
+# WhatsApp Chat: Badminton Plans
 
-**Chat ID:** 918799310968@s.whatsapp.net  
-**Date:** 2026-04-30  
-**Participants:** Anirudh Joshi
+## Metadata
+- **Chat ID**: 918799310968@s.whatsapp.net
+- **Participants**: Anirudh Joshi, Harshit
+- **Date**: 2026-04-30
+- **Source Type**: WhatsApp Chat
+
+## Summary
+A brief casual conversation where Anirudh Joshi invites Harshit to play badminton at 7 PM at Ace Badminton. Harshit indicates he is at the office and asks for the location.
 
 ## Conversation
 
-| Timestamp | Sender | Message |
-|-----------|--------|---------|
-| 2026-04-30 12:54:31 | Anirudh Joshi | Kaha h |
-| 2026-04-30 12:54:42 | Anirudh Joshi | badminton khelne aayega 7 baje |
+**Anirudh Joshi** · _2026-04-30T12:54:31+00:00_
+Kaha h
 
-## Summary
+**Anirudh Joshi** · _2026-04-30T12:54:42+00:00_
+badminton khelne aayega 7 baje
 
-Brief informal WhatsApp exchange where Anirudh Joshi asks about someone's location ("Kaha h" - "Where are you?") and invites them to play badminton at 7 o'clock.
+**Harshit** · _2026-04-30T12:59:38+00:00_
+Office sir
 
-## Context
+**Harshit** · _2026-04-30T12:59:45+00:00_
+Kahan par?
 
-- **Type:** Casual/personal conversation
-- **Language:** Hindi (informal)
-- **Topics:** Location inquiry, badminton invitation
-- **Action Items:** None identified
+**Anirudh Joshi** · _2026-04-30T13:00:22+00:00_
+Ace badminton
+
+## Key Details
+- **Activity**: Badminton
+- **Proposed Time**: 7 PM
+- **Venue**: Ace Badminton
