@@ -1,0 +1,33 @@
+{
+  "source_id": "810bbea9-3f5d-4cc5-bec3-7c86f31e800b",
+  "source_type": "IMAGE",
+  "title": "TMSTH App - Unsaved Recordings Warning",
+  "output_file": "structured.md",
+  "events": [
+    {
+      "timestamp": "2026-04-30T13:08:25Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "585b418b-18e0-4b0d-adb4-d56fadaa3923.jpg",
+        "file_size_bytes": 61386,
+        "file_format": "JPG"
+      }
+    },
+    {
+      "timestamp": "2026-04-30T13:08:28Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "word_count": 87,
+        "extraction_method": "claude_vision"
+      }
+    },
+    {
+      "timestamp": "2026-04-30T13:08:30Z",
+      "event": "output_created",
+      "status": "success",
+      "files": ["structured.md", "ingest_log.json"]
+    }
+  ]
+}
