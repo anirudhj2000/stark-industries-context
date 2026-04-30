@@ -4,7 +4,13 @@
 **Format**: WhatsApp Chat
 **Messages**: 6
 **Word Count**: 42
-**Processed**: 2026-04-30T13:03:39Z
+**Processed**: 2026-04-30T13:06:39Z
+
+---
+
+## Summary
+
+Casual conversation about badminton plans. Anirudh Joshi invites Harshit to play badminton at 7 PM at Ace Badminton venue. Harshit is currently at the office and indicates he would arrive late even if he left immediately for home.
 
 ---
 
@@ -13,6 +19,16 @@
 - **Chat ID**: 918799310968@s.whatsapp.net
 - **Participants**: Anirudh Joshi, Harshit
 - **Date**: 2026-04-30
+
+---
+
+## Key Information
+
+- **Activity**: Badminton
+- **Proposed Time**: 7 PM (19:00)
+- **Venue**: Ace Badminton
+- **Harshit's Location**: Office
+- **Outcome**: Pending - Harshit expressed concern about arriving late
 
 ---
 
