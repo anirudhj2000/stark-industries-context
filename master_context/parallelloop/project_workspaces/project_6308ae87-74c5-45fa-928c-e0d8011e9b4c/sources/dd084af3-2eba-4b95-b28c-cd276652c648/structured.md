@@ -1,25 +1,17 @@
-# WhatsApp Chat: 918799310968
+# WhatsApp — Harshit
+_chat_id: 918799310968@s.whatsapp.net_
 
-## Metadata
-- **Contact**: Anirudh Joshi
-- **Chat ID**: 918799310968@s.whatsapp.net
-- **Date**: April 30, 2026
-- **Source**: WhatsApp Integration
+**Anirudh Joshi** · _2026-04-30T12:54:31+00:00_
+Kaha h
 
-## Conversation
+**Anirudh Joshi** · _2026-04-30T12:54:42+00:00_
+badminton khelne aayega 7 baje
 
-### Messages
+**Harshit** · _2026-04-30T12:59:38+00:00_
+Office sir
 
-1. **Message 1**
-   - Content: "Kaha h" (Where are you?)
-   
-2. **Message 2**
-   - Content: "badminton khelne aayega 7 baje" (Will come to play badminton at 7 o'clock)
+**Harshit** · _2026-04-30T12:59:45+00:00_
+Kahan par?
 
-## Summary
-
-A casual exchange coordinating plans to play badminton. One person asks about location, and the other suggests meeting at 7 o'clock to play badminton.
-
-## Key Topics
-- Badminton
-- Meeting coordination
+**Anirudh Joshi** · _2026-04-30T13:00:22+00:00_
+Ace badminton
