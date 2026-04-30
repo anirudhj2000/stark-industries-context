@@ -1,13 +1,20 @@
-# WhatsApp Chat: Badminton Plans
+# WhatsApp — Harshit
 
-## Metadata
+**Source ID**: 85162376-79b7-4f00-a2d2-5131b1b23a09
+**Format**: WhatsApp Chat
+**Messages**: 6
+**Word Count**: 42
+**Processed**: 2026-04-30T13:03:39Z
+
+---
+
+## Chat Metadata
+
 - **Chat ID**: 918799310968@s.whatsapp.net
 - **Participants**: Anirudh Joshi, Harshit
 - **Date**: 2026-04-30
-- **Source Type**: WhatsApp Chat
 
-## Summary
-A brief casual conversation where Anirudh Joshi invites Harshit to play badminton at 7 PM at Ace Badminton. Harshit indicates he is at the office and asks for the location.
+---
 
 ## Conversation
 
@@ -26,7 +33,17 @@ Kahan par?
 **Anirudh Joshi** · _2026-04-30T13:00:22+00:00_
 Ace badminton
 
-## Key Details
-- **Activity**: Badminton
-- **Proposed Time**: 7 PM
-- **Venue**: Ace Badminton
+**Harshit** · _2026-04-30T13:02:26+00:00_
+Sir agar abhi niklu ghar ke liye toh bhi thoda late ho hi jayega
+
+---
+
+## Enrichment Legend
+
+### Vocabulary (0 terms normalized)
+
+_No vocabulary terms matched._
+
+### Entities (0 found)
+
+_No known entities matched._
