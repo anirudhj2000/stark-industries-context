@@ -1,0 +1,59 @@
+{
+  "source_id": "4360f9ba-251f-4521-8d9f-f65a1a726543",
+  "source_type": "integration_whatsapp_chat",
+  "source_title": "Casual Greeting Chat",
+  "processed_at": "2026-04-30T12:47:35Z",
+  "status": "success",
+  "extraction": {
+    "method": "whatsapp_chat_markdown",
+    "input_format": "markdown",
+    "input_size_bytes": 225
+  },
+  "content_stats": {
+    "message_count": 3,
+    "participant_count": 2,
+    "word_count": 8,
+    "character_count": 225
+  },
+  "enrichment": {
+    "vocabulary_normalized": [],
+    "entities_linked": [
+      {
+        "entity_id": "parallelloop",
+        "entity_type": "organization",
+        "mention": "Parallelloop",
+        "count": 1
+      }
+    ],
+    "total_vocabulary_normalized": 0,
+    "total_entities_linked": 1
+  },
+  "events": [
+    {
+      "timestamp": "2026-04-30T12:47:35Z",
+      "event": "extraction_started",
+      "details": "Processing WhatsApp chat markdown"
+    },
+    {
+      "timestamp": "2026-04-30T12:47:35Z",
+      "event": "entities_loaded",
+      "details": "Loaded 2 person entities"
+    },
+    {
+      "timestamp": "2026-04-30T12:47:35Z",
+      "event": "enrichment_applied",
+      "details": "Linked 1 organization entity"
+    },
+    {
+      "timestamp": "2026-04-30T12:47:35Z",
+      "event": "extraction_completed",
+      "details": "Output written to structured.md"
+    }
+  ],
+  "verification": {
+    "input_words": 8,
+    "output_words": 8,
+    "match_ratio": 1.0,
+    "passed": true
+  }
+}
