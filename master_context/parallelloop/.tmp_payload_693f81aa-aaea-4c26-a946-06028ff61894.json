@@ -1,0 +1,19 @@
+{
+  "job_id": "693f81aa-aaea-4c26-a946-06028ff61894",
+  "source_id": "4360f9ba-251f-4521-8d9f-f65a1a726543",
+  "source_title": "WA Parallelloop",
+  "source_description": "WhatsApp chat captured from 919398542806",
+  "project_id": "1e18278d-fb8e-4064-9fec-a7deb3bf97db",
+  "context_type": "org",
+  "source_type": "integration_whatsapp_chat",
+  "upload_type": "",
+  "participants": [],
+  "external_participants": [],
+  "number_of_participants": null,
+  "trigger": "whatsapp_chat_sync",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/context/webhooks/completion/",
+  "is_worktree_mode": false,
+  "output_base": "sources/4360f9ba-251f-4521-8d9f-f65a1a726543",
+  "primary_file_path": "sources/4360f9ba-251f-4521-8d9f-f65a1a726543/structured.md",
+  "s3_presigned_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/b727b286-8c32-4ffd-b962-a992c4d52438.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T093752Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=993cbb45bd585e8af2d93eec2fd538164af2f2226bc10c1e9d9d679b6d0091f4"
+}
