@@ -1,44 +1,42 @@
 # WhatsApp Chat: Sample ones
 
-**Source Type:** WhatsApp Group Chat  
-**Chat ID:** 120363426428364786@g.us  
-**Date:** 2026-05-01  
-**Participants:** Anirudh Joshi
+**Source**: WhatsApp Group Chat  
+**Chat ID**: 120363426428364786@g.us  
+**Date Range**: 2026-05-01  
+**Processed**: 2026-05-01
 
 ---
 
-## Transcript
+## Messages
 
-**Anirudh Joshi** · 2026-05-01 11:18:04 UTC  
-@60095769616416 what is up buddy
+**Anirudh Joshi** · _2026-05-01 11:18:04 UTC_
+> @60095769616416 what is up buddy
 
-**Anirudh Joshi** · 2026-05-01 11:27:53 UTC  
-What is up buddy
+**Anirudh Joshi** · _2026-05-01 11:27:53 UTC_
+> What is up buddy
 
-**Anirudh Joshi** · 2026-05-01 11:33:32 UTC  
-@60095769616416 , who all the in this project
+**Anirudh Joshi** · _2026-05-01 11:33:32 UTC_
+> @60095769616416 , who all the in this project
 
-**Anirudh Joshi** · 2026-05-01 11:43:47 UTC  
-@60095769616416 ,
+**Anirudh Joshi** · _2026-05-01 11:43:47 UTC_
+> @60095769616416
 
-**Anirudh Joshi** · 2026-05-01 11:44:36 UTC  
-@60095769616416 search for the month of December month of
+**Anirudh Joshi** · _2026-05-01 11:44:36 UTC_
+> @60095769616416 search for the month of December month of
+
+**Anirudh Joshi** · _2026-05-01 12:06:02 UTC_
+> @60095769616416 , what are you upto
+
+**Anirudh Joshi** · _2026-05-01 12:46:41 UTC_
+> @60095769616416 , who all are in this org?
 
 ---
 
 ## Summary
 
-This is a brief WhatsApp group chat from May 1, 2026, with casual messages from Anirudh Joshi. The conversation includes:
+This is a WhatsApp group chat containing 7 messages from Anirudh Joshi on May 1, 2026. The messages appear to be directed at a bot or contact (@60095769616416) with casual greetings and questions about project members and organizational structure.
 
-- Greetings directed at a contact (@60095769616416)
-- A question about project participants
-- A request to search for December data (message appears incomplete)
-
-## Key Topics
-
-- Project team inquiry
-- December data search request
-
-## Action Items
-
-- None identified
+### Key Topics
+- Greetings and check-ins
+- Questions about project participants
+- Questions about organization members

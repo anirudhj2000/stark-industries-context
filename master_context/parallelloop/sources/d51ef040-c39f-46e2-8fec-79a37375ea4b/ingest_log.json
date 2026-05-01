@@ -1,0 +1,33 @@
+{
+  "source_id": "d51ef040-c39f-46e2-8fec-79a37375ea4b",
+  "source_type": "IMAGE",
+  "title": "Hyundai i20 Parking Photo",
+  "output_file": "structured.md",
+  "events": [
+    {
+      "timestamp": "2026-05-01T12:31:30+00:00",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "4520e772-b410-49ff-b355-54e68067ad1f.jpg",
+        "file_size_bytes": 61234,
+        "file_format": "JPG"
+      }
+    },
+    {
+      "timestamp": "2026-05-01T12:31:35+00:00",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "word_count": 42,
+        "extraction_method": "claude_vision"
+      }
+    },
+    {
+      "timestamp": "2026-05-01T12:31:36+00:00",
+      "event": "output_created",
+      "status": "success",
+      "files": ["structured.md", "ingest_log.json"]
+    }
+  ]
+}
