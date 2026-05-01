@@ -1,0 +1,19 @@
+{
+  "job_id": "a2dc0248-23d3-48a9-af9f-f263a4220615",
+  "source_id": "426fa2c8-f174-49c9-8481-92e249fd6200",
+  "source_title": "WA Mudit Mahajan \u2014 2026-05-01 11:34 .jpg",
+  "source_description": "WhatsApp attachment from 919398542806",
+  "project_id": "1e18278d-fb8e-4064-9fec-a7deb3bf97db",
+  "context_type": "org",
+  "source_type": "document",
+  "upload_type": "",
+  "participants": [],
+  "external_participants": [],
+  "number_of_participants": null,
+  "trigger": "whatsapp_attachment_download",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/context/webhooks/completion/",
+  "is_worktree_mode": false,
+  "output_base": "sources/426fa2c8-f174-49c9-8481-92e249fd6200",
+  "primary_file_path": "sources/426fa2c8-f174-49c9-8481-92e249fd6200/structured.md",
+  "s3_presigned_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/dea1c451-e90f-4718-a09a-612a60c4ccd2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T113441Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=150981ceaf9dc64c93a53d07138a8d66a7093c1646285e5c2b05037239d63ff3"
+}
