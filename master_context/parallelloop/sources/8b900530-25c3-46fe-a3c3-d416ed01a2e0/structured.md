@@ -1,82 +1,104 @@
-# WhatsApp Chat: Parallelloop Group
+---
+source_id: 8b900530-25c3-46fe-a3c3-d416ed01a2e0
+source_type: integration_whatsapp_chat
+title: WA Parallelloop
+chat_id: 120363426428364786@g.us
+date_range: 2026-05-01
+participants:
+  - Anirudh Joshi
+  - Parallelloop (Bot)
+processed_at: 2026-05-01T13:04:55+00:00
+---
 
-## Metadata
-
-| Field | Value |
-|-------|-------|
-| Source Type | WhatsApp Group Chat |
-| Chat ID | 120363426428364786@g.us |
-| Chat Name | Parallelloop |
-| Date Range | 2026-05-01 |
-| Participants | Anirudh Joshi, Parallelloop (bot) |
+# WhatsApp Chat: Parallelloop
 
 ## Summary
 
-Internal team chat in the Parallelloop group where Anirudh Joshi queries the Parallelloop bot about organizational information. The bot provides details about the company's functional structure with 3 departments (HR, Sales, Tech) and 7 teams. Currently only 1 active member (Anirudh) is registered in the system.
+This WhatsApp group chat captures interactions between Anirudh Joshi and the Parallelloop bot on May 1, 2026. The conversation covers:
 
-## Key Topics
+- **Organization structure inquiry**: Parallelloop AI has a functional structure with 3 departments (HR, Sales, Tech) and 7 teams (People Ops, Recruiting, Enterprise, SMB, Backend, Devops, Frontend)
+- **Team membership**: Currently 1 active member registered - Anirudh in the Enterprise team
+- **MCP integrations available**: Google Calendar, Excel, and WhatsApp
+- **Upcoming meetings**: PL Daily Standup on May 4th at 2:00 PM IST, followed by AMA with Prateek Jogani at 6:30 PM IST
 
-- **Organization Structure Inquiry**: Anirudh asks who is in the organization
-- **Bot Response**: Details the functional structure with departments and teams
-- **MCP Access**: Anirudh asks about available MCPs (Model Context Protocols)
+## Key Information Extracted
 
-## Organization Context Extracted
+### Organization Structure
+| Department | Teams |
+|------------|-------|
+| HR | People Ops, Recruiting |
+| Sales | Enterprise, SMB |
+| Tech | Backend, Devops, Frontend |
 
-The Parallelloop bot confirmed:
-- **Structure Type**: Functional
-- **Departments**: HR, Sales, Tech
-- **Teams**:
-  - HR: People Ops, Recruiting
-  - Sales: Enterprise, SMB
-  - Tech: Backend, Devops, Frontend
-- **Active Members**: 1 (Anirudh - Enterprise team)
+### Available Integrations
+- Google Calendar (events, calendars, free slots, attendees, permissions)
+- Excel (workbooks, worksheets, charts, tables, data operations)
+- WhatsApp (messages, images, documents, groups)
 
-## Transcript
+### Upcoming Meetings (as of May 1, 2026)
+1. **PL Daily Standup** - May 4, 2026 at 2:00 PM IST (1 hour) - Organized by Yujun
+2. **AMA: Prateek Jogani** - May 4, 2026 at 6:30 PM IST
 
-### 2026-05-01
+---
 
-**Anirudh Joshi** · 11:18 UTC
-> @60095769616416 what is up buddy
+## Full Transcript
 
-**Anirudh Joshi** · 11:27 UTC
-> What is up buddy
+**Anirudh Joshi** · _2026-05-01T11:18:04+00:00_
+@60095769616416 what is up buddy
 
-**Anirudh Joshi** · 11:33 UTC
-> @60095769616416 , who all the in this project
+**Anirudh Joshi** · _2026-05-01T11:27:53+00:00_
+What is up buddy
 
-**Anirudh Joshi** · 11:43 UTC
-> @60095769616416 ,
+**Anirudh Joshi** · _2026-05-01T11:33:32+00:00_
+@60095769616416 , who all the in this project
 
-**Anirudh Joshi** · 11:44 UTC
-> @60095769616416 search for the month of December month of
+**Anirudh Joshi** · _2026-05-01T11:43:47+00:00_
+@60095769616416  ,
 
-**Anirudh Joshi** · 12:06 UTC
-> @60095769616416 , what are you upto
+**Anirudh Joshi** · _2026-05-01T11:44:36+00:00_
+@60095769616416 search for the month of December month of
 
-**Anirudh Joshi** · 12:46 UTC
-> @60095769616416 , who all are in this org?
+**Anirudh Joshi** · _2026-05-01T12:06:02+00:00_
+@60095769616416 , what are you upto
 
-**Parallelloop** · 12:51 UTC
-> Parallelloop AI has a functional structure with 3 departments and 7 teams:
->
-> **Departments & Teams:**
-> - HR: People Ops, Recruiting
-> - Sales: Enterprise, SMB
-> - Tech: Backend, Devops, Frontend
->
-> **Team Members:**
-> Currently there's 1 active member registered:
-> - Anirudh (anirudhjoshi985@gmail.com) - part of the Enterprise team
->
-> The org structure is set up but team member data is minimal. You may want to add more people to fully populate the directory.
+**Anirudh Joshi** · _2026-05-01T12:46:41+00:00_
+@60095769616416 , who all are in this org?
 
-**Anirudh Joshi** · 12:52 UTC
-> @60095769616416 , list the mcps you have access to
+**Parallelloop** · _2026-05-01T12:51:27+00:00_
+Parallelloop AI has a functional structure with 3 departments and 7 teams:
 
-## Action Items
+**Departments & Teams:**
+• HR: People Ops, Recruiting
+• Sales: Enterprise, SMB
+• Tech: Backend, Devops, Frontend
 
-None identified.
+**Team Members:**
+Currently there's 1 active member registered:
+• Anirudh (anirudhjoshi985@gmail.com) - part of the Enterprise team
 
-## Decisions Made
+The org structure is set up but team member data is minimal. You may want to add more people to fully populate the directory.
 
-None identified.
+**Anirudh Joshi** · _2026-05-01T12:52:34+00:00_
+@60095769616416 , list the mcps you have access to
+
+**Parallelloop** · _2026-05-01T12:53:02+00:00_
+I have access to the following MCP integrations:
+
+**Google Calendar** - I can create events, list calendars, find free time slots, manage attendees, and handle calendar permissions.
+
+**Excel** - I can create and manage workbooks, worksheets, charts, tables, and perform data operations like reading/writing ranges and sorting.
+
+**WhatsApp** - I can send messages, images, documents, manage groups, and handle chat operations.
+
+Let me know if you'd like me to use any of these to help with something!
+
+**Anirudh Joshi** · _2026-05-01T12:55:11+00:00_ (edited)
+@60095769616416  Cool , when is my next meeting
+
+**Anirudh Joshi** · _2026-05-01T13:03:18+00:00_ (edited)
+@60095769616416  Cool , when is my next meeting
+
+**Parallelloop** · _2026-05-01T13:04:49+00:00_
+Your next meeting is **PL Daily Standup** on **Monday, May 4th at 2:00 PM IST** (1 hour duration). It's organized by Yujun and includes a Google Meet link: meet.google.com/spf-oudn-dno
+
+You also have **AMA: Prateek Jogani** later that same day at 6:30 PM IST.
