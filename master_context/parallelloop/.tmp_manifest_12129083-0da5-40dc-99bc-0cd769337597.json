@@ -1,6 +1,6 @@
 {
   "manifest_version": "3.1",
-  "generated_at": "2026-05-01T09:51:37.369632+00:00",
+  "generated_at": "2026-05-01T09:51:39.424376+00:00",
   "org": {
     "id": "5251447a-1eea-44f3-b728-37c07f04768a",
     "slug": "parallelloop"
@@ -70,8 +70,8 @@
         "region": "ap-southeast-1",
         "checksum": "b9932e46a7c7aa09cb5188a47f33cf7f9c01139d20c7ee1383ddf823f718a450",
         "size_bytes": 318,
-        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/d8b3324e-5e3c-4cc3-9e5b-a0a8d0f92c7e.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095137Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=d94f9eaa2fa1f008baec7c1db4b8509a6abdeadec6a2a582b943539829d917d9",
-        "download_url_expires_at": "2026-05-01T13:51:37.278139Z"
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/d8b3324e-5e3c-4cc3-9e5b-a0a8d0f92c7e.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095139Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=e570a854496840dcaf39b67b55e0cbae7ea1294acbb32bf74a85d95583978355",
+        "download_url_expires_at": "2026-05-01T13:51:39.058968Z"
       }
     },
     {
@@ -85,8 +85,8 @@
         "region": "ap-southeast-1",
         "checksum": "",
         "size_bytes": 61386,
-        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/2e81ffde-77e5-4f3a-b83f-d08140caf0fb.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095137Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=c75bc0f3f7080c5c55a903ceaf9511c9cd5ddadce429d98d457da806361f8310",
-        "download_url_expires_at": "2026-05-01T13:51:37.279383Z"
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/2e81ffde-77e5-4f3a-b83f-d08140caf0fb.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095139Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=d9fb8cdbb8273438703c60793b030953f57d857ca5a1186002d750a0e6ec711c",
+        "download_url_expires_at": "2026-05-01T13:51:39.063132Z"
       }
     },
     {
@@ -100,38 +100,38 @@
         "region": "ap-southeast-1",
         "checksum": "1fa0b21244fc459ca7be996eded149c4e55a9540cdd789e54be39b9bdab0b7a3",
         "size_bytes": 533,
-        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/fcebf5ee-13dd-4e73-8250-090ab265a79e.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095137Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=64702657b97e13d9549604710ba2a7185edfe143cb5eade518a1110757bd1d03",
-        "download_url_expires_at": "2026-05-01T13:51:37.280114Z"
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/fcebf5ee-13dd-4e73-8250-090ab265a79e.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095139Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=4b81816cf990efa54f838f63650a83739b55b027caa7e6fd4c7ed480ee9be4c2",
+        "download_url_expires_at": "2026-05-01T13:51:39.071492Z"
       }
     },
     {
       "id": "1e0291f1-6d7d-468e-8621-8f533243e313",
       "title": "Call Availability Request",
       "type": "integration_whatsapp_chat",
-      "status": "processed",
+      "status": "pending",
       "s3": {
         "bucket": "tgsd-context-upload-test",
         "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/f0f7defb-d8c9-4231-ac96-200610f923c4.md",
         "region": "ap-southeast-1",
         "checksum": "b6050e0b22985ddf9753fd46955d3bea823f2bef8aade37b204aef510504582c",
         "size_bytes": 221,
-        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/f0f7defb-d8c9-4231-ac96-200610f923c4.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095137Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=d883fdbb24e57d1ca26130add4e32676c53ec154894ec4a1082a2c1b6a656ab3",
-        "download_url_expires_at": "2026-05-01T13:51:37.288219Z"
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/f0f7defb-d8c9-4231-ac96-200610f923c4.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095139Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=828690ae043d381fbed6a5dae9f66491bba02180212b49c5e50e0a1c2dae7af2",
+        "download_url_expires_at": "2026-05-01T13:51:39.072859Z"
       }
     },
     {
       "id": "17498a0e-ef7e-428f-8f74-7d1220872ff6",
       "title": "Zoho Analytics MCP Setup Reference",
       "type": "integration_whatsapp_chat",
-      "status": "processed",
+      "status": "pending",
       "s3": {
         "bucket": "tgsd-context-upload-test",
         "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/3f2f904b-3d01-4e8d-bcb1-0fdd8221d651.md",
         "region": "ap-southeast-1",
         "checksum": "43e5fbcf6612cd0aee2f3fcb89c4ebcb63b01a99354afcc3de59657a38119ea1",
         "size_bytes": 275,
-        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/3f2f904b-3d01-4e8d-bcb1-0fdd8221d651.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095137Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=62269a84246d74be4d06dd7e7c2fbce267955add478ff02a8f64969c7083f732",
-        "download_url_expires_at": "2026-05-01T13:51:37.289800Z"
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/3f2f904b-3d01-4e8d-bcb1-0fdd8221d651.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095139Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=91288887725f6af92cbf940950c01784bc597f21730e99477058c9b8a85cc1d9",
+        "download_url_expires_at": "2026-05-01T13:51:39.073860Z"
       }
     },
     {
@@ -145,23 +145,23 @@
         "region": "ap-southeast-1",
         "checksum": "0c4df1fd310cac0f7b8eb8b9675b9e721dc87ff83f9d99b88fe84423591ead19",
         "size_bytes": 516,
-        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/e3eb1b84-b094-45c4-9024-62f6916192aa.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095137Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=29ad9d1a910b734d4e978ef52594c3bd19f0a198fc651d6c88741c1fa19e0f6f",
-        "download_url_expires_at": "2026-05-01T13:51:37.290273Z"
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/e3eb1b84-b094-45c4-9024-62f6916192aa.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095139Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=2499b2e9c0594fd6c138051c74acd0b9423d4b46975dbf369137bc2303994d7c",
+        "download_url_expires_at": "2026-05-01T13:51:39.095580Z"
       }
     },
     {
       "id": "2d80c6a6-a037-4eb7-bee9-0e511acf3cbc",
       "title": "WhatsApp Test Chat",
       "type": "integration_whatsapp_chat",
-      "status": "processed",
+      "status": "pending",
       "s3": {
         "bucket": "tgsd-context-upload-test",
         "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/c4e279a5-1d0a-4bb2-a303-b098a5e89476.md",
         "region": "ap-southeast-1",
         "checksum": "dbabb97db2645f199070bd24feb8501ebdfe1b2e8a7a1a43ba720a892ebc1549",
         "size_bytes": 346,
-        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/c4e279a5-1d0a-4bb2-a303-b098a5e89476.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095137Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=dd2a6293a6f9387e016dd33f544d36d503f078713c818a14c4fce259366b4c09",
-        "download_url_expires_at": "2026-05-01T13:51:37.290655Z"
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/c4e279a5-1d0a-4bb2-a303-b098a5e89476.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095139Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=50264d26501bf2996f54191ddaa74f5ccd8b7771d4648b254a6366faadc4c23c",
+        "download_url_expires_at": "2026-05-01T13:51:39.117543Z"
       }
     },
     {
@@ -175,8 +175,8 @@
         "region": "ap-southeast-1",
         "checksum": "68abd2e232967b3daa2d6a8f45f75aaef2cd9cf09db078d3134960af493918ec",
         "size_bytes": 741,
-        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/b727b286-8c32-4ffd-b962-a992c4d52438.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095137Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=4b7d51682ecad892d4d3f3833770708e0e6667eb56799a91c8cb85249f4acd18",
-        "download_url_expires_at": "2026-05-01T13:51:37.294762Z"
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/b727b286-8c32-4ffd-b962-a992c4d52438.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095139Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=cccc5ddc2d3d22f6e3ab78b852bc1b74daef49bf4b1347d7f8f6fdc95799f528",
+        "download_url_expires_at": "2026-05-01T13:51:39.123842Z"
       }
     },
     {
@@ -190,8 +190,8 @@
         "region": "ap-southeast-1",
         "checksum": "15d94fc436076778ddf08250a08de470d0381e510927e1ae2a8cf5cc37554008",
         "size_bytes": 1042,
-        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/a195b00c-554e-4653-b6c6-6953da6f014f.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095137Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=f84efba2ac40828f2d2b325219e9e269e452b3b0215bcc2c995b825ffa4bc8da",
-        "download_url_expires_at": "2026-05-01T13:51:37.296474Z"
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/a195b00c-554e-4653-b6c6-6953da6f014f.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095139Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=548bbd53e0e4074aee5cf799b8fbe8518f0b1fe260699c6b776e1da5a26c73a8",
+        "download_url_expires_at": "2026-05-01T13:51:39.139465Z"
       }
     },
     {
@@ -205,8 +205,8 @@
         "region": "ap-southeast-1",
         "checksum": "855b1624c4bf974b0de5fe88b5307ed0382134580d516fd0e341f979c1bfeaa1",
         "size_bytes": 84,
-        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/cc4e25a9-7d92-4b63-ac3d-b93c6fe3607d.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095137Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=2e5c134f59cb5265036317c8a8a70ed4e2332ac8b586ffbe0b9651b8a5da1e7d",
-        "download_url_expires_at": "2026-05-01T13:51:37.303054Z"
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/cc4e25a9-7d92-4b63-ac3d-b93c6fe3607d.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095139Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=6bbc163c1a06e76d3f4f65d0904c5bb7b8ff0a9c686d26f7f31d3f47ad7caa27",
+        "download_url_expires_at": "2026-05-01T13:51:39.171320Z"
       }
     }
   ],
@@ -237,7 +237,7 @@
   "access": {
     "write_paths": [
       "master_context/parallelloop/",
-      "sources/85162376-79b7-4f00-a2d2-5131b1b23a09/"
+      "sources/1e0291f1-6d7d-468e-8621-8f533243e313/"
     ],
     "read_paths": [
       "master_context/parallelloop/"
