@@ -1,0 +1,23 @@
+{
+  "job_id": "05e3cd5f-7073-402a-a821-1fcbb2ba980c",
+  "platform": "whatsapp",
+  "mention_text": "tell me a joke",
+  "chat_id": "919820713883@s.whatsapp.net",
+  "wa_message_id": "3ADFE8E18FC7F69EB7B9",
+  "sender_id": "919820713883@s.whatsapp.net",
+  "sender_name": "Siba",
+  "instance_id": "inst_f2a1c983",
+  "project_link_id": "2d407b32-d106-43b8-b138-1d7cca05bf96",
+  "project_slug": "live-artifacts-test",
+  "thread_context": [
+    {
+      "id": "3ADFE8E18FC7F69EB7B9",
+      "sender": "Siba",
+      "ts": "2026-05-01T12:53:57+00:00",
+      "is_from_me": false,
+      "text": "tell me a joke"
+    }
+  ],
+  "session_key": "whatsapp_chat_inst_f2a1c983_919820713883@s.whatsapp.net",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/integrations/whatsapp-mcp/bot-mention-webhook/"
+}
