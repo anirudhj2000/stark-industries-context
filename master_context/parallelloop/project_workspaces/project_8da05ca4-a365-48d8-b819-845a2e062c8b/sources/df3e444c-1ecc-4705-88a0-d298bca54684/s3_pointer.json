@@ -2,7 +2,7 @@
   "bucket": "tgsd-context-upload-test",
   "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_8da05ca4-a365-48d8-b819-845a2e062c8b/raw/integration_whatsapp_chat/5cc78941-58b2-4e80-bfc2-2434e24c6a15.md",
   "region": "ap-southeast-1",
-  "checksum": "d9c5e2199b3b7f66b75a545d74ac4b44331877018797771085b2e92437fd9fb1",
-  "size_bytes": 1109,
-  "updated_at": "2026-05-01T13:07:56.644741Z"
+  "checksum": "1d855ac25304be0b4a397c09a3eb33245e7be501b70a430a22f3907a7a427e4e",
+  "size_bytes": 1208,
+  "updated_at": "2026-05-01T13:11:27.975343Z"
 }
