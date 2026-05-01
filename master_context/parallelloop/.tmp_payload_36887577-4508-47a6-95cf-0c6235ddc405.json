@@ -1,0 +1,107 @@
+{
+  "job_id": "36887577-4508-47a6-95cf-0c6235ddc405",
+  "platform": "whatsapp",
+  "mention_text": "This message was sent by the bot itself and does not require a response. The previous message already answered the user's question about available skills.",
+  "chat_id": "919398542806@s.whatsapp.net",
+  "wa_message_id": "3EB00144264C1316A73E4A",
+  "sender_id": "919398542806@s.whatsapp.net",
+  "sender_name": "Anirudh Joshi",
+  "instance_id": "inst_f2a1c983",
+  "project_link_id": "2d407b32-d106-43b8-b138-1d7cca05bf96",
+  "project_slug": "live-artifacts-test",
+  "thread_context": [
+    {
+      "id": "AC5D089506770719783CA8D601DF2CAA",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-04-30T09:11:37+00:00",
+      "is_from_me": false,
+      "text": "Yo yo yo"
+    },
+    {
+      "id": "AC21551B39110835B3ACB5919847487B",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-04-30T11:08:09+00:00",
+      "is_from_me": false,
+      "text": "What is up"
+    },
+    {
+      "id": "AC27293CBBFC874DE6339F6E4048552B",
+      "sender": "Parallelloop",
+      "ts": "2026-04-30T12:46:02+00:00",
+      "is_from_me": true,
+      "text": "Yoyoyoyoyot"
+    },
+    {
+      "id": "AC3FB3EF61BAF25458D4DE4BC2999351",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-04-30T12:48:01+00:00",
+      "is_from_me": false,
+      "text": ""
+    },
+    {
+      "id": "AC2BDC314F712BF13B871DF1925653B2",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T02:47:47+00:00",
+      "is_from_me": false,
+      "text": "Hi testing"
+    },
+    {
+      "id": "ACAF8C9CE3DF3AB18EE9452C1AFE631B",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T02:47:57+00:00",
+      "is_from_me": false,
+      "text": "Check the projects that you have access to"
+    },
+    {
+      "id": "AC32012808828B902044C017C5344C01",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T02:55:01+00:00",
+      "is_from_me": false,
+      "text": "Hi"
+    },
+    {
+      "id": "AC46903702A66920FED901C565548A14",
+      "sender": "Parallelloop",
+      "ts": "2026-05-01T07:46:21+00:00",
+      "is_from_me": true,
+      "text": "Hi"
+    },
+    {
+      "id": "ACDC80DC4CE6CA8FBB3AF7665AFBDCF8",
+      "sender": "Parallelloop",
+      "ts": "2026-05-01T08:06:04+00:00",
+      "is_from_me": true,
+      "text": "Hi"
+    },
+    {
+      "id": "ACF9BA33B18CE665D2BEF48ED434E01D",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T09:36:20+00:00",
+      "is_from_me": false,
+      "text": "Hi"
+    },
+    {
+      "id": "AC05903C133BDDC4DCB2E3A5DEF121B2",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T09:40:56+00:00",
+      "is_from_me": false,
+      "text": "Hi , what is up , do you have access to any skills?"
+    },
+    {
+      "id": "AC3AFC17898E900A0CFBD2D73D98CC27",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T09:57:25+00:00",
+      "is_from_me": false,
+      "text": "Hi , what is up , do you have access to any skills?"
+    },
+    {
+      "id": "3EB00144264C1316A73E4A",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T09:59:03+00:00",
+      "is_from_me": false,
+      "text": "This message was sent by the bot itself and does not require a response. The previous message already answered the user's question about available skills."
+    }
+  ],
+  "session_key": "whatsapp_chat_inst_f2a1c983_919398542806@s.whatsapp.net",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/integrations/whatsapp-mcp/bot-mention-webhook/"
+}
