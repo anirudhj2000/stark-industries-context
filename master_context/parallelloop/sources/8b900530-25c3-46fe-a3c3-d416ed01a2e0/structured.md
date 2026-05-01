@@ -7,7 +7,7 @@ date_range: 2026-05-01
 participants:
   - Anirudh Joshi
   - Parallelloop (Bot)
-processed_at: 2026-05-01T13:04:55+00:00
+processed_at: 2026-05-01T13:07:56+00:00
 ---
 
 # WhatsApp Chat: Parallelloop
@@ -105,3 +105,15 @@ Let me know if you'd like me to use any of these to help with something!
 Your next meeting is **PL Daily Standup** on **Monday, May 4th at 2:00 PM IST** (1 hour duration). It's organized by Yujun and includes a Google Meet link: meet.google.com/spf-oudn-dno
 
 You also have **AMA: Prateek Jogani** later that same day at 6:30 PM IST.
+
+**Anirudh Joshi** · _2026-05-01T13:06:24+00:00_
+@60095769616416 , create a metting with siba@parallelloop.ai for today at 7pm
+
+**Parallelloop** · _2026-05-01T13:07:04+00:00_
+Done! I've created your meeting with Siba for today at 7:00 PM IST (May 1st). Here are the details:
+
+- **Meeting with Siba**
+- 7:00 PM - 8:00 PM IST
+- Google Meet: https://meet.google.com/ypu-kcyi-yvd
+
+Calendar invites have been sent to siba@parallelloop.ai.
