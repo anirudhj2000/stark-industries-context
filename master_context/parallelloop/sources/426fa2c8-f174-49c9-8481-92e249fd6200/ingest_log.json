@@ -1,0 +1,33 @@
+{
+  "source_id": "426fa2c8-f174-49c9-8481-92e249fd6200",
+  "source_type": "IMAGE",
+  "title": "Commercial Model Pricing Structure",
+  "output_file": "structured.md",
+  "events": [
+    {
+      "timestamp": "2026-05-01T11:34:50+00:00",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "dea1c451-e90f-4718-a09a-612a60c4ccd2.jpg",
+        "file_size_bytes": 65302,
+        "file_format": "JPG"
+      }
+    },
+    {
+      "timestamp": "2026-05-01T11:35:00+00:00",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "word_count": 85,
+        "extraction_method": "claude_vision"
+      }
+    },
+    {
+      "timestamp": "2026-05-01T11:35:00+00:00",
+      "event": "output_created",
+      "status": "success",
+      "files": ["structured.md", "ingest_log.json"]
+    }
+  ]
+}
