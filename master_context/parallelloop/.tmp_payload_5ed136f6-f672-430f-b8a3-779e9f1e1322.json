@@ -1,0 +1,19 @@
+{
+  "job_id": "5ed136f6-f672-430f-b8a3-779e9f1e1322",
+  "source_id": "aac58b5b-b878-4fe5-8ee1-0474fe17eb41",
+  "source_title": "WA Siba",
+  "source_description": "WhatsApp chat captured from 19406025549",
+  "project_id": "8da05ca4-a365-48d8-b819-845a2e062c8b",
+  "context_type": "project",
+  "source_type": "integration_whatsapp_chat",
+  "upload_type": "",
+  "participants": [],
+  "external_participants": [],
+  "number_of_participants": null,
+  "trigger": "whatsapp_chat_sync",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/context/webhooks/completion/",
+  "is_worktree_mode": false,
+  "output_base": "project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/sources/aac58b5b-b878-4fe5-8ee1-0474fe17eb41",
+  "primary_file_path": "project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/sources/aac58b5b-b878-4fe5-8ee1-0474fe17eb41/structured.md",
+  "s3_presigned_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_8da05ca4-a365-48d8-b819-845a2e062c8b/raw/integration_whatsapp_chat/53d7ad1d-15c7-47e7-b875-491a284ed409.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T131158Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=8217098156b7d7595a4e96b44553c75edccee92a1a4b3c515926897641e8b496"
+}
