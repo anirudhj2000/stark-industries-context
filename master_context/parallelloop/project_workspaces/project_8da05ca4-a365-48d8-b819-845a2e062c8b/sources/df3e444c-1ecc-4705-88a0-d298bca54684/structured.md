@@ -30,3 +30,6 @@ What is up buddy
 
 **Anirudh Joshi** · _2026-05-01T13:03:18+00:00_ (edited)
 @60095769616416  Cool , when is my next meeting
+
+**Anirudh Joshi** · _2026-05-01T13:06:24+00:00_
+@60095769616416 , create a metting with siba@parallelloop.ai for today at 7pm

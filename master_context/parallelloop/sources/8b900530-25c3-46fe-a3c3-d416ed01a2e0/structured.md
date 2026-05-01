@@ -38,6 +38,9 @@ This WhatsApp group chat captures interactions between Anirudh Joshi and the Par
 ### Upcoming Meetings (as of May 1, 2026)
 1. **PL Daily Standup** - May 4, 2026 at 2:00 PM IST (1 hour) - Organized by Yujun
 2. **AMA: Prateek Jogani** - May 4, 2026 at 6:30 PM IST
+3. **Meeting with Siba** - May 1, 2026 at 7:00 PM IST (created during chat)
+   - Attendee: siba@parallelloop.ai
+   - Google Meet: https://meet.google.com/ypu-kcyi-yvd
 
 ---
 
