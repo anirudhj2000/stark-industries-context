@@ -1,30 +1,45 @@
 # WhatsApp Chat: Aaryan Ahuja
 
-**Source ID:** 916f9562-70cd-4381-9102-1bcad84d7e9a  
-**Source Type:** WhatsApp Chat  
-**Date Range:** April 30, 2026 (10:00 AM - 3:29 PM UTC)  
-**Participants:** Aaryan Ahuja, Anirudh Joshi
-
----
+## Metadata
+- **Source**: WhatsApp Chat
+- **Chat ID**: 919398542806
+- **Date Range**: 2026-04-30
+- **Participants**: 447585270086@s.whatsapp.net, Aaryan Ahuja, Anirudh Joshi
 
 ## Summary
 
-A conversation between Aaryan Ahuja and the user regarding technical requirements and AWS credits.
+This conversation covers two main topics:
+1. **Zoho Analytics** - Inquiry about requirements for Zoho Analytics setup
+2. **AWS Credits** - Aaryan Ahuja requesting a discussion about AWS credits update
+
+## Transcript
+
+### 2026-04-30
+
+**447585270086@s.whatsapp.net** (10:00 AM UTC)
+> Hi
+
+**447585270086@s.whatsapp.net** (10:00 AM UTC)
+> What will we need for zoho Analytics
+
+**me** (10:19 AM UTC)
+> checking , will confirm
+
+**Aaryan Ahuja** (12:58 PM UTC)
+> Hi have some update on AWS
+
+**Aaryan Ahuja** (12:58 PM UTC)
+> When can I connect with you on the credits
+
+**Anirudh Joshi** (03:29 PM UTC)
+> [No message content]
 
 ## Key Topics
 
-### Zoho Analytics Requirements
-- Aaryan inquired about requirements for Zoho Analytics
-- The user was checking and would provide confirmation
+- Zoho Analytics requirements
+- AWS credits discussion
 
-### AWS Credits Discussion
-- Aaryan mentioned having an update on AWS
-- Requested a meeting to discuss credits-related matters
+## Action Items
 
-## Participants
-- **Aaryan Ahuja** - Primary contact, inquiring about requirements and AWS updates
-- **Anirudh Joshi** - Appears at the end of the conversation
-
----
-
-*Extracted from WhatsApp integration on 2026-05-01*
+- [ ] Confirm Zoho Analytics requirements (assigned to: message sender)
+- [ ] Schedule call to discuss AWS credits (pending between Aaryan Ahuja and recipient)
