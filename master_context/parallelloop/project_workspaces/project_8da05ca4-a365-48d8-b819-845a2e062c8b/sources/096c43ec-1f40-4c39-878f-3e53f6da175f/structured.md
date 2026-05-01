@@ -1,30 +1,48 @@
 # WhatsApp Chat: Anirudh Joshi
 
-**Source Type:** WhatsApp Chat  
-**Date Range:** April 30 - May 1, 2026  
-**Participants:** Anirudh Joshi, Parallelloop
+## Metadata
+- **Source Type**: WhatsApp Chat
+- **Chat ID**: 919398542806@s.whatsapp.net
+- **Date Range**: April 30, 2026 - May 1, 2026
+- **Participants**: Anirudh Joshi, Parallelloop, 919398542806@s.whatsapp.net
 
----
+## Conversation
 
-## Conversation Summary
+### April 30, 2026
 
-This is an informal WhatsApp conversation thread between Anirudh Joshi and Parallelloop containing casual greetings and brief testing messages.
+**919398542806@s.whatsapp.net** (09:11 UTC)
+> Yo yo yo
 
-## Key Messages
+**919398542806@s.whatsapp.net** (11:08 UTC)
+> What is up
 
-| Timestamp | Sender | Message |
-|-----------|--------|---------|
-| 2026-04-30 | Anirudh Joshi | "Yo yo yo" |
-| 2026-04-30 | Anirudh Joshi | "What is up" |
-| 2026-04-30 | Parallelloop | "Yoyoyoyoyot" |
-| 2026-04-30 | Anirudh Joshi | "Check the projects that you have access to" |
-| 2026-05-01 | - | "Hi" messages exchanged |
-| 2026-05-01T02:48:01+00:00 | Anirudh Joshi | (empty message) |
+**Parallelloop** (12:46 UTC)
+> Yoyoyoyoyot
 
-## Context
+**Anirudh Joshi** (12:48 UTC)
+> [empty message]
 
-The conversation appears to be informal testing/coordination messages with one actionable instruction regarding checking project access.
+### May 1, 2026
 
----
+**Anirudh Joshi** (02:47 UTC)
+> Hi testing
 
-*Extracted from WhatsApp integration on 2026-05-01*
+**Anirudh Joshi** (02:47 UTC)
+> Check the projects that you have access to
+
+**Anirudh Joshi** (02:55 UTC)
+> Hi
+
+**Parallelloop** (07:46 UTC)
+> Hi
+
+**Parallelloop** (08:06 UTC)
+> Hi
+
+## Summary
+
+Brief informal chat between Anirudh Joshi and Parallelloop with casual greetings. Key action item mentioned: checking project access permissions.
+
+## Key Topics
+- Greetings and casual conversation
+- Project access verification request
