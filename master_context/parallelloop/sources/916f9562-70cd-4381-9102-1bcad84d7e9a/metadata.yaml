@@ -1,0 +1,15 @@
+source_id: 916f9562-70cd-4381-9102-1bcad84d7e9a
+source_type: integration_whatsapp_chat
+title: WA Aaryan Ahuja
+extracted_at: "2026-05-01T09:51:37Z"
+date_range:
+  start: "2026-04-30T10:00:00Z"
+  end: "2026-04-30T15:29:00Z"
+participants:
+  - name: Aaryan Ahuja
+    role: contact
+  - name: Anirudh Joshi
+    role: user
+topics:
+  - Zoho Analytics requirements
+  - AWS credits discussion
