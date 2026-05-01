@@ -1,0 +1,22 @@
+source_id: ae4e6dda-1128-4c46-8032-582cc8caa746
+source_type: integration_whatsapp_chat
+title: "WhatsApp Chat: Nikhil Gogia"
+description: WhatsApp chat captured from 919398542806
+chat_id: "120363039418515225@g.us"
+captured_from: "919398542806"
+processed_at: "2026-05-01T09:51:37+00:00"
+date_range:
+  start: "2026-05-01T04:15:43+00:00"
+  end: "2026-05-01T07:16:08+00:00"
+participants:
+  - name: Ipshit Singh
+    message_count: 1
+  - name: Doleshwar
+    message_count: 3
+  - name: Nikhil Gogia
+    message_count: 1
+metrics:
+  total_messages: 5
+  participant_count: 3
+files:
+  - structured.md
