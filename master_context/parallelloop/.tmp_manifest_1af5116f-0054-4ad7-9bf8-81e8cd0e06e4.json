@@ -1,0 +1,44 @@
+{
+  "manifest_version": "3.0",
+  "generated_at": "2026-05-01T10:04:03.376360+00:00",
+  "org": {
+    "id": "5251447a-1eea-44f3-b728-37c07f04768a",
+    "slug": "parallelloop"
+  },
+  "project": {
+    "id": "f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd",
+    "slug": "sample-porj-2"
+  },
+  "workspace": {
+    "root": "master_context/parallelloop",
+    "read_paths": [
+      "master_context/parallelloop/.claude/",
+      "master_context/parallelloop/entities/",
+      "master_context/parallelloop/sources/",
+      "master_context/parallelloop/artifacts/",
+      "master_context/parallelloop/integrations/",
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/"
+    ],
+    "write_paths": [
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/",
+      "master_context/parallelloop/chat_uploads/f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/"
+    ],
+    "scratch_paths": [
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/scratch/"
+    ]
+  },
+  "access": {
+    "write_paths": [
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/",
+      "master_context/parallelloop/chat_uploads/f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/"
+    ],
+    "read_paths": [
+      "master_context/parallelloop/.claude/",
+      "master_context/parallelloop/entities/",
+      "master_context/parallelloop/sources/",
+      "master_context/parallelloop/artifacts/",
+      "master_context/parallelloop/integrations/",
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/"
+    ]
+  }
+}
