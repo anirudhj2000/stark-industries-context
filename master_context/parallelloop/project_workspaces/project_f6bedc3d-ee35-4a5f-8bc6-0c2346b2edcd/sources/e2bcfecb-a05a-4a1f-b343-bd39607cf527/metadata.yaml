@@ -1,0 +1,14 @@
+source_id: e2bcfecb-a05a-4a1f-b343-bd39607cf527
+source_type: integration_whatsapp_chat
+title: "WhatsApp Chat: 447585270086"
+description: WhatsApp chat captured from 919398542806
+extracted_at: "2026-05-01T09:51:37Z"
+chat_id: 447585270086@s.whatsapp.net
+participants:
+  - name: Anirudh Joshi
+message_count: 1
+date_range:
+  start: "2026-04-30T15:29:47+00:00"
+  end: "2026-04-30T15:29:47+00:00"
+topics: []
+action_items: []
