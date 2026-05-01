@@ -1,45 +1,38 @@
-# Zoho Analytics Requirements Inquiry
+# WA Aaryan Ahuja
 
 **Source Type:** WhatsApp Chat  
-**Chat ID:** 447585270086@s.whatsapp.net  
-**Contact:** Aaryan Ahuja  
-**Date:** 2026-04-30  
+**Captured From:** 919398542806  
+**Processed:** 2026-04-30
 
 ---
 
 ## Summary
 
-A brief WhatsApp conversation where Aaryan Ahuja inquired about requirements for Zoho Analytics integration, followed by a later update regarding AWS and a request to discuss credits timing.
+This is a chat thread between Aaryan Ahuja and another participant discussing technical matters.
 
 ## Key Topics
 
-- **Zoho Analytics** - Requirements inquiry for implementation
-- **AWS** - Update mentioned, credits discussion requested
+- **Zoho Analytics** - Aaryan inquired about requirements for Zoho Analytics setup
+- **AWS Credits** - Aaryan mentioned having an update on AWS and requested a connection regarding credits
 
-## Conversation Transcript
+## Conversation Highlights
 
-| Timestamp | Participant | Message |
-|-----------|-------------|---------|
-| 2026-04-30 10:00:17 UTC | Aaryan Ahuja | Hi |
-| 2026-04-30 10:00:23 UTC | Aaryan Ahuja | What will we need for zoho Analytics |
-| 2026-04-30 10:19:21 UTC | (internal) | checking , will confirm |
-| 2026-04-30 12:58:26 UTC | Aaryan Ahuja | Hi have some update on AWS |
-| 2026-04-30 12:58:34 UTC | Aaryan Ahuja | When can I connect with you on the credits |
+1. **Zoho Analytics Inquiry**: Aaryan asked "What will we need for Zoho Analytics," with the other participant responding they are "checking, will confirm."
+
+2. **AWS Update**: Aaryan shared that he has "some update on AWS" and requested a connection regarding credits.
 
 ## Participants
 
-- **Aaryan Ahuja** (447585270086@s.whatsapp.net) - External contact
-- **Internal team member** - Responded to inquiry
+- Aaryan Ahuja
+- Anirudh Joshi
 
-## Action Items
+## Context
 
-1. Confirm Zoho Analytics requirements (pending)
-2. Schedule call with Aaryan Ahuja to discuss AWS credits
+The conversation appears to be work-related, focusing on:
+- Analytics tools (Zoho Analytics)
+- Cloud services (AWS)
+- Pending follow-ups on requirements and credits
 
-## Context Notes
+---
 
-This appears to be an ongoing conversation about two topics:
-1. Zoho Analytics integration needs
-2. AWS credits coordination
-
-The conversation is brief and awaiting follow-up on both topics.
+*Extracted from WhatsApp integration*

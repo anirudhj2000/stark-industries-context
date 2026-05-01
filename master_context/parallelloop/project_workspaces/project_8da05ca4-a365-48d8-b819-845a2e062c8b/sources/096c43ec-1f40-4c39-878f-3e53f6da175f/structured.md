@@ -1,30 +1,30 @@
 # WhatsApp Chat: Anirudh Joshi
 
 **Source Type:** WhatsApp Chat  
-**Chat ID:** 919398542806@s.whatsapp.net  
-**Date Range:** 2026-04-30  
-**Participants:** 919398542806, Parallelloop, Anirudh Joshi
+**Date Range:** April 30 - May 1, 2026  
+**Participants:** Anirudh Joshi, Parallelloop
 
 ---
 
-## Conversation
+## Conversation Summary
 
-**919398542806@s.whatsapp.net** · _2026-04-30T09:11:37+00:00_
-> Yo yo yo
+This is an informal WhatsApp conversation thread between Anirudh Joshi and Parallelloop containing casual greetings and brief testing messages.
 
-**919398542806@s.whatsapp.net** · _2026-04-30T11:08:09+00:00_
-> What is up
+## Key Messages
 
-**Parallelloop** · _2026-04-30T12:46:02+00:00_
-> Yoyoyoyoyot
+| Timestamp | Sender | Message |
+|-----------|--------|---------|
+| 2026-04-30 | Anirudh Joshi | "Yo yo yo" |
+| 2026-04-30 | Anirudh Joshi | "What is up" |
+| 2026-04-30 | Parallelloop | "Yoyoyoyoyot" |
+| 2026-04-30 | Anirudh Joshi | "Check the projects that you have access to" |
+| 2026-05-01 | - | "Hi" messages exchanged |
+| 2026-05-01T02:48:01+00:00 | Anirudh Joshi | (empty message) |
 
-**Anirudh Joshi** · _2026-04-30T12:48:01+00:00_
+## Context
+
+The conversation appears to be informal testing/coordination messages with one actionable instruction regarding checking project access.
 
 ---
 
-## Summary
-
-Brief informal chat exchange on April 30, 2026 with casual greetings between participants.
-
-**Message Count:** 4  
-**Duration:** ~3.5 hours (09:11 - 12:48 UTC)
+*Extracted from WhatsApp integration on 2026-05-01*
