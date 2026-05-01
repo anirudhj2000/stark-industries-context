@@ -1,0 +1,336 @@
+{
+  "manifest_version": "3.1",
+  "generated_at": "2026-05-01T13:07:56.235953+00:00",
+  "org": {
+    "id": "5251447a-1eea-44f3-b728-37c07f04768a",
+    "slug": "parallelloop"
+  },
+  "project": {
+    "id": "1e18278d-fb8e-4064-9fec-a7deb3bf97db",
+    "slug": "organization-context",
+    "name": "Organization Context",
+    "type": "ORGANIZATION_ONBOARDING",
+    "is_default": true
+  },
+  "user": {
+    "id": "2a1f5178-d275-4c20-a853-26f01fcf114f",
+    "email": "anirudh@parallelloop.ai",
+    "permissions": {
+      "user_id": "2a1f5178-d275-4c20-a853-26f01fcf114f",
+      "org_role": "ADMIN",
+      "readable_paths": [
+        ".claude/commands/",
+        ".claude/skills/",
+        "chat_uploads/1e18278d-fb8e-4064-9fec-a7deb3bf97db/",
+        "entities/organization/",
+        "entities/person/",
+        "entities/schemas/",
+        "integrations/",
+        "project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+        "project_workspaces/project_51d60ca6-f527-46e6-a61d-0a9bc10ed7e1/",
+        "project_workspaces/project_6308ae87-74c5-45fa-928c-e0d8011e9b4c/",
+        "project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/",
+        "project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/"
+      ],
+      "writable_paths": [
+        "chat_uploads/1e18278d-fb8e-4064-9fec-a7deb3bf97db/",
+        "entities/",
+        "integrations/",
+        "project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/"
+      ],
+      "blocked_paths": [
+        "**/*.key",
+        "**/*.pem",
+        "**/.env",
+        "**/.git/**",
+        "**/credentials/**",
+        "**/secrets/**",
+        "project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/context_index/**"
+      ]
+    }
+  },
+  "team_members": [
+    {
+      "user_id": "2a1f5178-d275-4c20-a853-26f01fcf114f",
+      "email": "anirudh@parallelloop.ai",
+      "name": "Anirudh Joshi",
+      "availability": "active",
+      "project_role": "PROJECT_LEAD"
+    }
+  ],
+  "sources": [
+    {
+      "id": "d51ef040-c39f-46e2-8fec-79a37375ea4b",
+      "title": "WA GKNK Chowdary \u2014 2026-05-01 12:31 .jpg",
+      "type": "document",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/4520e772-b410-49ff-b355-54e68067ad1f.jpg",
+        "region": "ap-southeast-1",
+        "checksum": "",
+        "size_bytes": 61234,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/4520e772-b410-49ff-b355-54e68067ad1f.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=1bc683f75ad2e72a51b3897235afedc64fe359604d343396f23ff1c025044250",
+        "download_url_expires_at": "2026-05-01T17:07:56.224147Z"
+      }
+    },
+    {
+      "id": "eec5a857-4e64-4642-8c64-4d676c6d2dff",
+      "title": "WA GKNK Chowdary",
+      "type": "integration_whatsapp_chat",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/96d6a1f8-8341-4490-bcf3-42181c5fb7e2.md",
+        "region": "ap-southeast-1",
+        "checksum": "023769ee0547011fa2058d359bea6c6d1670716e5cc9770fe11f1eb59137bfd7",
+        "size_bytes": 1139,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/96d6a1f8-8341-4490-bcf3-42181c5fb7e2.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=2798685631db11c773f3814b2cb297f73df9b5ad10af9e7aa876c013d7b6e8d0",
+        "download_url_expires_at": "2026-05-01T17:07:56.224966Z"
+      }
+    },
+    {
+      "id": "426fa2c8-f174-49c9-8481-92e249fd6200",
+      "title": "WA Mudit Mahajan \u2014 2026-05-01 11:34 .jpg",
+      "type": "document",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/dea1c451-e90f-4718-a09a-612a60c4ccd2.jpg",
+        "region": "ap-southeast-1",
+        "checksum": "",
+        "size_bytes": 65302,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/dea1c451-e90f-4718-a09a-612a60c4ccd2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=3ae63a06d26de3f4ca876dc027493f74e648ce4c4a82c48d1cd09e09a8c65648",
+        "download_url_expires_at": "2026-05-01T17:07:56.225739Z"
+      }
+    },
+    {
+      "id": "8b900530-25c3-46fe-a3c3-d416ed01a2e0",
+      "title": "WA Parallelloop",
+      "type": "integration_whatsapp_chat",
+      "status": "pending",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/52c92315-e8eb-4d21-a5e2-821f5dfdc88d.md",
+        "region": "ap-southeast-1",
+        "checksum": "e7a452888f717cc051e29b57397ff0642997e1f12b622a7f5f374e96eeb35661",
+        "size_bytes": 2809,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/52c92315-e8eb-4d21-a5e2-821f5dfdc88d.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=5212c110e43b5da25f49281c5caa3af89dac9a148917567252a8f4f525815992",
+        "download_url_expires_at": "2026-05-01T17:07:56.225892Z"
+      }
+    },
+    {
+      "id": "2eb60744-c5a7-421b-a826-a75faadd7843",
+      "title": "WA Parallelloop \u2014 2026-05-01 11:10",
+      "type": "audio",
+      "status": "error",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/9dbedb84-af95-436e-9b74-1acfa87053d6",
+        "region": "ap-southeast-1",
+        "checksum": "",
+        "size_bytes": 512,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/9dbedb84-af95-436e-9b74-1acfa87053d6?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=2913d8f612b00425f63dcbe6a2297098f777a61500e33d9eca2e544e572ffcf2",
+        "download_url_expires_at": "2026-05-01T17:07:56.226056Z"
+      }
+    },
+    {
+      "id": "b4f1d60f-3299-45d7-a404-8d78387e59b0",
+      "title": "WA Parallelloop \u2014 2026-05-01 11:01",
+      "type": "audio",
+      "status": "error",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/d6583b00-f2df-47e9-8210-3275354ae12d",
+        "region": "ap-southeast-1",
+        "checksum": "",
+        "size_bytes": 8805,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/d6583b00-f2df-47e9-8210-3275354ae12d?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=360d65d791a2599f8983ab2b0287466ad8845f657611bbb75e8c91da3588b18e",
+        "download_url_expires_at": "2026-05-01T17:07:56.226246Z"
+      }
+    },
+    {
+      "id": "68814a48-4ca3-4471-9412-29c7dfe1eec9",
+      "title": "WA Nikhil Gogia",
+      "type": "integration_whatsapp_chat",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/d8b3324e-5e3c-4cc3-9e5b-a0a8d0f92c7e.md",
+        "region": "ap-southeast-1",
+        "checksum": "b9932e46a7c7aa09cb5188a47f33cf7f9c01139d20c7ee1383ddf823f718a450",
+        "size_bytes": 318,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/d8b3324e-5e3c-4cc3-9e5b-a0a8d0f92c7e.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=0345d806e4f9b18a19e6ef3e6141244936e470816e1f1c29a4aa49ca988b1730",
+        "download_url_expires_at": "2026-05-01T17:07:56.226397Z"
+      }
+    },
+    {
+      "id": "da19721c-c364-4bac-a0ed-5ed131d1e223",
+      "title": "WA 19406025549@s.whatsapp.net \u2014 2026-04-30 12:58 .jpg",
+      "type": "document",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/2e81ffde-77e5-4f3a-b83f-d08140caf0fb.jpg",
+        "region": "ap-southeast-1",
+        "checksum": "",
+        "size_bytes": 61386,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_attachment/2e81ffde-77e5-4f3a-b83f-d08140caf0fb.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=b58da60d4333c70cc2a692ed730d0c8363fd4534131d61fdce85abab84ad7bee",
+        "download_url_expires_at": "2026-05-01T17:07:56.226587Z"
+      }
+    },
+    {
+      "id": "85162376-79b7-4f00-a2d2-5131b1b23a09",
+      "title": "WA Harshit",
+      "type": "integration_whatsapp_chat",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/fcebf5ee-13dd-4e73-8250-090ab265a79e.md",
+        "region": "ap-southeast-1",
+        "checksum": "1fa0b21244fc459ca7be996eded149c4e55a9540cdd789e54be39b9bdab0b7a3",
+        "size_bytes": 533,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/fcebf5ee-13dd-4e73-8250-090ab265a79e.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=209daee9fd592b2035bef8693d6c97048f1109536ad6961b87bcf9ca4194896b",
+        "download_url_expires_at": "2026-05-01T17:07:56.226754Z"
+      }
+    },
+    {
+      "id": "1e0291f1-6d7d-468e-8621-8f533243e313",
+      "title": "Call Availability Request",
+      "type": "integration_whatsapp_chat",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/f0f7defb-d8c9-4231-ac96-200610f923c4.md",
+        "region": "ap-southeast-1",
+        "checksum": "b6050e0b22985ddf9753fd46955d3bea823f2bef8aade37b204aef510504582c",
+        "size_bytes": 221,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/f0f7defb-d8c9-4231-ac96-200610f923c4.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=d7a3224eab9b5720e49f88141153f0d2ea4b588d460a69ac27ed1bca011158c3",
+        "download_url_expires_at": "2026-05-01T17:07:56.226920Z"
+      }
+    },
+    {
+      "id": "17498a0e-ef7e-428f-8f74-7d1220872ff6",
+      "title": "Zoho Analytics MCP Setup Reference",
+      "type": "integration_whatsapp_chat",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/3f2f904b-3d01-4e8d-bcb1-0fdd8221d651.md",
+        "region": "ap-southeast-1",
+        "checksum": "43e5fbcf6612cd0aee2f3fcb89c4ebcb63b01a99354afcc3de59657a38119ea1",
+        "size_bytes": 275,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/3f2f904b-3d01-4e8d-bcb1-0fdd8221d651.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=51d5d18d9be2ff661e813a81e98bf4027a9893da186bd7986fbf6a246cdea98a",
+        "download_url_expires_at": "2026-05-01T17:07:56.227163Z"
+      }
+    },
+    {
+      "id": "916f9562-70cd-4381-9102-1bcad84d7e9a",
+      "title": "WA Aaryan Ahuja",
+      "type": "integration_whatsapp_chat",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/e3eb1b84-b094-45c4-9024-62f6916192aa.md",
+        "region": "ap-southeast-1",
+        "checksum": "0c4df1fd310cac0f7b8eb8b9675b9e721dc87ff83f9d99b88fe84423591ead19",
+        "size_bytes": 516,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/e3eb1b84-b094-45c4-9024-62f6916192aa.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=6fd41afaf99ea879ce795e21a524fd1ef7b4ad3ddb5b4960eb4c22f1fab133dc",
+        "download_url_expires_at": "2026-05-01T17:07:56.227314Z"
+      }
+    },
+    {
+      "id": "2d80c6a6-a037-4eb7-bee9-0e511acf3cbc",
+      "title": "WA Mudit Mahajan",
+      "type": "integration_whatsapp_chat",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/c4e279a5-1d0a-4bb2-a303-b098a5e89476.md",
+        "region": "ap-southeast-1",
+        "checksum": "7af71281ee8a93f90a1dcdf6f673be2c57a0aff2a33d2bac3f564d771640e77d",
+        "size_bytes": 382,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/c4e279a5-1d0a-4bb2-a303-b098a5e89476.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=d4835d17611076b8d4077a6e5ee0609e9b62bb82f2c9ceee07734c4e53d8949a",
+        "download_url_expires_at": "2026-05-01T17:07:56.227442Z"
+      }
+    },
+    {
+      "id": "4360f9ba-251f-4521-8d9f-f65a1a726543",
+      "title": "WA Parallelloop",
+      "type": "integration_whatsapp_chat",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/b727b286-8c32-4ffd-b962-a992c4d52438.md",
+        "region": "ap-southeast-1",
+        "checksum": "71d39e764eee1a3e686d9205effff55ac4cd6b9107aee426c1989a3278619ca0",
+        "size_bytes": 4467,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/b727b286-8c32-4ffd-b962-a992c4d52438.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=c54cf10e178e2be9be14279d938b85ea299051ee875c0fa61b51b05a41c756a7",
+        "download_url_expires_at": "2026-05-01T17:07:56.227988Z"
+      }
+    },
+    {
+      "id": "694cbdd2-062c-4c2a-9258-8d85d28315c5",
+      "title": "WhatsApp Chat 919398542806",
+      "type": "integration_whatsapp_chat",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/a195b00c-554e-4653-b6c6-6953da6f014f.md",
+        "region": "ap-southeast-1",
+        "checksum": "15d94fc436076778ddf08250a08de470d0381e510927e1ae2a8cf5cc37554008",
+        "size_bytes": 1042,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/a195b00c-554e-4653-b6c6-6953da6f014f.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=6ff12a59221d547d9ba6c214e3722e4cc400918becc373638a20df5c3ac6cd1a",
+        "download_url_expires_at": "2026-05-01T17:07:56.228145Z"
+      }
+    },
+    {
+      "id": "a0c44db4-5a4a-4fca-bd1b-bd601638a2fb",
+      "title": "919553568082-1529140376@g.us",
+      "type": "integration_whatsapp_chat",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/cc4e25a9-7d92-4b63-ac3d-b93c6fe3607d.md",
+        "region": "ap-southeast-1",
+        "checksum": "855b1624c4bf974b0de5fe88b5307ed0382134580d516fd0e341f979c1bfeaa1",
+        "size_bytes": 84,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/cc4e25a9-7d92-4b63-ac3d-b93c6fe3607d.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T130756Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=1b44eb7b751db7c730ff6caf30be35e5f2a1476bc26a98d88e3c7450eb91efde",
+        "download_url_expires_at": "2026-05-01T17:07:56.228305Z"
+      }
+    }
+  ],
+  "artifacts": [],
+  "templates": [],
+  "lifecycle": {
+    "template_id": null,
+    "current_phase": null
+  },
+  "playbook_api": {
+    "base_url": "http://host.docker.internal:8000",
+    "api_key": "gsd-inter-service-key-for-local-dev"
+  },
+  "workspace": {
+    "root": "master_context/parallelloop",
+    "read_paths": [
+      "master_context/parallelloop/"
+    ],
+    "write_paths": [
+      "master_context/parallelloop/"
+    ],
+    "scratch_paths": [
+      "master_context/parallelloop/scratch/"
+    ],
+    "manifest_path": "master_context/parallelloop/manifest.project.json",
+    "vocabulary_path": "master_context/parallelloop/entities/organization/parallelloop/vocabulary.yaml"
+  },
+  "access": {
+    "write_paths": [
+      "master_context/parallelloop/",
+      "sources/8b900530-25c3-46fe-a3c3-d416ed01a2e0/"
+    ],
+    "read_paths": [
+      "master_context/parallelloop/"
+    ]
+  }
+}
