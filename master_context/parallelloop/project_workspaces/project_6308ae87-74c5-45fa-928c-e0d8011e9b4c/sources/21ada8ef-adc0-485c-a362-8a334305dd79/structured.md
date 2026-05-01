@@ -1,28 +1,57 @@
-# WhatsApp Chat: Parallelloop
+# WhatsApp — Parallelloop
+_chat_id: 19406025549@s.whatsapp.net_
 
-## Metadata
-- **Source Type**: WhatsApp Chat
-- **Chat Name**: Parallelloop
-- **Date Range**: April - May 2026
-- **Participants**: Parallelloop, Anirudh Joshi
+**Parallelloop** · _2026-04-30T12:46:02+00:00_
+Yoyoyoyoyot
 
-## Summary
+**Anirudh Joshi** · _2026-04-30T12:48:01+00:00_
 
-An informal WhatsApp conversation between Parallelloop and Anirudh Joshi. The chat contains casual greetings and exploratory messages, appearing to test communication or platform functionality.
+**Anirudh Joshi** · _2026-05-01T02:47:47+00:00_
+Hi testing
 
-## Key Points
+**Anirudh Joshi** · _2026-05-01T02:47:57+00:00_
+Check the projects that you have access to
 
-- Casual greeting exchange initiated by Parallelloop
-- Anirudh Joshi sent test messages including instructions about project access
-- Discussion about skills access
-- Exploratory/testing nature of conversation
+**Anirudh Joshi** · _2026-05-01T02:55:01+00:00_
+Hi
 
-## Conversation Highlights
+**Parallelloop** · _2026-05-01T07:46:21+00:00_
+Hi
 
-1. **Opening**: Parallelloop initiated with informal greeting "Yoyoyoyoyot"
-2. **Instructions**: Anirudh Joshi asked to "Check the projects that you have access to"
-3. **Closing inquiry**: Question about skills access - "Hi, what is up, do you have access to any skills?"
+**Parallelloop** · _2026-05-01T08:06:04+00:00_
+Hi
 
-## Context
+**Anirudh Joshi** · _2026-05-01T09:36:20+00:00_
+Hi
 
-This appears to be an internal test conversation exploring platform capabilities, specifically around project and skills access within the Parallelloop system.
+**Anirudh Joshi** · _2026-05-01T09:40:56+00:00_
+Hi , what is up , do you have access to any skills?
+
+**Anirudh Joshi** · _2026-05-01T09:57:25+00:00_
+Hi , what is up , do you have access to any skills?
+
+**Parallelloop** · _2026-05-01T09:58:17+00:00_
+Hey! I'm doing well. Yes, I have access to several skills I can help you with:
+
+**Documents & Planning:**
+- PRD, TDD, FRD - brainstorm or generate product/technical/functional requirements
+- Meeting notes - create summaries from discussions
+- General documents - save any content as a document
+
+**Research & Exploration:**
+- Deep research - investigate topics with web search
+- Brainstorming - explore ideas together
+
+**Visual & Design:**
+- Diagrams & charts - create flowcharts, architecture diagrams, visualizations
+- Frontend design - build HTML pages and dashboards
+
+**Project Management:**
+- Track actions - save follow-ups and todos
+- New projects - define and set up new project workspaces
+- Experiments - design and track project experiments
+
+**Questions:**
+- Route questions to team members
+
+Just let me know what you'd like help with!
