@@ -1,0 +1,19 @@
+{
+  "job_id": "c14d1c5e-6920-484d-8341-a5e1450d5a84",
+  "source_id": "68814a48-4ca3-4471-9412-29c7dfe1eec9",
+  "source_title": "WA Nikhil Gogia",
+  "source_description": "WhatsApp chat captured from 919398542806",
+  "project_id": "1e18278d-fb8e-4064-9fec-a7deb3bf97db",
+  "context_type": "org",
+  "source_type": "integration_whatsapp_chat",
+  "upload_type": "",
+  "participants": [],
+  "external_participants": [],
+  "number_of_participants": null,
+  "trigger": "whatsapp_recovery_after_git_clean",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/context/webhooks/completion/",
+  "is_worktree_mode": false,
+  "output_base": "sources/68814a48-4ca3-4471-9412-29c7dfe1eec9",
+  "primary_file_path": "sources/68814a48-4ca3-4471-9412-29c7dfe1eec9/structured.md",
+  "s3_presigned_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/d8b3324e-5e3c-4cc3-9e5b-a0a8d0f92c7e.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260501%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260501T095133Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=2b5a61d2872a47a6a053520b29fa98103a629a65df2c827451f8ab34491834d5"
+}
