@@ -1,0 +1,72 @@
+{
+  "job_id": "d75bb950-da52-422f-b43d-b516cc49c80a",
+  "platform": "whatsapp",
+  "mention_text": "@60095769616416 , list the mcps you have access to",
+  "chat_id": "120363426428364786@g.us",
+  "wa_message_id": "AC21452B2AFD2DB3D4380B212D076BE2",
+  "sender_id": "210762719060014@lid",
+  "sender_name": "Anirudh Joshi",
+  "instance_id": "inst_f2a1c983",
+  "project_link_id": "2d407b32-d106-43b8-b138-1d7cca05bf96",
+  "project_slug": "live-artifacts-test",
+  "thread_context": [
+    {
+      "id": "ACF6458FA99210FF0F3D555438A17C3D",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T11:18:04+00:00",
+      "is_from_me": false,
+      "text": "@60095769616416 what is up buddy"
+    },
+    {
+      "id": "AC799FDB903EBEB99AE7B422FA12E258",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T11:27:53+00:00",
+      "is_from_me": false,
+      "text": "What is up buddy"
+    },
+    {
+      "id": "ACDC6BD24DCF071247D0EC75BBD1D2B0",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T11:33:32+00:00",
+      "is_from_me": false,
+      "text": "@60095769616416 , who all the in this project"
+    },
+    {
+      "id": "ACF2DC3BBFBB193A4168F7450E52294B",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T11:43:47+00:00",
+      "is_from_me": false,
+      "text": "@60095769616416  ,"
+    },
+    {
+      "id": "ACA81B8D3ECE7E87C5CE6EA9A4B3D15C",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T11:44:36+00:00",
+      "is_from_me": false,
+      "text": "@60095769616416 search for the month of December month of"
+    },
+    {
+      "id": "AC4A223C7B6956E850C3B19A84FF03CC",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T12:06:02+00:00",
+      "is_from_me": false,
+      "text": "@60095769616416 , what are you upto"
+    },
+    {
+      "id": "AC52DD32265E86BC9FAA0AEE7CED0E8F",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T12:46:41+00:00",
+      "is_from_me": false,
+      "text": "@60095769616416 , who all are in this org?"
+    },
+    {
+      "id": "AC21452B2AFD2DB3D4380B212D076BE2",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-01T12:52:34+00:00",
+      "is_from_me": false,
+      "text": "@60095769616416 , list the mcps you have access to"
+    }
+  ],
+  "session_key": "whatsapp_chat_inst_f2a1c983_120363426428364786@g.us",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/integrations/whatsapp-mcp/bot-mention-webhook/"
+}
