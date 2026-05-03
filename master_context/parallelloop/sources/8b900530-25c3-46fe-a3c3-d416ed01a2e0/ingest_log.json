@@ -1,0 +1,70 @@
+{
+  "source_id": "8b900530-25c3-46fe-a3c3-d416ed01a2e0",
+  "source_type": "integration_whatsapp_chat",
+  "output_file": "structured.md",
+
+  "events": [
+    {
+      "timestamp": "2026-05-03T06:51:59Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "52c92315-e8eb-4d21-a5e2-821f5dfdc88d.md",
+        "file_size_bytes": 3054,
+        "file_format": "WhatsApp Chat (Markdown)",
+        "message_count": 17
+      }
+    },
+    {
+      "timestamp": "2026-05-03T06:52:00Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "messages_processed": 17,
+        "word_count": 389,
+        "participants": ["Anirudh Joshi", "Parallelloop"],
+        "date_range": {
+          "start": "2026-05-01T11:18:04+00:00",
+          "end": "2026-05-03T06:50:35+00:00"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-05-03T06:52:01Z",
+      "event": "org_context_loaded",
+      "status": "success",
+      "details": {
+        "vocabulary_terms": 0,
+        "entities_indexed": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-03T06:52:02Z",
+      "event": "enrichment_completed",
+      "status": "success",
+      "metrics": {
+        "entities_found": ["anirudh", "hr", "sales", "tech", "enterprise", "backend", "devops", "frontend"],
+        "vocabulary_normalized": ["MCP"]
+      }
+    },
+    {
+      "timestamp": "2026-05-03T06:52:03Z",
+      "event": "content_verification",
+      "status": "success",
+      "metrics": {
+        "extracted_words": 389,
+        "output_words": 420,
+        "preservation_ratio": 0.93
+      }
+    },
+    {
+      "timestamp": "2026-05-03T06:52:04Z",
+      "event": "output_created",
+      "status": "success",
+      "files": [
+        "structured.md",
+        "ingest_log.json"
+      ]
+    }
+  ]
+}

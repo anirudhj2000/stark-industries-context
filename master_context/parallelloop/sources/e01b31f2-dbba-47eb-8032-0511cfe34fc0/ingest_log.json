@@ -1,0 +1,67 @@
+{
+  "source_id": "e01b31f2-dbba-47eb-8032-0511cfe34fc0",
+  "source_type": "integration_whatsapp_chat",
+  "output_file": "structured.md",
+
+  "events": [
+    {
+      "timestamp": "2026-05-02T18:16:38Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "569777aa-0534-4938-8de0-72f22df7e476.md",
+        "file_size_bytes": 255,
+        "file_format": "WhatsApp Chat",
+        "message_count": 3
+      }
+    },
+    {
+      "timestamp": "2026-05-02T18:16:39Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "messages_processed": 3,
+        "participants": ["Jaishree Joshi", "Anirudh Joshi"],
+        "word_count": 6,
+        "attachments_found": 0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T18:16:40Z",
+      "event": "org_context_loaded",
+      "status": "success",
+      "details": {
+        "vocabulary_terms": 0,
+        "entities_indexed": 2
+      }
+    },
+    {
+      "timestamp": "2026-05-02T18:16:41Z",
+      "event": "enrichment_completed",
+      "status": "success",
+      "metrics": {
+        "entities_found": [],
+        "vocabulary_normalized": []
+      }
+    },
+    {
+      "timestamp": "2026-05-02T18:16:42Z",
+      "event": "content_verification",
+      "status": "success",
+      "metrics": {
+        "extracted_words": 6,
+        "output_words": 6,
+        "preservation_ratio": 1.0
+      }
+    },
+    {
+      "timestamp": "2026-05-02T18:16:43Z",
+      "event": "output_created",
+      "status": "success",
+      "files": [
+        "structured.md",
+        "ingest_log.json"
+      ]
+    }
+  ]
+}

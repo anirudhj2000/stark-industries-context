@@ -3,24 +3,25 @@ source_id: 8b900530-25c3-46fe-a3c3-d416ed01a2e0
 source_type: integration_whatsapp_chat
 title: WA Parallelloop
 chat_id: 120363426428364786@g.us
-date_range: 2026-05-01
+date_range: 2026-05-01 to 2026-05-03
 participants:
   - Anirudh Joshi
   - Parallelloop (Bot)
-processed_at: 2026-05-01T13:07:56+00:00
+processed_at: 2026-05-03T06:52:00+00:00
 ---
 
 # WhatsApp Chat: Parallelloop
 
 ## Summary
 
-This WhatsApp group chat captures interactions between Anirudh Joshi and the Parallelloop bot on May 1, 2026. The conversation covers:
+This WhatsApp group chat captures interactions between Anirudh Joshi and the Parallelloop bot from May 1-3, 2026. The conversation covers:
 
 - **Organization structure inquiry**: Parallelloop AI has a functional structure with 3 departments (HR, Sales, Tech) and 7 teams (People Ops, Recruiting, Enterprise, SMB, Backend, Devops, Frontend)
 - **Team membership**: Currently 1 active member registered - Anirudh in the Enterprise team
 - **MCP integrations available**: Google Calendar, Excel, and WhatsApp
 - **Upcoming meetings**: PL Daily Standup on May 4th at 2:00 PM IST, followed by AMA with Prateek Jogani at 6:30 PM IST
 - **Meeting scheduled**: Created a meeting with Siba (siba@parallelloop.ai) for May 1st at 7:00 PM IST via Google Calendar
+- **Follow-up messages**: Anirudh checking in on May 3rd
 
 ## Key Information Extracted
 
@@ -118,3 +119,12 @@ Done! I've created your meeting with Siba for today at 7:00 PM IST (May 1st). He
 - Google Meet: https://meet.google.com/ypu-kcyi-yvd
 
 Calendar invites have been sent to siba@parallelloop.ai.
+
+**Anirudh Joshi** · _2026-05-01T13:09:56+00:00_ (edited)
+@60095769616416  Remove the the meeting
+
+**Anirudh Joshi** · _2026-05-03T06:50:27+00:00_
+Yo what is up
+
+**Anirudh Joshi** · _2026-05-03T06:50:35+00:00_
+@60095769616416 , are you there
