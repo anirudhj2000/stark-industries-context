@@ -10,9 +10,9 @@
       "status": "success",
       "details": {
         "file_name": "52c92315-e8eb-4d21-a5e2-821f5dfdc88d.md",
-        "file_size_bytes": 3054,
+        "file_size_bytes": 3604,
         "file_format": "WhatsApp Chat (Markdown)",
-        "message_count": 17
+        "message_count": 22
       }
     },
     {
@@ -20,12 +20,12 @@
       "event": "extraction_completed",
       "status": "success",
       "metrics": {
-        "messages_processed": 17,
-        "word_count": 389,
+        "messages_processed": 22,
+        "word_count": 425,
         "participants": ["Anirudh Joshi", "Parallelloop"],
         "date_range": {
           "start": "2026-05-01T11:18:04+00:00",
-          "end": "2026-05-03T06:50:35+00:00"
+          "end": "2026-05-04T03:09:00+00:00"
         }
       }
     },
@@ -52,13 +52,13 @@
       "event": "content_verification",
       "status": "success",
       "metrics": {
-        "extracted_words": 389,
-        "output_words": 420,
-        "preservation_ratio": 0.93
+        "extracted_words": 425,
+        "output_words": 450,
+        "preservation_ratio": 0.94
       }
     },
     {
-      "timestamp": "2026-05-03T06:52:04Z",
+      "timestamp": "2026-05-04T03:12:30Z",
       "event": "output_created",
       "status": "success",
       "files": [
