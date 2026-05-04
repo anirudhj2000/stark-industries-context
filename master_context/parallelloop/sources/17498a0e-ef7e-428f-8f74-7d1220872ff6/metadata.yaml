@@ -1,0 +1,24 @@
+source_id: 17498a0e-ef7e-428f-8f74-7d1220872ff6
+source_type: integration_whatsapp_chat
+title: "Scimplify x PL coordination"
+chat_id: "120363410001516230@g.us"
+extracted_at: "2026-05-04T13:04:27+00:00"
+date_range:
+  start: "2026-04-30T11:05:32+00:00"
+  end: "2026-05-04T13:02:41+00:00"
+participants:
+  - id: "210762719060014@lid"
+    name: null
+  - id: "257384605839483@lid"
+    name: null
+  - id: "aaryan_ahuja"
+    name: "Aaryan Ahuja"
+  - id: "siba"
+    name: "Siba"
+topics:
+  - "Zoho Analytics MCP setup"
+  - "App upload issues"
+  - "TestFlight app update"
+key_links:
+  - url: "https://testflight.apple.com/join/D6wa12HK"
+    description: "TestFlight link for latest app version"
