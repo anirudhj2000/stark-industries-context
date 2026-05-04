@@ -5,32 +5,32 @@
 
   "events": [
     {
-      "timestamp": "2026-05-03T06:51:59Z",
+      "timestamp": "2026-05-04T03:36:20Z",
       "event": "file_verified",
       "status": "success",
       "details": {
         "file_name": "52c92315-e8eb-4d21-a5e2-821f5dfdc88d.md",
-        "file_size_bytes": 3604,
+        "file_size_bytes": 5021,
         "file_format": "WhatsApp Chat (Markdown)",
-        "message_count": 22
+        "message_count": 30
       }
     },
     {
-      "timestamp": "2026-05-03T06:52:00Z",
+      "timestamp": "2026-05-04T03:36:21Z",
       "event": "extraction_completed",
       "status": "success",
       "metrics": {
-        "messages_processed": 22,
-        "word_count": 425,
+        "messages_processed": 30,
+        "word_count": 847,
         "participants": ["Anirudh Joshi", "Parallelloop"],
         "date_range": {
           "start": "2026-05-01T11:18:04+00:00",
-          "end": "2026-05-04T03:09:00+00:00"
+          "end": "2026-05-04T03:28:45+00:00"
         }
       }
     },
     {
-      "timestamp": "2026-05-03T06:52:01Z",
+      "timestamp": "2026-05-04T03:36:22Z",
       "event": "org_context_loaded",
       "status": "success",
       "details": {
@@ -39,26 +39,26 @@
       }
     },
     {
-      "timestamp": "2026-05-03T06:52:02Z",
+      "timestamp": "2026-05-04T03:36:23Z",
       "event": "enrichment_completed",
       "status": "success",
       "metrics": {
-        "entities_found": ["anirudh", "hr", "sales", "tech", "enterprise", "backend", "devops", "frontend"],
-        "vocabulary_normalized": ["MCP"]
+        "entities_found": ["anirudh_joshi"],
+        "vocabulary_normalized": ["MCP", "PRD", "TDD", "FRD"]
       }
     },
     {
-      "timestamp": "2026-05-03T06:52:03Z",
+      "timestamp": "2026-05-04T03:36:24Z",
       "event": "content_verification",
       "status": "success",
       "metrics": {
-        "extracted_words": 425,
-        "output_words": 450,
-        "preservation_ratio": 0.94
+        "extracted_words": 847,
+        "output_words": 920,
+        "preservation_ratio": 0.92
       }
     },
     {
-      "timestamp": "2026-05-04T03:12:30Z",
+      "timestamp": "2026-05-04T03:36:25Z",
       "event": "output_created",
       "status": "success",
       "files": [
