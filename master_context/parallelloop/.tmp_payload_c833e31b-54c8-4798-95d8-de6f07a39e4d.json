@@ -1,0 +1,65 @@
+{
+  "job_id": "c833e31b-54c8-4798-95d8-de6f07a39e4d",
+  "platform": "whatsapp",
+  "mention_text": "@60095769616416 , you getting any of this?",
+  "chat_id": "120363426428364786@g.us",
+  "wa_message_id": "AC7145D34002FFF169AF4F5FED87F199",
+  "sender_id": "210762719060014@lid",
+  "sender_name": "Anirudh Joshi",
+  "instance_id": "inst_07897a47",
+  "project_link_id": "91a36e0d-6350-43bb-8205-530260038106",
+  "project_slug": "sample-project",
+  "thread_context": [
+    {
+      "id": "AC494D6C1391349A272871D057621F5B",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-04T02:55:59+00:00",
+      "is_from_me": false,
+      "text": "Hi what is up"
+    },
+    {
+      "id": "AC368BB64CAC6AB88EB83B3E4F5BA736",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-04T02:56:02+00:00",
+      "is_from_me": false,
+      "text": "How are you doing"
+    },
+    {
+      "id": "ACEFD321A844BCDF05A1591EA0FB8301",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-04T02:56:07+00:00",
+      "is_from_me": false,
+      "text": "What have you been upto"
+    },
+    {
+      "id": "AC408E7A4E555D1C99F4FEFBA512EABA",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-04T02:56:22+00:00",
+      "is_from_me": false,
+      "text": "@60095769616416 are you there?"
+    },
+    {
+      "id": "AC1883ECA9B63B1C76DBFA74FB4A4100",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-04T03:09:01+00:00",
+      "is_from_me": false,
+      "text": "Hi"
+    },
+    {
+      "id": "AC77410B8E2FF837F0A309DCCF65C545",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-04T03:10:52+00:00",
+      "is_from_me": false,
+      "text": "\u2705"
+    },
+    {
+      "id": "AC7145D34002FFF169AF4F5FED87F199",
+      "sender": "Anirudh Joshi",
+      "ts": "2026-05-04T03:25:49+00:00",
+      "is_from_me": false,
+      "text": "@60095769616416 , you getting any of this?"
+    }
+  ],
+  "session_key": "whatsapp_chat_inst_07897a47_120363426428364786@g.us",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/integrations/whatsapp-mcp/bot-mention-webhook/"
+}
