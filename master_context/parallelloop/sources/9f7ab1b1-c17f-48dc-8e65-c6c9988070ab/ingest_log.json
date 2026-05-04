@@ -1,0 +1,45 @@
+{
+  "source_id": "9f7ab1b1-c17f-48dc-8e65-c6c9988070ab",
+  "source_title": "WA Parallelloop — 2026-05-04 05:15",
+  "source_type": "audio",
+  "status": "error",
+  "error": "Transcription failed: Neither ELEVENLABS_API_KEY nor OPENAI_API_KEY is set in the environment",
+  "timeline": [
+    {
+      "step": "manifest_read",
+      "timestamp": "2026-05-04T05:16:00Z",
+      "status": "success"
+    },
+    {
+      "step": "payload_read",
+      "timestamp": "2026-05-04T05:16:00Z",
+      "status": "success"
+    },
+    {
+      "step": "audio_file_located",
+      "timestamp": "2026-05-04T05:16:01Z",
+      "status": "success",
+      "details": {
+        "file": "267b02ab-7bec-421f-ae8f-f5147bd25e24",
+        "size_bytes": 8702
+      }
+    },
+    {
+      "step": "transcription_elevenlabs",
+      "timestamp": "2026-05-04T05:16:02Z",
+      "status": "error",
+      "error": "ELEVENLABS_API_KEY not set in environment"
+    },
+    {
+      "step": "transcription_whisper",
+      "timestamp": "2026-05-04T05:16:03Z",
+      "status": "error",
+      "error": "OPENAI_API_KEY not set"
+    }
+  ],
+  "metrics": {
+    "duration_seconds": 0,
+    "word_count": 0,
+    "num_speakers": 0
+  }
+}

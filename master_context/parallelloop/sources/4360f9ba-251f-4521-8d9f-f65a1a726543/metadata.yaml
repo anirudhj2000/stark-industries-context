@@ -1,0 +1,35 @@
+source_id: 4360f9ba-251f-4521-8d9f-f65a1a726543
+source_type: integration_whatsapp_chat
+title: "WhatsApp Chat: Parallelloop"
+description: "WhatsApp conversation between Anirudh Joshi and Parallelloop bot, testing bot capabilities and project access"
+chat_id: "19406025549@s.whatsapp.net"
+date_range:
+  start: "2026-04-30"
+  end: "2026-05-04"
+participants:
+  - name: "Anirudh Joshi"
+    role: user
+  - name: "Parallelloop"
+    role: bot
+message_count: 35
+topics:
+  - Bot capabilities demonstration
+  - Project access verification
+  - Document creation skills
+  - Research and brainstorming features
+  - Echo loop detection
+mentions:
+  projects:
+    - "live-artifacts-test"
+  features:
+    - PRD creation
+    - TDD creation
+    - FRD creation
+    - Meeting notes
+    - Deep research
+    - Brainstorming
+    - Diagrams and charts
+    - Frontend design
+    - Action tracking
+    - Project management
+processed_at: "2026-05-04T05:08:18+00:00"

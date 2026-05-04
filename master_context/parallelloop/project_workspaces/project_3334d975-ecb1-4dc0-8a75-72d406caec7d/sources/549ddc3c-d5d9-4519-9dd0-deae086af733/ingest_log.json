@@ -1,0 +1,33 @@
+{
+  "source_id": "549ddc3c-d5d9-4519-9dd0-deae086af733",
+  "source_type": "IMAGE",
+  "title": "Audio Upload Progress Screenshot",
+  "output_file": "structured.md",
+  "events": [
+    {
+      "timestamp": "2026-05-04T04:30:45+00:00",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "62ee1c5d-c0c6-43bb-aeb5-036f23808c53.jpg",
+        "file_size_bytes": 41824,
+        "file_format": "JPG"
+      }
+    },
+    {
+      "timestamp": "2026-05-04T04:30:46+00:00",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "word_count": 47,
+        "extraction_method": "claude_vision"
+      }
+    },
+    {
+      "timestamp": "2026-05-04T04:30:47+00:00",
+      "event": "output_created",
+      "status": "success",
+      "files": ["structured.md", "ingest_log.json"]
+    }
+  ]
+}
