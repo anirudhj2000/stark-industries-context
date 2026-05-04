@@ -1,19 +1,50 @@
 source_id: 8b900530-25c3-46fe-a3c3-d416ed01a2e0
-title: Parallelloop WhatsApp Group Chat
+title: "WhatsApp Chat: Sample ones"
 source_type: integration_whatsapp_chat
-chat_id: 120363426428364786@g.us
-processed_at: "2026-05-04T03:10:34Z"
+chat_id: "120363426428364786@g.us"
+processed_at: "2026-05-04T03:29:08+00:00"
 date_range:
   start: "2026-05-01T11:18:04+00:00"
-  end: "2026-05-04T03:09:01+00:00"
+  end: "2026-05-04T03:28:45+00:00"
 participants:
   - name: Anirudh Joshi
     role: user
   - name: Parallelloop
-    role: bot
-message_count: 24
+    role: ai_agent
+    aliases:
+      - "60095769616416@lid"
+message_count: 30
 topics:
-  - Organization structure inquiry
-  - MCP integrations overview
-  - Calendar/meeting management
-  - General greetings
+  - organization_structure
+  - mcp_integrations
+  - calendar_management
+  - artifact_creation
+entities_mentioned:
+  people:
+    - Anirudh Joshi
+    - Siba
+    - Yujun
+    - Prateek Jogani
+  departments:
+    - HR
+    - Sales
+    - Tech
+  teams:
+    - People Ops
+    - Recruiting
+    - Enterprise
+    - SMB
+    - Backend
+    - Devops
+    - Frontend
+  integrations:
+    - Google Calendar
+    - Excel
+    - WhatsApp
+action_items:
+  - description: Add more team members to org directory
+    assignee: Anirudh Joshi
+    status: open
+  - description: Create HTML artifact with today's news
+    assignee: Parallelloop
+    status: in_progress
