@@ -1,0 +1,145 @@
+{
+  "manifest_version": "3.1",
+  "generated_at": "2026-05-04T02:57:32.049026+00:00",
+  "org": {
+    "id": "5251447a-1eea-44f3-b728-37c07f04768a",
+    "slug": "parallelloop"
+  },
+  "project": {
+    "id": "3334d975-ecb1-4dc0-8a75-72d406caec7d",
+    "slug": "sample-project",
+    "name": "Sample project",
+    "type": "PRODUCT_DEVELOPMENT",
+    "is_default": false
+  },
+  "user": {
+    "id": "2a1f5178-d275-4c20-a853-26f01fcf114f",
+    "email": "anirudh@parallelloop.ai",
+    "permissions": {
+      "user_id": "2a1f5178-d275-4c20-a853-26f01fcf114f",
+      "org_role": "ADMIN",
+      "readable_paths": [
+        ".claude/commands/",
+        ".claude/skills/",
+        "chat_uploads/3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+        "entities/organization/",
+        "entities/person/",
+        "entities/schemas/",
+        "integrations/",
+        "project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/",
+        "project_workspaces/project_51d60ca6-f527-46e6-a61d-0a9bc10ed7e1/",
+        "project_workspaces/project_6308ae87-74c5-45fa-928c-e0d8011e9b4c/",
+        "project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/",
+        "project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/"
+      ],
+      "writable_paths": [
+        "chat_uploads/3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+        "integrations/",
+        "project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/"
+      ],
+      "blocked_paths": [
+        "**/*.key",
+        "**/*.pem",
+        "**/.env",
+        "**/.git/**",
+        "**/credentials/**",
+        "**/secrets/**",
+        "project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/context_index/**"
+      ]
+    }
+  },
+  "team_members": [
+    {
+      "user_id": "2a1f5178-d275-4c20-a853-26f01fcf114f",
+      "email": "anirudh@parallelloop.ai",
+      "name": "Anirudh Joshi",
+      "availability": "active",
+      "project_role": "PROJECT_LEAD"
+    }
+  ],
+  "sources": [
+    {
+      "id": "bb8ec76e-6f31-4437-a315-ab93e4b42428",
+      "title": "WA Anirudh Joshi",
+      "type": "integration_whatsapp_chat",
+      "status": "pending",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_3334d975-ecb1-4dc0-8a75-72d406caec7d/raw/integration_whatsapp_chat/89cda318-6994-4d67-b7d3-0d3efb704874.md",
+        "region": "ap-southeast-1",
+        "checksum": "54d9bec124b6e49392fbe26d078fb2506287074865c13b87f40ade6df3b17ce2",
+        "size_bytes": 425,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_3334d975-ecb1-4dc0-8a75-72d406caec7d/raw/integration_whatsapp_chat/89cda318-6994-4d67-b7d3-0d3efb704874.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260504%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260504T025732Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=a8b295ad8d50cc27a118f719e399f7c5cebc3b3d4b64c5ad79d93cd3524dd658",
+        "download_url_expires_at": "2026-05-04T06:57:32.032675Z"
+      }
+    }
+  ],
+  "artifacts": [],
+  "templates": [],
+  "lifecycle": {
+    "template_id": null,
+    "current_phase": null
+  },
+  "playbook_api": {
+    "base_url": "http://host.docker.internal:8000",
+    "api_key": "gsd-inter-service-key-for-local-dev"
+  },
+  "workspace": {
+    "root": "master_context/parallelloop",
+    "read_paths": [
+      "master_context/parallelloop/.claude/",
+      "master_context/parallelloop/entities/",
+      "master_context/parallelloop/sources/",
+      "master_context/parallelloop/artifacts/",
+      "master_context/parallelloop/integrations/",
+      "master_context/parallelloop/project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/",
+      "master_context/parallelloop/project_workspaces/project_6308ae87-74c5-45fa-928c-e0d8011e9b4c/",
+      "master_context/parallelloop/project_workspaces/project_51d60ca6-f527-46e6-a61d-0a9bc10ed7e1/",
+      "master_context/parallelloop/project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/",
+      "master_context/parallelloop/project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/"
+    ],
+    "write_paths": [
+      "master_context/parallelloop/project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+      "master_context/parallelloop/chat_uploads/3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+      "master_context/parallelloop/integrations/",
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/",
+      "master_context/parallelloop/project_workspaces/project_6308ae87-74c5-45fa-928c-e0d8011e9b4c/",
+      "master_context/parallelloop/project_workspaces/project_51d60ca6-f527-46e6-a61d-0a9bc10ed7e1/",
+      "master_context/parallelloop/project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/",
+      "master_context/parallelloop/project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/"
+    ],
+    "scratch_paths": [
+      "master_context/parallelloop/project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/scratch/"
+    ],
+    "manifest_path": "master_context/parallelloop/manifest.project.json",
+    "vocabulary_path": "master_context/parallelloop/entities/organization/parallelloop/vocabulary.yaml"
+  },
+  "access": {
+    "write_paths": [
+      "master_context/parallelloop/project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+      "master_context/parallelloop/chat_uploads/3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+      "master_context/parallelloop/integrations/",
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/",
+      "master_context/parallelloop/project_workspaces/project_6308ae87-74c5-45fa-928c-e0d8011e9b4c/",
+      "master_context/parallelloop/project_workspaces/project_51d60ca6-f527-46e6-a61d-0a9bc10ed7e1/",
+      "master_context/parallelloop/project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/",
+      "master_context/parallelloop/project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/",
+      "project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/sources/bb8ec76e-6f31-4437-a315-ab93e4b42428/",
+      "project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/"
+    ],
+    "read_paths": [
+      "master_context/parallelloop/.claude/",
+      "master_context/parallelloop/entities/",
+      "master_context/parallelloop/sources/",
+      "master_context/parallelloop/artifacts/",
+      "master_context/parallelloop/integrations/",
+      "master_context/parallelloop/project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/",
+      "master_context/parallelloop/project_workspaces/project_6308ae87-74c5-45fa-928c-e0d8011e9b4c/",
+      "master_context/parallelloop/project_workspaces/project_51d60ca6-f527-46e6-a61d-0a9bc10ed7e1/",
+      "master_context/parallelloop/project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/",
+      "master_context/parallelloop/project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/"
+    ]
+  }
+}
