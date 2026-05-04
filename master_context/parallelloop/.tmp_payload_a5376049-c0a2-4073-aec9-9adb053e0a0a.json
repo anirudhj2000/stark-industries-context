@@ -1,0 +1,12 @@
+{
+  "job_id": "a5376049-c0a2-4073-aec9-9adb053e0a0a",
+  "source_id": "9f7ab1b1-c17f-48dc-8e65-c6c9988070ab",
+  "source_type": "audio",
+  "source_title": "WA Parallelloop \u2014 2026-05-04 05:15",
+  "source_description": "WhatsApp attachment from 919398542806",
+  "project_id": "1e18278d-fb8e-4064-9fec-a7deb3bf97db",
+  "context_type": "org",
+  "transcript_path": "sources/9f7ab1b1-c17f-48dc-8e65-c6c9988070ab/transcript.md",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/context/webhooks/completion/",
+  "artifact_file_path": "artifacts/art_meeting_notes_9f7ab1b1-c17f-48dc-8e65-c6c9988070ab/meeting_notes.md"
+}
