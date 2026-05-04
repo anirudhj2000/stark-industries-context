@@ -4,27 +4,33 @@
 
 | Field | Value |
 |-------|-------|
-| Chat ID | 120363426428364786@g.us |
-| Chat Type | Group |
-| Source | WhatsApp Integration |
-| Captured From | 19406025549 |
+| **Chat Type** | Group |
+| **Chat ID** | 120363426428364786@g.us |
+| **Source** | WhatsApp Integration |
+| **Date Range** | 2026-05-04 |
 
 ## Participants
 
-| Identifier | Role |
-|------------|------|
-| 210762719060014@lid | Super Admin |
-| 60095769616416@lid | Member |
+- Anirudh Joshi
 
-## Messages
+## Chat Transcript
 
 ### 2026-05-04
 
 **Anirudh Joshi** (03:34 UTC)
-> _(No message content)_
+> [Empty message or media attachment]
 
----
+**Anirudh Joshi** (03:54 UTC)
+> [Empty message or media attachment]
 
 ## Summary
 
-This is a WhatsApp group chat titled "Sample ones" with 2 participants. The chat contains minimal activity with one entry from Anirudh Joshi on May 4, 2026. No substantive message content was captured in this sync.
+This WhatsApp group chat titled "Sample ones" contains 2 messages from Anirudh Joshi on May 4, 2026. The messages appear to be empty or contain media attachments that were not captured in text form.
+
+## Key Topics
+
+- No substantive topics identified (messages appear empty)
+
+## Action Items
+
+- None identified
