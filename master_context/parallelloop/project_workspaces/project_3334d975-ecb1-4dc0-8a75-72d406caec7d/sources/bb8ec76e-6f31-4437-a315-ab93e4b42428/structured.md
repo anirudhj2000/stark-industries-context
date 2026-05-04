@@ -1,15 +1,14 @@
-# WhatsApp Chat — Anirudh Joshi
+# WhatsApp Chat: Sample ones
 
-**Source Type:** WhatsApp Chat  
+**Source Type:** WhatsApp Group Chat  
 **Chat ID:** 120363426428364786@g.us  
-**Captured From:** 19406025549  
-**Date Range:** 2026-05-04
+**Captured:** 2026-05-04  
 
 ---
 
 ## Participants
-- 210762719060014@lid (super admin)
-- 60095769616416@lid
+
+- Anirudh Joshi
 
 ---
 
@@ -27,8 +26,11 @@
 **Anirudh Joshi** · _2026-05-04T02:56:22+00:00_
 > @60095769616416 are you there?
 
+**Anirudh Joshi** · _2026-05-04T03:09:01+00:00_
+> Hi
+
 ---
 
 ## Summary
 
-Brief WhatsApp conversation initiated by Anirudh Joshi on May 4, 2026, containing casual greetings and a check-in with another participant. 4 messages total.
+Brief informal conversation initiated by Anirudh Joshi with casual greetings and check-in messages. One message mentions another participant by reference (@60095769616416). No responses from other participants captured in this excerpt.
