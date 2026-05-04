@@ -1,0 +1,19 @@
+{
+  "job_id": "bcca186c-8955-4a77-b55e-ecfa749cb66b",
+  "source_id": "17498a0e-ef7e-428f-8f74-7d1220872ff6",
+  "source_title": "WA Scimplify x PL coordination",
+  "source_description": "WhatsApp chat captured from 919398542806",
+  "project_id": "1e18278d-fb8e-4064-9fec-a7deb3bf97db",
+  "context_type": "org",
+  "source_type": "integration_whatsapp_chat",
+  "upload_type": "",
+  "participants": [],
+  "external_participants": [],
+  "number_of_participants": null,
+  "trigger": "whatsapp_chat_sync",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/context/webhooks/completion/",
+  "is_worktree_mode": false,
+  "output_base": "sources/17498a0e-ef7e-428f-8f74-7d1220872ff6",
+  "primary_file_path": "sources/17498a0e-ef7e-428f-8f74-7d1220872ff6/structured.md",
+  "s3_presigned_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_1e18278d-fb8e-4064-9fec-a7deb3bf97db/raw/integration_whatsapp_chat/3f2f904b-3d01-4e8d-bcb1-0fdd8221d651.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260504%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260504T130426Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=c4600f683d208c3ca1722d19a33e230b8cad48d9dd43fac611878a66c287bae9"
+}
