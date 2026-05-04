@@ -1,50 +1,60 @@
-# WhatsApp — Scimplify x PL coordination
+# Scimplify x PL coordination
 
-**Source Type:** WhatsApp Chat  
+**Source Type:** WhatsApp Group Chat  
 **Chat ID:** 120363410001516230@g.us  
-**Date Range:** 2026-04-30 to 2026-05-04
-
----
-
-## Conversation
-
-**210762719060014@lid** · _2026-04-30T11:05:32+00:00_  
-@257384605839483, please refer this doc, for the zoho analytics MCP setup
-
-**257384605839483@lid** · _2026-04-30T11:05:45+00:00_  
-Okay thanks
-
-**Aaryan Ahuja** · _2026-05-04T12:47:12+00:00_  
-[Attachment]
-
-**Aaryan Ahuja** · _2026-05-04T12:47:39+00:00_  
-Uploading issues are persistent @210762719060014, lost one recording today and this one is taking 20 mins plus hasn't loaded
-
-**Aaryan Ahuja** · _2026-05-04T12:49:20+00:00_  
-Could you help out as to what is to be done?
+**Date Range:** 2026-04-30 to 2026-05-04  
+**Participants:** 210762719060014@lid, 257384605839483@lid, Aaryan Ahuja, Siba
 
 ---
 
 ## Summary
 
-This WhatsApp group chat between Scimplify and Parallelloop teams covers two topics:
+This WhatsApp group chat captures coordination between Scimplify and Parallelloop (PL) teams regarding:
+1. **Zoho Analytics MCP Setup** - Documentation was shared for integration setup
+2. **Upload Issues** - Aaryan Ahuja reported persistent uploading problems with recording uploads
+3. **App Update Fix** - Siba provided a TestFlight link for an updated app version that resolved the issue
 
-1. **Zoho Analytics MCP Setup** (2026-04-30): A team member shared documentation for Zoho Analytics MCP setup.
+---
 
-2. **Upload Issues Reported** (2026-05-04): Aaryan Ahuja reported persistent uploading problems:
-   - Lost one recording due to the issue
-   - Another upload was taking over 20 minutes without completing
-   - Requested assistance to resolve the issue
+## Conversation Transcript
+
+### 2026-04-30
+
+**210762719060014@lid** · 11:05:32 UTC  
+@257384605839483, please refer this doc, for the zoho analytics MCP setup
+
+**257384605839483@lid** · 11:05:45 UTC  
+Okay thanks
+
+---
+
+### 2026-05-04
+
+**Aaryan Ahuja** · 12:47:12 UTC  
+[Attachment]
+
+**Aaryan Ahuja** · 12:47:39 UTC  
+Uploading issues are persistent @210762719060014, lost one recording today and this one is taking 20 mins plus hasn't loaded
+
+**Aaryan Ahuja** · 12:49:20 UTC  
+Could you help out as to what is to be done?
+
+**Siba** · 12:56:35 UTC  
+@257384605839483 can you update the app to the latest one  
+https://testflight.apple.com/join/D6wa12HK
+
+**Siba** · 12:57:18 UTC  
+this has been processed, can you check
+
+---
 
 ## Key Topics
-- Zoho Analytics MCP setup
-- File/recording upload failures
-- Technical support request
 
-## Participants
-- 210762719060014@lid
-- 257384605839483@lid
-- Aaryan Ahuja
+- **Zoho Analytics MCP Setup** - Integration documentation shared between teams
+- **Recording Upload Issues** - Performance problems with file uploads taking 20+ minutes
+- **TestFlight App Update** - Solution provided via updated iOS app version
 
-## Action Items
-- [ ] Investigate and resolve persistent uploading issues reported by Aaryan Ahuja
+## Action Items Identified
+
+1. Update to latest app version via TestFlight to resolve upload issues
+2. Verify processed recording after app update
