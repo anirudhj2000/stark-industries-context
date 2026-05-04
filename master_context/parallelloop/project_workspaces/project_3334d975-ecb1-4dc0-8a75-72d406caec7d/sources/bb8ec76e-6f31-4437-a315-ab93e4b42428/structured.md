@@ -1,25 +1,23 @@
-# WhatsApp Chat — Sample ones
+# WhatsApp Chat: Sample ones
 
 ## Metadata
 
-| Field | Value |
-|-------|-------|
-| Chat ID | 120363426428364786@g.us |
-| Chat Type | Group |
-| Date Range | 2026-05-04 |
-| Time Range | 02:55:59 - 03:34:48 UTC |
-| Participants | Anirudh Joshi |
-| Message Count | 11 |
+- **Source Type**: WhatsApp Chat
+- **Chat ID**: 120363426428364786@g.us
+- **Date**: 2026-05-04
+- **Participants**: Anirudh Joshi
 
 ## Summary
 
-This WhatsApp chat captures a series of messages from Anirudh Joshi attempting to engage with another participant (@60095769616416). The conversation includes:
+This WhatsApp chat contains a series of messages from Anirudh Joshi attempting to engage with another participant (@60095769616416). The conversation includes casual greetings and requests to create HTML artifacts with news content.
 
-- Initial greetings and check-ins
-- Multiple attempts to get the other participant's attention
-- A request to create artifacts, specifically an HTML artifact with "today's news" as the scope
+## Key Topics
 
-## Conversation
+- Initial check-in and greetings
+- Request to create artifacts
+- Specific request for HTML artifact with today's news
+
+## Transcript
 
 **Anirudh Joshi** · _2026-05-04T02:55:59+00:00_
 Hi what is up
@@ -52,15 +50,7 @@ So , can you create artifacts for me
 @60095769616416 Let's create a html artifact with today's news as scope
 
 **Anirudh Joshi** · _2026-05-04T03:34:48+00:00_
-_(empty message)_
+_(media attachment)_
 
-## Key Topics
-
-- **Artifact creation request**: Request to create an HTML artifact featuring today's news
-- **Engagement attempts**: Multiple attempts to confirm message receipt from @60095769616416
-
-## Action Items
-
-| Item | Owner | Status |
-|------|-------|--------|
-| Create HTML artifact with today's news | @60095769616416 | Pending |
+**Anirudh Joshi** · _2026-05-04T03:54:50+00:00_
+_(media attachment)_
