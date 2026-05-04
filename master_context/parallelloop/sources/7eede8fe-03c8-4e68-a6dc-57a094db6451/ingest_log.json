@@ -1,0 +1,33 @@
+{
+  "source_id": "7eede8fe-03c8-4e68-a6dc-57a094db6451",
+  "source_type": "IMAGE",
+  "title": "Puppy Photo",
+  "output_file": "structured.md",
+  "events": [
+    {
+      "timestamp": "2026-05-04T03:35:00Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "24dfc05c-8d1c-4952-a4cb-ae59cf33cd5b.jpg",
+        "file_size_bytes": 178086,
+        "file_format": "JPG"
+      }
+    },
+    {
+      "timestamp": "2026-05-04T03:35:01Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "word_count": 52,
+        "extraction_method": "claude_vision"
+      }
+    },
+    {
+      "timestamp": "2026-05-04T03:35:02Z",
+      "event": "output_created",
+      "status": "success",
+      "files": ["structured.md", "ingest_log.json"]
+    }
+  ]
+}
