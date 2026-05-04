@@ -1,7 +1,7 @@
 id: project_3334d975-ecb1-4dc0-8a75-72d406caec7d
 metadata:
   created_at: '2026-04-28T13:36:37.368920+00:00'
-  updated_at: '2026-04-28T13:36:38.422365+00:00'
+  updated_at: '2026-05-04T03:01:56.900099+00:00'
 project_members:
 - email: anirudh@parallelloop.ai
   is_active: true
@@ -11,6 +11,15 @@ project_members:
   name: Anirudh Joshi
   removed_at: null
   role: PROJECT_LEAD
+  teams: []
+- email: anirudhjoshi985@gmail.com
+  is_active: true
+  is_owner: false
+  joined_at: '2026-05-04T03:01:56.402987+00:00'
+  membership_id: 4d02dd9d-bdd4-48ee-9e65-5275953a2ae9
+  name: Anirudh 2
+  removed_at: null
+  role: TEAM_MEMBER
   teams: []
 project_name: Sample project
 project_slug: sample-project
