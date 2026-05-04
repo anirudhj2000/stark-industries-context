@@ -46,6 +46,15 @@ https://testflight.apple.com/join/D6wa12HK
 **Siba** · 12:57:18 UTC  
 this has been processed, can you check
 
+**Aaryan Ahuja** · 13:02:23 UTC  
+yes can confirm
+
+**Aaryan Ahuja** · 13:02:30 UTC  
+got processed a 5 mins back
+
+**Aaryan Ahuja** · 13:02:41 UTC  
+sure will just do this
+
 ---
 
 ## Key Topics
