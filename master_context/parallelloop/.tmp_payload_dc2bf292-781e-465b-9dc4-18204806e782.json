@@ -1,0 +1,12 @@
+{
+  "job_id": "dc2bf292-781e-465b-9dc4-18204806e782",
+  "source_id": "ad71d539-de06-46ab-aa7c-ba3a997cea9e",
+  "source_type": "audio",
+  "source_title": "WA Sample ones \u2014 2026-05-07 13:58",
+  "source_description": "WhatsApp attachment from 19406025549",
+  "project_id": "3471566c-764e-4ae5-bb3c-57e4a6209e6b",
+  "context_type": "project",
+  "transcript_path": "project_workspaces/project_3471566c-764e-4ae5-bb3c-57e4a6209e6b/sources/ad71d539-de06-46ab-aa7c-ba3a997cea9e/transcript.md",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/context/webhooks/completion/",
+  "artifact_file_path": "project_workspaces/project_3471566c-764e-4ae5-bb3c-57e4a6209e6b/artifacts/art_meeting_notes_ad71d539-de06-46ab-aa7c-ba3a997cea9e/meeting_notes.md"
+}
