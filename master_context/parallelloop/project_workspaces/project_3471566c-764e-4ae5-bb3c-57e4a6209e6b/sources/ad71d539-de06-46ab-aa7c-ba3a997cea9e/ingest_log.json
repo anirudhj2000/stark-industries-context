@@ -16,6 +16,12 @@
       "timestamp": "2026-05-07T13:59:01Z",
       "status": "error",
       "details": "ELEVENLABS_API_KEY and OPENAI_API_KEY not set in environment"
+    },
+    {
+      "step": "meeting_notes_generation",
+      "timestamp": "2026-05-07T14:00:04Z",
+      "status": "error",
+      "details": "Cannot generate meeting notes - transcript not available due to transcription failure"
     }
   ],
   "metrics": {
