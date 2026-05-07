@@ -1,0 +1,129 @@
+{
+  "job_id": "6d572637-5077-4af1-a684-4cb2805d971d",
+  "platform": "whatsapp",
+  "mention_text": "Hi which project are we in?",
+  "chat_id": "919398542806@s.whatsapp.net",
+  "wa_message_id": "ACE68391507D56B6AC889F35958E2253",
+  "sender_id": "919398542806@s.whatsapp.net",
+  "sender_name": "Anirudh Joshi",
+  "instance_id": "inst_d095702e",
+  "project_link_id": "84ce3eae-3b0d-4936-adb1-5b4879b4ff43",
+  "project_slug": "whatsapp-test-fix-test",
+  "thread_context": [
+    {
+      "id": "ACF40AA73CC995B22A87FE0A2D6E2906",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-05-07T13:33:42+00:00",
+      "is_from_me": false,
+      "msg_type": "text",
+      "text": "Hi"
+    },
+    {
+      "id": "3EB078BCB3A0DA4BB1D29A",
+      "sender": "me",
+      "ts": "2026-05-07T13:33:43+00:00",
+      "is_from_me": true,
+      "msg_type": "text",
+      "text": "Thanks for messaging - your number isn't yet authorised to chat with this bot. An admin needs to enable responses for you. We'll be in touch shortly."
+    },
+    {
+      "id": "AC4632C5300AB799401361F53BA74A6D",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-05-07T13:33:56+00:00",
+      "is_from_me": false,
+      "msg_type": "text",
+      "text": "Hi what is up"
+    },
+    {
+      "id": "ACA028DFF8B3686DA0C23C2BEA37D27F",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-05-07T13:34:01+00:00",
+      "is_from_me": false,
+      "msg_type": "image",
+      "text": ""
+    },
+    {
+      "id": "3EB0B705B368DFBEC9D196",
+      "sender": "me",
+      "ts": "2026-05-07T13:37:20+00:00",
+      "is_from_me": true,
+      "msg_type": "text",
+      "text": "Hey Anirudh! \ud83d\udc4b All good here. I can see your Parallelloop home dashboard \u2014 you've got *4 projects* visible (Software Evaluation, Meyglow Products, Sales Order Agentic Platform, Sudarshan Chemical \u2013 Metal Derivatives BD) with 18 more beyond that. Looks like you've been active recently \u2014 the Sudarshan Chemical BD Engagement artifacts were updated just within the last hour!"
+    },
+    {
+      "id": "ACA8243B379C239CB3841F6B0FCD2D02",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-05-07T13:38:35+00:00",
+      "is_from_me": false,
+      "msg_type": "text",
+      "text": "Which project are you getting this from"
+    },
+    {
+      "id": "ACFB4951DE7DFF1EDC5BD211C0729AF6",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-05-07T13:44:29+00:00",
+      "is_from_me": false,
+      "msg_type": "image",
+      "text": ""
+    },
+    {
+      "id": "ACB32B337022301D44458E5EE4F51FEF",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-05-07T13:44:33+00:00",
+      "is_from_me": false,
+      "msg_type": "text",
+      "text": "Check this"
+    },
+    {
+      "id": "ACC0B8189BA49106CE7E36E1E3DAA8D1",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-05-07T13:46:26+00:00",
+      "is_from_me": false,
+      "msg_type": "text",
+      "text": "Where are all the teams present"
+    },
+    {
+      "id": "ACFA25BCDFA14F42517D06F2C80C7C38",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-05-07T13:46:33+00:00",
+      "is_from_me": false,
+      "msg_type": "text",
+      "text": "Who Is the owner of this org"
+    },
+    {
+      "id": "ACEE02523F680EBC216477CF52FB04A8",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-05-07T13:46:37+00:00",
+      "is_from_me": false,
+      "msg_type": "text",
+      "text": "Why are you not responding"
+    },
+    {
+      "id": "AC555D374AB2BA68AD7700CA78EEC1F5",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-05-07T13:48:56+00:00",
+      "is_from_me": false,
+      "msg_type": "text",
+      "text": "Yo , which project are we in"
+    },
+    {
+      "id": "ACE68391507D56B6AC889F35958E2253",
+      "sender": "919398542806@s.whatsapp.net",
+      "ts": "2026-05-07T13:53:28+00:00",
+      "is_from_me": false,
+      "msg_type": "text",
+      "text": "Hi which project are we in?"
+    },
+    {
+      "id": "3EB0CFE1A689A2BBABE3DE",
+      "sender": "me",
+      "ts": "2026-05-07T13:53:31+00:00",
+      "is_from_me": true,
+      "msg_type": "text",
+      "text": "You're currently in the **whatsapp-test-fix-test** project. This WhatsApp chat is linked to that project, so any actions, artifacts, or context I work with will be scoped to it."
+    }
+  ],
+  "media_attachments": [],
+  "session_key": "whatsapp_chat_inst_d095702e_919398542806@s.whatsapp.net",
+  "playbook_webhook_url": "http://host.docker.internal:8000/api/v1/integrations/whatsapp-mcp/bot-mention-webhook/"
+}
