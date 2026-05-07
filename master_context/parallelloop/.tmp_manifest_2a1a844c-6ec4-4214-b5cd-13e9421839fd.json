@@ -1,0 +1,195 @@
+{
+  "manifest_version": "3.1",
+  "generated_at": "2026-05-07T14:00:29.079386+00:00",
+  "org": {
+    "id": "5251447a-1eea-44f3-b728-37c07f04768a",
+    "slug": "parallelloop"
+  },
+  "project": {
+    "id": "3471566c-764e-4ae5-bb3c-57e4a6209e6b",
+    "slug": "whatsapp-test-fix-test",
+    "name": "Whatsapp test fix test",
+    "type": "PRODUCT_DEVELOPMENT",
+    "is_default": false
+  },
+  "user": {
+    "id": "2a1f5178-d275-4c20-a853-26f01fcf114f",
+    "email": "anirudh@parallelloop.ai",
+    "permissions": {
+      "user_id": "2a1f5178-d275-4c20-a853-26f01fcf114f",
+      "org_role": "ADMIN",
+      "readable_paths": [
+        ".claude/commands/",
+        ".claude/skills/",
+        "chat_uploads/3471566c-764e-4ae5-bb3c-57e4a6209e6b/",
+        "entities/organization/",
+        "entities/person/",
+        "entities/schemas/",
+        "integrations/",
+        "project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/",
+        "project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+        "project_workspaces/project_51d60ca6-f527-46e6-a61d-0a9bc10ed7e1/",
+        "project_workspaces/project_6308ae87-74c5-45fa-928c-e0d8011e9b4c/",
+        "project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/",
+        "project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/"
+      ],
+      "writable_paths": [
+        "chat_uploads/3471566c-764e-4ae5-bb3c-57e4a6209e6b/",
+        "integrations/",
+        "project_workspaces/project_3471566c-764e-4ae5-bb3c-57e4a6209e6b/"
+      ],
+      "blocked_paths": [
+        "**/*.key",
+        "**/*.pem",
+        "**/.env",
+        "**/.git/**",
+        "**/credentials/**",
+        "**/secrets/**",
+        "project_workspaces/project_3471566c-764e-4ae5-bb3c-57e4a6209e6b/context_index/**"
+      ]
+    }
+  },
+  "team_members": [
+    {
+      "user_id": "2a1f5178-d275-4c20-a853-26f01fcf114f",
+      "email": "anirudh@parallelloop.ai",
+      "name": "Anirudh Joshi",
+      "availability": "active",
+      "project_role": "PROJECT_LEAD"
+    }
+  ],
+  "sources": [
+    {
+      "id": "ad71d539-de06-46ab-aa7c-ba3a997cea9e",
+      "title": "WA Sample ones \u2014 2026-05-07 13:58",
+      "type": "audio",
+      "status": "pending",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_3471566c-764e-4ae5-bb3c-57e4a6209e6b/raw/integration_whatsapp_attachment/069ceaed-2aac-4729-9cae-ef3bfc91d998",
+        "region": "ap-southeast-1",
+        "checksum": "",
+        "size_bytes": 20649,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_3471566c-764e-4ae5-bb3c-57e4a6209e6b/raw/integration_whatsapp_attachment/069ceaed-2aac-4729-9cae-ef3bfc91d998?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260507%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260507T140029Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=ab9007f3dfaf1d2d51f5520f83e39167fa5a79a870e670bf2843b70acbddbfc5",
+        "download_url_expires_at": "2026-05-07T18:00:29.045422Z"
+      }
+    },
+    {
+      "id": "f8c039a8-5b46-4cee-ba6a-18ec702b0173",
+      "title": "WA Anirudh Joshi \u2014 2026-05-07 13:58 jpg",
+      "type": "document",
+      "status": "processed",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_3471566c-764e-4ae5-bb3c-57e4a6209e6b/raw/integration_whatsapp_attachment/d792a24f-3d69-49a6-ad68-8a89f448419f.jpg",
+        "region": "ap-southeast-1",
+        "checksum": "",
+        "size_bytes": 111944,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_3471566c-764e-4ae5-bb3c-57e4a6209e6b/raw/integration_whatsapp_attachment/d792a24f-3d69-49a6-ad68-8a89f448419f.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260507%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260507T140029Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=759379c4e680d8db2463e1c594c07b69874700e6a40b980286f61211666ad3e3",
+        "download_url_expires_at": "2026-05-07T18:00:29.046151Z"
+      }
+    },
+    {
+      "id": "c7ba3a3f-8e83-4164-9e9a-3361eec51297",
+      "title": "WA chat \u2014 2026-05-07",
+      "type": "integration_whatsapp_chat",
+      "status": "pending",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_3471566c-764e-4ae5-bb3c-57e4a6209e6b/raw/integration_whatsapp_chat/98467dea-3728-4af7-bd32-b129579706a9.md",
+        "region": "ap-southeast-1",
+        "checksum": "aac75fdd7f64e300ddd8b4fd7a5e07dbd6f2fc619a60d3fcea17f93ec7bcd1de",
+        "size_bytes": 461,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_3471566c-764e-4ae5-bb3c-57e4a6209e6b/raw/integration_whatsapp_chat/98467dea-3728-4af7-bd32-b129579706a9.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260507%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260507T140029Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=8bfd92f4bdce3ddec57ef9c8300cdca61d69cb638b94dade837612158656c6c6",
+        "download_url_expires_at": "2026-05-07T18:00:29.046398Z"
+      }
+    },
+    {
+      "id": "d58b072f-9e15-4505-85a3-07fc824d471c",
+      "title": "WA chat \u2014 2026-05-07",
+      "type": "integration_whatsapp_chat",
+      "status": "pending",
+      "s3": {
+        "bucket": "tgsd-context-upload-test",
+        "key": "local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_3471566c-764e-4ae5-bb3c-57e4a6209e6b/raw/integration_whatsapp_chat/b2e61029-151c-4dfb-b67d-9cde34a35ed5.md",
+        "region": "ap-southeast-1",
+        "checksum": "e3b4178f3a0528bd79b32a270c7d2724695e6e38983582fedcf8ca998a2e9a37",
+        "size_bytes": 2479,
+        "download_url": "https://tgsd-context-upload-test.s3.ap-southeast-1.amazonaws.com/local/uploads/org_5251447a-1eea-44f3-b728-37c07f04768a/proj_3471566c-764e-4ae5-bb3c-57e4a6209e6b/raw/integration_whatsapp_chat/b2e61029-151c-4dfb-b67d-9cde34a35ed5.md?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4SZHNZN35CXHPCRU%2F20260507%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260507T140029Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=ca35d4d0a45dea4d3b60aebdb1ec58c96da73ed14e3f4a8b916bfe7450225b0c",
+        "download_url_expires_at": "2026-05-07T18:00:29.046544Z"
+      }
+    }
+  ],
+  "artifacts": [],
+  "templates": [],
+  "lifecycle": {
+    "template_id": null,
+    "current_phase": null
+  },
+  "playbook_api": {
+    "base_url": "http://host.docker.internal:8000",
+    "api_key": "gsd-inter-service-key-for-local-dev"
+  },
+  "workspace": {
+    "root": "master_context/parallelloop",
+    "read_paths": [
+      "master_context/parallelloop/.claude/",
+      "master_context/parallelloop/entities/",
+      "master_context/parallelloop/sources/",
+      "master_context/parallelloop/artifacts/",
+      "master_context/parallelloop/integrations/",
+      "master_context/parallelloop/project_workspaces/project_3471566c-764e-4ae5-bb3c-57e4a6209e6b/",
+      "master_context/parallelloop/project_workspaces/project_51d60ca6-f527-46e6-a61d-0a9bc10ed7e1/",
+      "master_context/parallelloop/project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/",
+      "master_context/parallelloop/project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/",
+      "master_context/parallelloop/project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+      "master_context/parallelloop/project_workspaces/project_6308ae87-74c5-45fa-928c-e0d8011e9b4c/",
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/"
+    ],
+    "write_paths": [
+      "master_context/parallelloop/project_workspaces/project_3471566c-764e-4ae5-bb3c-57e4a6209e6b/",
+      "master_context/parallelloop/chat_uploads/3471566c-764e-4ae5-bb3c-57e4a6209e6b/",
+      "master_context/parallelloop/integrations/",
+      "master_context/parallelloop/project_workspaces/project_51d60ca6-f527-46e6-a61d-0a9bc10ed7e1/",
+      "master_context/parallelloop/project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/",
+      "master_context/parallelloop/project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/",
+      "master_context/parallelloop/project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+      "master_context/parallelloop/project_workspaces/project_6308ae87-74c5-45fa-928c-e0d8011e9b4c/",
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/"
+    ],
+    "scratch_paths": [
+      "master_context/parallelloop/project_workspaces/project_3471566c-764e-4ae5-bb3c-57e4a6209e6b/scratch/"
+    ],
+    "manifest_path": "master_context/parallelloop/manifest.project.json",
+    "vocabulary_path": "master_context/parallelloop/entities/organization/parallelloop/vocabulary.yaml"
+  },
+  "access": {
+    "write_paths": [
+      "master_context/parallelloop/project_workspaces/project_3471566c-764e-4ae5-bb3c-57e4a6209e6b/",
+      "master_context/parallelloop/chat_uploads/3471566c-764e-4ae5-bb3c-57e4a6209e6b/",
+      "master_context/parallelloop/integrations/",
+      "master_context/parallelloop/project_workspaces/project_51d60ca6-f527-46e6-a61d-0a9bc10ed7e1/",
+      "master_context/parallelloop/project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/",
+      "master_context/parallelloop/project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/",
+      "master_context/parallelloop/project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+      "master_context/parallelloop/project_workspaces/project_6308ae87-74c5-45fa-928c-e0d8011e9b4c/",
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/",
+      "project_workspaces/project_3471566c-764e-4ae5-bb3c-57e4a6209e6b/sources/c7ba3a3f-8e83-4164-9e9a-3361eec51297/",
+      "project_workspaces/project_3471566c-764e-4ae5-bb3c-57e4a6209e6b/"
+    ],
+    "read_paths": [
+      "master_context/parallelloop/.claude/",
+      "master_context/parallelloop/entities/",
+      "master_context/parallelloop/sources/",
+      "master_context/parallelloop/artifacts/",
+      "master_context/parallelloop/integrations/",
+      "master_context/parallelloop/project_workspaces/project_3471566c-764e-4ae5-bb3c-57e4a6209e6b/",
+      "master_context/parallelloop/project_workspaces/project_51d60ca6-f527-46e6-a61d-0a9bc10ed7e1/",
+      "master_context/parallelloop/project_workspaces/project_1e18278d-fb8e-4064-9fec-a7deb3bf97db/",
+      "master_context/parallelloop/project_workspaces/project_8da05ca4-a365-48d8-b819-845a2e062c8b/",
+      "master_context/parallelloop/project_workspaces/project_3334d975-ecb1-4dc0-8a75-72d406caec7d/",
+      "master_context/parallelloop/project_workspaces/project_6308ae87-74c5-45fa-928c-e0d8011e9b4c/",
+      "master_context/parallelloop/project_workspaces/project_f6bedc3d-ee35-4a5f-8bc6-0c2346b2edcd/"
+    ]
+  }
+}
