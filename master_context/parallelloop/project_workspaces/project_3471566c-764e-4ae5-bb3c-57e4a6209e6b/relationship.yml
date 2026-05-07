@@ -1,0 +1,17 @@
+id: project_3471566c-764e-4ae5-bb3c-57e4a6209e6b
+metadata:
+  created_at: '2026-05-07T13:28:20.420107+00:00'
+  updated_at: '2026-05-07T13:28:52.254016+00:00'
+project_members:
+- email: anirudh@parallelloop.ai
+  is_active: true
+  is_owner: true
+  joined_at: '2026-05-07T13:28:17.012190+00:00'
+  membership_id: ea025972-7d3d-459d-8798-115b4a31232c
+  name: Anirudh Joshi
+  removed_at: null
+  role: PROJECT_LEAD
+  teams: []
+project_name: Whatsapp test fix test
+project_slug: whatsapp-test-fix-test
+type: project_relationship
