@@ -1,0 +1,17 @@
+id: project_bd20df9f-6efd-4ef4-8eae-57e5da52ca26
+metadata:
+  created_at: '2026-05-08T11:42:34.524231+00:00'
+  updated_at: '2026-05-08T11:42:34.524605+00:00'
+project_members:
+- email: anirudh@parallelloop.ai
+  is_active: true
+  is_owner: true
+  joined_at: '2026-05-08T11:42:31.615379+00:00'
+  membership_id: ea025972-7d3d-459d-8798-115b4a31232c
+  name: Anirudh Joshi
+  removed_at: null
+  role: PROJECT_LEAD
+  teams: []
+project_name: Whatsapp 2
+project_slug: whatsapp-2
+type: project_relationship
