@@ -1,0 +1,33 @@
+{
+  "source_id": "b3ea9fa6-ce5c-4b92-9d65-f593d9cb67b0",
+  "source_type": "IMAGE",
+  "title": "Scimplify API Token Refresh Endpoint",
+  "output_file": "structured.md",
+  "events": [
+    {
+      "timestamp": "2026-05-08T13:26:45Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "f5bbf6b1-c662-4e83-80be-6d9a9f54a46a.jpg",
+        "file_size_bytes": 265275,
+        "file_format": "JPG"
+      }
+    },
+    {
+      "timestamp": "2026-05-08T13:27:00Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "word_count": 156,
+        "extraction_method": "claude_vision"
+      }
+    },
+    {
+      "timestamp": "2026-05-08T13:27:00Z",
+      "event": "output_created",
+      "status": "success",
+      "files": ["structured.md", "ingest_log.json"]
+    }
+  ]
+}
