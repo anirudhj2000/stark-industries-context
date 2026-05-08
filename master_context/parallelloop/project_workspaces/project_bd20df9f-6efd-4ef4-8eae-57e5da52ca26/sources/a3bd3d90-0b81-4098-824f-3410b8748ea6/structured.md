@@ -1,68 +1,32 @@
-# WhatsApp Chat: Anirudh Joshi
+# WhatsApp — Anirudh Joshi
+_chat_id: 919398542806@s.whatsapp.net_
 
-**Source Type:** WhatsApp Chat  
-**Chat ID:** 919398542806@s.whatsapp.net  
-**Captured:** 2026-05-08
-
----
-
-## Participants
-
-| Participant | Type |
-|-------------|------|
-| 919398542806@s.whatsapp.net | External User |
-| me (Bot) | System |
-
----
-
-## Conversation
-
-### Message 1
-**From:** 919398542806@s.whatsapp.net  
-**Timestamp:** 1970-01-21T13:57:22.798000+00:00
-
+**919398542806@s.whatsapp.net** · _1970-01-21T13:57:22.798000+00:00_
 Hi
 
----
-
-### Message 2
-**From:** me (Bot)  
-**Timestamp:** 1970-01-21T13:57:22.799000+00:00
-
+**me** · _1970-01-21T13:57:22.799000+00:00_
 Thanks for messaging - your number isn't yet authorised to chat with this bot. An admin needs to enable responses for you. We'll be in touch shortly.
 
----
-
-### Message 3
-**From:** 919398542806@s.whatsapp.net  
-**Timestamp:** 1970-01-21T13:57:22.824000+00:00
-
+**919398542806@s.whatsapp.net** · _1970-01-21T13:57:22.824000+00:00_
 Hey list the projects you have access to
 
----
-
-### Message 4
-**From:** 919398542806@s.whatsapp.net  
-**Timestamp:** 1970-01-21T13:57:24.344000+00:00
-
+**919398542806@s.whatsapp.net** · _1970-01-21T13:57:24.344000+00:00_
 Hey why are you not responding
 
----
-
-### Message 5
-**From:** 919398542806@s.whatsapp.net  
-**Timestamp:** 1970-01-21T13:57:25.791000+00:00
-
+**919398542806@s.whatsapp.net** · _1970-01-21T13:57:25.791000+00:00_
 Yo what is up
 
----
+**919398542806@s.whatsapp.net** · _1970-01-21T13:57:26.556000+00:00_
+Hi
 
-## Summary
+**me** · _1970-01-21T13:57:26.559000+00:00_
+Thanks for messaging - your number isn't yet authorised to chat with this bot. An admin needs to enable responses for you. We'll be in touch shortly.
 
-This is a WhatsApp conversation where an unauthorized user (phone number 919398542806) attempted to interact with a bot system. The bot's automated response indicated that the user's number was not yet authorized to chat. The user made three follow-up messages requesting project information and asking why the bot wasn't responding, but received no further replies due to authorization restrictions.
+**919398542806@s.whatsapp.net** · _1970-01-21T13:57:26.594000+00:00_
+Hi
 
-**Key Points:**
-- User attempted to access bot functionality without authorization
-- Bot correctly identified and blocked unauthorized access
-- User made multiple attempts to engage (3 follow-up messages)
-- No substantive project information was exchanged
+**919398542806@s.whatsapp.net** · _1970-01-21T13:57:26.609000+00:00_
+Hey hey hey
+
+**me** · _1970-01-21T13:57:26.665000+00:00_
+Hey Anirudh! Looks like you're all set now — you're connected to your Parallelloop project. Feel free to ask me questions, track action items, or just say hi anytime!
