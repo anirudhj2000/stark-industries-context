@@ -1,0 +1,33 @@
+{
+  "source_id": "a8eea532-7a5e-4508-bd4f-4db15e65dae6",
+  "source_type": "IMAGE",
+  "title": "Parallel Loop Office Signage",
+  "output_file": "structured.md",
+  "events": [
+    {
+      "timestamp": "2026-05-08T12:46:00Z",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "62229217-099d-4a53-bf1a-91a1610628ef.jpg",
+        "file_size_bytes": 98428,
+        "file_format": "JPG"
+      }
+    },
+    {
+      "timestamp": "2026-05-08T12:46:02Z",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "word_count": 2,
+        "extraction_method": "claude_vision"
+      }
+    },
+    {
+      "timestamp": "2026-05-08T12:46:03Z",
+      "event": "output_created",
+      "status": "success",
+      "files": ["structured.md", "ingest_log.json"]
+    }
+  ]
+}
