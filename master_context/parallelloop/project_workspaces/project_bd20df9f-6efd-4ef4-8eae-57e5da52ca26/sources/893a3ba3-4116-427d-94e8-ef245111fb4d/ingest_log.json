@@ -1,0 +1,33 @@
+{
+  "source_id": "893a3ba3-4116-427d-94e8-ef245111fb4d",
+  "source_type": "IMAGE",
+  "title": "Parallel Loop Office Branding",
+  "output_file": "structured.md",
+  "events": [
+    {
+      "timestamp": "2026-05-08T12:45:46+00:00",
+      "event": "file_verified",
+      "status": "success",
+      "details": {
+        "file_name": "62229217-099d-4a53-bf1a-91a1610628ef.jpg",
+        "file_size_bytes": 98428,
+        "file_format": "JPG"
+      }
+    },
+    {
+      "timestamp": "2026-05-08T12:45:47+00:00",
+      "event": "extraction_completed",
+      "status": "success",
+      "metrics": {
+        "word_count": 2,
+        "extraction_method": "claude_vision"
+      }
+    },
+    {
+      "timestamp": "2026-05-08T12:45:48+00:00",
+      "event": "output_created",
+      "status": "success",
+      "files": ["structured.md", "ingest_log.json"]
+    }
+  ]
+}
