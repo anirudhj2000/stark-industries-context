@@ -1,28 +1,28 @@
-id: team_8c189939_enterprise
+id: team_2b382b72_consumer
 type: team
-name: Enterprise
-slug: enterprise-11
+name: Consumer
+slug: consumer-9
 status: active
 external_ids:
-  team_id: 8c189939-63bb-4c9a-9977-6fbc30185346
+  team_id: 2b382b72-5273-442e-a881-9626ea928325
   organization_slug: parallelloop
 profile:
-  description: 'Business Unit: Enterprise'
+  description: 'Business Unit: Consumer'
   team_type: DEPARTMENT
   code: ''
   slack_channel: ''
 ontology:
-  entity_id: a35336ed-9316-45ec-9b31-9921db31c676
-  entity_path: entities/business-units/enterprise-bu
+  entity_id: b58d949d-ab08-4c97-88ed-0dc3dabd9a86
+  entity_path: entities/business-units/consumer
   level: business-unit
 roster: []
 metadata:
   source: membership_change
   sync_reason: member_added
-  updated_at: '2026-05-16T06:19:56.643887+00:00'
+  updated_at: '2026-05-16T06:19:56.799897+00:00'
   member_count: 0
   active_member_count: 0
 change_history:
 - operation: roster_updated
-  timestamp: '2026-05-16T06:19:56.643887+00:00'
+  timestamp: '2026-05-16T06:19:56.799897+00:00'
   source: member_added

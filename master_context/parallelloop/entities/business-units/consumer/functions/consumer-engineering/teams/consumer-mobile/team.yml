@@ -1,0 +1,28 @@
+id: team_13e2f762_mobile
+type: team
+name: Mobile
+slug: mobile-9
+status: active
+external_ids:
+  team_id: 13e2f762-76a2-4580-9b99-a18d9039c49f
+  organization_slug: parallelloop
+profile:
+  description: 'Team: Mobile'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: d938739d-9ab4-4b9e-b936-d88dda80e4a5
+  entity_path: entities/business-units/consumer/functions/consumer-engineering/teams/consumer-mobile
+  level: team
+roster: []
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-05-16T06:19:55.849166+00:00'
+  member_count: 0
+  active_member_count: 0
+change_history:
+- operation: roster_updated
+  timestamp: '2026-05-16T06:19:55.849166+00:00'
+  source: member_added

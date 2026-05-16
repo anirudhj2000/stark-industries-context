@@ -1,0 +1,28 @@
+id: team_56c9a429_account-executives
+type: team
+name: Account Executives
+slug: account-executives-9
+status: active
+external_ids:
+  team_id: 56c9a429-933f-4eee-b4f4-31bbbbd08a09
+  organization_slug: parallelloop
+profile:
+  description: 'Team: Account Executives'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: 072fb903-25ba-4f3b-b048-bd89bd635dd4
+  entity_path: entities/business-units/enterprise-bu/functions/enterprise-sales/teams/enterprise-ae
+  level: team
+roster: []
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-05-16T06:19:56.472335+00:00'
+  member_count: 0
+  active_member_count: 0
+change_history:
+- operation: roster_updated
+  timestamp: '2026-05-16T06:19:56.472335+00:00'
+  source: member_added

@@ -1,0 +1,28 @@
+id: team_ab053617_platform
+type: team
+name: Platform
+slug: platform-9
+status: active
+external_ids:
+  team_id: ab053617-c65c-4c62-9aa0-a8ed82c27a41
+  organization_slug: parallelloop
+profile:
+  description: 'Team: Platform'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: dcab083f-a9fb-4df9-b321-58361d851fb1
+  entity_path: entities/business-units/consumer/functions/consumer-engineering/teams/consumer-platform
+  level: team
+roster: []
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-05-16T06:19:56.420504+00:00'
+  member_count: 0
+  active_member_count: 0
+change_history:
+- operation: roster_updated
+  timestamp: '2026-05-16T06:19:56.420504+00:00'
+  source: member_added

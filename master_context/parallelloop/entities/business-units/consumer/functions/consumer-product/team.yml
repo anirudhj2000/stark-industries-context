@@ -1,0 +1,28 @@
+id: team_cee81dd7_product
+type: team
+name: Product
+slug: product-11
+status: active
+external_ids:
+  team_id: cee81dd7-5173-4881-889d-2e6270fc0b9b
+  organization_slug: parallelloop
+profile:
+  description: 'Function: Product'
+  team_type: DEPARTMENT
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: 980fe10b-b6e0-4003-bd32-da9c308dfb0c
+  entity_path: entities/business-units/consumer/functions/consumer-product
+  level: function
+roster: []
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-05-16T06:19:56.497923+00:00'
+  member_count: 0
+  active_member_count: 0
+change_history:
+- operation: roster_updated
+  timestamp: '2026-05-16T06:19:56.497923+00:00'
+  source: member_added
