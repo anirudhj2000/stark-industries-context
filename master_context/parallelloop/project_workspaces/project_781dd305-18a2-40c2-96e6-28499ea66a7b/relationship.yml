@@ -1,0 +1,17 @@
+id: project_781dd305-18a2-40c2-96e6-28499ea66a7b
+metadata:
+  created_at: '2026-05-16T05:57:26.605991+00:00'
+  updated_at: '2026-05-16T05:57:26.606135+00:00'
+project_members:
+- email: anirudhjoshi285@gmail.com
+  is_active: true
+  is_owner: false
+  joined_at: '2026-05-16T05:57:26.337753+00:00'
+  membership_id: 89144d40-33ee-499d-b062-381ce73e7716
+  name: Anirudh Joshi
+  removed_at: null
+  role: CONTRIBUTOR
+  teams: []
+project_name: Active Days Counter
+project_slug: active-days-counter
+type: project_relationship
