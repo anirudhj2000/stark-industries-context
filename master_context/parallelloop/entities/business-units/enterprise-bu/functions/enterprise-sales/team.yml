@@ -1,0 +1,40 @@
+id: team_1983c1ec_sales
+type: team
+name: Sales
+slug: sales-11
+status: active
+external_ids:
+  team_id: 1983c1ec-892a-42cb-bd90-70db8991da64
+  organization_slug: parallelloop
+profile:
+  description: 'Function: Sales'
+  team_type: DEPARTMENT
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: b8fa427f-7421-46ca-b9cb-c52033a224df
+  entity_path: entities/business-units/enterprise-bu/functions/enterprise-sales
+  level: function
+roster:
+- email: anirudhjoshi285@gmail.com
+  name: Anirudh Joshi
+  membership_id: 9df4dd6b-968d-446c-a0db-a8ff95a6667b
+  role: MEMBER
+  title: ''
+  department: ''
+  function: ''
+  is_active: true
+  team_role: MEMBER
+  context_description: ''
+  responsibilities: []
+  joined_at: '2026-05-16T05:58:16.870165+00:00'
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-05-16T05:58:17.016816+00:00'
+  member_count: 1
+  active_member_count: 1
+change_history:
+- operation: roster_updated
+  timestamp: '2026-05-16T05:58:17.016816+00:00'
+  source: member_added
