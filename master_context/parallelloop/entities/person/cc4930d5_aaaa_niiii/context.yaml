@@ -1,34 +1,46 @@
-id: cc4930d5_aaaa_niiii
-type: person
-name: AAAA NIIII
-status: invited
+change_history:
+- operation: create
+  reference_id: cc4930d5-6541-4481-8c49-04c511d5a6a2
+  source: created
+  timestamp: '2026-05-16T06:19:56.420073+00:00'
+- operation: project_assignment_update
+  project_id: 781dd305-18a2-40c2-96e6-28499ea66a7b
+  source: playbook_sync
+  timestamp: '2026-05-16T06:28:30.786420+00:00'
 external_ids:
   bulk_import_item_id: cc4930d5-6541-4481-8c49-04c511d5a6a2
   email: anirudh@anirudh.ai
-profile:
-  email: anirudh@anirudh.ai
-  first_name: AAAA
-  last_name: NIIII
-  primary_role: ''
-  department: ''
-  function: ''
-  timezone: UTC
-  location: ''
-  pronouns: ''
-  about: ''
-  expertise_tags: []
-  context_description: ''
-  responsibilities: []
-  manager_email: null
-rbac_scope:
-  teams: []
-  org_role: MEMBER
+id: cc4930d5_aaaa_niiii
 metadata:
-  source: created
   created_at: '2026-05-16T06:19:56.420073+00:00'
   data_quality: minimal
-change_history:
-- operation: create
-  timestamp: '2026-05-16T06:19:56.420073+00:00'
   source: created
-  reference_id: cc4930d5-6541-4481-8c49-04c511d5a6a2
+name: AAAA NIIII
+profile:
+  about: ''
+  context_description: ''
+  department: ''
+  email: anirudh@anirudh.ai
+  expertise_tags: []
+  first_name: AAAA
+  function: ''
+  last_name: NIIII
+  location: ''
+  manager_email: null
+  primary_role: ''
+  pronouns: ''
+  responsibilities: []
+  timezone: UTC
+project_assignments:
+- is_active: true
+  is_owner: false
+  joined_at: '2026-05-16T06:28:30.357123+00:00'
+  project_id: 781dd305-18a2-40c2-96e6-28499ea66a7b
+  project_name: Active Days Counter
+  project_slug: active-days-counter
+  role: CONTRIBUTOR
+rbac_scope:
+  org_role: MEMBER
+  teams: []
+status: invited
+type: person

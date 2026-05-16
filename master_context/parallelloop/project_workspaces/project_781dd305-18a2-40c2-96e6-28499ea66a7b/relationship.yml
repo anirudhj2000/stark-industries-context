@@ -1,7 +1,7 @@
 id: project_781dd305-18a2-40c2-96e6-28499ea66a7b
 metadata:
   created_at: '2026-05-16T05:57:26.605991+00:00'
-  updated_at: '2026-05-16T05:57:26.606135+00:00'
+  updated_at: '2026-05-16T06:28:30.790354+00:00'
 project_members:
 - email: anirudhjoshi285@gmail.com
   is_active: true
@@ -9,6 +9,15 @@ project_members:
   joined_at: '2026-05-16T05:57:26.337753+00:00'
   membership_id: 89144d40-33ee-499d-b062-381ce73e7716
   name: Anirudh Joshi
+  removed_at: null
+  role: CONTRIBUTOR
+  teams: []
+- email: anirudh@anirudh.ai
+  is_active: true
+  is_owner: false
+  joined_at: '2026-05-16T06:28:30.357123+00:00'
+  membership_id: cc4930d5-6541-4481-8c49-04c511d5a6a2
+  name: AAAA NIIII
   removed_at: null
   role: CONTRIBUTOR
   teams: []
