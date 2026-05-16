@@ -1,0 +1,28 @@
+id: team_8c189939_enterprise
+type: team
+name: Enterprise
+slug: enterprise-11
+status: active
+external_ids:
+  team_id: 8c189939-63bb-4c9a-9977-6fbc30185346
+  organization_slug: parallelloop
+profile:
+  description: 'Business Unit: Enterprise'
+  team_type: DEPARTMENT
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: a35336ed-9316-45ec-9b31-9921db31c676
+  entity_path: entities/business-units/enterprise-bu
+  level: business-unit
+roster: []
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-05-16T06:03:17.092376+00:00'
+  member_count: 0
+  active_member_count: 0
+change_history:
+- operation: roster_updated
+  timestamp: '2026-05-16T06:03:17.092376+00:00'
+  source: member_added

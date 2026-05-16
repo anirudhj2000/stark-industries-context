@@ -1,0 +1,28 @@
+id: team_e34ab362_integrations
+type: team
+name: Integrations
+slug: integrations-9
+status: active
+external_ids:
+  team_id: e34ab362-3cfa-40ca-85f8-8eefff6f7f5a
+  organization_slug: parallelloop
+profile:
+  description: 'Team: Integrations'
+  team_type: GENERAL
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: 13d3917f-6a14-4a93-b20d-72505c275400
+  entity_path: entities/business-units/enterprise-bu/functions/enterprise-engineering/teams/enterprise-integrations
+  level: team
+roster: []
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-05-16T06:03:17.895986+00:00'
+  member_count: 0
+  active_member_count: 0
+change_history:
+- operation: roster_updated
+  timestamp: '2026-05-16T06:03:17.895986+00:00'
+  source: member_added

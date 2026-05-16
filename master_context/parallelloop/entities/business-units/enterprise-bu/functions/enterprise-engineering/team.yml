@@ -1,0 +1,28 @@
+id: team_a63fb6fa_engineering
+type: team
+name: Engineering
+slug: engineering-22
+status: active
+external_ids:
+  team_id: a63fb6fa-97cc-4688-9078-8bcac3ff302d
+  organization_slug: parallelloop
+profile:
+  description: 'Function: Engineering'
+  team_type: DEPARTMENT
+  code: ''
+  slack_channel: ''
+ontology:
+  entity_id: 4cca7107-701b-4fee-aac9-473e3e6ebc6f
+  entity_path: entities/business-units/enterprise-bu/functions/enterprise-engineering
+  level: function
+roster: []
+metadata:
+  source: membership_change
+  sync_reason: member_added
+  updated_at: '2026-05-16T06:03:17.902257+00:00'
+  member_count: 0
+  active_member_count: 0
+change_history:
+- operation: roster_updated
+  timestamp: '2026-05-16T06:03:17.902257+00:00'
+  source: member_added

@@ -31,10 +31,10 @@ roster:
 metadata:
   source: membership_change
   sync_reason: member_added
-  updated_at: '2026-05-16T05:58:17.016816+00:00'
+  updated_at: '2026-05-16T06:03:17.672936+00:00'
   member_count: 1
   active_member_count: 1
 change_history:
 - operation: roster_updated
-  timestamp: '2026-05-16T05:58:17.016816+00:00'
+  timestamp: '2026-05-16T06:03:17.672936+00:00'
   source: member_added
